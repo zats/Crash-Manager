@@ -1,0 +1,53 @@
+/* 
+  File.strings
+  Crashlytics
+
+  Created by Sasha Zats on 12/30/13.
+  Copyright (c) 2013 Sasha Zats. All rights reserved.
+*/
+
+// Organization Screen
+
+"CLSOrganizationNoApps" = "нет приложений";
+"%d CLSOrganizationsAppsCount (plural rule: one)" = "%d приложение";
+"%d CLSOrganizationsAppsCount (plural rule: few)" = "%d приложения";
+"%d CLSOrganizationsAppsCount (plural rule: many)" = "%d приложений";
+
+// Issue Filters
+
+// by issue status
+"CLSFilterIssuesStatusAll" = "Все проблемы";
+"CLSFilterIssuesStatusResolved" = "Исправленные проблемы";
+"CLSFilterIssuesStatusUnresolved" = "Открытые проблемы";
+// by time
+"CLSFilterTimeRangeAll" = "Все время";
+"CLSFilterTimeRangeLastHour" = "Последний час";
+"CLSFilterTimeRangeLast24Hours" = "Последние 24 часа";
+"CLSFilterTimeRangeLast48Hours" = "Последние 48 часов";
+"CLSFilterTimeRangeLast7Days" = "Последние 7 дней";
+"CLSFilterTimeRangeLast30Days" = "Последние 30 дней";
+
+// Applications List Screen
+
+"CLSApplicationsListNoIssues" = "";
+"%d CLSApplicationsListIssueCount (plural rule: one)" = "%d проблема";
+"%d CLSApplicationsListIssueCount (plural rule: few)" = "%d проблемы";
+"%d CLSApplicationsListIssueCount (plural rule: many)" = "%d проблем";
+"%d CLSApplicationsListUsersAffected (plural rule: one)" = "%d пользователь";
+"%d CLSApplicationsListUsersAffected (plural rule: few)" = "%d пользователя";
+"%d CLSApplicationsListUsersAffected (plural rule: many)" = "%d пользователей";
+"CLSApplicationsListNoIssues" = "нет багов";
+
+// Issues List screen
+"CLSIssueListTitleFormat" = "%@'s issues";
+"%d CLSIssueListCrashesCount (plural rule: one)" = "%d проблема";
+"%d CLSIssueListCrashesCount (plural rule: few)" = "%d проблемы";
+"%d CLSIssueListCrashesCount (plural rule: many)" = "%d проблем";
+"%d CLSIssueListUsersAffected (plural rule: one)" = "%d пользователь";
+"%d CLSIssueListUsersAffected (plural rule: few)" = "%d пользователя";
+"%d CLSIssueListUsersAffected (plural rule: many)" = "%d пользователей";
+
+// Issue details screen
+"CLSIssueDetailsSegmentDetails" = "Детали";
+"CLSIssueDetailsSegmentThreads" = "Процессы";
+"CLSIssueDetailsSegmentException" = "Исключение";

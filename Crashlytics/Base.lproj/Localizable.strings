@@ -1,0 +1,48 @@
+/* 
+  File.strings
+  Crashlytics
+
+  Created by Sasha Zats on 12/30/13.
+  Copyright (c) 2013 Sasha Zats. All rights reserved.
+*/
+
+// Organization Screen
+
+"CLSOrganizationNoApps" = "no apps";
+"%d CLSOrganizationsAppsCount (plural rule: one)" = "%d app";
+"%d CLSOrganizationsAppsCount (plural rule: other)" = "%d apps";
+
+// Issue Filters
+
+// by issue status
+"CLSFilterIssuesStatusAll" = "All Issues";
+"CLSFilterIssuesStatusResolved" = "Resolved Issues";
+"CLSFilterIssuesStatusUnresolved" = "Unresolved Issues";
+// by time
+"CLSFilterTimeRangeAll" = "All Time";
+"CLSFilterTimeRangeLastHour" = "Last Hour";
+"CLSFilterTimeRangeLast24Hours" = "Last 24 Hours";
+"CLSFilterTimeRangeLast48Hours" = "Last 48 Hours";
+"CLSFilterTimeRangeLast7Days" = "Last 7 Days";
+"CLSFilterTimeRangeLast30Days" = "Last 30 Days";
+
+// Applications List Screen
+
+"CLSApplicationsListNoIssues" = "";
+"%d CLSApplicationsListIssueCount (plural rule: other)" = "%d issues";
+"%d CLSApplicationsListIssueCount (plural rule: one)" = "%d issue";
+"%d CLSApplicationsListUsersAffected (plural rule: other)" = "%d users";
+"%d CLSApplicationsListUsersAffected (plural rule: one)" = "%d user";
+"CLSApplicationsListNoIssues" = "no issues";
+
+// Issues List screen
+"CLSIssueListTitleFormat" = "%@'s issues";
+"%d CLSIssueListCrashesCount (plural rule: other)" = "%d crashes";
+"%d CLSIssueListCrashesCount (plural rule: one)" = "%d crash";
+"%d CLSIssueListUsersAffected (plural rule: other)" = "%d users";
+"%d CLSIssueListUsersAffected (plural rule: one)" = "%d user";
+
+// Issue details screen
+"CLSIssueDetailsSegmentDetails" = "Details";
+"CLSIssueDetailsSegmentThreads" = "Threads";
+"CLSIssueDetailsSegmentException" = "Exception";
