@@ -154,7 +154,7 @@
 		5CC3F7F018786E7A003C2FAC /* CLSPasteboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSPasteboardObserver.h; sourceTree = "<group>"; };
 		5CC3F7F118786E7A003C2FAC /* CLSPasteboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSPasteboardObserver.m; sourceTree = "<group>"; };
 		5CE8926E186F13860017F68A /* configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = "<group>"; };
-		5CE94DE618534976003C7DB1 /* Shigu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shigu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE94DE618534976003C7DB1 /* Crashlytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crashlytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE94DE918534976003C7DB1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5CE94DEB18534976003C7DB1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5CE94DED18534976003C7DB1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -381,7 +381,7 @@
 		5CE94DE718534976003C7DB1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CE94DE618534976003C7DB1 /* Shigu.app */,
+				5CE94DE618534976003C7DB1 /* Crashlytics.app */,
 				5CE94E0718534976003C7DB1 /* CrashlyticsTests.xctest */,
 			);
 			name = Products;
@@ -475,6 +475,7 @@
 				5CE94DE218534976003C7DB1 /* Sources */,
 				5CE94DE318534976003C7DB1 /* Frameworks */,
 				5CE94DE418534976003C7DB1 /* Resources */,
+				5CDE08DB188A872F0051124A /* Automatic Build incrementation */,
 				8AF3D6D6FDA9447EBB27B388 /* Copy Pods Resources */,
 				5C6BF2AA18637D38007C483D /* Crashlytics */,
 				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
@@ -485,7 +486,7 @@
 			);
 			name = Crashlytics;
 			productName = Crashlytics;
-			productReference = 5CE94DE618534976003C7DB1 /* Shigu.app */;
+			productReference = 5CE94DE618534976003C7DB1 /* Crashlytics.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5CE94E0618534976003C7DB1 /* CrashlyticsTests */ = {
@@ -581,6 +582,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Crashlytics/Crashlytics.framework/run 1806f0e415eca8782897d8254a1363122c77c03a";
+		};
+		5CDE08DB188A872F0051124A /* Automatic Build incrementation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Automatic Build incrementation";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# increment build number only when building release builds that are not app store.\n# this way we keep the same version number for a tested version in production\nif [[ ! ${CONFIGURATION} =~ Appstore ]] && [[ ${CONFIGURATION} =~ Release ]] ; then\necho \"Increment version number - release build detected\"\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\nelse\necho \"Skipping increment version number - configuration is not release or environment is production\"\nfi";
 		};
 		8AF3D6D6FDA9447EBB27B388 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -817,7 +832,7 @@
 					"$(inherited)",
 					/Users/zats/Documents/Crashlytics,
 				);
-				PRODUCT_NAME = Shigu;
+				PRODUCT_NAME = "${TARGET_NAME}";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -849,7 +864,7 @@
 					"$(inherited)",
 					/Users/zats/Documents/Crashlytics,
 				);
-				PRODUCT_NAME = Shigu;
+				PRODUCT_NAME = "${TARGET_NAME}";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

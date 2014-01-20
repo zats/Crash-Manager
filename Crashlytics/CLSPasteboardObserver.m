@@ -166,6 +166,18 @@
 	
 	self.lastNavigatedURLString = urlString;
 	
+	UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+	if ([rootViewController isKindOfClass:[UINavigationController class]]) {
+		UIViewController *currentlyVisibleViewController = [((UINavigationController *)rootViewController).viewControllers lastObject];
+		if ([currentlyVisibleViewController isKindOfClass:[CLSIssueDetailsViewController class]]) {
+			BOOL showCurrentIssueID = [((CLSIssueDetailsViewController *)currentlyVisibleViewController).issue.issueID isEqualToString:issueID];
+			if (showCurrentIssueID) {
+				// no need to prompt user if we're already looking at the issue details
+				return;
+			}
+		}
+	}
+	
 	NSString *message = [NSString stringWithFormat:@"Do you want to navigate to the details of the detected issue?\n"];
 	message = [message stringByAppendingFormat:@"Organization: %@\n", organizationAlias];
 	message = [message stringByAppendingFormat:@"App: %@\n", bundleID];
@@ -176,6 +188,12 @@
 	[alert SH_addButtonWithTitle:@"Cancel"
 					   withBlock:nil];
 	[alert SH_addButtonCancelWithTitle:@"Navigate" withBlock:^(NSInteger theButtonIndex) {
+		id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+		[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"navigation"
+															  action:@"clipboard_issue_navigation"
+															   label:[NSString stringWithFormat:@"%@/%@/%@", organizationAlias, bundleID, issueID]
+															   value:nil] build]];
+		
 		CLSOrganization *organization = [CLSOrganization MR_findFirstByAttribute:CLSOrganizationAttributes.alias
 																	   withValue:organizationAlias];
 		
