@@ -117,8 +117,14 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 		return nil;
 	}
 	
-	CLSAccount *currentAccoutn = (CLSAccount *)[context objectRegisteredForID:objectID];
-	return currentAccoutn;
+    NSError *error = nil;
+	CLSAccount *currentAccount = (CLSAccount *)[context existingObjectWithID:objectID error:&error];
+#ifdef DEBUG
+    if (error) {
+        NSLog(@"%@", error);
+    }
+#endif
+	return currentAccount;
 }
 
 @end

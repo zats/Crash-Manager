@@ -41,6 +41,8 @@
 "%d CLSIssueListCrashesCount (plural rule: one)" = "%d crash";
 "%d CLSIssueListUsersAffected (plural rule: other)" = "%d users";
 "%d CLSIssueListUsersAffected (plural rule: one)" = "%d user";
+"CLSIssueListCloseIssues" = "Close";
+"CLSIssueListReopenIssue" = "Reopen";
 
 // Issue details screen
 "CLSIssueDetailsSegmentDetails" = "Details";

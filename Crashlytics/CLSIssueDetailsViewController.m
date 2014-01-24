@@ -31,9 +31,7 @@ typedef enum _CLSDetailsSegment {
 @property (weak, nonatomic) IBOutlet UILabel *exceptionTypeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *exceptionDescriptionLabel;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *issueStatusBarButtonItem;
-
 @property (strong, nonatomic) IBOutlet UIView *detailsContainerView;
 
 // Data

@@ -47,6 +47,28 @@
 
 #pragma mark - Private
 
+- (void)_configureCell:(CLSIssueListCell *)cell forIndexPath:(NSIndexPath *)indexPath {
+	CLSIssue *issue = [self _issueForIndexPath:indexPath];
+	cell.issueNumberLabel.text = [issue.displayID description];
+	cell.issueTitleLabel.textColor = [issue isResolved] ? [UIColor lightGrayColor] : [UIColor blackColor];
+	cell.issueTitleLabel.text = issue.title;
+	cell.issueSubtitleLabel.text = issue.subtitle;
+	NSString *crashesString = TTTLocalizedPluralString(issue.crashesCountValue, @"CLSIssueListCrashesCount", @"Crashes count for issues list screen");
+	NSString *usersAffected = TTTLocalizedPluralString(issue.devicesAffectedValue, @"CLSIssueListUsersAffected", @"Users affected count for issues list screen");
+	cell.issueDetailsLabel.text = [NSString stringWithFormat:@"%@  %@  %@", issue.build.buildID, crashesString,  usersAffected];
+	// adjusting layout for the cell according to its position in the table view
+	if ([self _isOnlyRowAtIndexPath:indexPath]) {
+		cell.baseLayoutConstraint.constant = -2;
+	} else if ([self _isLastRowAtIndexPath:indexPath]) {
+		cell.baseLayoutConstraint.constant = 1;
+	} else if ([self _isFirstRowAtIndexPath:indexPath]) {
+		cell.baseLayoutConstraint.constant = -5;
+	} else {
+		// any intermidiate row
+		cell.baseLayoutConstraint.constant = -2;
+	}
+}
+
 - (void)_beginLoading {
 	[self.refreshControl beginRefreshing];
 	
@@ -103,10 +125,11 @@
 		}]
 		subscribeNext:^(CLSFilter *filter) {
 			[[[RACSignal
-				combineLatest:@[RACObserve(filter, build),
-								RACObserve(filter, issueStatus),
-								RACObserve(filter, issueNewerThen),
-								RACObserve(filter, issueOlderThen)]]
+				combineLatest:@[
+                    RACObserve(filter, build),
+                    RACObserve(filter, issueStatus),
+                    RACObserve(filter, issueNewerThen),
+                    RACObserve(filter, issueOlderThen)]]
 				distinctUntilChanged]
 				subscribeNext:^(id x) {
 					// We don't get issues creation date in response we can not use
@@ -173,26 +196,8 @@
 	
 	CLSIssueListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueCellIdentifier"
 															forIndexPath:indexPath];
-	CLSIssue *issue = [self _issueForIndexPath:indexPath];
-	cell.issueNumberLabel.text = [issue.displayID description];
-	cell.issueTitleLabel.textColor = [issue isResolved] ? [UIColor lightGrayColor] : [UIColor blackColor];
-	cell.issueTitleLabel.text = issue.title;
-	cell.issueSubtitleLabel.text = issue.subtitle;
-	NSString *crashesString = TTTLocalizedPluralString(issue.crashesCountValue, @"CLSIssueListCrashesCount", @"Crashes count for issues list screen");
-	NSString *usersAffected = TTTLocalizedPluralString(issue.devicesAffectedValue, @"CLSIssueListUsersAffected", @"Users affected count for issues list screen");
-	cell.issueDetailsLabel.text = [NSString stringWithFormat:@"%@  %@  %@", issue.build.buildID, crashesString,  usersAffected];
-	// adjusting layout for the cell according to its position in the table view
-	if ([self _isOnlyRowAtIndexPath:indexPath]) {
-		cell.baseLayoutConstraint.constant = -2;
-	} else if ([self _isLastRowAtIndexPath:indexPath]) {
-		cell.baseLayoutConstraint.constant = 1;
-	} else if ([self _isFirstRowAtIndexPath:indexPath]) {
-		cell.baseLayoutConstraint.constant = -5;
-	} else {
-		// any intermidiate row
-		cell.baseLayoutConstraint.constant = -2;
-	}
-	return cell;
+    [self _configureCell:cell forIndexPath:indexPath];
+    return cell;
 }
 
 #pragma mark - UITableViewDelegate
@@ -204,6 +209,34 @@ titleForHeaderInSection:(NSInteger)section {
 
 
 #pragma mark - UITableViewDelegate
+
+- (BOOL)tableView:(UITableView *)tableView
+canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (NSString *)tableView:(UITableView *)tableView
+titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+	CLSIssue *issue = [self _issueForIndexPath:indexPath];
+    return issue.resolvedAt ? NSLocalizedString(@"CLSIssueListReopenIssue", @"") : NSLocalizedString(@"CLSIssueListCloseIssues", @"") ;
+}
+
+- (void)tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle != UITableViewCellEditingStyleDelete) {
+        return;
+    }
+    CLSIssue *issue = [self _issueForIndexPath:indexPath];
+    [[CLSAPIClient sharedInstance] setResolved:![issue isResolved]
+                                      forIssue:issue];
+    
+    
+    [tableView setEditing:NO animated:YES];
+    id cell = [tableView cellForRowAtIndexPath:indexPath];
+    [self _configureCell:cell
+            forIndexPath:indexPath];
+}
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -46,6 +46,8 @@
 "%d CLSIssueListUsersAffected (plural rule: one)" = "%d пользователь";
 "%d CLSIssueListUsersAffected (plural rule: few)" = "%d пользователя";
 "%d CLSIssueListUsersAffected (plural rule: many)" = "%d пользователей";
+"CLSIssueListCloseIssues" = "Закрыть";
+"CLSIssueListReopenIssue" = "Открыть";
 
 // Issue details screen
 "CLSIssueDetailsSegmentDetails" = "Детали";

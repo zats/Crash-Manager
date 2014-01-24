@@ -154,20 +154,20 @@
 		5CC3F7F018786E7A003C2FAC /* CLSPasteboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSPasteboardObserver.h; sourceTree = "<group>"; };
 		5CC3F7F118786E7A003C2FAC /* CLSPasteboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSPasteboardObserver.m; sourceTree = "<group>"; };
 		5CE8926E186F13860017F68A /* configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = "<group>"; };
-		5CE94DE618534976003C7DB1 /* Crashlytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crashlytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE94DE618534976003C7DB1 /* Crash Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crash Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE94DE918534976003C7DB1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5CE94DEB18534976003C7DB1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5CE94DED18534976003C7DB1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		5CE94DF118534976003C7DB1 /* Crashlytics-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Crashlytics-Info.plist"; sourceTree = "<group>"; };
+		5CE94DF118534976003C7DB1 /* CrashManager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrashManager-Info.plist"; sourceTree = "<group>"; };
 		5CE94DF518534976003C7DB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5CE94DF718534976003C7DB1 /* Crashlytics-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crashlytics-Prefix.pch"; sourceTree = "<group>"; };
+		5CE94DF718534976003C7DB1 /* CrashManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrashManager-Prefix.pch"; sourceTree = "<group>"; };
 		5CE94DF818534976003C7DB1 /* CLSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLSAppDelegate.h; sourceTree = "<group>"; };
 		5CE94DF918534976003C7DB1 /* CLSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLSAppDelegate.m; sourceTree = "<group>"; };
 		5CE94DFC18534976003C7DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CE94E0118534976003C7DB1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5CE94E0718534976003C7DB1 /* CrashlyticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrashlyticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE94E0718534976003C7DB1 /* CrashManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrashManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE94E0818534976003C7DB1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		5CE94E1018534976003C7DB1 /* CrashlyticsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrashlyticsTests-Info.plist"; sourceTree = "<group>"; };
+		5CE94E1018534976003C7DB1 /* CrashManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrashManagerTests-Info.plist"; sourceTree = "<group>"; };
 		5CE94E1418534976003C7DB1 /* CrashlyticsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashlyticsTests.m; sourceTree = "<group>"; };
 		5CE94E2118534BE0003C7DB1 /* Crashlytics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crashlytics.xcdatamodel; sourceTree = "<group>"; };
 		5CEDD1C318703DDC00B6A39A /* CLSIssueListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueListCell.h; sourceTree = "<group>"; };
@@ -381,8 +381,8 @@
 		5CE94DE718534976003C7DB1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CE94DE618534976003C7DB1 /* Crashlytics.app */,
-				5CE94E0718534976003C7DB1 /* CrashlyticsTests.xctest */,
+				5CE94DE618534976003C7DB1 /* Crash Manager.app */,
+				5CE94E0718534976003C7DB1 /* CrashManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -417,9 +417,9 @@
 		5CE94DF018534976003C7DB1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5CE94DF118534976003C7DB1 /* Crashlytics-Info.plist */,
+				5CE94DF118534976003C7DB1 /* CrashManager-Info.plist */,
 				5CE94DF518534976003C7DB1 /* main.m */,
-				5CE94DF718534976003C7DB1 /* Crashlytics-Prefix.pch */,
+				5CE94DF718534976003C7DB1 /* CrashManager-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -436,7 +436,7 @@
 		5CE94E0F18534976003C7DB1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5CE94E1018534976003C7DB1 /* CrashlyticsTests-Info.plist */,
+				5CE94E1018534976003C7DB1 /* CrashManagerTests-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -445,8 +445,8 @@
 			isa = PBXGroup;
 			children = (
 				5CEDD1C318703DDC00B6A39A /* CLSIssueListCell.h */,
-				5C3CEAB518671C4000F8DDC6 /* CLSIssuesTableViewController.h */,
 				5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */,
+				5C3CEAB518671C4000F8DDC6 /* CLSIssuesTableViewController.h */,
 				5C3CEAB618671C4000F8DDC6 /* CLSIssuesTableViewController.m */,
 				5C40185D186B827A00CC71AE /* Crash Details */,
 			);
@@ -467,9 +467,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5CE94DE518534976003C7DB1 /* Crashlytics */ = {
+		5CE94DE518534976003C7DB1 /* CrashManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CE94E1818534976003C7DB1 /* Build configuration list for PBXNativeTarget "Crashlytics" */;
+			buildConfigurationList = 5CE94E1818534976003C7DB1 /* Build configuration list for PBXNativeTarget "CrashManager" */;
 			buildPhases = (
 				B1FA73BB547446999FFD095D /* Check Pods Manifest.lock */,
 				5CE94DE218534976003C7DB1 /* Sources */,
@@ -484,14 +484,14 @@
 			);
 			dependencies = (
 			);
-			name = Crashlytics;
+			name = CrashManager;
 			productName = Crashlytics;
-			productReference = 5CE94DE618534976003C7DB1 /* Crashlytics.app */;
+			productReference = 5CE94DE618534976003C7DB1 /* Crash Manager.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5CE94E0618534976003C7DB1 /* CrashlyticsTests */ = {
+		5CE94E0618534976003C7DB1 /* CrashManagerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5CE94E1B18534976003C7DB1 /* Build configuration list for PBXNativeTarget "CrashlyticsTests" */;
+			buildConfigurationList = 5CE94E1B18534976003C7DB1 /* Build configuration list for PBXNativeTarget "CrashManagerTests" */;
 			buildPhases = (
 				5CE94E0318534976003C7DB1 /* Sources */,
 				5CE94E0418534976003C7DB1 /* Frameworks */,
@@ -503,9 +503,9 @@
 			dependencies = (
 				5CE94E0D18534976003C7DB1 /* PBXTargetDependency */,
 			);
-			name = CrashlyticsTests;
+			name = CrashManagerTests;
 			productName = CrashlyticsTests;
-			productReference = 5CE94E0718534976003C7DB1 /* CrashlyticsTests.xctest */;
+			productReference = 5CE94E0718534976003C7DB1 /* CrashManagerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -526,7 +526,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5CE94DE118534976003C7DB1 /* Build configuration list for PBXProject "Crashlytics" */;
+			buildConfigurationList = 5CE94DE118534976003C7DB1 /* Build configuration list for PBXProject "CrashManager" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -540,8 +540,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5CE94DE518534976003C7DB1 /* Crashlytics */,
-				5CE94E0618534976003C7DB1 /* CrashlyticsTests */,
+				5CE94DE518534976003C7DB1 /* CrashManager */,
+				5CE94E0618534976003C7DB1 /* CrashManagerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -706,7 +706,7 @@
 /* Begin PBXTargetDependency section */
 		5CE94E0D18534976003C7DB1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5CE94DE518534976003C7DB1 /* Crashlytics */;
+			target = 5CE94DE518534976003C7DB1 /* CrashManager */;
 			targetProxy = 5CE94E0C18534976003C7DB1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -818,7 +818,7 @@
 					"$(PROJECT_DIR)/Crashlytics",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Crashlytics/Crashlytics-Prefix.pch";
+				GCC_PREFIX_HEADER = "Crashlytics/CrashManager-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers\"",
@@ -827,12 +827,12 @@
 					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
 					"\"${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa\"",
 				);
-				INFOPLIST_FILE = "Crashlytics/Crashlytics-Info.plist";
+				INFOPLIST_FILE = "Crashlytics/CrashManager-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/zats/Documents/Crashlytics,
 				);
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = "Crash Manager";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -850,7 +850,7 @@
 					"$(PROJECT_DIR)/Crashlytics",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Crashlytics/Crashlytics-Prefix.pch";
+				GCC_PREFIX_HEADER = "Crashlytics/CrashManager-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers\"",
@@ -859,12 +859,12 @@
 					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
 					"\"${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa\"",
 				);
-				INFOPLIST_FILE = "Crashlytics/Crashlytics-Info.plist";
+				INFOPLIST_FILE = "Crashlytics/CrashManager-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/zats/Documents/Crashlytics,
 				);
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = "Crash Manager";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -886,8 +886,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "CrashlyticsTests/CrashlyticsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "CrashlyticsTests/CrashManagerTests-Info.plist";
+				PRODUCT_NAME = CrashManagerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -906,8 +906,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crashlytics/Crashlytics-Prefix.pch";
-				INFOPLIST_FILE = "CrashlyticsTests/CrashlyticsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "CrashlyticsTests/CrashManagerTests-Info.plist";
+				PRODUCT_NAME = CrashManagerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -916,7 +916,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5CE94DE118534976003C7DB1 /* Build configuration list for PBXProject "Crashlytics" */ = {
+		5CE94DE118534976003C7DB1 /* Build configuration list for PBXProject "CrashManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CE94E1618534976003C7DB1 /* Debug */,
@@ -925,7 +925,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CE94E1818534976003C7DB1 /* Build configuration list for PBXNativeTarget "Crashlytics" */ = {
+		5CE94E1818534976003C7DB1 /* Build configuration list for PBXNativeTarget "CrashManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CE94E1918534976003C7DB1 /* Debug */,
@@ -934,7 +934,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5CE94E1B18534976003C7DB1 /* Build configuration list for PBXNativeTarget "CrashlyticsTests" */ = {
+		5CE94E1B18534976003C7DB1 /* Build configuration list for PBXNativeTarget "CrashManagerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CE94E1C18534976003C7DB1 /* Debug */,
