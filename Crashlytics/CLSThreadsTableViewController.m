@@ -10,6 +10,7 @@
 
 #import "CLSIncident.h"
 #import "CLSIncident_Session+Crashlytics.h"
+#import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
 @interface CLSThreadsTableViewController ()
 
@@ -92,6 +93,18 @@ titleForHeaderInSection:(NSInteger)section {
 	cell.detailTextLabel.text = binaryName;
 
 	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	UIAlertView *alert = [UIAlertView SH_alertViewWithTitle:cell.detailTextLabel.text
+												withMessage:cell.textLabel.text];
+	[alert SH_addButtonWithTitle:@"Copy" withBlock:^(NSInteger theButtonIndex) {
+		[[UIPasteboard generalPasteboard] setString:[NSString stringWithFormat:@"%@ %@", cell.detailTextLabel.text, cell.textLabel.text]];
+	}];
+	[alert SH_addButtonCancelWithTitle:@"Cancel" withBlock:nil];
+	[alert show];
 }
 
 @end

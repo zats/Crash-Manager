@@ -154,7 +154,7 @@
 		5CC3F7F018786E7A003C2FAC /* CLSPasteboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSPasteboardObserver.h; sourceTree = "<group>"; };
 		5CC3F7F118786E7A003C2FAC /* CLSPasteboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSPasteboardObserver.m; sourceTree = "<group>"; };
 		5CE8926E186F13860017F68A /* configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = "<group>"; };
-		5CE94DE618534976003C7DB1 /* Crash Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crash Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE94DE618534976003C7DB1 /* CrashManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrashManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE94DE918534976003C7DB1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5CE94DEB18534976003C7DB1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5CE94DED18534976003C7DB1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -381,7 +381,7 @@
 		5CE94DE718534976003C7DB1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CE94DE618534976003C7DB1 /* Crash Manager.app */,
+				5CE94DE618534976003C7DB1 /* CrashManager.app */,
 				5CE94E0718534976003C7DB1 /* CrashManagerTests.xctest */,
 			);
 			name = Products;
@@ -486,7 +486,7 @@
 			);
 			name = CrashManager;
 			productName = Crashlytics;
-			productReference = 5CE94DE618534976003C7DB1 /* Crash Manager.app */;
+			productReference = 5CE94DE618534976003C7DB1 /* CrashManager.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5CE94E0618534976003C7DB1 /* CrashManagerTests */ = {
@@ -832,7 +832,7 @@
 					"$(inherited)",
 					/Users/zats/Documents/Crashlytics,
 				);
-				PRODUCT_NAME = "Crash Manager";
+				PRODUCT_NAME = CrashManager;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -864,7 +864,7 @@
 					"$(inherited)",
 					/Users/zats/Documents/Crashlytics,
 				);
-				PRODUCT_NAME = "Crash Manager";
+				PRODUCT_NAME = CrashManager;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

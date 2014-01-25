@@ -71,7 +71,7 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 		}
 			
 		case kCLSGeneralSectionUser: {
-			cell.textLabel.text = @"userd";
+			cell.textLabel.text = @"user";
 			NSString *userDisplayString = [self.session.user displayString];
 			if (!userDisplayString) {
 				cell.detailTextLabel.text = @"Unknown";
