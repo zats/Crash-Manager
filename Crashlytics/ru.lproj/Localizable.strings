@@ -47,9 +47,41 @@
 "%d CLSIssueListUsersAffected (plural rule: few)" = "%d пользователя";
 "%d CLSIssueListUsersAffected (plural rule: many)" = "%d пользователей";
 "CLSIssueListCloseIssues" = "Закрыть";
-"CLSIssueListReopenIssue" = "Открыть";
+"CLSIssueListReopenIssue" = "Открыть снова";
 
 // Issue details screen
 "CLSIssueDetailsSegmentDetails" = "Детали";
 "CLSIssueDetailsSegmentThreads" = "Процессы";
 "CLSIssueDetailsSegmentException" = "Исключение";
+// General issue details
+"CLSIssueGeneralDetailsSectionGeneral" = "Основные";
+"CLSIssueGeneralDetailsSectionDevice" = "Устройство";
+"CLSIssueGeneralDetailsSectionOS" = "Операционная Система";
+"CLSIssueGeneralDetailsSectionKeys" = "Ключи";
+"CLSIssueGeneralDetailsSectionLogs" = "Отчеты";
+"CLSIssueGeneralDetailsRowSignal" = "сигнал";
+"CLSIssueGeneralDetailsRowUser" = "пользователь";
+"CLSIssueGeneralDetailsRowValueUnknown" = "Неизвестно";
+"CLSIssueGeneralDetailsRowBattery" = "батарейка";
+"CLSIssueGeneralDetailsRowValueNA" = "Нет данных";
+"CLSIssueGeneralDetailsRowDiskSpace" = "место на диске";
+"CLSIssueGeneralDetailsRowModel" = "модель";
+"CLSIssueGeneralDetailsRowOrientation" = "ориентация";
+"CLSIssueGeneralDetailsRowProximity" = "близость";
+"CLSIssueGeneralDetailsRowValueOn" = "вкл.";
+"CLSIssueGeneralDetailsRowValueOff" = "выкл.";
+"CLSIssueGeneralDetailsRowRam" = "опер. память";
+"CLSIssueGeneralDetailsRowOS" = "ОС";
+"CLSIssueGeneralDetailsRowJailbroken" = "взломан";
+"CLSIssueGeneralDetailsRowLanguage" = "язык";
+"CLSIssueGeneralDetailsNoKeysMessage" = "Эта проблема не содержит пользовательских ключей, обратитесь к документации чтобы добавить пользовательские ключи.";
+"CLSIssueGeneralDetailsNoLogsMessage" = "Эта проблема не содержит пользовательских отчетов, обратитесь к документации чтобы добавить пользовательские отчеты.";
+
+// Pasteboard
+"CLSPasteboardObserverURLDetectedMessageTitle" = "Перейти к проблеме?";
+"CLSPasteboardObserverURLDetectedMessage" = "Буфер содежит информцию о проблеме\n";
+"CLSPasteboardObserverURLDetectedMessageOrganization" = "Организация: %@\n";
+"CLSPasteboardObserverURLDetectedMessageApp" = "Приложение: %@\n";
+"CLSPasteboardObserverURLDetectedMessageIssue" = "Проблема: %@\n";
+"CLSPasteboardObserverURLDetectedMessageNavigateTitle" = "Перейти";
+"CLSPasteboardObserverURLDetectedMessageCancelTitle" = "Отменить";

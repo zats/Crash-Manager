@@ -48,3 +48,34 @@
 "CLSIssueDetailsSegmentDetails" = "Details";
 "CLSIssueDetailsSegmentThreads" = "Threads";
 "CLSIssueDetailsSegmentException" = "Exception";
+"CLSIssueGeneralDetailsSectionGeneral" = "General";
+"CLSIssueGeneralDetailsSectionDevice" = "Device";
+"CLSIssueGeneralDetailsSectionOS" = "Operating System";
+"CLSIssueGeneralDetailsSectionKeys" = "Keys";
+"CLSIssueGeneralDetailsSectionLogs" = "Logs";
+"CLSIssueGeneralDetailsRowSignal" = "signal";
+"CLSIssueGeneralDetailsRowUser" = "user";
+"CLSIssueGeneralDetailsRowValueUnknown" = "Unknown";
+"CLSIssueGeneralDetailsRowBattery" = "battery";
+"CLSIssueGeneralDetailsRowValueNA" = "N/A";
+"CLSIssueGeneralDetailsRowDiskSpace" = "disk space";
+"CLSIssueGeneralDetailsRowModel" = "model";
+"CLSIssueGeneralDetailsRowOrientation" = "orientation";
+"CLSIssueGeneralDetailsRowProximity" = "proximity";
+"CLSIssueGeneralDetailsRowValueOff" = "off";
+"CLSIssueGeneralDetailsRowValueOn" = "on";
+"CLSIssueGeneralDetailsRowRam" = "ram";
+"CLSIssueGeneralDetailsRowOS" = "os";
+"CLSIssueGeneralDetailsRowJailbroken" = "jailbroken";
+"CLSIssueGeneralDetailsRowLanguage" = "language";
+"CLSIssueGeneralDetailsNoKeysMessage" = "No keys were set, please see the documentation to add custom keys.";
+"CLSIssueGeneralDetailsNoLogsMessage" = "No logs were supplied, please see the documentation to add logs.";
+
+// Pasteboard
+"CLSPasteboardObserverURLDetectedMessageTitle" = "Navigate to an issue?";
+"CLSPasteboardObserverURLDetectedMessage" = "Do you want to navigate to the details of the detected issue?\n";
+"CLSPasteboardObserverURLDetectedMessageOrganization" = "Organization: %@\n";
+"CLSPasteboardObserverURLDetectedMessageApp" = "App: %@\n";
+"CLSPasteboardObserverURLDetectedMessageIssue" = "Issue: %@\n";
+"CLSPasteboardObserverURLDetectedMessageNavigateTitle" = "Navigate";
+"CLSPasteboardObserverURLDetectedMessageCancelTitle" = "Cancel";

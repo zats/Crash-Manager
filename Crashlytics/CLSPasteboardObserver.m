@@ -178,16 +178,23 @@
 		}
 	}
 	
-	NSString *message = [NSString stringWithFormat:@"Do you want to navigate to the details of the detected issue?\n"];
-	message = [message stringByAppendingFormat:@"Organization: %@\n", organizationAlias];
-	message = [message stringByAppendingFormat:@"App: %@\n", bundleID];
-	message = [message stringByAppendingFormat:@"Issue: %@\n", issueID];
+    
+    
+    
+    
+ 
+    
+    
+	NSString *message = NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessage", nil);
+	message = [message stringByAppendingFormat:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageOrganization", nil), organizationAlias];
+	message = [message stringByAppendingFormat:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageApp", nil), bundleID];
+	message = [message stringByAppendingFormat:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageIssue", nil), issueID];
 	
-	UIAlertView *alert = [UIAlertView SH_alertViewWithTitle:@"Navigate to an issue?"
+	UIAlertView *alert = [UIAlertView SH_alertViewWithTitle:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageTitle", nil)
 												withMessage:message];
-	[alert SH_addButtonWithTitle:@"Cancel"
+	[alert SH_addButtonWithTitle:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageCancelTitle", nil)
 					   withBlock:nil];
-	[alert SH_addButtonCancelWithTitle:@"Navigate" withBlock:^(NSInteger theButtonIndex) {
+	[alert SH_addButtonCancelWithTitle:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageNavigateTitle", nil) withBlock:^(NSInteger theButtonIndex) {
 		id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 		[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"navigation"
 															  action:@"clipboard_issue_navigation"
