@@ -178,7 +178,14 @@
     URLString = [URLString stringByReplacingOccurrencesOfString:@"#{class}"
                                                      withString:NSStringFromClass(className)];
 
-    NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleVersionKey];
+    // We can cache the build version.
+    static NSString *appBuildVersion;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        appBuildVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleVersionKey];
+    });
+    NSString *version = [NSString stringWithFormat:@"v%@", appBuildVersion];
+    
     URLString = [URLString stringByReplacingOccurrencesOfString:@"#{version}"
                                                      withString:version];
     

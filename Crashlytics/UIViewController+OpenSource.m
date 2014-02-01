@@ -18,12 +18,18 @@
         return;
     }
     
+    // TODO: expose children's pinch gesture recognizers: this way we can pinch
+    // on nested child view controllers and get the right controller instead of
+    // the outer one    
     UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] init];
-    @weakify(self);
-    [pinchGestureRecognizer.rac_gestureSignal subscribeNext:^(id x) {
-        @strongify(self);
-
-        NSURL *URL = [[CLSConfiguration sharedInstance] implementationURLForClass:[self class]];
+    Class className = [self class];
+    [pinchGestureRecognizer.rac_gestureSignal subscribeNext:^(UIPinchGestureRecognizer *pinchGestureRecognizer) {
+        if (pinchGestureRecognizer.state != UIGestureRecognizerStateEnded) {
+            return;
+        }
+        // At this point [self class] would point to the
+        // ClassName_RACSelectorSignal instead of ClassName
+        NSURL *URL = [[CLSConfiguration sharedInstance] implementationURLForClass:className];
         if (!URL) {
             return;
         }

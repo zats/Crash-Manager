@@ -469,6 +469,7 @@
 				8AF3D6D6FDA9447EBB27B388 /* Copy Pods Resources */,
 				5C6BF2AA18637D38007C483D /* Crashlytics */,
 				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
+				5CBE4765189D7A25002D3E90 /* Convert TODO and FIXME into warnings */,
 			);
 			buildRules = (
 			);
@@ -542,6 +543,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Crashlytics/Crashlytics.framework/run 1806f0e415eca8782897d8254a1363122c77c03a";
+		};
+		5CBE4765189D7A25002D3E90 /* Convert TODO and FIXME into warnings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Convert TODO and FIXME into warnings";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# http://matthewmorey.com/xcode-build-phases\nKEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
 		};
 		5CDE08DB188A872F0051124A /* Automatic Build incrementation */ = {
 			isa = PBXShellScriptBuildPhase;

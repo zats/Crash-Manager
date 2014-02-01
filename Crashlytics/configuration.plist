@@ -176,9 +176,9 @@
 	<key>CrashManagerSource</key>
 	<dict>
 		<key>Implementation</key>
-		<string>https://bitbucket.org/zats/crash-manager/src/1eb946604127bae3761f12930f4b798e1be46cbc/Crashlytics/#{class}.m?at=#{version}</string>
+		<string>https://github.com/zats/Crash-Manager/blob/#{version}/Crashlytics/#{class}.m</string>
 		<key>Interface</key>
-		<string>https://bitbucket.org/zats/crash-manager/src/1eb946604127bae3761f12930f4b798e1be46cbc/Crashlytics/#{class}.h?at=#{version}</string>
+		<string>https://github.com/zats/Crash-Manager/blob/#{version}/Crashlytics/#{class}.h</string>
 	</dict>
 </dict>
 </plist>
