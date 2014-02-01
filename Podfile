@@ -6,7 +6,7 @@ target "CrashManager" do
 	pod 'AFNetworking'
 	pod 'ReactiveCocoa'
 	pod 'ProtobufObjC'
-	# pod 'GroundControl'
+	pod 'GroundControl'
 	pod 'SHUIKitBlocks'
 	pod 'TTTLocalizedPluralString'
 	pod 'GoogleAnalytics-iOS-SDK'
