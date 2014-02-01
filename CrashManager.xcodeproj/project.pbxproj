@@ -43,6 +43,7 @@
 		5CBE4756189D4A05002D3E90 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBE4755189D4A05002D3E90 /* Crashlytics.framework */; };
 		5CBE475A189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */; };
 		5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */; };
+		5CBE4764189D64AF002D3E90 /* UIViewController+OpenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */; };
 		5CC3F7E41876A12D003C2FAC /* CLSLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */; };
 		5CC3F7E81876B192003C2FAC /* CLSLoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E71876B192003C2FAC /* CLSLoginCell.m */; };
 		5CC3F7EB1876C933003C2FAC /* CLSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7EA1876C933003C2FAC /* CLSError.m */; };
@@ -133,6 +134,8 @@
 		5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSGoogleAnalyticsLogger.m; sourceTree = "<group>"; };
 		5CBE475E189D58A6002D3E90 /* NSURLRequest+CLSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+CLSLogging.h"; sourceTree = "<group>"; };
 		5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+CLSLogging.m"; sourceTree = "<group>"; };
+		5CBE4762189D64AF002D3E90 /* UIViewController+OpenSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+OpenSource.h"; sourceTree = "<group>"; };
+		5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+OpenSource.m"; sourceTree = "<group>"; };
 		5CC3F7E21876A12D003C2FAC /* CLSLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLogViewController.h; sourceTree = "<group>"; };
 		5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSLogViewController.m; sourceTree = "<group>"; };
 		5CC3F7E61876B191003C2FAC /* CLSLoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLoginCell.h; sourceTree = "<group>"; };
@@ -199,12 +202,13 @@
 		5C3BCF301868AF33004BB1FA /* Generic */ = {
 			isa = PBXGroup;
 			children = (
-				5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */,
-				5CBE4757189D4E8B002D3E90 /* CocoaLumberjack + Google Analytics */,
+				5CBE4761189D649B002D3E90 /* UIViewController+OpenSource */,
 				5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */,
 				5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */,
 				5CC3F7F018786E7A003C2FAC /* CLSPasteboardObserver.h */,
 				5CC3F7F118786E7A003C2FAC /* CLSPasteboardObserver.m */,
+				5CBE4757189D4E8B002D3E90 /* CocoaLumberjack + Google Analytics */,
+				5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */,
 				5CE94DF018534976003C7DB1 /* Supporting Files */,
 			);
 			name = Generic;
@@ -350,6 +354,15 @@
 				5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */,
 			);
 			name = "NSURLRequest+Logging";
+			sourceTree = "<group>";
+		};
+		5CBE4761189D649B002D3E90 /* UIViewController+OpenSource */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE4762189D64AF002D3E90 /* UIViewController+OpenSource.h */,
+				5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */,
+			);
+			name = "UIViewController+OpenSource";
 			sourceTree = "<group>";
 		};
 		5CC3F7E51876B11B003C2FAC /* Login */ = {
@@ -630,6 +643,7 @@
 				5C401853186B3ABA00CC71AE /* CLSIssueExceptionTableViewController.m in Sources */,
 				5CE94E2218534BE0003C7DB1 /* Crashlytics.xcdatamodeld in Sources */,
 				5C401860186B829600CC71AE /* CLSThreadsTableViewController.m in Sources */,
+				5CBE4764189D64AF002D3E90 /* UIViewController+OpenSource.m in Sources */,
 				5C6D3CF518534CA9005E97D1 /* _CLSBuild.m in Sources */,
 				5C4B069518545AFD0061485A /* CLSApplicationsTableViewController.m in Sources */,
 				5CEDD1CD18705DE500B6A39A /* CLSConfiguration.m in Sources */,

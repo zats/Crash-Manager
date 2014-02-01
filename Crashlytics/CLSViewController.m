@@ -10,6 +10,7 @@
 
 #import "CLSLoginViewController.h"
 #import "CLSAccount.h"
+#import "UIViewController+OpenSource.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface CLSViewController ()
@@ -40,6 +41,11 @@
 }
 
 #pragma mark - UIViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self cls_exposeSource];
+}
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];

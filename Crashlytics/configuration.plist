@@ -173,7 +173,12 @@
 			</array>
 		</dict>
 	</array>
-	<key>CrashManagerSourceURLString</key>
-	<string>https://bitbucket.org/zats/crash-manager/</string>
+	<key>CrashManagerSource</key>
+	<dict>
+		<key>Implementation</key>
+		<string>https://bitbucket.org/zats/crash-manager/src/1eb946604127bae3761f12930f4b798e1be46cbc/Crashlytics/#{class}.m?at=#{version}</string>
+		<key>Interface</key>
+		<string>https://bitbucket.org/zats/crash-manager/src/1eb946604127bae3761f12930f4b798e1be46cbc/Crashlytics/#{class}.h?at=#{version}</string>
+	</dict>
 </dict>
 </plist>

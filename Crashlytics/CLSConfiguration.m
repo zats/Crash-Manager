@@ -51,19 +51,66 @@
 	return self;
 }
 
+#pragma mark - Public
+
 - (void)updateConfigurationPlistWithCompletionHandler:(CLSSettingsUpdateHandler)completion {
 	NSURL *URL = [NSURL URLWithString:@"http://crashlytics-ios.herokuapp.com/configuration.plist"];
-	[[NSUserDefaults standardUserDefaults] registerDefaultsWithURL:URL success:^(NSDictionary *defaults) {
-		NSData *data = [NSPropertyListSerialization dataFromPropertyList:defaults
-																  format:NSPropertyListBinaryFormat_v1_0
-														errorDescription:nil];
-		[data writeToFile:[[self class] configurationPlistPath]
-			   atomically:YES];
-									
-		completion(defaults, nil);
-	} failure:^(NSError *error) {
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    @weakify(self);
+    [[NSUserDefaults standardUserDefaults] registerDefaultsWithURLRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, NSDictionary *defaults) {
+        @strongify(self);
+        NSString *lastModifiedDate = [response allHeaderFields][@"Last-Modified"];
+        if (!lastModifiedDate) {
+            // no last modification date was found in the response
+            [self _serializeConfigurationDictionary:defaults
+                                         completion:completion];
+            return;
+        }
+        
+        // Parsing the last modification date according to
+        // http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3.1
+        static NSDateFormatter *dateFormatter;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            dateFormatter = [[NSDateFormatter alloc] init];
+            dateFormatter.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss z";
+            dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+            dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+        });
+        NSDate *date = [dateFormatter dateFromString:lastModifiedDate];
+        if (!date) {
+            // Couldn't parse date from the headers
+            [self _serializeConfigurationDictionary:defaults
+                                         completion:completion];
+            return;
+        }
+        
+        // now we can finally comapre the date we received from the server with
+        // the local destination file
+        NSString *destinationPlistPath = [[self class] configurationPlistPath];
+        NSError *error = nil;
+        NSDictionary *destinationAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:destinationPlistPath
+                                                                                               error:&error];
+        if (!destinationAttributes) {
+            DDLogWarn(@"Couldn't read the file attributes for file at %@", destinationPlistPath);
+            [self _serializeConfigurationDictionary:defaults
+                                         completion:completion];
+            return;
+        }
+        NSDate *destinationModificationDate = [destinationAttributes fileModificationDate];
+        BOOL isExistentFileNewer = (destinationModificationDate &&
+                                       [destinationModificationDate compare:date] == NSOrderedDescending);
+        if (isExistentFileNewer) {
+            completion([[NSUserDefaults standardUserDefaults] dictionaryRepresentation], nil);
+            return;
+        }
+        
+        [self _serializeConfigurationDictionary:defaults
+                                     completion:completion];
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+        DDLogError(@"Failed to load remote configuration file: %@", [error localizedDescription]);
 		completion(nil, error);
-	}];
+    }];
 }
 
 - (NSURL *)signUpURL {
@@ -74,7 +121,58 @@
 	return [NSURL URLWithString: [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"CrashlyticsLinks.forgotPassword"]];
 }
 
+- (NSURL *)implementationURLForClass:(Class)className {
+    NSString *URLString = [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"CrashManagerSource.Implementation"];
+    return [self _URLForTemplateURLString:URLString class:className];
+}
+
+- (NSURL *)interfaceURLForClass:(Class)className {
+    NSString *URLString = [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"CrashManagerSource.Interface"];
+    return [self _URLForTemplateURLString:URLString class:className];
+}
+
 #pragma mark - Private
+
+- (void)_serializeConfigurationDictionary:(NSDictionary *)defaults
+                               completion:(CLSSettingsUpdateHandler)completion {
+    // Serializing response back to plist
+    // TODO: Find a not-hacky way to access response NSData and just save that
+    NSError *error = nil;
+    NSData *data = [NSPropertyListSerialization dataWithPropertyList:defaults
+                                                              format:NSPropertyListBinaryFormat_v1_0
+                                                             options:0
+                                                               error:&error];
+    if (!data) {
+        DDLogError(@"Failed to serialize response back to plist: %@", error);
+        completion(nil, error);
+        return;
+    }
+    // Write a file to the location
+    if (![data writeToFile:[[self class] configurationPlistPath]
+                   options:NSDataWritingAtomic
+                     error:&error]) {
+        DDLogError(@"Failed to save remote configuration file: %@", error);
+        completion(nil, error);
+        return;
+    }
+    completion(defaults, nil);
+}
+
+- (NSURL *)_URLForTemplateURLString:(NSString *)URLString class:(Class)className {
+    if (!URLString) {
+        return nil;
+    }
+
+    URLString = [URLString stringByReplacingOccurrencesOfString:@"#{class}"
+                                                     withString:NSStringFromClass(className)];
+
+    NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleVersionKey];
+    URLString = [URLString stringByReplacingOccurrencesOfString:@"#{version}"
+                                                     withString:version];
+    
+    NSURL *URL = [NSURL URLWithString:URLString];
+    return URL;
+}
 
 - (void)_setupLogger {
     [DDTTYLogger sharedInstance].logFormatter = [[DDLogFileFormatterDefault alloc] init];
@@ -93,13 +191,13 @@
 	} else {
         NSError *error = nil;
         // Existent configuration plist
-        NSDictionary *destinationAttributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:destinationPlistPath
-                                                                                                      error:&error];
+        NSDictionary *destinationAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:destinationPlistPath
+                                                                                               error:&error];
         NSDate *destinationModificationDate = [destinationAttributes fileModificationDate];
         
         // Builtin configuration plist that comes with a bundle
-        NSDictionary *builtinAttributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:[[self class] builtinConfigurationPlistPath]
-                                                                                                   error:&error];
+        NSDictionary *builtinAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[[self class] builtinConfigurationPlistPath]
+                                                                                           error:&error];
         NSDate *builtinModificationDate = [builtinAttributes fileModificationDate];
         BOOL builtInFileOlderThanDestination = (builtinAttributes &&
                                                 destinationAttributes &&

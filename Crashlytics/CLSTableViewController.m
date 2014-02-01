@@ -10,6 +10,7 @@
 
 #import "CLSAccount.h"
 #import "CLSOrganization.h"
+#import "UIViewController+OpenSource.h"
 #import <Crashlytics/Crashlytics.h>
 
 @interface CLSTableViewController () <NSFetchedResultsControllerDelegate>
@@ -54,6 +55,11 @@
 }
 
 #pragma mark - UIViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self cls_exposeSource];
+}
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];

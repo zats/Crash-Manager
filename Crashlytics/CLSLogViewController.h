@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Sasha Zats. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CLSViewController.h"
 
 @class CLSSession;
-@interface CLSLogViewController : UIViewController
+@interface CLSLogViewController : CLSViewController
 
 @property (nonatomic, weak) CLSSession *session;
 
