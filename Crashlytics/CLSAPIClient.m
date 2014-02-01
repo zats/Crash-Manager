@@ -8,7 +8,6 @@
 
 #import "CLSAPIClient.h"
 
-#import "AFNetworkActivityIndicatorManager.h"
 #import "CLSAccount.h"
 #import "CLSApplication.h"
 #import "CLSBuild.h"
@@ -18,6 +17,10 @@
 #import "CLSIssue.h"
 #import "CLSOrganization.h"
 #import "CLSResponseSerializer.h"
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+
+static NSString *CLSGANetworkErrorCategory = @"Network error";
 
 @interface CLSAPIClient ()
 @end
@@ -42,7 +45,26 @@
 	[AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 	self.requestSerializer = [CLSRequestSerializer serializer];
 	self.responseSerializer = [CLSResponseSerializer serializer];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:AFNetworkingTaskDidCompleteNotification object:Nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        NSError *error = [note userInfo][ AFNetworkingTaskDidCompleteErrorKey ];
+        if (!error) {
+            return;
+        }
+        id<GAITracker> tracker = [GAI sharedInstance].defaultTracker;
+        NSDictionary *errorDictioanry = [[GAIDictionaryBuilder createEventWithCategory:CLSGANetworkErrorCategory
+                                                                                action:[error domain]
+                                                                                 label:[error localizedDescription]
+                                                                                 value:@([error code])] build];
+        [tracker send:errorDictioanry];
+
+    }];
+    
 	return self;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
@@ -250,7 +272,6 @@
 	NSAssert([issue.application.applicationID length], @"Invalid application ID");
 	NSAssert([issue.application.organization.organizationID length], @"Invalid organization ID");
 	RACReplaySubject *subject = [RACReplaySubject subject];
-	// https://crashlytics.com/api/v2/organizations/50505cc7d9479e49050000b2/apps/52776819e2c70d5d817e44ec/issues/528cce90e2c70d5d818826aa
 	NSString *path = [NSString stringWithFormat:@"api/v2/organizations/%@/apps/%@/issues/%@", issue.application.organization.organizationID, issue.application.applicationID, issue.issueID];
 	id resolvedAt = resolved ? [[CLSIssue formatter] stringFromDate:issue.resolvedAt] : [NSNull null];
 	NSDictionary *parameters = @{ @"resolved_at" : resolvedAt };

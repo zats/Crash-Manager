@@ -70,7 +70,7 @@ static inline NSDictionary *CLSSimplifyDictionary(NSDictionary *dictionary) {
 	NSLog(@"%@\n%@\n%@", response.URL,
 		  [((NSHTTPURLResponse *)response) allHeaderFields],
 		  data ? [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] : @"");
-#endif
+#endif    
 	BOOL isAuthenticationError = NO;
 	BOOL isErrorResponse = NO;
 	if ([response isKindOfClass:[NSHTTPURLResponse class]]) {

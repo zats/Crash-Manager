@@ -63,6 +63,7 @@
 		5CEDD1C518703DDC00B6A39A /* CLSIssueListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */; };
 		5CEDD1CA187050BC00B6A39A /* CLSApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */; };
 		5CEDD1CD18705DE500B6A39A /* CLSConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */; };
+		61DBF5D7659F4A42874FA875 /* libPods-CrashManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */; };
 		C94217A9DA83439F940931DC /* libPods-Crashlytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1720AECF3434209992CC05C /* libPods-Crashlytics.a */; };
 /* End PBXBuildFile section */
 
@@ -177,7 +178,9 @@
 		5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSConfiguration.h; sourceTree = "<group>"; };
 		5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSConfiguration.m; sourceTree = "<group>"; };
 		8F4C94CF39614963B473C307 /* Pods-Crashlytics.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crashlytics.xcconfig"; path = "Pods/Pods-Crashlytics.xcconfig"; sourceTree = "<group>"; };
+		B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrashManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1720AECF3434209992CC05C /* libPods-Crashlytics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Crashlytics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashManager.xcconfig"; path = "Pods/Pods-CrashManager.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,7 @@
 				5CE94DEE18534976003C7DB1 /* UIKit.framework in Frameworks */,
 				5CE94DEA18534976003C7DB1 /* Foundation.framework in Frameworks */,
 				C94217A9DA83439F940931DC /* libPods-Crashlytics.a in Frameworks */,
+				61DBF5D7659F4A42874FA875 /* libPods-CrashManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +379,7 @@
 				5CE94DE818534976003C7DB1 /* Frameworks */,
 				5CE94DE718534976003C7DB1 /* Products */,
 				8F4C94CF39614963B473C307 /* Pods-Crashlytics.xcconfig */,
+				EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -396,6 +401,7 @@
 				5CE94DED18534976003C7DB1 /* UIKit.framework */,
 				5CE94E0818534976003C7DB1 /* XCTest.framework */,
 				D1720AECF3434209992CC05C /* libPods-Crashlytics.a */,
+				B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -609,7 +615,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Crashlytics-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-CrashManager-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B1FA73BB547446999FFD095D /* Check Pods Manifest.lock */ = {
@@ -807,7 +813,7 @@
 		};
 		5CE94E1918534976003C7DB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F4C94CF39614963B473C307 /* Pods-Crashlytics.xcconfig */;
+			baseConfigurationReference = EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -839,7 +845,7 @@
 		};
 		5CE94E1A18534976003C7DB1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F4C94CF39614963B473C307 /* Pods-Crashlytics.xcconfig */;
+			baseConfigurationReference = EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
