@@ -20,6 +20,14 @@
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [CLSConfiguration sharedInstance];
+
+    // Google Analytics
+	id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-46469219-2"];
+	NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    [tracker set:kGAIAppVersion value:version];
+	[GAI sharedInstance].logger.logLevel = kGAILogLevelInfo;
+
     // Configuration
 	[[CLSConfiguration sharedInstance] updateConfigurationPlistWithCompletionHandler:^(NSDictionary *defaults, NSError *error) {
 		NSString *apiKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"CrashlyticsAPIKey"];
@@ -29,12 +37,6 @@
 			[[GAI sharedInstance].logger error:[NSString stringWithFormat:@"Failed to fetch remote plist: %@", error]];
 		}
 	}];
-	
-	// Google Analytics
-	id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-46469219-2"];
-	NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
-    [tracker set:kGAIAppVersion value:version];
-	[GAI sharedInstance].logger.logLevel = kGAILogLevelInfo;
 	
     // Core Data stack
 	[MagicalRecord setupAutoMigratingCoreDataStack];

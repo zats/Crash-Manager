@@ -11,6 +11,7 @@
 #import "CLSGoogleAnalyticsLogger.h"
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import <CocoaLumberjack/DDFileLogger.h>
+#import <GoogleAnalytics-iOS-SDK/GAILogger.h>
 #import <GroundControl/NSUserDefaults+GroundControl.h>
 
 @interface CLSConfiguration ()
@@ -62,6 +63,7 @@
         NSString *lastModifiedDate = [response allHeaderFields][@"Last-Modified"];
         if (!lastModifiedDate) {
             // no last modification date was found in the response
+            DDLogWarn(@"Could not find the remote modification date for the configuration file, overriding the local one anyway");
             [self _serializeConfigurationDictionary:defaults
                                          completion:completion];
             return;
@@ -77,8 +79,9 @@
             dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
             dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
         });
-        NSDate *date = [dateFormatter dateFromString:lastModifiedDate];
-        if (!date) {
+        NSDate *remoteModificationDate = [dateFormatter dateFromString:lastModifiedDate];
+        if (!remoteModificationDate) {
+            DDLogWarn(@"Could not parse the remote modification date for the configuration file, overriding the local one anyway");
             // Couldn't parse date from the headers
             [self _serializeConfigurationDictionary:defaults
                                          completion:completion];
@@ -98,15 +101,24 @@
             return;
         }
         NSDate *destinationModificationDate = [destinationAttributes fileModificationDate];
-        BOOL isExistentFileNewer = (destinationModificationDate &&
-                                       [destinationModificationDate compare:date] == NSOrderedDescending);
-        if (isExistentFileNewer) {
+        BOOL isLocalFileNewer = (destinationModificationDate &&
+                                 [destinationModificationDate compare:remoteModificationDate] == NSOrderedDescending);
+        if (isLocalFileNewer) {
+            DDLogVerbose(@"Local configuration file is newer than the remote one, keeping the local one");
             completion([[NSUserDefaults standardUserDefaults] dictionaryRepresentation], nil);
             return;
         }
         
         [self _serializeConfigurationDictionary:defaults
                                      completion:completion];
+        
+        // Setting the last modification attribute from the response
+        // FIXME: this actually happen after completion handler was called
+        NSMutableDictionary *destinationAttributesM = [destinationAttributes mutableCopy];
+        destinationAttributesM[ NSFileModificationDate ] = remoteModificationDate;
+        [[NSFileManager defaultManager] setAttributes:destinationAttributesM
+                                         ofItemAtPath:destinationPlistPath
+                                                error:&error];
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
         DDLogError(@"Failed to load remote configuration file: %@", [error localizedDescription]);
 		completion(nil, error);
@@ -175,6 +187,12 @@
 }
 
 - (void)_setupLogger {
+#ifdef DEBUG
+    [GAI sharedInstance].logger.logLevel = kGAILogLevelVerbose;
+#else
+    [GAI sharedInstance].logger.logLevel = kGAILogLevelWarning;
+#endif
+    
     [DDTTYLogger sharedInstance].logFormatter = [[DDLogFileFormatterDefault alloc] init];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     [DDLog addLogger:[CLSGoogleAnalyticsLogger sharedInstance]];
@@ -214,19 +232,27 @@
     
 }
 
-- (void)_copyBuiltinPreferencesToPath:(NSString *)conigurationPlistPath {
+- (void)_copyBuiltinPreferencesToPath:(NSString *)destinationPath {
     NSError *error = nil;
-    if (![[NSFileManager defaultManager] createDirectoryAtPath:[conigurationPlistPath stringByDeletingLastPathComponent]
+    if (![[NSFileManager defaultManager] createDirectoryAtPath:[destinationPath stringByDeletingLastPathComponent]
                                    withIntermediateDirectories:YES
                                                     attributes:nil
                                                          error:&error]) {
-        DDLogWarn(@"Could not create a directory at path %@: %@", [conigurationPlistPath stringByDeletingLastPathComponent], [error localizedDescription]);
+        DDLogWarn(@"Could not create a directory at path %@: %@", [destinationPath stringByDeletingLastPathComponent], [error localizedDescription]);
     }
 
+    if ([[NSFileManager defaultManager] fileExistsAtPath:destinationPath]) {
+        if (![[NSFileManager defaultManager] removeItemAtPath:destinationPath
+                                                        error:&error]) {
+            DDLogError(@"Failed to remove existent configuration file at %@", destinationPath);
+            return;
+        }
+    }
+    
     if (![[NSFileManager defaultManager] copyItemAtPath:[[self class] builtinConfigurationPlistPath]
-                                                 toPath:conigurationPlistPath
+                                                 toPath:destinationPath
                                                   error:&error]) {
-        DDLogError(@"Could not copy plist from %@ to %@: %@", [[self class] builtinConfigurationPlistPath], conigurationPlistPath, [error localizedDescription]);
+        DDLogError(@"Could not copy plist from %@ to %@: %@", [[self class] builtinConfigurationPlistPath], destinationPath, [error localizedDescription]);
     }
     
 }
