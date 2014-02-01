@@ -10,6 +10,7 @@
 
 #import "CLSGoogleAnalyticsLogger.h"
 #import <CocoaLumberjack/DDTTYLogger.h>
+#import <CocoaLumberjack/DDFileLogger.h>
 #import <GroundControl/NSUserDefaults+GroundControl.h>
 
 @interface CLSConfiguration ()
@@ -76,6 +77,7 @@
 #pragma mark - Private
 
 - (void)_setupLogger {
+    [DDTTYLogger sharedInstance].logFormatter = [[DDLogFileFormatterDefault alloc] init];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     [DDLog addLogger:[CLSGoogleAnalyticsLogger sharedInstance]];
 }
@@ -86,6 +88,7 @@
     
     // File does not exist at destination, copy the built in
 	if (![[NSFileManager defaultManager] fileExistsAtPath:destinationPlistPath]) {
+        DDLogVerbose(@"Configuration file was not found at destination %@, copying from the bundle", destinationPlistPath);
         [self _copyBuiltinPreferencesToPath:destinationPlistPath];
 	} else {
         NSError *error = nil;
@@ -102,6 +105,7 @@
                                                 destinationAttributes &&
                                                 [builtinModificationDate compare:destinationModificationDate] == NSOrderedAscending);
         if (!builtInFileOlderThanDestination) {
+            DDLogVerbose(@"Builtin plist file is newer than the one at %@: builtin creation date %@, destination creation date %@", destinationPlistPath, builtinModificationDate, destinationModificationDate);;
             [self _copyBuiltinPreferencesToPath:destinationPlistPath];
         }
     }
@@ -113,13 +117,20 @@
 }
 
 - (void)_copyBuiltinPreferencesToPath:(NSString *)conigurationPlistPath {
-    [[NSFileManager defaultManager] createDirectoryAtPath:[conigurationPlistPath stringByDeletingLastPathComponent]
-                              withIntermediateDirectories:YES
-                                               attributes:nil
-                                                    error:nil];
-    [[NSFileManager defaultManager] copyItemAtPath:[[self class] builtinConfigurationPlistPath]
-                                            toPath:conigurationPlistPath
-                                             error:nil];
+    NSError *error = nil;
+    if (![[NSFileManager defaultManager] createDirectoryAtPath:[conigurationPlistPath stringByDeletingLastPathComponent]
+                                   withIntermediateDirectories:YES
+                                                    attributes:nil
+                                                         error:&error]) {
+        DDLogWarn(@"Could not create a directory at path %@: %@", [conigurationPlistPath stringByDeletingLastPathComponent], [error localizedDescription]);
+    }
+
+    if (![[NSFileManager defaultManager] copyItemAtPath:[[self class] builtinConfigurationPlistPath]
+                                                 toPath:conigurationPlistPath
+                                                  error:&error]) {
+        DDLogError(@"Could not copy plist from %@ to %@: %@", [[self class] builtinConfigurationPlistPath], conigurationPlistPath, [error localizedDescription]);
+    }
+    
 }
 
 @end

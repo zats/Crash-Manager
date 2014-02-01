@@ -42,6 +42,7 @@
 		5CB3C0881871BE5200CE00D7 /* CLSFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */; };
 		5CBE4756189D4A05002D3E90 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBE4755189D4A05002D3E90 /* Crashlytics.framework */; };
 		5CBE475A189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */; };
+		5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */; };
 		5CC3F7E41876A12D003C2FAC /* CLSLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */; };
 		5CC3F7E81876B192003C2FAC /* CLSLoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E71876B192003C2FAC /* CLSLoginCell.m */; };
 		5CC3F7EB1876C933003C2FAC /* CLSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7EA1876C933003C2FAC /* CLSError.m */; };
@@ -130,6 +131,8 @@
 		5CBE4755189D4A05002D3E90 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
 		5CBE4758189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSGoogleAnalyticsLogger.h; sourceTree = "<group>"; };
 		5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSGoogleAnalyticsLogger.m; sourceTree = "<group>"; };
+		5CBE475E189D58A6002D3E90 /* NSURLRequest+CLSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+CLSLogging.h"; sourceTree = "<group>"; };
+		5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+CLSLogging.m"; sourceTree = "<group>"; };
 		5CC3F7E21876A12D003C2FAC /* CLSLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLogViewController.h; sourceTree = "<group>"; };
 		5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSLogViewController.m; sourceTree = "<group>"; };
 		5CC3F7E61876B191003C2FAC /* CLSLoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLoginCell.h; sourceTree = "<group>"; };
@@ -196,6 +199,7 @@
 		5C3BCF301868AF33004BB1FA /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */,
 				5CBE4757189D4E8B002D3E90 /* CocoaLumberjack + Google Analytics */,
 				5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */,
 				5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */,
@@ -337,6 +341,15 @@
 				5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */,
 			);
 			name = "CocoaLumberjack + Google Analytics";
+			sourceTree = "<group>";
+		};
+		5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE475E189D58A6002D3E90 /* NSURLRequest+CLSLogging.h */,
+				5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */,
+			);
+			name = "NSURLRequest+Logging";
 			sourceTree = "<group>";
 		};
 		5CC3F7E51876B11B003C2FAC /* Login */ = {
@@ -584,6 +597,7 @@
 			files = (
 				5CE94DF618534976003C7DB1 /* main.m in Sources */,
 				5CC3F7E81876B192003C2FAC /* CLSLoginCell.m in Sources */,
+				5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */,
 				5C4B0684185356000061485A /* CLSOrganizationsViewController.m in Sources */,
 				5C6D3CF818534CA9005E97D1 /* CLSApplication.m in Sources */,
 				5C5ABF661871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m in Sources */,

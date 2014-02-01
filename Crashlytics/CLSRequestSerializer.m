@@ -8,6 +8,7 @@
 
 #import "CLSRequestSerializer.h"
 
+#import "NSURLRequest+CLSLogging.h"
 #import "CLSAccount.h"
 
 @interface CLSRequestSerializer ()
@@ -45,9 +46,7 @@ forHTTPHeaderField:@"Accept"];
 		[request setValue:[CLSAccount activeAccount].token
 	   forHTTPHeaderField:@"X-CRASHLYTICS-ACCESS-TOKEN"];
 	}
-#ifdef DEBUG
-	NSLog(@"%@ %@\n%@\n%@", request.HTTPMethod, request.URL, [request allHTTPHeaderFields], parameters ?: @"");
-#endif
+    DDLogVerbose(@"%@", [request cls_cURLCommand]);
 	return request;
 }
 

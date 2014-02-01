@@ -41,7 +41,6 @@ static inline NSDictionary *CLSSimplifyDictionary(NSDictionary *dictionary) {
 			result[key] = CLSSimplifyArray(dictionary[key]);
 		}
 	}
-//	[result removeObjectsForKeys:keysToRemove];
 	return [result copy];
 }
 
@@ -65,7 +64,6 @@ static inline NSDictionary *CLSSimplifyDictionary(NSDictionary *dictionary) {
 - (id)responseObjectForResponse:(NSURLResponse *)response
 						   data:(NSData *)data
 						  error:(NSError *__autoreleasing *)error {
-	
 #ifdef DEBUG
 	NSLog(@"%@\n%@\n%@", response.URL,
 		  [((NSHTTPURLResponse *)response) allHeaderFields],

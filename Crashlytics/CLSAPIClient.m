@@ -8,6 +8,7 @@
 
 #import "CLSAPIClient.h"
 
+#import "NSURLRequest+CLSLogging.h"
 #import "CLSAccount.h"
 #import "CLSApplication.h"
 #import "CLSBuild.h"
@@ -37,42 +38,6 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 	return apiClient;
 }
 
-// https://github.com/mattt/FormatterKit/blame/master/FormatterKit/TTTURLRequestFormatter.m#L45
-+ (NSString *)cURLCommandFromURLRequest:(NSURLRequest *)request {
-    NSMutableString *command = [NSMutableString stringWithString:@"curl"];
-    
-    [command appendFormat:@" -X %@", [request HTTPMethod]];
-    
-    if ([[request HTTPBody] length] > 0) {
-        NSMutableString *HTTPBodyString = [[NSMutableString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding];
-        [HTTPBodyString replaceOccurrencesOfString:@"\\" withString:@"\\\\" options:0 range:NSMakeRange(0, [HTTPBodyString length])];
-        [HTTPBodyString replaceOccurrencesOfString:@"`" withString:@"\\`" options:0 range:NSMakeRange(0, [HTTPBodyString length])];
-        [HTTPBodyString replaceOccurrencesOfString:@"\"" withString:@"\\\"" options:0 range:NSMakeRange(0, [HTTPBodyString length])];
-        [HTTPBodyString replaceOccurrencesOfString:@"$" withString:@"\\$" options:0 range:NSMakeRange(0, [HTTPBodyString length])];
-        [command appendFormat:@" -d \"%@\"", HTTPBodyString];
-    }
-    
-    NSString *acceptEncodingHeader = [[request allHTTPHeaderFields] valueForKey:@"Accept-Encoding"];
-    if ([acceptEncodingHeader rangeOfString:@"gzip"].location != NSNotFound) {
-        [command appendString:@" --compressed"];
-    }
-    
-    if ([request URL]) {
-        NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[request URL]];
-        for (NSHTTPCookie *cookie in cookies) {
-            [command appendFormat:@" --cookie \"%@=%@\"", [cookie name], [cookie value]];
-        }
-    }
-    
-    for (id field in [request allHTTPHeaderFields]) {
-        [command appendFormat:@" -H %@", [NSString stringWithFormat:@"'%@: %@'", field, [[request valueForHTTPHeaderField:field] stringByReplacingOccurrencesOfString:@"\'" withString:@"\\\'"]]];
-    }
-    
-    [command appendFormat:@" \"%@\"", [[request URL] absoluteString]];
-    
-    return [NSString stringWithString:command];
-}
-
 - (instancetype)initWithBaseURL:(NSURL *)url {
 	self = [super initWithBaseURL:url];
 	if (!self) {
@@ -87,7 +52,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
         NSURLSessionTask *task = [note object];
         NSError *error = [note userInfo][AFNetworkingTaskDidCompleteErrorKey];
         if (task && error && task.originalRequest) {
-            DDLogError(@"Networking error occured; \nRequest: %@ \nError: %@", [[self class] cURLCommandFromURLRequest:task.originalRequest], [error localizedDescription]);
+            DDLogError(@"Networking error occured; \nRequest: %@ \nError: %@", [task.originalRequest cls_cURLCommand], [error localizedDescription]);
         }
     }];
     

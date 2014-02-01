@@ -173,5 +173,7 @@
 			</array>
 		</dict>
 	</array>
+	<key>CrashManagerSourceURLString</key>
+	<string>https://bitbucket.org/zats/crash-manager/</string>
 </dict>
 </plist>

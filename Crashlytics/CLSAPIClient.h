@@ -13,6 +13,7 @@
 
 + (instancetype)sharedInstance;
 
+    
 @end
 
 @interface CLSAPIClient (CLSSession)
