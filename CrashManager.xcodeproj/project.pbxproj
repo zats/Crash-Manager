@@ -150,8 +150,6 @@
 		5CE94DFC18534976003C7DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CE94E0118534976003C7DB1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5CE94E0818534976003C7DB1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		5CE94E1018534976003C7DB1 /* CrashManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrashManagerTests-Info.plist"; sourceTree = "<group>"; };
-		5CE94E1418534976003C7DB1 /* CrashlyticsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashlyticsTests.m; sourceTree = "<group>"; };
 		5CE94E2118534BE0003C7DB1 /* Crashlytics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crashlytics.xcdatamodel; sourceTree = "<group>"; };
 		5CEDD1C318703DDC00B6A39A /* CLSIssueListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueListCell.h; sourceTree = "<group>"; };
 		5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueListCell.m; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 		5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSApplicationCell.m; sourceTree = "<group>"; };
 		5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSConfiguration.h; sourceTree = "<group>"; };
 		5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSConfiguration.m; sourceTree = "<group>"; };
-		8F4C94CF39614963B473C307 /* Pods-Crashlytics.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crashlytics.xcconfig"; path = "Pods/Pods-Crashlytics.xcconfig"; sourceTree = "<group>"; };
 		B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrashManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashManager.xcconfig"; path = "Pods/Pods-CrashManager.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -344,10 +341,8 @@
 			isa = PBXGroup;
 			children = (
 				5CE94DEF18534976003C7DB1 /* Crashlytics */,
-				5CE94E0E18534976003C7DB1 /* CrashlyticsTests */,
 				5CE94DE818534976003C7DB1 /* Frameworks */,
 				5CE94DE718534976003C7DB1 /* Products */,
-				8F4C94CF39614963B473C307 /* Pods-Crashlytics.xcconfig */,
 				EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -393,23 +388,6 @@
 				5CE94DF118534976003C7DB1 /* CrashManager-Info.plist */,
 				5CE94DF518534976003C7DB1 /* main.m */,
 				5CE94DF718534976003C7DB1 /* CrashManager-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5CE94E0E18534976003C7DB1 /* CrashlyticsTests */ = {
-			isa = PBXGroup;
-			children = (
-				5CE94E1418534976003C7DB1 /* CrashlyticsTests.m */,
-				5CE94E0F18534976003C7DB1 /* Supporting Files */,
-			);
-			path = CrashlyticsTests;
-			sourceTree = "<group>";
-		};
-		5CE94E0F18534976003C7DB1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5CE94E1018534976003C7DB1 /* CrashManagerTests-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
