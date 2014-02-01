@@ -1,0 +1,841 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C046FDC1872B64600E4998C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C046FDB1872B64600E4998C /* Settings.bundle */; };
+		5C3BCF2B1868AD1D004BB1FA /* CLSIncident.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BCF2A1868AD1D004BB1FA /* CLSIncident.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5C3BCF2F1868AF20004BB1FA /* CLSIssueDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BCF2E1868AF20004BB1FA /* CLSIssueDetailsViewController.m */; };
+		5C3CEAB718671C4000F8DDC6 /* CLSIssuesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CEAB618671C4000F8DDC6 /* CLSIssuesTableViewController.m */; };
+		5C401853186B3ABA00CC71AE /* CLSIssueExceptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401852186B3ABA00CC71AE /* CLSIssueExceptionTableViewController.m */; };
+		5C401860186B829600CC71AE /* CLSThreadsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C40185F186B829600CC71AE /* CLSThreadsTableViewController.m */; };
+		5C401864186C2CE000CC71AE /* CLSIncident_Session+Crashlytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401863186C2CE000CC71AE /* CLSIncident_Session+Crashlytics.m */; };
+		5C4B0684185356000061485A /* CLSOrganizationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B0683185356000061485A /* CLSOrganizationsViewController.m */; };
+		5C4B068718535B6F0061485A /* CLSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B068618535B6F0061485A /* CLSLoginViewController.m */; };
+		5C4B068A18535D760061485A /* CLSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B068918535D760061485A /* CLSViewController.m */; };
+		5C4B068D18535D9A0061485A /* CLSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B068C18535D9A0061485A /* CLSTableViewController.m */; };
+		5C4B0691185392A00061485A /* CLSAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B0690185392A00061485A /* CLSAPIClient.m */; };
+		5C4B069518545AFD0061485A /* CLSApplicationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B069418545AFD0061485A /* CLSApplicationsTableViewController.m */; };
+		5C4B0698185465480061485A /* CLSRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B0697185465480061485A /* CLSRequestSerializer.m */; };
+		5C5ABF661871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5ABF651871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m */; };
+		5C67C71518662F8700EC5943 /* CLSBuildsFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C67C71418662F8700EC5943 /* CLSBuildsFilterViewController.m */; };
+		5C6BF2B018637E34007C483D /* CLSResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6BF2AF18637E34007C483D /* CLSResponseSerializer.m */; };
+		5C6D3CF218534CA9005E97D1 /* _CLSAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CDF18534CA9005E97D1 /* _CLSAccount.m */; };
+		5C6D3CF318534CA9005E97D1 /* _CLSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CE118534CA9005E97D1 /* _CLSApplication.m */; };
+		5C6D3CF418534CA9005E97D1 /* _CLSIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CE318534CA9005E97D1 /* _CLSIssue.m */; };
+		5C6D3CF518534CA9005E97D1 /* _CLSBuild.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CE518534CA9005E97D1 /* _CLSBuild.m */; };
+		5C6D3CF618534CA9005E97D1 /* _CLSOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CE718534CA9005E97D1 /* _CLSOrganization.m */; };
+		5C6D3CF718534CA9005E97D1 /* CLSAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CE918534CA9005E97D1 /* CLSAccount.m */; };
+		5C6D3CF818534CA9005E97D1 /* CLSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CEB18534CA9005E97D1 /* CLSApplication.m */; };
+		5C6D3CF918534CA9005E97D1 /* CLSIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CED18534CA9005E97D1 /* CLSIssue.m */; };
+		5C6D3CFA18534CA9005E97D1 /* CLSBuild.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CEF18534CA9005E97D1 /* CLSBuild.m */; };
+		5C6D3CFB18534CA9005E97D1 /* CLSOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CF118534CA9005E97D1 /* CLSOrganization.m */; };
+		5C85507518720FB8008F5038 /* _CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507218720FB8008F5038 /* _CLSFilter.m */; };
+		5C85507618720FB8008F5038 /* CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507418720FB8008F5038 /* CLSFilter.m */; };
+		5C8550791872191C008F5038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C85507B1872191C008F5038 /* Localizable.strings */; };
+		5C9AC77C186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */; };
+		5CA538B61872D4E200544C7A /* CLSTimeRangeFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */; };
+		5CB3C0881871BE5200CE00D7 /* CLSFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */; };
+		5CBE4756189D4A05002D3E90 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBE4755189D4A05002D3E90 /* Crashlytics.framework */; };
+		5CBE475A189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */; };
+		5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */; };
+		5CC3F7E41876A12D003C2FAC /* CLSLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */; };
+		5CC3F7E81876B192003C2FAC /* CLSLoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E71876B192003C2FAC /* CLSLoginCell.m */; };
+		5CC3F7EB1876C933003C2FAC /* CLSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7EA1876C933003C2FAC /* CLSError.m */; };
+		5CC3F7F218786E7A003C2FAC /* CLSPasteboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7F118786E7A003C2FAC /* CLSPasteboardObserver.m */; };
+		5CE8926F186F13860017F68A /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CE8926E186F13860017F68A /* configuration.plist */; };
+		5CE94DEA18534976003C7DB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94DE918534976003C7DB1 /* Foundation.framework */; };
+		5CE94DEC18534976003C7DB1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94DEB18534976003C7DB1 /* CoreGraphics.framework */; };
+		5CE94DEE18534976003C7DB1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94DED18534976003C7DB1 /* UIKit.framework */; };
+		5CE94DF618534976003C7DB1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE94DF518534976003C7DB1 /* main.m */; };
+		5CE94DFA18534976003C7DB1 /* CLSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE94DF918534976003C7DB1 /* CLSAppDelegate.m */; };
+		5CE94DFD18534976003C7DB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE94DFB18534976003C7DB1 /* Main.storyboard */; };
+		5CE94E0218534976003C7DB1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE94E0118534976003C7DB1 /* Images.xcassets */; };
+		5CE94E2218534BE0003C7DB1 /* Crashlytics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CE94E2018534BE0003C7DB1 /* Crashlytics.xcdatamodeld */; };
+		5CEDD1C518703DDC00B6A39A /* CLSIssueListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */; };
+		5CEDD1CA187050BC00B6A39A /* CLSApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */; };
+		5CEDD1CD18705DE500B6A39A /* CLSConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */; };
+		61DBF5D7659F4A42874FA875 /* libPods-CrashManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5C046FDB1872B64600E4998C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		5C3BCF291868AD1D004BB1FA /* CLSIncident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSIncident.h; path = Crashlytics/CLSIncident.h; sourceTree = SOURCE_ROOT; };
+		5C3BCF2A1868AD1D004BB1FA /* CLSIncident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLSIncident.m; path = Crashlytics/CLSIncident.m; sourceTree = SOURCE_ROOT; };
+		5C3BCF2D1868AF20004BB1FA /* CLSIssueDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueDetailsViewController.h; sourceTree = "<group>"; };
+		5C3BCF2E1868AF20004BB1FA /* CLSIssueDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueDetailsViewController.m; sourceTree = "<group>"; };
+		5C3CEAB518671C4000F8DDC6 /* CLSIssuesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssuesTableViewController.h; sourceTree = "<group>"; };
+		5C3CEAB618671C4000F8DDC6 /* CLSIssuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssuesTableViewController.m; sourceTree = "<group>"; };
+		5C401851186B3ABA00CC71AE /* CLSIssueExceptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueExceptionTableViewController.h; sourceTree = "<group>"; };
+		5C401852186B3ABA00CC71AE /* CLSIssueExceptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueExceptionTableViewController.m; sourceTree = "<group>"; };
+		5C401855186B418A00CC71AE /* CLSSessionDetailsPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSSessionDetailsPresenter.h; sourceTree = "<group>"; };
+		5C40185E186B829600CC71AE /* CLSThreadsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSThreadsTableViewController.h; sourceTree = "<group>"; };
+		5C40185F186B829600CC71AE /* CLSThreadsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSThreadsTableViewController.m; sourceTree = "<group>"; };
+		5C401862186C2CE000CC71AE /* CLSIncident_Session+Crashlytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CLSIncident_Session+Crashlytics.h"; path = "Crashlytics/CLSIncident_Session+Crashlytics.h"; sourceTree = SOURCE_ROOT; };
+		5C401863186C2CE000CC71AE /* CLSIncident_Session+Crashlytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CLSIncident_Session+Crashlytics.m"; path = "Crashlytics/CLSIncident_Session+Crashlytics.m"; sourceTree = SOURCE_ROOT; };
+		5C4B0682185356000061485A /* CLSOrganizationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSOrganizationsViewController.h; sourceTree = "<group>"; };
+		5C4B0683185356000061485A /* CLSOrganizationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSOrganizationsViewController.m; sourceTree = "<group>"; };
+		5C4B068518535B6F0061485A /* CLSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLoginViewController.h; sourceTree = "<group>"; };
+		5C4B068618535B6F0061485A /* CLSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSLoginViewController.m; sourceTree = "<group>"; };
+		5C4B068818535D760061485A /* CLSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSViewController.h; sourceTree = "<group>"; };
+		5C4B068918535D760061485A /* CLSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSViewController.m; sourceTree = "<group>"; };
+		5C4B068B18535D9A0061485A /* CLSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSTableViewController.h; sourceTree = "<group>"; };
+		5C4B068C18535D9A0061485A /* CLSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSTableViewController.m; sourceTree = "<group>"; };
+		5C4B068F185392A00061485A /* CLSAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSAPIClient.h; sourceTree = "<group>"; };
+		5C4B0690185392A00061485A /* CLSAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSAPIClient.m; sourceTree = "<group>"; };
+		5C4B069318545AFD0061485A /* CLSApplicationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSApplicationsTableViewController.h; sourceTree = "<group>"; };
+		5C4B069418545AFD0061485A /* CLSApplicationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSApplicationsTableViewController.m; sourceTree = "<group>"; };
+		5C4B0696185465480061485A /* CLSRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSRequestSerializer.h; sourceTree = "<group>"; };
+		5C4B0697185465480061485A /* CLSRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSRequestSerializer.m; sourceTree = "<group>"; };
+		5C5ABF641871C48A00FB2A77 /* CLSIssueStatusFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueStatusFilterViewController.h; sourceTree = "<group>"; };
+		5C5ABF651871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueStatusFilterViewController.m; sourceTree = "<group>"; };
+		5C67C71318662F8700EC5943 /* CLSBuildsFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSBuildsFilterViewController.h; sourceTree = "<group>"; };
+		5C67C71418662F8700EC5943 /* CLSBuildsFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSBuildsFilterViewController.m; sourceTree = "<group>"; };
+		5C6BF2AE18637E34007C483D /* CLSResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSResponseSerializer.h; sourceTree = "<group>"; };
+		5C6BF2AF18637E34007C483D /* CLSResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSResponseSerializer.m; sourceTree = "<group>"; };
+		5C6D3CDE18534CA9005E97D1 /* _CLSAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CLSAccount.h; path = Crashlytics/_CLSAccount.h; sourceTree = SOURCE_ROOT; };
+		5C6D3CDF18534CA9005E97D1 /* _CLSAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _CLSAccount.m; path = Crashlytics/_CLSAccount.m; sourceTree = SOURCE_ROOT; };
+		5C6D3CE018534CA9005E97D1 /* _CLSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CLSApplication.h; path = Crashlytics/_CLSApplication.h; sourceTree = SOURCE_ROOT; };
+		5C6D3CE118534CA9005E97D1 /* _CLSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _CLSApplication.m; path = Crashlytics/_CLSApplication.m; sourceTree = SOURCE_ROOT; };
+		5C6D3CE218534CA9005E97D1 /* _CLSIssue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CLSIssue.h; path = Crashlytics/_CLSIssue.h; sourceTree = SOURCE_ROOT; };
+		5C6D3CE318534CA9005E97D1 /* _CLSIssue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _CLSIssue.m; path = Crashlytics/_CLSIssue.m; sourceTree = SOURCE_ROOT; };
+		5C6D3CE418534CA9005E97D1 /* _CLSBuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CLSBuild.h; path = Crashlytics/_CLSBuild.h; sourceTree = SOURCE_ROOT; };
+		5C6D3CE518534CA9005E97D1 /* _CLSBuild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _CLSBuild.m; path = Crashlytics/_CLSBuild.m; sourceTree = SOURCE_ROOT; };
+		5C6D3CE618534CA9005E97D1 /* _CLSOrganization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CLSOrganization.h; path = Crashlytics/_CLSOrganization.h; sourceTree = SOURCE_ROOT; };
+		5C6D3CE718534CA9005E97D1 /* _CLSOrganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _CLSOrganization.m; path = Crashlytics/_CLSOrganization.m; sourceTree = SOURCE_ROOT; };
+		5C6D3CE818534CA9005E97D1 /* CLSAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSAccount.h; path = Crashlytics/CLSAccount.h; sourceTree = SOURCE_ROOT; };
+		5C6D3CE918534CA9005E97D1 /* CLSAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLSAccount.m; path = Crashlytics/CLSAccount.m; sourceTree = SOURCE_ROOT; };
+		5C6D3CEA18534CA9005E97D1 /* CLSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSApplication.h; path = Crashlytics/CLSApplication.h; sourceTree = SOURCE_ROOT; };
+		5C6D3CEB18534CA9005E97D1 /* CLSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLSApplication.m; path = Crashlytics/CLSApplication.m; sourceTree = SOURCE_ROOT; };
+		5C6D3CEC18534CA9005E97D1 /* CLSIssue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSIssue.h; path = Crashlytics/CLSIssue.h; sourceTree = SOURCE_ROOT; };
+		5C6D3CED18534CA9005E97D1 /* CLSIssue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLSIssue.m; path = Crashlytics/CLSIssue.m; sourceTree = SOURCE_ROOT; };
+		5C6D3CEE18534CA9005E97D1 /* CLSBuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSBuild.h; path = Crashlytics/CLSBuild.h; sourceTree = SOURCE_ROOT; };
+		5C6D3CEF18534CA9005E97D1 /* CLSBuild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLSBuild.m; path = Crashlytics/CLSBuild.m; sourceTree = SOURCE_ROOT; };
+		5C6D3CF018534CA9005E97D1 /* CLSOrganization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSOrganization.h; path = Crashlytics/CLSOrganization.h; sourceTree = SOURCE_ROOT; };
+		5C6D3CF118534CA9005E97D1 /* CLSOrganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLSOrganization.m; path = Crashlytics/CLSOrganization.m; sourceTree = SOURCE_ROOT; };
+		5C85507118720FB8008F5038 /* _CLSFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CLSFilter.h; path = Crashlytics/_CLSFilter.h; sourceTree = SOURCE_ROOT; };
+		5C85507218720FB8008F5038 /* _CLSFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _CLSFilter.m; path = Crashlytics/_CLSFilter.m; sourceTree = SOURCE_ROOT; };
+		5C85507318720FB8008F5038 /* CLSFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSFilter.h; path = Crashlytics/CLSFilter.h; sourceTree = SOURCE_ROOT; };
+		5C85507418720FB8008F5038 /* CLSFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLSFilter.m; path = Crashlytics/CLSFilter.m; sourceTree = SOURCE_ROOT; };
+		5C85507A1872191C008F5038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5C9AC77A186C74190037DC36 /* CLSIssueGeneralDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueGeneralDetailsViewController.h; sourceTree = "<group>"; };
+		5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueGeneralDetailsViewController.m; sourceTree = "<group>"; };
+		5CA538B41872D4E200544C7A /* CLSTimeRangeFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSTimeRangeFilterViewController.h; sourceTree = "<group>"; };
+		5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSTimeRangeFilterViewController.m; sourceTree = "<group>"; };
+		5CB3C0861871BE5200CE00D7 /* CLSFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSFiltersViewController.h; sourceTree = "<group>"; };
+		5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSFiltersViewController.m; sourceTree = "<group>"; };
+		5CBE4755189D4A05002D3E90 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
+		5CBE4758189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSGoogleAnalyticsLogger.h; sourceTree = "<group>"; };
+		5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSGoogleAnalyticsLogger.m; sourceTree = "<group>"; };
+		5CBE475E189D58A6002D3E90 /* NSURLRequest+CLSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+CLSLogging.h"; sourceTree = "<group>"; };
+		5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+CLSLogging.m"; sourceTree = "<group>"; };
+		5CC3F7E21876A12D003C2FAC /* CLSLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLogViewController.h; sourceTree = "<group>"; };
+		5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSLogViewController.m; sourceTree = "<group>"; };
+		5CC3F7E61876B191003C2FAC /* CLSLoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLoginCell.h; sourceTree = "<group>"; };
+		5CC3F7E71876B192003C2FAC /* CLSLoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSLoginCell.m; sourceTree = "<group>"; };
+		5CC3F7E91876C933003C2FAC /* CLSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSError.h; sourceTree = "<group>"; };
+		5CC3F7EA1876C933003C2FAC /* CLSError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSError.m; sourceTree = "<group>"; };
+		5CC3F7EE1876D80D003C2FAC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		5CC3F7EF1876D856003C2FAC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5CC3F7F018786E7A003C2FAC /* CLSPasteboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSPasteboardObserver.h; sourceTree = "<group>"; };
+		5CC3F7F118786E7A003C2FAC /* CLSPasteboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSPasteboardObserver.m; sourceTree = "<group>"; };
+		5CE8926E186F13860017F68A /* configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = "<group>"; };
+		5CE94DE618534976003C7DB1 /* CrashManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrashManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE94DE918534976003C7DB1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5CE94DEB18534976003C7DB1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5CE94DED18534976003C7DB1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5CE94DF118534976003C7DB1 /* CrashManager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrashManager-Info.plist"; sourceTree = "<group>"; };
+		5CE94DF518534976003C7DB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5CE94DF718534976003C7DB1 /* CrashManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrashManager-Prefix.pch"; sourceTree = "<group>"; };
+		5CE94DF818534976003C7DB1 /* CLSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLSAppDelegate.h; sourceTree = "<group>"; };
+		5CE94DF918534976003C7DB1 /* CLSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLSAppDelegate.m; sourceTree = "<group>"; };
+		5CE94DFC18534976003C7DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5CE94E0118534976003C7DB1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5CE94E0818534976003C7DB1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5CE94E2118534BE0003C7DB1 /* Crashlytics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crashlytics.xcdatamodel; sourceTree = "<group>"; };
+		5CEDD1C318703DDC00B6A39A /* CLSIssueListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueListCell.h; sourceTree = "<group>"; };
+		5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueListCell.m; sourceTree = "<group>"; };
+		5CEDD1C8187050BC00B6A39A /* CLSApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSApplicationCell.h; sourceTree = "<group>"; };
+		5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSApplicationCell.m; sourceTree = "<group>"; };
+		5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSConfiguration.h; sourceTree = "<group>"; };
+		5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSConfiguration.m; sourceTree = "<group>"; };
+		B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrashManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashManager.xcconfig"; path = "Pods/Pods-CrashManager.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5CE94DE318534976003C7DB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE94DEC18534976003C7DB1 /* CoreGraphics.framework in Frameworks */,
+				5CBE4756189D4A05002D3E90 /* Crashlytics.framework in Frameworks */,
+				5CE94DEE18534976003C7DB1 /* UIKit.framework in Frameworks */,
+				5CE94DEA18534976003C7DB1 /* Foundation.framework in Frameworks */,
+				61DBF5D7659F4A42874FA875 /* libPods-CrashManager.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C3BCF2C1868AF0B004BB1FA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5CE8926E186F13860017F68A /* configuration.plist */,
+				5CE94E2018534BE0003C7DB1 /* Crashlytics.xcdatamodeld */,
+				5CE94E0118534976003C7DB1 /* Images.xcassets */,
+				5C85507B1872191C008F5038 /* Localizable.strings */,
+				5CE94DFB18534976003C7DB1 /* Main.storyboard */,
+				5C046FDB1872B64600E4998C /* Settings.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5C3BCF301868AF33004BB1FA /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */,
+				5CBE4757189D4E8B002D3E90 /* CocoaLumberjack + Google Analytics */,
+				5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */,
+				5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */,
+				5CC3F7F018786E7A003C2FAC /* CLSPasteboardObserver.h */,
+				5CC3F7F118786E7A003C2FAC /* CLSPasteboardObserver.m */,
+				5CE94DF018534976003C7DB1 /* Supporting Files */,
+			);
+			name = Generic;
+			sourceTree = "<group>";
+		};
+		5C40185D186B827A00CC71AE /* Crash Details */ = {
+			isa = PBXGroup;
+			children = (
+				5C3BCF2D1868AF20004BB1FA /* CLSIssueDetailsViewController.h */,
+				5C3BCF2E1868AF20004BB1FA /* CLSIssueDetailsViewController.m */,
+				5C401861186C27D600CC71AE /* Crash Details View Controllers */,
+				5CB3C0821871BDFC00CE00D7 /* Filters */,
+			);
+			name = "Crash Details";
+			sourceTree = "<group>";
+		};
+		5C401861186C27D600CC71AE /* Crash Details View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5C401851186B3ABA00CC71AE /* CLSIssueExceptionTableViewController.h */,
+				5C401852186B3ABA00CC71AE /* CLSIssueExceptionTableViewController.m */,
+				5C40185E186B829600CC71AE /* CLSThreadsTableViewController.h */,
+				5C40185F186B829600CC71AE /* CLSThreadsTableViewController.m */,
+				5C9AC77A186C74190037DC36 /* CLSIssueGeneralDetailsViewController.h */,
+				5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */,
+				5C401855186B418A00CC71AE /* CLSSessionDetailsPresenter.h */,
+				5CC3F7E21876A12D003C2FAC /* CLSLogViewController.h */,
+				5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */,
+			);
+			name = "Crash Details View Controllers";
+			sourceTree = "<group>";
+		};
+		5C4B0681185355C50061485A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5C4B0682185356000061485A /* CLSOrganizationsViewController.h */,
+				5C4B0683185356000061485A /* CLSOrganizationsViewController.m */,
+				5CC3F7E51876B11B003C2FAC /* Login */,
+				5C4B069218545AED0061485A /* Abstract */,
+				5CEDD1C61870509A00B6A39A /* Applications List */,
+				5CEDD1C218703DB700B6A39A /* Issues List */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5C4B068E1853927C0061485A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5C4B068F185392A00061485A /* CLSAPIClient.h */,
+				5C4B0690185392A00061485A /* CLSAPIClient.m */,
+				5C4B0696185465480061485A /* CLSRequestSerializer.h */,
+				5C4B0697185465480061485A /* CLSRequestSerializer.m */,
+				5C6BF2AE18637E34007C483D /* CLSResponseSerializer.h */,
+				5C6BF2AF18637E34007C483D /* CLSResponseSerializer.m */,
+				5CC3F7E91876C933003C2FAC /* CLSError.h */,
+				5CC3F7EA1876C933003C2FAC /* CLSError.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		5C4B069218545AED0061485A /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				5C4B068818535D760061485A /* CLSViewController.h */,
+				5C4B068918535D760061485A /* CLSViewController.m */,
+				5C4B068B18535D9A0061485A /* CLSTableViewController.h */,
+				5C4B068C18535D9A0061485A /* CLSTableViewController.m */,
+			);
+			name = Abstract;
+			sourceTree = "<group>";
+		};
+		5C6D3CDD18534CA9005E97D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C6D3CE818534CA9005E97D1 /* CLSAccount.h */,
+				5C6D3CE918534CA9005E97D1 /* CLSAccount.m */,
+				5C6D3CEA18534CA9005E97D1 /* CLSApplication.h */,
+				5C6D3CEB18534CA9005E97D1 /* CLSApplication.m */,
+				5C6D3CEE18534CA9005E97D1 /* CLSBuild.h */,
+				5C6D3CEF18534CA9005E97D1 /* CLSBuild.m */,
+				5C85507318720FB8008F5038 /* CLSFilter.h */,
+				5C85507418720FB8008F5038 /* CLSFilter.m */,
+				5C3BCF291868AD1D004BB1FA /* CLSIncident.h */,
+				5C3BCF2A1868AD1D004BB1FA /* CLSIncident.m */,
+				5C401862186C2CE000CC71AE /* CLSIncident_Session+Crashlytics.h */,
+				5C401863186C2CE000CC71AE /* CLSIncident_Session+Crashlytics.m */,
+				5C6D3CEC18534CA9005E97D1 /* CLSIssue.h */,
+				5C6D3CED18534CA9005E97D1 /* CLSIssue.m */,
+				5C6D3CF018534CA9005E97D1 /* CLSOrganization.h */,
+				5C6D3CF118534CA9005E97D1 /* CLSOrganization.m */,
+				5C6D3CFC18534DEE005E97D1 /* Internals */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C6D3CFC18534DEE005E97D1 /* Internals */ = {
+			isa = PBXGroup;
+			children = (
+				5C85507118720FB8008F5038 /* _CLSFilter.h */,
+				5C85507218720FB8008F5038 /* _CLSFilter.m */,
+				5C6D3CDE18534CA9005E97D1 /* _CLSAccount.h */,
+				5C6D3CDF18534CA9005E97D1 /* _CLSAccount.m */,
+				5C6D3CE018534CA9005E97D1 /* _CLSApplication.h */,
+				5C6D3CE118534CA9005E97D1 /* _CLSApplication.m */,
+				5C6D3CE218534CA9005E97D1 /* _CLSIssue.h */,
+				5C6D3CE318534CA9005E97D1 /* _CLSIssue.m */,
+				5C6D3CE418534CA9005E97D1 /* _CLSBuild.h */,
+				5C6D3CE518534CA9005E97D1 /* _CLSBuild.m */,
+				5C6D3CE618534CA9005E97D1 /* _CLSOrganization.h */,
+				5C6D3CE718534CA9005E97D1 /* _CLSOrganization.m */,
+			);
+			name = Internals;
+			sourceTree = "<group>";
+		};
+		5CB3C0821871BDFC00CE00D7 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				5CB3C0861871BE5200CE00D7 /* CLSFiltersViewController.h */,
+				5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */,
+				5C5ABF641871C48A00FB2A77 /* CLSIssueStatusFilterViewController.h */,
+				5C5ABF651871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m */,
+				5CA538B41872D4E200544C7A /* CLSTimeRangeFilterViewController.h */,
+				5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */,
+				5C67C71318662F8700EC5943 /* CLSBuildsFilterViewController.h */,
+				5C67C71418662F8700EC5943 /* CLSBuildsFilterViewController.m */,
+			);
+			name = Filters;
+			sourceTree = "<group>";
+		};
+		5CBE4757189D4E8B002D3E90 /* CocoaLumberjack + Google Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE4758189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.h */,
+				5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */,
+			);
+			name = "CocoaLumberjack + Google Analytics";
+			sourceTree = "<group>";
+		};
+		5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE475E189D58A6002D3E90 /* NSURLRequest+CLSLogging.h */,
+				5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */,
+			);
+			name = "NSURLRequest+Logging";
+			sourceTree = "<group>";
+		};
+		5CC3F7E51876B11B003C2FAC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5C4B068518535B6F0061485A /* CLSLoginViewController.h */,
+				5C4B068618535B6F0061485A /* CLSLoginViewController.m */,
+				5CC3F7E61876B191003C2FAC /* CLSLoginCell.h */,
+				5CC3F7E71876B192003C2FAC /* CLSLoginCell.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		5CE94DDD18534976003C7DB1 = {
+			isa = PBXGroup;
+			children = (
+				5CE94DEF18534976003C7DB1 /* Crashlytics */,
+				5CE94DE818534976003C7DB1 /* Frameworks */,
+				5CE94DE718534976003C7DB1 /* Products */,
+				EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		5CE94DE718534976003C7DB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CE94DE618534976003C7DB1 /* CrashManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5CE94DE818534976003C7DB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE4755189D4A05002D3E90 /* Crashlytics.framework */,
+				5CE94DE918534976003C7DB1 /* Foundation.framework */,
+				5CE94DEB18534976003C7DB1 /* CoreGraphics.framework */,
+				5CE94DED18534976003C7DB1 /* UIKit.framework */,
+				5CE94E0818534976003C7DB1 /* XCTest.framework */,
+				B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5CE94DEF18534976003C7DB1 /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				5CE94DF818534976003C7DB1 /* CLSAppDelegate.h */,
+				5CE94DF918534976003C7DB1 /* CLSAppDelegate.m */,
+				5C3BCF301868AF33004BB1FA /* Generic */,
+				5C6D3CDD18534CA9005E97D1 /* Model */,
+				5C4B068E1853927C0061485A /* Networking */,
+				5C3BCF2C1868AF0B004BB1FA /* Resources */,
+				5C4B0681185355C50061485A /* View Controllers */,
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		5CE94DF018534976003C7DB1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CE94DF118534976003C7DB1 /* CrashManager-Info.plist */,
+				5CE94DF518534976003C7DB1 /* main.m */,
+				5CE94DF718534976003C7DB1 /* CrashManager-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5CEDD1C218703DB700B6A39A /* Issues List */ = {
+			isa = PBXGroup;
+			children = (
+				5CEDD1C318703DDC00B6A39A /* CLSIssueListCell.h */,
+				5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */,
+				5C3CEAB518671C4000F8DDC6 /* CLSIssuesTableViewController.h */,
+				5C3CEAB618671C4000F8DDC6 /* CLSIssuesTableViewController.m */,
+				5C40185D186B827A00CC71AE /* Crash Details */,
+			);
+			name = "Issues List";
+			sourceTree = "<group>";
+		};
+		5CEDD1C61870509A00B6A39A /* Applications List */ = {
+			isa = PBXGroup;
+			children = (
+				5C4B069318545AFD0061485A /* CLSApplicationsTableViewController.h */,
+				5C4B069418545AFD0061485A /* CLSApplicationsTableViewController.m */,
+				5CEDD1C8187050BC00B6A39A /* CLSApplicationCell.h */,
+				5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */,
+			);
+			name = "Applications List";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5CE94DE518534976003C7DB1 /* CrashManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CE94E1818534976003C7DB1 /* Build configuration list for PBXNativeTarget "CrashManager" */;
+			buildPhases = (
+				B1FA73BB547446999FFD095D /* Check Pods Manifest.lock */,
+				5CE94DE218534976003C7DB1 /* Sources */,
+				5CE94DE318534976003C7DB1 /* Frameworks */,
+				5CE94DE418534976003C7DB1 /* Resources */,
+				5CDE08DB188A872F0051124A /* Automatic Build incrementation */,
+				8AF3D6D6FDA9447EBB27B388 /* Copy Pods Resources */,
+				5C6BF2AA18637D38007C483D /* Crashlytics */,
+				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CrashManager;
+			productName = Crashlytics;
+			productReference = 5CE94DE618534976003C7DB1 /* CrashManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5CE94DDE18534976003C7DB1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CLS;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Sasha Zats";
+				TargetAttributes = {
+					5CE94DE518534976003C7DB1 = {
+						DevelopmentTeam = 5KE88HWMKJ;
+					};
+				};
+			};
+			buildConfigurationList = 5CE94DE118534976003C7DB1 /* Build configuration list for PBXProject "CrashManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ru,
+			);
+			mainGroup = 5CE94DDD18534976003C7DB1;
+			productRefGroup = 5CE94DE718534976003C7DB1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5CE94DE518534976003C7DB1 /* CrashManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5CE94DE418534976003C7DB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE94E0218534976003C7DB1 /* Images.xcassets in Resources */,
+				5CE8926F186F13860017F68A /* configuration.plist in Resources */,
+				5C046FDC1872B64600E4998C /* Settings.bundle in Resources */,
+				5CE94DFD18534976003C7DB1 /* Main.storyboard in Resources */,
+				5C8550791872191C008F5038 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C6BF2AA18637D38007C483D /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics/Crashlytics.framework/run 1806f0e415eca8782897d8254a1363122c77c03a";
+		};
+		5CDE08DB188A872F0051124A /* Automatic Build incrementation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Automatic Build incrementation";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# increment build number only when building release builds that are not app store.\n# this way we keep the same version number for a tested version in production\nif [[ ! ${CONFIGURATION} =~ Appstore ]] && [[ ${CONFIGURATION} =~ Release ]] ; then\necho \"Increment version number - release build detected\"\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\nelse\necho \"Skipping increment version number - configuration is not release or environment is production\"\nfi";
+		};
+		8AF3D6D6FDA9447EBB27B388 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-CrashManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1FA73BB547446999FFD095D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Objective-Clean Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# \"${LOCAL_APPS_DIR}\"/Objective-Clean.app/Contents/Resources/ObjClean.app/Contents/MacOS/ObjClean \"${SRCROOT}\"?CLS";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5CE94DE218534976003C7DB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE94DF618534976003C7DB1 /* main.m in Sources */,
+				5CC3F7E81876B192003C2FAC /* CLSLoginCell.m in Sources */,
+				5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */,
+				5C4B0684185356000061485A /* CLSOrganizationsViewController.m in Sources */,
+				5C6D3CF818534CA9005E97D1 /* CLSApplication.m in Sources */,
+				5C5ABF661871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m in Sources */,
+				5CE94DFA18534976003C7DB1 /* CLSAppDelegate.m in Sources */,
+				5C4B068D18535D9A0061485A /* CLSTableViewController.m in Sources */,
+				5C6D3CF618534CA9005E97D1 /* _CLSOrganization.m in Sources */,
+				5CBE475A189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m in Sources */,
+				5CEDD1CA187050BC00B6A39A /* CLSApplicationCell.m in Sources */,
+				5C6D3CFA18534CA9005E97D1 /* CLSBuild.m in Sources */,
+				5C6D3CF218534CA9005E97D1 /* _CLSAccount.m in Sources */,
+				5CC3F7E41876A12D003C2FAC /* CLSLogViewController.m in Sources */,
+				5C6D3CF318534CA9005E97D1 /* _CLSApplication.m in Sources */,
+				5C6BF2B018637E34007C483D /* CLSResponseSerializer.m in Sources */,
+				5C9AC77C186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m in Sources */,
+				5C6D3CFB18534CA9005E97D1 /* CLSOrganization.m in Sources */,
+				5C6D3CF418534CA9005E97D1 /* _CLSIssue.m in Sources */,
+				5CC3F7EB1876C933003C2FAC /* CLSError.m in Sources */,
+				5C6D3CF918534CA9005E97D1 /* CLSIssue.m in Sources */,
+				5CEDD1C518703DDC00B6A39A /* CLSIssueListCell.m in Sources */,
+				5CA538B61872D4E200544C7A /* CLSTimeRangeFilterViewController.m in Sources */,
+				5C401864186C2CE000CC71AE /* CLSIncident_Session+Crashlytics.m in Sources */,
+				5C4B0691185392A00061485A /* CLSAPIClient.m in Sources */,
+				5C3BCF2F1868AF20004BB1FA /* CLSIssueDetailsViewController.m in Sources */,
+				5C85507518720FB8008F5038 /* _CLSFilter.m in Sources */,
+				5C3BCF2B1868AD1D004BB1FA /* CLSIncident.m in Sources */,
+				5C85507618720FB8008F5038 /* CLSFilter.m in Sources */,
+				5CB3C0881871BE5200CE00D7 /* CLSFiltersViewController.m in Sources */,
+				5C6D3CF718534CA9005E97D1 /* CLSAccount.m in Sources */,
+				5C4B068718535B6F0061485A /* CLSLoginViewController.m in Sources */,
+				5C401853186B3ABA00CC71AE /* CLSIssueExceptionTableViewController.m in Sources */,
+				5CE94E2218534BE0003C7DB1 /* Crashlytics.xcdatamodeld in Sources */,
+				5C401860186B829600CC71AE /* CLSThreadsTableViewController.m in Sources */,
+				5C6D3CF518534CA9005E97D1 /* _CLSBuild.m in Sources */,
+				5C4B069518545AFD0061485A /* CLSApplicationsTableViewController.m in Sources */,
+				5CEDD1CD18705DE500B6A39A /* CLSConfiguration.m in Sources */,
+				5C3CEAB718671C4000F8DDC6 /* CLSIssuesTableViewController.m in Sources */,
+				5C67C71518662F8700EC5943 /* CLSBuildsFilterViewController.m in Sources */,
+				5CC3F7F218786E7A003C2FAC /* CLSPasteboardObserver.m in Sources */,
+				5C4B0698185465480061485A /* CLSRequestSerializer.m in Sources */,
+				5C4B068A18535D760061485A /* CLSViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5C85507B1872191C008F5038 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C85507A1872191C008F5038 /* Base */,
+				5CC3F7EF1876D856003C2FAC /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5CE94DFB18534976003C7DB1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CE94DFC18534976003C7DB1 /* Base */,
+				5CC3F7EE1876D80D003C2FAC /* ru */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5CE94E1618534976003C7DB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5CE94E1718534976003C7DB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5CE94E1918534976003C7DB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Crashlytics",
+					/Users/zats/Documents/Crashlytics/Crashlytics,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Crashlytics/CrashManager-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa\"",
+				);
+				INFOPLIST_FILE = "Crashlytics/CrashManager-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zats/Documents/Crashlytics,
+				);
+				PRODUCT_NAME = CrashManager;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5CE94E1A18534976003C7DB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Crashlytics",
+					/Users/zats/Documents/Crashlytics/Crashlytics,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Crashlytics/CrashManager-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
+					"\"${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa\"",
+				);
+				INFOPLIST_FILE = "Crashlytics/CrashManager-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zats/Documents/Crashlytics,
+				);
+				PRODUCT_NAME = CrashManager;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5CE94DE118534976003C7DB1 /* Build configuration list for PBXProject "CrashManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE94E1618534976003C7DB1 /* Debug */,
+				5CE94E1718534976003C7DB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CE94E1818534976003C7DB1 /* Build configuration list for PBXNativeTarget "CrashManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE94E1918534976003C7DB1 /* Debug */,
+				5CE94E1A18534976003C7DB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5CE94E2018534BE0003C7DB1 /* Crashlytics.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5CE94E2118534BE0003C7DB1 /* Crashlytics.xcdatamodel */,
+			);
+			currentVersion = 5CE94E2118534BE0003C7DB1 /* Crashlytics.xcdatamodel */;
+			path = Crashlytics.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5CE94DDE18534976003C7DB1 /* Project object */;
+}

@@ -1,0 +1,156 @@
+
+/* Class = "IBUILabel"; text = "0.9.22 (671)  10 crashes  5 users"; ObjectID = "36w-ld-r7M"; */
+"36w-ld-r7M.text" = "0.9.22 (671)  10 crashes  5 users";
+
+/* Class = "IBUILabel"; text = "Sign Up"; ObjectID = "3zs-do-QLf"; */
+"3zs-do-QLf.text" = "Sign Up";
+
+/* Class = "IBUILabel"; text = "Issue Title"; ObjectID = "4Ka-eW-6FE"; */
+"4Ka-eW-6FE.text" = "Issue Title";
+
+/* Class = "IBUILabel"; text = "All Time"; ObjectID = "4xT-Fw-I9C"; */
+"4xT-Fw-I9C.text" = "All Time";
+
+/* Class = "IBUINavigationItem"; title = "Applications"; ObjectID = "6PQ-Ve-HjS"; */
+"6PQ-Ve-HjS.title" = "Applications";
+
+/* Class = "IBUILabel"; text = "com.bundle.id"; ObjectID = "8bu-eF-Oea"; */
+"8bu-eF-Oea.text" = "com.bundle.id";
+
+/* Class = "IBUILabel"; text = "Issue subtitle"; ObjectID = "9Hf-Zw-Qbk"; */
+"9Hf-Zw-Qbk.text" = "Issue subtitle";
+
+/* Class = "IBUIBarButtonItem"; title = "Orgs"; ObjectID = "Bas-In-4cj"; */
+"Bas-In-4cj.title" = "Orgs";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "Dxa-mK-vkI"; */
+"Dxa-mK-vkI.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Password"; ObjectID = "Er9-bS-fe2"; */
+"Er9-bS-fe2.text" = "Password";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "FN7-NV-zDY"; */
+"FN7-NV-zDY.text" = "Title";
+
+/* Class = "IBUILabel"; text = "10"; ObjectID = "FgM-WJ-5zE"; */
+"FgM-WJ-5zE.text" = "10";
+
+/* Class = "IBUIBarButtonItem"; title = "Filter"; ObjectID = "Fgo-qE-AWu"; */
+"Fgo-qE-AWu.title" = "Filter";
+
+/* Class = "IBUILabel"; text = "Email"; ObjectID = "HS3-WX-7Sa"; */
+"HS3-WX-7Sa.text" = "Email";
+
+/* Class = "IBUILabel"; text = "Application"; ObjectID = "KBD-Vx-0Ls"; */
+"KBD-Vx-0Ls.text" = "Application";
+
+/* Class = "IBUILabel"; text = "Build Version"; ObjectID = "Kcn-a3-uGf"; */
+"Kcn-a3-uGf.text" = "Build Version";
+
+/* Class = "IBUILabel"; text = "All Issues"; ObjectID = "KrR-RD-Wgw"; */
+"KrR-RD-Wgw.text" = "All Issues";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "NUo-cb-7V2"; */
+"NUo-cb-7V2.text" = "Subtitle";
+
+/* Class = "IBUILabel"; text = "Issue Status"; ObjectID = "PAk-bk-pX7"; */
+"PAk-bk-pX7.text" = "Issue Status";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "S9g-y3-d8i"; */
+"S9g-y3-d8i.text" = "Title";
+
+/* Class = "IBUISegmentedControl"; T7i-5o-qIV.segmentTitles[0] = "Removed"; ObjectID = "T7i-5o-qIV"; */
+"T7i-5o-qIV.segmentTitles[0]" = "Removed";
+
+/* Class = "IBUISegmentedControl"; T7i-5o-qIV.segmentTitles[1] = "During"; ObjectID = "T7i-5o-qIV"; */
+"T7i-5o-qIV.segmentTitles[1]" = "During";
+
+/* Class = "IBUISegmentedControl"; T7i-5o-qIV.segmentTitles[2] = "Runtime"; ObjectID = "T7i-5o-qIV"; */
+"T7i-5o-qIV.segmentTitles[2]" = "Runtime";
+
+/* Class = "IBUILabel"; text = "Forgot Password"; ObjectID = "TNx-n0-xIV"; */
+"TNx-n0-xIV.text" = "Forgot Password";
+
+/* Class = "IBUITextField"; placeholder = "buggy@crashington.com"; ObjectID = "XPs-pQ-sFk"; */
+"XPs-pQ-sFk.placeholder" = "buggy@crashington.com";
+
+/* Class = "IBUILabel"; text = "[NSObject(NSObject) doesNotRecognizeSelector:]"; ObjectID = "Xko-PF-16z"; */
+"Xko-PF-16z.text" = "[NSObject(NSObject) doesNotRecognizeSelector:]";
+
+/* Class = "IBUIBarButtonItem"; title = "Apps"; ObjectID = "aO9-f0-T3y"; */
+"aO9-f0-T3y.title" = "Apps";
+
+/* Class = "IBUILabel"; text = "CoreFoundation"; ObjectID = "aWX-2a-3ZE"; */
+"aWX-2a-3ZE.text" = "CoreFoundation";
+
+/* Class = "IBUIBarButtonItem"; title = "Logout"; ObjectID = "cob-a4-9RQ"; */
+"cob-a4-9RQ.title" = "Logout";
+
+/* Class = "IBUINavigationItem"; title = "Login"; ObjectID = "dWf-hh-WrG"; */
+"dWf-hh-WrG.title" = "Login";
+
+/* Class = "IBUITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "gP5-CP-kyP"; */
+"gP5-CP-kyP.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "IBUINavigationItem"; title = "Filters"; ObjectID = "gcj-tE-rPm"; */
+"gcj-tE-rPm.title" = "Filters";
+
+/* Class = "IBUIBarButtonItem"; title = "Reopen"; ObjectID = "iRh-IY-3EU"; */
+"iRh-IY-3EU.title" = "Reopen";
+
+/* Class = "IBUILabel"; text = "iOS  999 issues affecting 999 users"; ObjectID = "jcE-Ol-dfz"; */
+"jcE-Ol-dfz.text" = "iOS  999 issues affecting 999 users";
+
+/* Class = "IBUINavigationItem"; title = "Time Range"; ObjectID = "l3h-lR-fjN"; */
+"l3h-lR-fjN.title" = "Time Range";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "lEB-o3-OMd"; */
+"lEB-o3-OMd.text" = "Subtitle";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "lPQ-6S-xON"; */
+"lPQ-6S-xON.text" = "Subtitle";
+
+/* Class = "IBUILabel"; text = "All Versions"; ObjectID = "lma-Oa-e4U"; */
+"lma-Oa-e4U.text" = "All Versions";
+
+/* Class = "IBUILabel"; text = "Time Range"; ObjectID = "nDR-9s-uaS"; */
+"nDR-9s-uaS.text" = "Time Range";
+
+/* Class = "IBUILabel"; text = "Reset Filters"; ObjectID = "nGn-ph-pAu"; */
+"nGn-ph-pAu.text" = "Reset Filters";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "nga-tF-WJo"; */
+"nga-tF-WJo.text" = "Detail";
+
+/* Class = "IBUILabel"; text = "All Time"; ObjectID = "oiR-iX-QcN"; */
+"oiR-iX-QcN.text" = "All Time";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "owb-oB-36n"; */
+"owb-oB-36n.text" = "Title";
+
+/* Class = "IBUILabel"; text = "All Issues"; ObjectID = "qQR-AU-6Tx"; */
+"qQR-AU-6Tx.text" = "All Issues";
+
+/* Class = "IBUITextField"; placeholder = "68616C6C6F776F726C64"; ObjectID = "qba-px-JCb"; */
+"qba-px-JCb.placeholder" = "68616C6C6F776F726C64";
+
+/* Class = "IBUINavigationItem"; title = "Build Version"; ObjectID = "r36-pS-SHm"; */
+"r36-pS-SHm.title" = "Build Version";
+
+/* Class = "IBUINavigationItem"; title = "Issues"; ObjectID = "ug4-61-S1t"; */
+"ug4-61-S1t.title" = "Issues";
+
+/* Class = "IBUINavigationItem"; title = "Issue Status"; ObjectID = "wNp-rF-Wd3"; */
+"wNp-rF-Wd3.title" = "Issue Status";
+
+/* Class = "IBUILabel"; text = "Sign In"; ObjectID = "wPs-3D-iTV"; */
+"wPs-3D-iTV.text" = "Sign In";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "wuQ-dd-KlQ"; */
+"wuQ-dd-KlQ.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Logs"; ObjectID = "y8S-kU-47K"; */
+"y8S-kU-47K.text" = "Logs";
+
+/* Class = "IBUINavigationItem"; title = "Organizations"; ObjectID = "zBj-Eo-czB"; */
+"zBj-Eo-czB.title" = "Organizations";

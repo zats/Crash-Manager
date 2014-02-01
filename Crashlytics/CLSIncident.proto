@@ -1,0 +1,290 @@
+message CLSIncident {
+
+    enum Architecture {
+		X86_32 = 0;
+		X86_64 = 1;
+		ARM_UNKNOWN = 2;
+		PPC = 3;
+		PPC64 = 4;
+		ARMV6 = 5;
+		ARMV7 = 6;
+		UNKNOWN = 7;
+		ARMV7S = 8;
+		ARM64 = 9;
+	}
+
+	enum Platform {
+		MAC_OS_X = 0;
+		IPHONE_OS = 1;
+		IPHONE_SIMULATOR = 2;
+		ANDROID = 3;
+		WINDOWS = 4;
+		LINUX = 5;
+		BLACKBERRY = 6;
+		OTHER = 1000;
+	}
+
+	enum FrameImportance {
+		SYMBOLICATED = 1;
+		IN_DEVELOPER_CODE = 2;
+		IN_CRASHED_THREAD = 4;
+		LIKELY_LEAD_TO_CRASH = 8;
+		IN_EXCEPTION = 16;
+		ALGORITHM = 32;
+		USER_DECLARED = 64;
+	}
+
+	enum FrameProperties {
+		FRAME_UNKNOWN = 0;
+		FRAME_TYPE_COMPILED = 1;
+		FRAME_TYPE_VM = 2;
+		FRAME_TYPE_INTERPRETED = 4;
+		FRAME_TYPE_JIT = 8;
+		FRAME_TYPE_SPECULATIVE = 16;
+		FRAME_TYPE_INLINED = 32;
+		FRAME_CONTEXT_DEVELOPER = 67108864;
+		FRAME_CONTEXT_VENDOR = 134217728;
+		FRAME_CONTEXT_RUNTIME = 268435456;
+		FRAME_CONTEXT_PLATFORM = 536870912;
+		FRAME_CONTEXT_SYSTEM = 1073741824;
+	}
+
+	enum GeneratorType {
+		IOS_SDK = 1;
+		MACOS_SDK = 2;
+		ANDROID_SDK = 3;
+		JAVASCRIPT_SDK = 4;
+	}
+
+	enum DeviceIdentifierType {
+		WIFI_MAC_ADDRESS = 1;
+		BLUETOOTH_MAC_ADDRESS = 2;
+		IOS_UDID = 50;
+		IOS_ADVERTISING_IDENTIFIER = 51;
+		IOS_VENDOR_IDENTIFIER = 52;
+		ANDROID_ID = 100;
+		ANDROID_DEVICE_ID = 101;
+		ANDROID_SERIAL = 102;
+		MAC_HARDWARE_UUID = 200;
+		MAC_SERIAL = 201;
+	}
+
+	enum DeviceState {
+		IS_SIMULATOR = 1;
+		JAILBROKEN = 2;
+		DEBUGGER_ATTACHED = 4;
+		BETA_OS = 8;
+		VENDOR_INTERNAL = 16;
+		COMPROMISED_LIBRARIES = 32;
+	}
+
+	enum DeliveryMechanism {
+		DEVELOPER = 1;
+		USER_SIDELOAD = 2;
+		TEST_DISTRIBUTION = 3;
+		APP_STORE = 4;
+	}
+
+	enum FrameDecoder {
+		SYMBOLICATION = 1;
+		DEOBFUSCATION = 2;
+		CACHE_HYDRATION = 3;
+	}
+
+	message CustomAttribute {
+	    required string key = 1;
+	    required string value = 2;
+	}
+
+	message Frame {
+		required uint64 pc = 1;
+		optional string symbol = 2;
+		optional string file = 3;
+		optional uint64 offset = 4;
+		optional uint32 importance = 5;
+		optional string expanded_symbol = 6;
+		optional string expanded_file = 7;
+		optional uint64 expanded_offset = 8;
+		optional uint32 properties = 9;
+		optional uint64 line_number = 10;
+	}
+
+	message Session {
+		required string generator = 1;
+		required bytes identifier = 2;
+		required uint64 started_at = 3;
+		optional uint64 ended_at = 4;
+		optional bool crashed = 5;
+		optional uint32 analyzer = 11;
+		optional GeneratorType generator_type = 12;
+		optional FrameDecoder frame_decoder = 13;
+
+		message User {
+			required string identifier = 1;
+			optional string name = 2;
+			optional string email = 3;
+			repeated CustomAttribute custom_attributes = 4;
+		}
+		optional User user = 6;
+
+		message Process {
+			optional string name = 1;
+			required uint32 pid = 2;
+			optional string path = 3;
+			optional string parent_process_name = 4;
+			optional uint32 parent_process_id = 5;
+		}
+
+		message Application {
+			required string identifier = 1;
+			required string version = 2;
+			optional string display_version = 3;
+			optional Process process = 4;
+
+			message Organization {
+				optional string api_key = 1;
+				optional string cls_id = 2;
+			}
+			optional Organization organization = 5;
+			optional string installation_uuid = 6;
+			optional string cls_id = 7;
+			optional string development_platform = 8;
+			optional string development_platform_version = 9;
+			optional DeliveryMechanism delivery_mechanism = 10;
+
+		}
+		required Application app = 7;
+
+		message OperatingSystem {
+			required Platform platform = 1;
+			required string version = 2;
+			optional string build_version = 3;
+			optional bool jailbroken = 4;
+		}
+		optional OperatingSystem os = 8;
+
+		message Device {
+			optional bytes identifier = 1;
+			optional bytes udid = 2;
+			required Architecture arch = 3;
+			optional string model = 4;
+			optional uint32 cores = 5;
+			optional uint64 ram = 6;
+			optional uint64 disk_space = 7;
+			optional string user_agent = 8;
+			optional string language = 9;
+			optional bool simulator = 10;
+
+			message Identifier {
+				required DeviceIdentifierType key = 1;
+				required string value = 2;
+			}
+			repeated Identifier identifiers = 11;
+			optional uint32 state = 12;
+			optional string manufacturer = 13;
+			optional string model_class = 14;
+		}
+		optional Device device = 9;
+
+		message Event {
+			required uint64 timestamp = 1;
+			required string type = 2;
+			optional string aggregation_id = 7;
+
+			message Application {
+
+				message Execution {
+
+					message Thread {
+						optional string name = 1;
+						required uint32 importance = 2;
+
+						repeated Frame frames = 3;
+
+						message Register {
+							required string name = 1;
+							required uint64 value = 2;
+						}
+						repeated Register registers = 4;
+						optional string alternate_name = 5;
+						optional string objc_selector_name = 6;
+					}
+					repeated Thread threads = 1;
+
+					message Exception {
+						optional string type = 1;
+						optional string code = 2;
+						optional string reason = 3;
+						repeated Frame frames = 4;
+						repeated CustomAttribute custom_attributes = 5;
+						optional Exception caused_by = 6;
+						optional uint32 overflow_count = 7;
+						optional uint32 importance = 8;
+					}
+					optional Exception exception = 2;
+
+					message Signal {
+						required string name = 1;
+						required string code = 2;
+						required uint64 address = 3;
+					}
+					required Signal signal = 3;
+
+					message BinaryImage {
+						required uint64 base_address = 1;
+						required uint64 size = 2;
+						required string name = 3;
+						optional Architecture arch = 5;
+						optional string cls_id = 6;
+					}
+					repeated BinaryImage binaries = 4;
+				}
+				required Execution execution = 1;
+				repeated CustomAttribute custom_attributes = 2;
+				optional bool background = 3;
+				optional uint32 ui_orientation = 4;
+			}
+			optional Application app = 3;
+
+			message OperatingSystem {
+
+				message NetworkInterface {
+					optional string name = 1;
+					optional string description = 2;
+					optional string type = 3;
+					optional bytes address = 4;
+
+					message Connection {
+						optional uint32 port = 1;
+						optional uint64 bytes_sent = 2;
+						optional uint64 bytes_received = 3;
+						optional uint64 opened_at = 4;
+						optional uint64 closed_at = 5;
+						optional uint32 status = 6;
+					}
+					repeated Connection connections = 5;
+				}
+				repeated NetworkInterface network_interfaces = 1;
+				repeated Process processes = 2;
+			}
+			optional OperatingSystem os = 4;
+
+			message Device {
+				optional float battery_level = 1;
+				optional sint32 battery_velocity = 2;
+				optional bool proximity_on = 3;
+				optional uint32 orientation = 4;
+				optional uint64 ram_used = 5;
+				optional uint64 disk_used = 6;
+			}
+			optional Device device = 5;
+
+			message Log {
+				optional string content = 1;
+				optional uint32 last_offset = 2;
+			}
+			optional Log log = 6;
+		}
+		repeated Event events = 10;
+ 	}
+}
