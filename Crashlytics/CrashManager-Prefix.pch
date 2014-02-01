@@ -22,4 +22,11 @@
 	#import <GoogleAnalytics-iOS-SDK/GAIFields.h>
 	#import <GoogleAnalytics-iOS-SDK/GAIDictionaryBuilder.h>
 
+    #import <CocoaLumberjack/DDLog.h>
+#ifdef DEBUG
+    static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+#else
+    static const int ddLogLevel = LOG_LEVEL_WARN;
+#endif
+
 #endif

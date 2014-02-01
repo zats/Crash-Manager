@@ -10,6 +10,7 @@ target "CrashManager" do
 	pod 'SHUIKitBlocks'
 	pod 'TTTLocalizedPluralString'
 	pod 'GoogleAnalytics-iOS-SDK'
+	pod 'CocoaLumberjack'
 
 	inhibit_all_warnings!
 end
