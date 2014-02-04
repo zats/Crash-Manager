@@ -570,7 +570,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# increment build number only when building release builds that are not app store.\n# this way we keep the same version number for a tested version in production\nif [[ ! ${CONFIGURATION} =~ Appstore ]] && [[ ${CONFIGURATION} =~ Release ]] ; then\necho \"Increment version number - release build detected\"\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\nelse\necho \"Skipping increment version number - configuration is not release or environment is production\"\nfi";
+			shellScript = "# increment build number only when building release builds that are not app store.\n# this way we keep the same version number for a tested version in production\nif [[ ! ${CONFIGURATION} =~ Appstore ]] && [[ ${CONFIGURATION} =~ Release ]] ; then\necho \"Increment version number - release build detected\"\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\nfi";
 		};
 		8AF3D6D6FDA9447EBB27B388 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

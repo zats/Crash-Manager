@@ -182,7 +182,13 @@
     static NSString *appBuildVersion;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        appBuildVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleVersionKey];
+        NSString *gitSHA = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GitSHA"];
+        if ([gitSHA length]) {
+            appBuildVersion = gitSHA;
+        } else {
+            // it's a stable build, use full semantic version
+            appBuildVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleVersionKey];
+        }
     });
     NSString *version = [NSString stringWithFormat:@"v%@", appBuildVersion];
     
