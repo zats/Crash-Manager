@@ -26,7 +26,9 @@ PODS:
   - GoogleAnalytics-iOS-SDK (3.0.3)
   - GroundControl (2.0.0):
     - AFNetworking (~> 2.0)
-  - MagicalRecord (2.2)
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core
+  - MagicalRecord/Core (2.2)
   - ProtobufObjC (0.0.1)
   - ReactiveCocoa (2.2):
     - ReactiveCocoa/Core
@@ -61,6 +63,7 @@ PODS:
     - SHTextViewBlocks (~> 1.1.0)
     - SHWebViewBlocks (~> 1.3.0)
   - SHWebViewBlocks (1.3.0)
+  - SSKeychain (1.2.1)
   - TTTLocalizedPluralString (0.0.9)
 
 DEPENDENCIES:
@@ -73,6 +76,7 @@ DEPENDENCIES:
   - ProtobufObjC
   - ReactiveCocoa
   - SHUIKitBlocks
+  - SSKeychain
   - TTTLocalizedPluralString
 
 SPEC CHECKSUMS:
@@ -81,7 +85,7 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 6ed94046d2ca7fde03a73b3d01b8cfc56574b314
   GoogleAnalytics-iOS-SDK: 7b0e55cfe5e70d60478a7b105f15ac71e8bc373e
   GroundControl: 7246542fbddc789a448c7a60e4f4df94881972f9
-  MagicalRecord: b1fc46c99a9749fe7fe7e6f43a89b62ef5201933
+  MagicalRecord: 95d49d74ef752cd52f6ad87bcb474817fc3978cf
   ProtobufObjC: 3b68d87fe1165e85559eedd583eb65ffd913ff9f
   ReactiveCocoa: 5b340678dc3168d6c9a2ca70fb83df683c08ca02
   SHActionSheetBlocks: d1194997eb32ea752a906043ac97887615a270ad
@@ -98,6 +102,7 @@ SPEC CHECKSUMS:
   SHTextViewBlocks: 9ad22b4d4e22985b79dbf23aa6af67e6fc4e7b55
   SHUIKitBlocks: 491698656f4e39f6b4b7ee869a19e517baf5331e
   SHWebViewBlocks: 4776bd43c0dd653e8f9574f93973436ccba224d2
+  SSKeychain: d18926838c2e7cd342e2a49e9f869858e49f035a
   TTTLocalizedPluralString: 9813ed30d6babe01440a758cbf2bef85a2138913
 
 COCOAPODS: 0.29.0

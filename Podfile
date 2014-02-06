@@ -12,6 +12,7 @@ target "CrashManager" do
 	pod 'GoogleAnalytics-iOS-SDK'
 	pod 'CocoaLumberjack'
     pod 'Appsee'
+    pod 'SSKeychain'
 
 	inhibit_all_warnings!
 end
