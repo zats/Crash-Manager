@@ -11,11 +11,11 @@
 #import "CLSAPIClient.h"
 #import "CLSAccount.h"
 #import "CLSApplication.h"
-#import "CLSOrganization.h"
-#import "CLSIssuesTableViewController.h"
-#import <AFNetworking/UIImageView+AFNetworking.h>
 #import "CLSApplicationCell.h"
 #import "CLSBuild.h"
+#import "CLSIssuesTableViewController.h"
+#import "CLSOrganization.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
 
 @interface CLSApplicationsTableViewController ()
@@ -109,27 +109,10 @@
 		detailsString = [detailsString stringByAppendingString:NSLocalizedString(@"CLSApplicationsListNoIssues", @"Status text for when application has no issues on the applications list screen")];
 	}
 	cell.applicationDetailsLabel.text = detailsString;
-	if (application.icon) {
-		cell.applicationIconImageView.image = application.icon;
-	} else {
-		NSURL *iconURL = [NSURL URLWithString:application.iconURLString];
-		UIImage *placeholderImage = [UIImage imageNamed:@"app-icon-placeholder"];
-		NSURLRequest *request = [NSURLRequest requestWithURL:iconURL];
-		@weakify(cell);
-		[cell.applicationIconImageView setImageWithURLRequest:request placeholderImage:placeholderImage success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-			@strongify(cell);
-			application.icon = image;
-			[application.managedObjectContext MR_saveToPersistentStoreAndWait];
-			cell.applicationIconImageView.image = image;
-		} failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-			@strongify(cell);
-			application.icon = nil;
-			cell.applicationIconImageView.image = placeholderImage;
-		}];
-//		[cell.applicationIconImageView setImageWithURL:iconURL
-//									  placeholderImage:placeholderImage];
-	}
-
+    NSURL *iconURL = [NSURL URLWithString:application.iconURLString];
+    UIImage *placeholderImage = [UIImage imageNamed:@"app-icon-placeholder"];
+    [cell.applicationIconImageView setImageWithURL:iconURL
+                                  placeholderImage:placeholderImage];
 	if ([self isOnlyRowInSectionAtIndexPath:indexPath]) {
 		cell.baseLayoutConstraint.constant = 0;
 	} else if ([self isLastRowInSectionAtIndexPath:indexPath]) {

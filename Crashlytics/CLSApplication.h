@@ -5,8 +5,6 @@
 + (instancetype)applicationWithContentsOfDictionary:(NSDictionary *)dictionary
 										  inContext:(NSManagedObjectContext *)context;
 
-@property (nonatomic, strong) UIImage *icon;
-
 - (void)updateWithContentsOfDictionary:(NSDictionary *)dictionary;
 
 - (void)updateBuildsWithContentsOfArray:(NSArray *)array;

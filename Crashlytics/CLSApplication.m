@@ -13,7 +13,6 @@
 
 
 @implementation CLSApplication
-@dynamic icon;
 
 + (instancetype)applicationWithContentsOfDictionary:(NSDictionary *)dictionary
 										  inContext:(NSManagedObjectContext *)context {
@@ -100,23 +99,6 @@
 	[super awakeFromInsert];
 
 	self.filter = [CLSFilter MR_createInContext:self.managedObjectContext];
-}
-
-- (UIImage *)icon {
-	[self willAccessValueForKey:CLSApplicationAttributes.icon];
-	UIImage *icon = self.primitiveIcon;
-	[self didAccessValueForKey:CLSApplicationAttributes.icon];
-	if (!icon) {
-		icon = [UIImage imageWithData:self.primitiveIconData];
-		self.primitiveIcon = icon;
-	}
-	return icon;
-}
-
-- (void)willSave {
-	self.primitiveIconData = self.primitiveIcon ? UIImagePNGRepresentation(self.primitiveIcon) : nil;
-
-	[super willSave];
 }
 
 @end

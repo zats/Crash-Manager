@@ -6,8 +6,6 @@
 const struct CLSApplicationAttributes CLSApplicationAttributes = {
 	.applicationID = @"applicationID",
 	.bundleID = @"bundleID",
-	.icon = @"icon",
-	.iconData = @"iconData",
 	.iconURLString = @"iconURLString",
 	.impactedDevicesCount = @"impactedDevicesCount",
 	.latestBuild = @"latestBuild",
@@ -78,20 +76,6 @@ const struct CLSApplicationFetchedProperties CLSApplicationFetchedProperties = {
 
 
 @dynamic bundleID;
-
-
-
-
-
-
-@dynamic icon;
-
-
-
-
-
-
-@dynamic iconData;
 
 
 

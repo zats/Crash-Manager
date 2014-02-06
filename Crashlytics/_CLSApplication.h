@@ -7,8 +7,6 @@
 extern const struct CLSApplicationAttributes {
 	__unsafe_unretained NSString *applicationID;
 	__unsafe_unretained NSString *bundleID;
-	__unsafe_unretained NSString *icon;
-	__unsafe_unretained NSString *iconData;
 	__unsafe_unretained NSString *iconURLString;
 	__unsafe_unretained NSString *impactedDevicesCount;
 	__unsafe_unretained NSString *latestBuild;
@@ -34,8 +32,6 @@ extern const struct CLSApplicationFetchedProperties {
 @class CLSOrganization;
 
 
-
-@class NSObject;
 
 
 
@@ -73,26 +69,6 @@ extern const struct CLSApplicationFetchedProperties {
 
 
 //- (BOOL)validateBundleID:(id*)value_ error:(NSError**)error_;
-
-
-
-
-
-@property (nonatomic, strong) id icon;
-
-
-
-//- (BOOL)validateIcon:(id*)value_ error:(NSError**)error_;
-
-
-
-
-
-@property (nonatomic, strong) NSData* iconData;
-
-
-
-//- (BOOL)validateIconData:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -232,18 +208,6 @@ extern const struct CLSApplicationFetchedProperties {
 
 - (NSString*)primitiveBundleID;
 - (void)setPrimitiveBundleID:(NSString*)value;
-
-
-
-
-- (id)primitiveIcon;
-- (void)setPrimitiveIcon:(id)value;
-
-
-
-
-- (NSData*)primitiveIconData;
-- (void)setPrimitiveIconData:(NSData*)value;
 
 
 
