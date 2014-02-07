@@ -1,6 +1,9 @@
 language: objective-c
-xcode_project: CrashManager.xcodeproj
-xcode_scheme: CrashManager
+before_install:
+	- gem install cocoapods
+	- brew update
+    - brew install xctool
+script: xctool -workspace CrashManager.xcworkspace -scheme CrashManager
 
 branches:
   only:
