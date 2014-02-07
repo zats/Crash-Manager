@@ -71,11 +71,7 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
-	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:NSStringFromClass([self class])];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-
-	RACSignal *viewWillDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
+    RACSignal *viewWillDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
 	[[[[[CLSAccount activeAccountChangedSignal] takeUntil:viewWillDisappear] distinctUntilChanged] filter:^BOOL(CLSAccount *account) {
 		return ![account canCreateSession];
 	}] subscribeNext:^(CLSAccount *account) {

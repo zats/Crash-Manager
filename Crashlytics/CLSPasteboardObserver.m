@@ -194,13 +194,7 @@
 												withMessage:message];
 	[alert SH_addButtonWithTitle:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageCancelTitle", nil)
 					   withBlock:nil];
-	[alert SH_addButtonCancelWithTitle:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageNavigateTitle", nil) withBlock:^(NSInteger theButtonIndex) {
-		id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-		[tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"navigation"
-															  action:@"clipboard_issue_navigation"
-															   label:[NSString stringWithFormat:@"%@/%@/%@", organizationAlias, bundleID, issueID]
-															   value:nil] build]];
-		
+	[alert SH_addButtonCancelWithTitle:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageNavigateTitle", nil) withBlock:^(NSInteger theButtonIndex) {		
 		CLSOrganization *organization = [CLSOrganization MR_findFirstByAttribute:CLSOrganizationAttributes.alias
 																	   withValue:organizationAlias];
 		

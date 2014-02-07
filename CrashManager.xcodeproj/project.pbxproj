@@ -41,7 +41,6 @@
 		5CA538B61872D4E200544C7A /* CLSTimeRangeFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */; };
 		5CB3C0881871BE5200CE00D7 /* CLSFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */; };
 		5CBE4756189D4A05002D3E90 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBE4755189D4A05002D3E90 /* Crashlytics.framework */; };
-		5CBE475A189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */; };
 		5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */; };
 		5CBE4764189D64AF002D3E90 /* UIViewController+OpenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */; };
 		5CC3F7E41876A12D003C2FAC /* CLSLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */; };
@@ -130,8 +129,6 @@
 		5CB3C0861871BE5200CE00D7 /* CLSFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSFiltersViewController.h; sourceTree = "<group>"; };
 		5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSFiltersViewController.m; sourceTree = "<group>"; };
 		5CBE4755189D4A05002D3E90 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
-		5CBE4758189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSGoogleAnalyticsLogger.h; sourceTree = "<group>"; };
-		5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSGoogleAnalyticsLogger.m; sourceTree = "<group>"; };
 		5CBE475E189D58A6002D3E90 /* NSURLRequest+CLSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+CLSLogging.h"; sourceTree = "<group>"; };
 		5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+CLSLogging.m"; sourceTree = "<group>"; };
 		5CBE4762189D64AF002D3E90 /* UIViewController+OpenSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+OpenSource.h"; sourceTree = "<group>"; };
@@ -208,7 +205,6 @@
 				5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */,
 				5CC3F7F018786E7A003C2FAC /* CLSPasteboardObserver.h */,
 				5CC3F7F118786E7A003C2FAC /* CLSPasteboardObserver.m */,
-				5CBE4757189D4E8B002D3E90 /* CocoaLumberjack + Google Analytics */,
 				5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */,
 				5CE94DF018534976003C7DB1 /* Supporting Files */,
 			);
@@ -344,15 +340,6 @@
 				5C67C71418662F8700EC5943 /* CLSBuildsFilterViewController.m */,
 			);
 			name = Filters;
-			sourceTree = "<group>";
-		};
-		5CBE4757189D4E8B002D3E90 /* CocoaLumberjack + Google Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				5CBE4758189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.h */,
-				5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */,
-			);
-			name = "CocoaLumberjack + Google Analytics";
 			sourceTree = "<group>";
 		};
 		5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */ = {
@@ -640,7 +627,6 @@
 				5CE94DFA18534976003C7DB1 /* CLSAppDelegate.m in Sources */,
 				5C4B068D18535D9A0061485A /* CLSTableViewController.m in Sources */,
 				5C6D3CF618534CA9005E97D1 /* _CLSOrganization.m in Sources */,
-				5CBE475A189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m in Sources */,
 				5CEDD1CA187050BC00B6A39A /* CLSApplicationCell.m in Sources */,
 				5C6D3CFA18534CA9005E97D1 /* CLSBuild.m in Sources */,
 				5C6D3CF218534CA9005E97D1 /* _CLSAccount.m in Sources */,

@@ -27,12 +27,6 @@
 
     // AppSee
     [Appsee start:@"e6f5703eda674ec59beb9ab49b712d4a"];
-    
-    // Google Analytics
-	id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-46469219-2"];
-	NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
-    [tracker set:kGAIAppVersion value:version];
-	[GAI sharedInstance].logger.logLevel = kGAILogLevelInfo;
 
     // Configuration
 	[[CLSConfiguration sharedInstance] updateConfigurationPlistWithCompletionHandler:^(NSDictionary *defaults, NSError *error) {
@@ -40,7 +34,7 @@
 		[Crashlytics startWithAPIKey:apiKey];
 		
 		if (error) {
-			[[GAI sharedInstance].logger error:[NSString stringWithFormat:@"Failed to fetch remote plist: %@", error]];
+            DDLogError(@"Failed to fetch remote plist: %@", error);
 		}
 	}];
 	

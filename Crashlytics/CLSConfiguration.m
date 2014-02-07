@@ -8,10 +8,8 @@
 
 #import "CLSConfiguration.h"
 
-#import "CLSGoogleAnalyticsLogger.h"
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import <CocoaLumberjack/DDFileLogger.h>
-#import <GoogleAnalytics-iOS-SDK/GAILogger.h>
 #import <GroundControl/NSUserDefaults+GroundControl.h>
 
 @interface CLSConfiguration ()
@@ -200,15 +198,7 @@
 }
 
 - (void)_setupLogger {
-#ifdef DEBUG
-    [GAI sharedInstance].logger.logLevel = kGAILogLevelVerbose;
-#else
-    [GAI sharedInstance].logger.logLevel = kGAILogLevelWarning;
-#endif
-    
-    [DDTTYLogger sharedInstance].logFormatter = [[DDLogFileFormatterDefault alloc] init];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
-    [DDLog addLogger:[CLSGoogleAnalyticsLogger sharedInstance]];
 }
 
 - (void)_setupConfigurationFile {
