@@ -30,12 +30,12 @@ PODS:
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
   - ProtobufObjC (0.0.1)
-  - ReactiveCocoa (2.2):
+  - ReactiveCocoa (2.2.3):
     - ReactiveCocoa/Core
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/Core (2.2):
+  - ReactiveCocoa/Core (2.2.3):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.2)
+  - ReactiveCocoa/no-arc (2.2.3)
   - SHActionSheetBlocks (2.3.0)
   - SHAlertViewBlocks (1.2.0)
   - SHBarButtonItemBlocks (1.2.0)
@@ -87,7 +87,7 @@ SPEC CHECKSUMS:
   GroundControl: 7246542fbddc789a448c7a60e4f4df94881972f9
   MagicalRecord: 95d49d74ef752cd52f6ad87bcb474817fc3978cf
   ProtobufObjC: 3b68d87fe1165e85559eedd583eb65ffd913ff9f
-  ReactiveCocoa: 5b340678dc3168d6c9a2ca70fb83df683c08ca02
+  ReactiveCocoa: b3cb6ebd50f1a0f2e39c6fd7ce3c428b6efcb22b
   SHActionSheetBlocks: d1194997eb32ea752a906043ac97887615a270ad
   SHAlertViewBlocks: 3ea75e2d9a1221e59deed52818759a8c25f5f77f
   SHBarButtonItemBlocks: 066ae66720be9ce1531d9d5e95350031b8aae0fe
