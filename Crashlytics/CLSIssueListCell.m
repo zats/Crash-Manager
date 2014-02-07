@@ -9,11 +9,11 @@
 #import "CLSIssueListCell.h"
 
 @interface CLSIssueListCell ()
-@property (strong, nonatomic, readwrite) IBOutlet UILabel *issueNumberLabel;
-@property (strong, nonatomic, readwrite) IBOutlet UILabel *issueTitleLabel;
-@property (strong, nonatomic, readwrite) IBOutlet UILabel *issueSubtitleLabel;
-@property (strong, nonatomic, readwrite) IBOutlet UILabel *issueDetailsLabel;
-@property (strong, nonatomic, readwrite) IBOutlet NSLayoutConstraint *baseLayoutConstraint;
+@property (weak, nonatomic, readwrite) IBOutlet UILabel *issueNumberLabel;
+@property (weak, nonatomic, readwrite) IBOutlet UILabel *issueTitleLabel;
+@property (weak, nonatomic, readwrite) IBOutlet UILabel *issueSubtitleLabel;
+@property (weak, nonatomic, readwrite) IBOutlet UILabel *issueDetailsLabel;
+@property (weak, nonatomic, readwrite) IBOutlet NSLayoutConstraint *baseLayoutConstraint;
 @end
 
 @implementation CLSIssueListCell

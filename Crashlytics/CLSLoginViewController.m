@@ -10,7 +10,6 @@
 
 #import "CLSAccount.h"
 #import "CLSAPIClient.h"
-#import "CLSLoginCell.h"
 #import "CLSConfiguration.h"
 
 typedef NS_ENUM(NSInteger, CLSLoginSections) {

@@ -44,7 +44,6 @@
 		5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */; };
 		5CBE4764189D64AF002D3E90 /* UIViewController+OpenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */; };
 		5CC3F7E41876A12D003C2FAC /* CLSLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */; };
-		5CC3F7E81876B192003C2FAC /* CLSLoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E71876B192003C2FAC /* CLSLoginCell.m */; };
 		5CC3F7EB1876C933003C2FAC /* CLSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7EA1876C933003C2FAC /* CLSError.m */; };
 		5CC3F7F218786E7A003C2FAC /* CLSPasteboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7F118786E7A003C2FAC /* CLSPasteboardObserver.m */; };
 		5CE8926F186F13860017F68A /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CE8926E186F13860017F68A /* configuration.plist */; };
@@ -135,8 +134,6 @@
 		5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+OpenSource.m"; sourceTree = "<group>"; };
 		5CC3F7E21876A12D003C2FAC /* CLSLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLogViewController.h; sourceTree = "<group>"; };
 		5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSLogViewController.m; sourceTree = "<group>"; };
-		5CC3F7E61876B191003C2FAC /* CLSLoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLoginCell.h; sourceTree = "<group>"; };
-		5CC3F7E71876B192003C2FAC /* CLSLoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSLoginCell.m; sourceTree = "<group>"; };
 		5CC3F7E91876C933003C2FAC /* CLSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSError.h; sourceTree = "<group>"; };
 		5CC3F7EA1876C933003C2FAC /* CLSError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSError.m; sourceTree = "<group>"; };
 		5CC3F7EE1876D80D003C2FAC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -365,8 +362,6 @@
 			children = (
 				5C4B068518535B6F0061485A /* CLSLoginViewController.h */,
 				5C4B068618535B6F0061485A /* CLSLoginViewController.m */,
-				5CC3F7E61876B191003C2FAC /* CLSLoginCell.h */,
-				5CC3F7E71876B192003C2FAC /* CLSLoginCell.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -619,7 +614,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CE94DF618534976003C7DB1 /* main.m in Sources */,
-				5CC3F7E81876B192003C2FAC /* CLSLoginCell.m in Sources */,
 				5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */,
 				5C4B0684185356000061485A /* CLSOrganizationsViewController.m in Sources */,
 				5C6D3CF818534CA9005E97D1 /* CLSApplication.m in Sources */,

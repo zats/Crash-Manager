@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CLSIssueListCell : UITableViewCell
-@property (strong, nonatomic, readonly) UILabel *issueNumberLabel;
-@property (strong, nonatomic, readonly) UILabel *issueTitleLabel;
-@property (strong, nonatomic, readonly) UILabel *issueSubtitleLabel;
-@property (strong, nonatomic, readonly) UILabel *issueDetailsLabel;
+@property (weak, nonatomic, readonly) UILabel *issueNumberLabel;
+@property (weak, nonatomic, readonly) UILabel *issueTitleLabel;
+@property (weak, nonatomic, readonly) UILabel *issueSubtitleLabel;
+@property (weak, nonatomic, readonly) UILabel *issueDetailsLabel;
 
 @property (strong, nonatomic, readonly) NSLayoutConstraint *baseLayoutConstraint;
 @end
