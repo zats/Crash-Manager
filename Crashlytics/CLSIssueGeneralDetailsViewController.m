@@ -11,6 +11,7 @@
 #import "CLSIncident.h"
 #import "CLSIncident_Session+Crashlytics.h"
 #import "CLSLogViewController.h"
+#import "UIViewController+OpenSource.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
 typedef NS_ENUM(NSInteger, CLSSections) {
@@ -49,6 +50,8 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    [self cls_exposeSource];
 	
 	@weakify(self);
 	[[RACObserve(self, session)

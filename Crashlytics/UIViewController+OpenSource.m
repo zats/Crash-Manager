@@ -9,6 +9,8 @@
 #import "UIViewController+OpenSource.h"
 
 #import "CLSConfiguration.h"
+#import <PBWebViewController/PBWebViewController.h>
+#import <SHBarButtonItemBlocks/SHBarButtonItemBlocks.h>
 
 @implementation UIViewController (OpenSource)
 
@@ -27,6 +29,11 @@
         if (pinchGestureRecognizer.state != UIGestureRecognizerStateEnded) {
             return;
         }
+        
+        if (pinchGestureRecognizer.scale >= 1) {
+            return;
+        }
+        
         // At this point [self class] would point to the
         // ClassName_RACSelectorSignal instead of ClassName
         NSURL *URL = [[CLSConfiguration sharedInstance] implementationURLForClass:className];
@@ -34,10 +41,26 @@
             return;
         }
         
-        [[UIApplication sharedApplication] openURL:URL];
+        [self _showWebViewControllerWithURL:URL];
     }];
     [self.view addGestureRecognizer:pinchGestureRecognizer];
-    
+}
+
+#pragma mark - Private
+
+- (void)_showWebViewControllerWithURL:(NSURL *)URL {
+    PBWebViewController *webViewController = [[PBWebViewController alloc] init];
+    webViewController.URL = URL;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:webViewController];
+    @weakify(self);
+    UIBarButtonItem *closeBarButtonItem = [UIBarButtonItem SH_barButtonItemWithBarButtonSystemItem:UIBarButtonSystemItemCancel withBlock:^(UIBarButtonItem *sender) {
+        @strongify(self);
+        [navigationController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    webViewController.navigationItem.leftBarButtonItem = closeBarButtonItem;
+    [self presentViewController:navigationController
+                       animated:YES
+                     completion:nil];
 }
 
 @end

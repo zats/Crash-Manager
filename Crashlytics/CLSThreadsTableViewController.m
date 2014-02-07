@@ -10,6 +10,7 @@
 
 #import "CLSIncident.h"
 #import "CLSIncident_Session+Crashlytics.h"
+#import "UIViewController+OpenSource.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
 @interface CLSThreadsTableViewController ()
@@ -24,25 +25,36 @@
 @implementation CLSThreadsTableViewController
 @synthesize session = _session;
 
-- (void)setSession:(CLSSession *)session {
-	_session = session;
-	
-	if (![self.session.events count]) {
-		self.threads = nil;
-		self.execution = nil;
-		self.event = nil;
-		self.crashedThread = nil;
-	} else {
-		self.event = [session lastEvent];
-		self.execution = self.event.app.execution;
-		self.threads = self.execution.threads;
-		self.crashedThread = [self.session crashedThread];
-	}
-	
-	if ([self isViewLoaded]) {
-		[self.tableView reloadData];
-	}
+
+#pragma mark - UIViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self cls_exposeSource];
+    
+    @weakify(self);
+    [RACObserve(self, session) subscribeNext:^(CLSSession *session) {
+        @strongify(self);
+
+    	if (![session.events count]) {
+            self.threads = nil;
+            self.execution = nil;
+            self.event = nil;
+            self.crashedThread = nil;
+        } else {
+            self.event = [session lastEvent];
+            self.execution = self.event.app.execution;
+            self.threads = self.execution.threads;
+            self.crashedThread = [self.session crashedThread];
+        }
+        
+        if ([self isViewLoaded]) {
+            [self.tableView reloadData];
+        }
+    }];
 }
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return [self.threads count];
@@ -94,6 +106,8 @@ titleForHeaderInSection:(NSInteger)section {
 
 	return cell;
 }
+
+#pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
