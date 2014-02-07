@@ -23,8 +23,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [CLSConfiguration sharedInstance];
     
-    // TODO: Stick with one: AppSee or GoogleAnalytics
-
     // AppSee
     [Appsee start:@"e6f5703eda674ec59beb9ab49b712d4a"];
 

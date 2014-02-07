@@ -166,25 +166,21 @@
 	
 	self.lastNavigatedURLString = urlString;
 	
-	UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    // Using first object rather than keyWindow property since it's invalid
+    // when alert or action sheet is presented.
+    UIWindow *window = [[UIApplication sharedApplication].windows firstObject];
+	UIViewController *rootViewController = window.rootViewController;
 	if ([rootViewController isKindOfClass:[UINavigationController class]]) {
 		UIViewController *currentlyVisibleViewController = [((UINavigationController *)rootViewController).viewControllers lastObject];
 		if ([currentlyVisibleViewController isKindOfClass:[CLSIssueDetailsViewController class]]) {
-			BOOL showCurrentIssueID = [((CLSIssueDetailsViewController *)currentlyVisibleViewController).issue.issueID isEqualToString:issueID];
-			if (showCurrentIssueID) {
+			BOOL alreadyShowsIssue = [((CLSIssueDetailsViewController *)currentlyVisibleViewController).issue.issueID isEqualToString:issueID];
+			if (alreadyShowsIssue) {
 				// no need to prompt user if we're already looking at the issue details
 				return;
 			}
 		}
 	}
 	
-    
-    
-    
-    
- 
-    
-    
 	NSString *message = NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessage", nil);
 	message = [message stringByAppendingFormat:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageOrganization", nil), organizationAlias];
 	message = [message stringByAppendingFormat:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageApp", nil), bundleID];
@@ -203,7 +199,6 @@
 
 		CLSIssue *issue = [CLSIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
 										 withValue:issueID];
-		
 		
 		if (!issue) {
 			issue = [CLSIssue MR_createEntity];
