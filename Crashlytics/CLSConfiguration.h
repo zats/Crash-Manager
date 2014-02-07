@@ -17,6 +17,9 @@ typedef void(^CLSSettingsUpdateHandler)(NSDictionary *defaults, NSError *error);
 @property (nonatomic, readonly) NSURL *signUpURL;
 @property (nonatomic, readonly) NSURL *forgotPasswordURL;
 
+- (NSURL *)implementationURLForClass:(Class)className;
+- (NSURL *)interfaceURLForClass:(Class)className;
+
 - (void)updateConfigurationPlistWithCompletionHandler:(CLSSettingsUpdateHandler)completion;
 
 @end

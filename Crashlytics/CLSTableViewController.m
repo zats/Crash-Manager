@@ -10,6 +10,7 @@
 
 #import "CLSAccount.h"
 #import "CLSOrganization.h"
+#import "UIViewController+OpenSource.h"
 #import <Crashlytics/Crashlytics.h>
 
 @interface CLSTableViewController () <NSFetchedResultsControllerDelegate>
@@ -55,6 +56,11 @@
 
 #pragma mark - UIViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self cls_exposeSource];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 		
@@ -65,11 +71,7 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
-	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:NSStringFromClass([self class])];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-
-	RACSignal *viewWillDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
+    RACSignal *viewWillDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
 	[[[[[CLSAccount activeAccountChangedSignal] takeUntil:viewWillDisappear] distinctUntilChanged] filter:^BOOL(CLSAccount *account) {
 		return ![account canCreateSession];
 	}] subscribeNext:^(CLSAccount *account) {

@@ -3,7 +3,7 @@
     <entity name="Account" representedClassName="CLSAccount" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="organizations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Organization" inverseName="accounts" inverseEntity="Organization" syncable="YES"/>
@@ -11,8 +11,6 @@
     <entity name="Application" representedClassName="CLSApplication" syncable="YES">
         <attribute name="applicationID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="bundleID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="icon" optional="YES" transient="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="iconData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="iconURLString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="impactedDevicesCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="latestBuild" optional="YES" attributeType="String" syncable="YES"/>
@@ -65,11 +63,11 @@
         <relationship name="applications" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Application" inverseName="organization" inverseEntity="Application" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Account" positionX="-153" positionY="-306" width="128" height="135"/>
-        <element name="Application" positionX="-135" positionY="-87" width="128" height="268"/>
-        <element name="Build" positionX="223" positionY="-3" width="128" height="120"/>
-        <element name="Filter" positionX="36" positionY="152" width="128" height="118"/>
-        <element name="Issue" positionX="421" positionY="-42" width="128" height="240"/>
-        <element name="Organization" positionX="106" positionY="-186" width="128" height="163"/>
+        <element name="Account" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Application" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Build" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Filter" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Issue" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Organization" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

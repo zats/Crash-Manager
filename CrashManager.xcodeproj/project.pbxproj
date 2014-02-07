@@ -41,8 +41,8 @@
 		5CA538B61872D4E200544C7A /* CLSTimeRangeFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */; };
 		5CB3C0881871BE5200CE00D7 /* CLSFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */; };
 		5CBE4756189D4A05002D3E90 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBE4755189D4A05002D3E90 /* Crashlytics.framework */; };
-		5CBE475A189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */; };
 		5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */; };
+		5CBE4764189D64AF002D3E90 /* UIViewController+OpenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */; };
 		5CC3F7E41876A12D003C2FAC /* CLSLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */; };
 		5CC3F7E81876B192003C2FAC /* CLSLoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E71876B192003C2FAC /* CLSLoginCell.m */; };
 		5CC3F7EB1876C933003C2FAC /* CLSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7EA1876C933003C2FAC /* CLSError.m */; };
@@ -129,10 +129,10 @@
 		5CB3C0861871BE5200CE00D7 /* CLSFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSFiltersViewController.h; sourceTree = "<group>"; };
 		5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSFiltersViewController.m; sourceTree = "<group>"; };
 		5CBE4755189D4A05002D3E90 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
-		5CBE4758189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSGoogleAnalyticsLogger.h; sourceTree = "<group>"; };
-		5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSGoogleAnalyticsLogger.m; sourceTree = "<group>"; };
 		5CBE475E189D58A6002D3E90 /* NSURLRequest+CLSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+CLSLogging.h"; sourceTree = "<group>"; };
 		5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+CLSLogging.m"; sourceTree = "<group>"; };
+		5CBE4762189D64AF002D3E90 /* UIViewController+OpenSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+OpenSource.h"; sourceTree = "<group>"; };
+		5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+OpenSource.m"; sourceTree = "<group>"; };
 		5CC3F7E21876A12D003C2FAC /* CLSLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLogViewController.h; sourceTree = "<group>"; };
 		5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSLogViewController.m; sourceTree = "<group>"; };
 		5CC3F7E61876B191003C2FAC /* CLSLoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLoginCell.h; sourceTree = "<group>"; };
@@ -199,12 +199,13 @@
 		5C3BCF301868AF33004BB1FA /* Generic */ = {
 			isa = PBXGroup;
 			children = (
-				5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */,
-				5CBE4757189D4E8B002D3E90 /* CocoaLumberjack + Google Analytics */,
+				5C6A2BCF18A4121400C529CE /* Image */,
+				5CBE4761189D649B002D3E90 /* UIViewController+OpenSource */,
 				5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */,
 				5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */,
 				5CC3F7F018786E7A003C2FAC /* CLSPasteboardObserver.h */,
 				5CC3F7F118786E7A003C2FAC /* CLSPasteboardObserver.m */,
+				5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */,
 				5CE94DF018534976003C7DB1 /* Supporting Files */,
 			);
 			name = Generic;
@@ -276,6 +277,13 @@
 			name = Abstract;
 			sourceTree = "<group>";
 		};
+		5C6A2BCF18A4121400C529CE /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
 		5C6D3CDD18534CA9005E97D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,15 +342,6 @@
 			name = Filters;
 			sourceTree = "<group>";
 		};
-		5CBE4757189D4E8B002D3E90 /* CocoaLumberjack + Google Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				5CBE4758189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.h */,
-				5CBE4759189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m */,
-			);
-			name = "CocoaLumberjack + Google Analytics";
-			sourceTree = "<group>";
-		};
 		5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +349,15 @@
 				5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */,
 			);
 			name = "NSURLRequest+Logging";
+			sourceTree = "<group>";
+		};
+		5CBE4761189D649B002D3E90 /* UIViewController+OpenSource */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE4762189D64AF002D3E90 /* UIViewController+OpenSource.h */,
+				5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */,
+			);
+			name = "UIViewController+OpenSource";
 			sourceTree = "<group>";
 		};
 		5CC3F7E51876B11B003C2FAC /* Login */ = {
@@ -456,6 +464,7 @@
 				8AF3D6D6FDA9447EBB27B388 /* Copy Pods Resources */,
 				5C6BF2AA18637D38007C483D /* Crashlytics */,
 				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
+				5CBE4765189D7A25002D3E90 /* Convert TODO and FIXME into warnings */,
 			);
 			buildRules = (
 			);
@@ -530,6 +539,20 @@
 			shellPath = /bin/sh;
 			shellScript = "./Crashlytics/Crashlytics.framework/run 1806f0e415eca8782897d8254a1363122c77c03a";
 		};
+		5CBE4765189D7A25002D3E90 /* Convert TODO and FIXME into warnings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Convert TODO and FIXME into warnings";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# http://matthewmorey.com/xcode-build-phases\nKEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+		};
 		5CDE08DB188A872F0051124A /* Automatic Build incrementation */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -542,7 +565,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# increment build number only when building release builds that are not app store.\n# this way we keep the same version number for a tested version in production\nif [[ ! ${CONFIGURATION} =~ Appstore ]] && [[ ${CONFIGURATION} =~ Release ]] ; then\necho \"Increment version number - release build detected\"\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\nelse\necho \"Skipping increment version number - configuration is not release or environment is production\"\nfi";
+			shellScript = "# increment build number only when building release builds that are not app store.\n# this way we keep the same version number for a tested version in production\nif [[ ! ${CONFIGURATION} =~ Appstore ]] && [[ ${CONFIGURATION} =~ Release ]] ; then\necho \"Increment version number - release build detected\"\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\nfi";
 		};
 		8AF3D6D6FDA9447EBB27B388 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -604,7 +627,6 @@
 				5CE94DFA18534976003C7DB1 /* CLSAppDelegate.m in Sources */,
 				5C4B068D18535D9A0061485A /* CLSTableViewController.m in Sources */,
 				5C6D3CF618534CA9005E97D1 /* _CLSOrganization.m in Sources */,
-				5CBE475A189D4FFB002D3E90 /* CLSGoogleAnalyticsLogger.m in Sources */,
 				5CEDD1CA187050BC00B6A39A /* CLSApplicationCell.m in Sources */,
 				5C6D3CFA18534CA9005E97D1 /* CLSBuild.m in Sources */,
 				5C6D3CF218534CA9005E97D1 /* _CLSAccount.m in Sources */,
@@ -630,6 +652,7 @@
 				5C401853186B3ABA00CC71AE /* CLSIssueExceptionTableViewController.m in Sources */,
 				5CE94E2218534BE0003C7DB1 /* Crashlytics.xcdatamodeld in Sources */,
 				5C401860186B829600CC71AE /* CLSThreadsTableViewController.m in Sources */,
+				5CBE4764189D64AF002D3E90 /* UIViewController+OpenSource.m in Sources */,
 				5C6D3CF518534CA9005E97D1 /* _CLSBuild.m in Sources */,
 				5C4B069518545AFD0061485A /* CLSApplicationsTableViewController.m in Sources */,
 				5CEDD1CD18705DE500B6A39A /* CLSConfiguration.m in Sources */,

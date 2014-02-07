@@ -1,10 +1,10 @@
 #import "CLSAccount.h"
 
 #import "CLSOrganization.h"
-
-//#error Override password accessor to route it through the keychain, or make it transient
+#import <SSKeychain/SSKeychain.h>
 
 static NSString *const CLSCurrentAccountKeyName = @"CLSCurrentAccountKeyName";
+static NSString *const CLSKeychainServiceName = @"CLSKeychainServiceName";
 
 NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidChangeNotification";
 
@@ -67,6 +67,43 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 
 - (BOOL)canRestoreSession {
 	return [self.token length];
+}
+
+- (NSString *)password {
+    [self willAccessValueForKey:CLSAccountAttributes.password];
+    NSString *result = self.primitivePassword;
+    [self didAccessValueForKey:CLSAccountAttributes.password];
+    if (result) {
+        return result;
+    }
+    
+    NSError *error = nil;
+    SSKeychainQuery *query = [[SSKeychainQuery alloc] init];
+    query.service = CLSKeychainServiceName;
+    query.account = self.email;
+    [query fetch:&error];
+    
+    if (error) {
+        if ([error code] != errSecItemNotFound) {
+            DDLogError(@"Failed to fetch password %@", error);
+        }
+        self.primitivePassword = nil;
+    }
+    self.primitivePassword = query.password;
+    return self.primitivePassword;
+}
+
+- (void)willSave {
+    NSError *error = nil;
+    SSKeychainQuery *query = [[SSKeychainQuery alloc] init];
+    query.service = CLSKeychainServiceName;
+    query.account = self.primitiveEmail;
+    query.password = self.primitivePassword;
+    if (![query save:&error]) {
+        DDLogError(@"Failed to persist password to the keychain %@", error);
+    }
+
+    [super willSave];
 }
 
 @end

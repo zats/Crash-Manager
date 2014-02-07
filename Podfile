@@ -1,6 +1,6 @@
-# Uncomment this line to define a global platform for your project
-# platform :ios, "6.0"
-
+#
+# Crash Manager target
+#
 target "CrashManager" do
 	pod 'MagicalRecord'
 	pod 'AFNetworking'
@@ -9,17 +9,14 @@ target "CrashManager" do
 	pod 'GroundControl'
 	pod 'SHUIKitBlocks'
 	pod 'TTTLocalizedPluralString'
-	pod 'GoogleAnalytics-iOS-SDK'
 	pod 'CocoaLumberjack'
+    pod 'Appsee'
+    pod 'SSKeychain'
 
 	inhibit_all_warnings!
 end
 
-# target "CrashManagerTests" do
-# end
-
 post_install do | installer |
 	require 'fileutils'
 	FileUtils.cp_r("Pods/Pods-CrashManager-acknowledgements.plist", "Crashlytics/Settings.bundle/Acknowledgements.plist", :remove_destination => true)
-	# puts "#{target.name}"
 end

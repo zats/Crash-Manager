@@ -10,6 +10,7 @@
 
 #import "CLSLoginViewController.h"
 #import "CLSAccount.h"
+#import "UIViewController+OpenSource.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface CLSViewController ()
@@ -41,13 +42,14 @@
 
 #pragma mark - UIViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self cls_exposeSource];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 
-	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:NSStringFromClass([self class])];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-	
 	RACSignal *viewWillDisappearSignal = [self rac_signalForSelector:@selector(viewWillDisappear:)];
 	
 	[[[CLSAccount activeAccountChangedSignal] takeUntil:viewWillDisappearSignal] subscribeNext:^(id x) {
