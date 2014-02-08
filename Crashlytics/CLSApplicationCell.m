@@ -9,10 +9,10 @@
 #import "CLSApplicationCell.h"
 
 @interface CLSApplicationCell ()
-@property (strong, nonatomic, readwrite) IBOutlet UIImageView *applicationIconImageView;
-@property (strong, nonatomic, readwrite) IBOutlet UILabel *applicationNameLabel;
-@property (strong, nonatomic, readwrite) IBOutlet UILabel *applicationBundleIDLabel;
-@property (strong, nonatomic, readwrite) IBOutlet UILabel *applicationDetailsLabel;
+@property (weak, nonatomic, readwrite) IBOutlet UIImageView *applicationIconImageView;
+@property (weak, nonatomic, readwrite) IBOutlet UILabel *applicationNameLabel;
+@property (weak, nonatomic, readwrite) IBOutlet UILabel *applicationBundleIDLabel;
+@property (weak, nonatomic, readwrite) IBOutlet UILabel *applicationDetailsLabel;
 
 @property (strong, nonatomic, readwrite) IBOutlet NSLayoutConstraint *baseLayoutConstraint;
 @end
@@ -42,8 +42,8 @@
 #pragma mark - NSObject
 
 - (void)awakeFromNib {
-	[super awakeFromNib];
 	[self _init];
+	[super awakeFromNib];
 }
 
 @end

@@ -37,6 +37,7 @@
 		5C85507518720FB8008F5038 /* _CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507218720FB8008F5038 /* _CLSFilter.m */; };
 		5C85507618720FB8008F5038 /* CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507418720FB8008F5038 /* CLSFilter.m */; };
 		5C8550791872191C008F5038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C85507B1872191C008F5038 /* Localizable.strings */; };
+		5C87FC7818A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C87FC7718A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m */; };
 		5C9AC77C186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */; };
 		5CA538B61872D4E200544C7A /* CLSTimeRangeFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */; };
 		5CB3C0881871BE5200CE00D7 /* CLSFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */; };
@@ -44,7 +45,6 @@
 		5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */; };
 		5CBE4764189D64AF002D3E90 /* UIViewController+OpenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */; };
 		5CC3F7E41876A12D003C2FAC /* CLSLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */; };
-		5CC3F7E81876B192003C2FAC /* CLSLoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E71876B192003C2FAC /* CLSLoginCell.m */; };
 		5CC3F7EB1876C933003C2FAC /* CLSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7EA1876C933003C2FAC /* CLSError.m */; };
 		5CC3F7F218786E7A003C2FAC /* CLSPasteboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7F118786E7A003C2FAC /* CLSPasteboardObserver.m */; };
 		5CE8926F186F13860017F68A /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CE8926E186F13860017F68A /* configuration.plist */; };
@@ -72,7 +72,6 @@
 		5C3CEAB618671C4000F8DDC6 /* CLSIssuesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssuesTableViewController.m; sourceTree = "<group>"; };
 		5C401851186B3ABA00CC71AE /* CLSIssueExceptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueExceptionTableViewController.h; sourceTree = "<group>"; };
 		5C401852186B3ABA00CC71AE /* CLSIssueExceptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueExceptionTableViewController.m; sourceTree = "<group>"; };
-		5C401855186B418A00CC71AE /* CLSSessionDetailsPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSSessionDetailsPresenter.h; sourceTree = "<group>"; };
 		5C40185E186B829600CC71AE /* CLSThreadsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSThreadsTableViewController.h; sourceTree = "<group>"; };
 		5C40185F186B829600CC71AE /* CLSThreadsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSThreadsTableViewController.m; sourceTree = "<group>"; };
 		5C401862186C2CE000CC71AE /* CLSIncident_Session+Crashlytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CLSIncident_Session+Crashlytics.h"; path = "Crashlytics/CLSIncident_Session+Crashlytics.h"; sourceTree = SOURCE_ROOT; };
@@ -122,6 +121,8 @@
 		5C85507318720FB8008F5038 /* CLSFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSFilter.h; path = Crashlytics/CLSFilter.h; sourceTree = SOURCE_ROOT; };
 		5C85507418720FB8008F5038 /* CLSFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLSFilter.m; path = Crashlytics/CLSFilter.m; sourceTree = SOURCE_ROOT; };
 		5C85507A1872191C008F5038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5C87FC7618A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSSessionDetailsAbstractViewController.h; sourceTree = "<group>"; };
+		5C87FC7718A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSSessionDetailsAbstractViewController.m; sourceTree = "<group>"; };
 		5C9AC77A186C74190037DC36 /* CLSIssueGeneralDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueGeneralDetailsViewController.h; sourceTree = "<group>"; };
 		5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueGeneralDetailsViewController.m; sourceTree = "<group>"; };
 		5CA538B41872D4E200544C7A /* CLSTimeRangeFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSTimeRangeFilterViewController.h; sourceTree = "<group>"; };
@@ -135,8 +136,6 @@
 		5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+OpenSource.m"; sourceTree = "<group>"; };
 		5CC3F7E21876A12D003C2FAC /* CLSLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLogViewController.h; sourceTree = "<group>"; };
 		5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSLogViewController.m; sourceTree = "<group>"; };
-		5CC3F7E61876B191003C2FAC /* CLSLoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLoginCell.h; sourceTree = "<group>"; };
-		5CC3F7E71876B192003C2FAC /* CLSLoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSLoginCell.m; sourceTree = "<group>"; };
 		5CC3F7E91876C933003C2FAC /* CLSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSError.h; sourceTree = "<group>"; };
 		5CC3F7EA1876C933003C2FAC /* CLSError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSError.m; sourceTree = "<group>"; };
 		5CC3F7EE1876D80D003C2FAC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -231,9 +230,10 @@
 				5C40185F186B829600CC71AE /* CLSThreadsTableViewController.m */,
 				5C9AC77A186C74190037DC36 /* CLSIssueGeneralDetailsViewController.h */,
 				5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */,
-				5C401855186B418A00CC71AE /* CLSSessionDetailsPresenter.h */,
 				5CC3F7E21876A12D003C2FAC /* CLSLogViewController.h */,
 				5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */,
+				5C87FC7618A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.h */,
+				5C87FC7718A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m */,
 			);
 			name = "Crash Details View Controllers";
 			sourceTree = "<group>";
@@ -365,8 +365,6 @@
 			children = (
 				5C4B068518535B6F0061485A /* CLSLoginViewController.h */,
 				5C4B068618535B6F0061485A /* CLSLoginViewController.m */,
-				5CC3F7E61876B191003C2FAC /* CLSLoginCell.h */,
-				5CC3F7E71876B192003C2FAC /* CLSLoginCell.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -619,7 +617,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CE94DF618534976003C7DB1 /* main.m in Sources */,
-				5CC3F7E81876B192003C2FAC /* CLSLoginCell.m in Sources */,
 				5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */,
 				5C4B0684185356000061485A /* CLSOrganizationsViewController.m in Sources */,
 				5C6D3CF818534CA9005E97D1 /* CLSApplication.m in Sources */,
@@ -655,6 +652,7 @@
 				5CBE4764189D64AF002D3E90 /* UIViewController+OpenSource.m in Sources */,
 				5C6D3CF518534CA9005E97D1 /* _CLSBuild.m in Sources */,
 				5C4B069518545AFD0061485A /* CLSApplicationsTableViewController.m in Sources */,
+				5C87FC7818A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m in Sources */,
 				5CEDD1CD18705DE500B6A39A /* CLSConfiguration.m in Sources */,
 				5C3CEAB718671C4000F8DDC6 /* CLSIssuesTableViewController.m in Sources */,
 				5C67C71518662F8700EC5943 /* CLSBuildsFilterViewController.m in Sources */,

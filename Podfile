@@ -12,7 +12,8 @@ target "CrashManager" do
 	pod 'CocoaLumberjack'
     pod 'Appsee'
     pod 'SSKeychain'
-
+    pod 'PBWebViewController'
+    
 	inhibit_all_warnings!
 end
 

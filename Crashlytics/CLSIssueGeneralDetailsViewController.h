@@ -6,9 +6,8 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "CLSSessionDetailsPresenter.h"
+#import "CLSSessionDetailsAbstractViewController.h"
 
-@interface CLSIssueGeneralDetailsViewController : UITableViewController <CLSSessionDetailsPresenter>
+@interface CLSIssueGeneralDetailsViewController : CLSSessionDetailsAbstractViewController
 
 @end

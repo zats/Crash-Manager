@@ -25,14 +25,14 @@ typedef enum _CLSDetailsSegment {
 
 @interface CLSIssueDetailsViewController ()
 
-@property (nonatomic, weak) UIViewController<CLSSessionDetailsPresenter> *currentDetailsViewController;
+@property (nonatomic, weak) CLSSessionDetailsAbstractViewController *currentDetailsViewController;
 
 // UI
 @property (weak, nonatomic) IBOutlet UILabel *exceptionTypeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *exceptionDescriptionLabel;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *issueStatusBarButtonItem;
-@property (strong, nonatomic) IBOutlet UIView *detailsContainerView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *issueStatusBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIView *detailsContainerView;
 
 // Data
 @property (nonatomic, strong) NSString *issueID;
@@ -98,7 +98,7 @@ typedef enum _CLSDetailsSegment {
 	
 	NSString *identifier = [self _viewControllerIdentifierForSegment:segment];
 	NSAssert(identifier, @"No view controller for chosen segment");
-	UIViewController<CLSSessionDetailsPresenter> *viewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+	CLSSessionDetailsAbstractViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
 	[self addChildViewController:viewController];
 	[self.detailsContainerView addSubview:viewController.view];
 	viewController.view.frame = self.detailsContainerView.bounds;

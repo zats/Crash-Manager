@@ -11,6 +11,7 @@
 #import "CLSIncident.h"
 #import "CLSIncident_Session+Crashlytics.h"
 #import "CLSLogViewController.h"
+#import "UIViewController+OpenSource.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
 typedef NS_ENUM(NSInteger, CLSSections) {
@@ -45,20 +46,6 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 @end
 
 @implementation CLSIssueGeneralDetailsViewController
-@synthesize session = _session;
-
-- (void)viewDidLoad {
-	[super viewDidLoad];
-	
-	@weakify(self);
-	[[RACObserve(self, session)
-	  filter:^BOOL(id value) {
-		  return value != nil;
-	  }] subscribeNext:^(id x) {
-		  @strongify(self);
-		  [self.tableView reloadData];
-	  }];
-}
 
 #pragma mark - Private
 

@@ -28,6 +28,7 @@ PODS:
   - MagicalRecord (2.2):
     - MagicalRecord/Core
   - MagicalRecord/Core (2.2)
+  - PBWebViewController (0.1)
   - ProtobufObjC (0.0.1)
   - ReactiveCocoa (2.2.3):
     - ReactiveCocoa/Core
@@ -71,6 +72,7 @@ DEPENDENCIES:
   - CocoaLumberjack
   - GroundControl
   - MagicalRecord
+  - PBWebViewController
   - ProtobufObjC
   - ReactiveCocoa
   - SHUIKitBlocks
@@ -83,6 +85,7 @@ SPEC CHECKSUMS:
   CocoaLumberjack: 6ed94046d2ca7fde03a73b3d01b8cfc56574b314
   GroundControl: 7246542fbddc789a448c7a60e4f4df94881972f9
   MagicalRecord: 95d49d74ef752cd52f6ad87bcb474817fc3978cf
+  PBWebViewController: 8a84b04caf635691335e3b449034dc0e9c1967c8
   ProtobufObjC: 3b68d87fe1165e85559eedd583eb65ffd913ff9f
   ReactiveCocoa: b3cb6ebd50f1a0f2e39c6fd7ce3c428b6efcb22b
   SHActionSheetBlocks: d1194997eb32ea752a906043ac97887615a270ad

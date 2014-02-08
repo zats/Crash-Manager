@@ -10,6 +10,7 @@
 
 #import "CLSIncident.h"
 #import "CLSIncident_Session+Crashlytics.h"
+#import "UIViewController+OpenSource.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
 @interface CLSIssueExceptionTableViewController ()
@@ -17,16 +18,6 @@
 @end
 
 @implementation CLSIssueExceptionTableViewController
-@synthesize session = _session;
-
-- (void)setSession:(CLSSession *)session {
-	_session = session;
-	if ([self isViewLoaded]) {
-		[self.tableView reloadData];
-	}
-}
-
-#pragma mark - UIViewController
 
 #pragma mark - UITableViewDataSource
 

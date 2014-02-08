@@ -13,7 +13,7 @@
 #import <SHUIKitBlocks/SHUIKitBlocks.h>
 
 @interface CLSLogViewController ()
-@property (strong, nonatomic) IBOutlet UITextView *textView;
+@property (nonatomic, weak) IBOutlet UITextView *textView;
 @end
 
 @implementation CLSLogViewController
