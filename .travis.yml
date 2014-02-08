@@ -1,8 +1,0 @@
-language: objective-c
-xcode_project: CrashManager.xcodeproj
-xcode_scheme: CrashManager
-
-branches:
-  only:
-    - master
-    - develop
