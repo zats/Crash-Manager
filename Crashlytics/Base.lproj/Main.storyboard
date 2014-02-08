@@ -535,7 +535,7 @@
                                 <rect key="frame" x="150" y="274" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mSW-tt-22E">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mSW-tt-22E">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -573,6 +573,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="CcU-69-gOZ" firstAttribute="top" secondItem="mSW-tt-22E" secondAttribute="bottom" id="6PC-I1-Yog"/>
+                            <constraint firstItem="mSW-tt-22E" firstAttribute="leading" secondItem="MN0-Yf-X0p" secondAttribute="leading" id="D4c-s1-neF"/>
+                            <constraint firstAttribute="trailing" secondItem="mSW-tt-22E" secondAttribute="trailing" id="Kx6-D7-j8w"/>
+                            <constraint firstItem="mSW-tt-22E" firstAttribute="top" secondItem="MN0-Yf-X0p" secondAttribute="top" id="Wuu-D5-e3x"/>
                             <constraint firstAttribute="centerY" secondItem="Zm6-is-7fJ" secondAttribute="centerY" id="kcP-HT-Oxk"/>
                             <constraint firstAttribute="centerX" secondItem="Zm6-is-7fJ" secondAttribute="centerX" id="ofz-L1-BgX"/>
                         </constraints>
@@ -692,7 +696,7 @@
                                 <rect key="frame" x="150" y="274" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="irx-bn-exM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="irx-bn-exM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -730,8 +734,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="irx-bn-exM" firstAttribute="leading" secondItem="SNR-X8-r7r" secondAttribute="leading" id="6gS-gd-XDm"/>
+                            <constraint firstItem="XoO-Vo-CSP" firstAttribute="top" secondItem="irx-bn-exM" secondAttribute="bottom" id="F0X-yn-cWq"/>
                             <constraint firstAttribute="centerX" secondItem="4cl-qz-6cH" secondAttribute="centerX" id="MvQ-ot-3ws"/>
                             <constraint firstAttribute="centerY" secondItem="4cl-qz-6cH" secondAttribute="centerY" id="UmB-WT-f2P"/>
+                            <constraint firstAttribute="trailing" secondItem="irx-bn-exM" secondAttribute="trailing" id="cCL-Z1-8Pj"/>
+                            <constraint firstItem="irx-bn-exM" firstAttribute="top" secondItem="SNR-X8-r7r" secondAttribute="top" id="g08-ev-NZN"/>
                         </constraints>
                     </view>
                     <connections>
@@ -759,7 +767,7 @@
                                 <rect key="frame" x="150" y="274" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wuh-mo-LCE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wuh-mo-LCE">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -814,8 +822,12 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="mdL-ZD-kxe" firstAttribute="top" secondItem="Wuh-mo-LCE" secondAttribute="bottom" id="2fb-b2-kRH"/>
+                            <constraint firstAttribute="trailing" secondItem="Wuh-mo-LCE" secondAttribute="trailing" id="8K7-ol-q8d"/>
                             <constraint firstAttribute="centerX" secondItem="3C4-9B-ER7" secondAttribute="centerX" id="GuO-1C-BsM"/>
                             <constraint firstAttribute="centerY" secondItem="3C4-9B-ER7" secondAttribute="centerY" id="RC3-HS-kTE"/>
+                            <constraint firstItem="Wuh-mo-LCE" firstAttribute="top" secondItem="i97-Fh-Gcy" secondAttribute="top" id="XXQ-1n-Ql3"/>
+                            <constraint firstItem="Wuh-mo-LCE" firstAttribute="leading" secondItem="i97-Fh-Gcy" secondAttribute="leading" id="ZDY-WA-sXK"/>
                         </constraints>
                     </view>
                     <connections>
