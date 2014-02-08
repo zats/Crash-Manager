@@ -10,7 +10,6 @@
 
 #import "CLSIncident.h"
 #import "CLSIncident_Session+Crashlytics.h"
-#import "UIViewController+OpenSource.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
 @interface CLSThreadsTableViewController ()
@@ -30,10 +29,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self cls_exposeSource];
     
     @weakify(self);
-    [RACObserve(self, session) subscribeNext:^(CLSSession *session) {
+    [self.sessionChangedSignal subscribeNext:^(CLSSession *session) {
         @strongify(self);
 
     	if (![session.events count]) {
@@ -48,9 +46,7 @@
             self.crashedThread = [self.session crashedThread];
         }
         
-        if ([self isViewLoaded]) {
-            [self.tableView reloadData];
-        }
+        [self.tableView reloadData];
     }];
 }
 

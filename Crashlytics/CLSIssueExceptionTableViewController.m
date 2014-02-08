@@ -18,23 +18,6 @@
 @end
 
 @implementation CLSIssueExceptionTableViewController
-@synthesize session = _session;
-
-#pragma mark - UIViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
- 
-    [self cls_exposeSource];
-    
-    @weakify(self);
-    [RACObserve(self, session) subscribeNext:^(id x) {
-        @strongify(self);
-        if ([self isViewLoaded]) {
-            [self.tableView reloadData];
-        }
-    }];
-}
 
 #pragma mark - UITableViewDataSource
 

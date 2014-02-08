@@ -25,7 +25,7 @@ typedef enum _CLSDetailsSegment {
 
 @interface CLSIssueDetailsViewController ()
 
-@property (nonatomic, weak) UIViewController<CLSSessionDetailsPresenter> *currentDetailsViewController;
+@property (nonatomic, weak) CLSSessionDetailsAbstractViewController *currentDetailsViewController;
 
 // UI
 @property (weak, nonatomic) IBOutlet UILabel *exceptionTypeLabel;
@@ -98,7 +98,7 @@ typedef enum _CLSDetailsSegment {
 	
 	NSString *identifier = [self _viewControllerIdentifierForSegment:segment];
 	NSAssert(identifier, @"No view controller for chosen segment");
-	UIViewController<CLSSessionDetailsPresenter> *viewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+	CLSSessionDetailsAbstractViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
 	[self addChildViewController:viewController];
 	[self.detailsContainerView addSubview:viewController.view];
 	viewController.view.frame = self.detailsContainerView.bounds;

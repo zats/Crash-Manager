@@ -46,22 +46,6 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 @end
 
 @implementation CLSIssueGeneralDetailsViewController
-@synthesize session = _session;
-
-- (void)viewDidLoad {
-	[super viewDidLoad];
-    
-    [self cls_exposeSource];
-	
-	@weakify(self);
-	[[RACObserve(self, session)
-	  filter:^BOOL(id value) {
-		  return value != nil;
-	  }] subscribeNext:^(id x) {
-		  @strongify(self);
-		  [self.tableView reloadData];
-	  }];
-}
 
 #pragma mark - Private
 

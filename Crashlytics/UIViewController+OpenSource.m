@@ -52,9 +52,8 @@
     PBWebViewController *webViewController = [[PBWebViewController alloc] init];
     webViewController.URL = URL;
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:webViewController];
-    @weakify(self);
+
     UIBarButtonItem *closeBarButtonItem = [UIBarButtonItem SH_barButtonItemWithBarButtonSystemItem:UIBarButtonSystemItemCancel withBlock:^(UIBarButtonItem *sender) {
-        @strongify(self);
         [navigationController dismissViewControllerAnimated:YES completion:nil];
     }];
     webViewController.navigationItem.leftBarButtonItem = closeBarButtonItem;
