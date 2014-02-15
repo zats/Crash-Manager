@@ -25,7 +25,7 @@
     
     // AppSee
     [Appsee start:@"e6f5703eda674ec59beb9ab49b712d4a"];
-
+	
     // Configuration
 	[[CLSConfiguration sharedInstance] updateConfigurationPlistWithCompletionHandler:^(NSDictionary *defaults, NSError *error) {
 		NSString *apiKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"CrashlyticsAPIKey"];
@@ -38,6 +38,8 @@
 	
     // Core Data stack
 	[MagicalRecord setupAutoMigratingCoreDataStack];
+	
+	self.window.tintColor = [UIColor colorWithRed:0.706 green:0.141 blue:0.063 alpha:1.000];
 	
     return YES;
 }
