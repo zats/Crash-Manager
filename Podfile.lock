@@ -17,12 +17,13 @@ PODS:
   - AFNetworking/Serialization (2.1.0)
   - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
-  - Appsee (2.0.6)
-  - CocoaLumberjack (1.8.0):
+  - Appsee (2.0.7)
+  - CocoaLumberjack (1.8.1):
     - CocoaLumberjack/Extensions
-  - CocoaLumberjack/Core (1.8.0)
-  - CocoaLumberjack/Extensions (1.8.0):
+  - CocoaLumberjack/Core (1.8.1)
+  - CocoaLumberjack/Extensions (1.8.1):
     - CocoaLumberjack/Core
+  - GoogleAnalytics-iOS-SDK (3.0.3)
   - GroundControl (2.0.0):
     - AFNetworking (~> 2.0)
   - MagicalRecord (2.2):
@@ -30,12 +31,12 @@ PODS:
   - MagicalRecord/Core (2.2)
   - PBWebViewController (0.1)
   - ProtobufObjC (0.0.1)
-  - ReactiveCocoa (2.2.3):
+  - ReactiveCocoa (2.2.4):
     - ReactiveCocoa/Core
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/Core (2.2.3):
+  - ReactiveCocoa/Core (2.2.4):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.2.3)
+  - ReactiveCocoa/no-arc (2.2.4)
   - SHActionSheetBlocks (2.3.0)
   - SHAlertViewBlocks (1.2.0)
   - SHBarButtonItemBlocks (1.2.0)
@@ -46,10 +47,11 @@ PODS:
   - SHPopoverControllerBlocks (1.2.0)
   - SHSegueBlocks (1.2.2):
     - SHObjectUserInfo (~> 1.2.0)
-  - SHTabBarControllerBlocks (1.1.0)
+  - SHTabBarControllerBlocks (2.0.0)
   - SHTextFieldBlocks (1.1.0)
   - SHTextViewBlocks (1.1.0)
-  - SHUIKitBlocks (2.1.0):
+  - SHTransitionBlocks (1.0.0)
+  - SHUIKitBlocks (2.3.0):
     - SHActionSheetBlocks (~> 2.3.0)
     - SHAlertViewBlocks (~> 1.2.0)
     - SHBarButtonItemBlocks (~> 1.2.0)
@@ -58,9 +60,10 @@ PODS:
     - SHNavigationControllerBlocks (~> 2.1.0)
     - SHPopoverControllerBlocks (~> 1.2.0)
     - SHSegueBlocks (~> 1.2.2)
-    - SHTabBarControllerBlocks (~> 1.1.0)
+    - SHTabBarControllerBlocks (~> 2.0.0)
     - SHTextFieldBlocks (~> 1.1.0)
     - SHTextViewBlocks (~> 1.1.0)
+    - SHTransitionBlocks (~> 1.0.0)
     - SHWebViewBlocks (~> 1.3.0)
   - SHWebViewBlocks (1.3.0)
   - SSKeychain (1.2.1)
@@ -70,6 +73,7 @@ DEPENDENCIES:
   - AFNetworking
   - Appsee
   - CocoaLumberjack
+  - GoogleAnalytics-iOS-SDK
   - GroundControl
   - MagicalRecord
   - PBWebViewController
@@ -81,13 +85,14 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
-  Appsee: 267f9614a10707ae89214e31bcbff64d54a26b98
-  CocoaLumberjack: 6ed94046d2ca7fde03a73b3d01b8cfc56574b314
+  Appsee: 2193c765595ff5ef0f0c0f57d1c159707a7853fe
+  CocoaLumberjack: 020378ec400d658923bf5887178394f65f052c90
+  GoogleAnalytics-iOS-SDK: 7b0e55cfe5e70d60478a7b105f15ac71e8bc373e
   GroundControl: 7246542fbddc789a448c7a60e4f4df94881972f9
   MagicalRecord: 95d49d74ef752cd52f6ad87bcb474817fc3978cf
   PBWebViewController: 8a84b04caf635691335e3b449034dc0e9c1967c8
   ProtobufObjC: 3b68d87fe1165e85559eedd583eb65ffd913ff9f
-  ReactiveCocoa: b3cb6ebd50f1a0f2e39c6fd7ce3c428b6efcb22b
+  ReactiveCocoa: 953a45dda30674fe704d1d9c77cc874141742f47
   SHActionSheetBlocks: d1194997eb32ea752a906043ac97887615a270ad
   SHAlertViewBlocks: 3ea75e2d9a1221e59deed52818759a8c25f5f77f
   SHBarButtonItemBlocks: 066ae66720be9ce1531d9d5e95350031b8aae0fe
@@ -97,10 +102,11 @@ SPEC CHECKSUMS:
   SHObjectUserInfo: 33f90c63c2a1404fa677606bde5aa2465f202bca
   SHPopoverControllerBlocks: e67aba94b8d420517f331fab1523403260070e3c
   SHSegueBlocks: 1e0eb768fa22e0d5d5db4a45dc9083c1acc6ac8a
-  SHTabBarControllerBlocks: fad90155b89d48c2961c8ee5fbc75975d75172a2
+  SHTabBarControllerBlocks: 52fd7350def7314e062f0081ef4e5fe149239bbf
   SHTextFieldBlocks: be9b486dba92e57ee2ab99cdc6a9542d71380c2d
   SHTextViewBlocks: 9ad22b4d4e22985b79dbf23aa6af67e6fc4e7b55
-  SHUIKitBlocks: 491698656f4e39f6b4b7ee869a19e517baf5331e
+  SHTransitionBlocks: c04783121bee0171b7a73a1f62735c57ca6bd292
+  SHUIKitBlocks: 80ed0948532a0026ba2f2d94f0e6061de54fc965
   SHWebViewBlocks: 4776bd43c0dd653e8f9574f93973436ccba224d2
   SSKeychain: d18926838c2e7cd342e2a49e9f869858e49f035a
   TTTLocalizedPluralString: 9813ed30d6babe01440a758cbf2bef85a2138913

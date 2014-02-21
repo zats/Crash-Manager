@@ -45,12 +45,15 @@
 	if (!self) {
 		return nil;
 	}
-    [self _setupLogger];
-    [self _setupConfigurationFile];
 	return self;
 }
 
 #pragma mark - Public
+
+- (void)setup {
+	[self _setupLogger];
+    [self _setupConfigurationFile];
+}
 
 - (void)updateConfigurationPlistWithCompletionHandler:(CLSSettingsUpdateHandler)completion {
 	NSURL *URL = [NSURL URLWithString:@"http://crashlytics-ios.herokuapp.com/configuration.plist"];

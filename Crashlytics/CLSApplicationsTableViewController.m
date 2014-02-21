@@ -50,8 +50,7 @@
 		return account != nil;
 	}];
 	
-	[[RACSignal
-	  combineLatest:@[
+	[[RACSignal combineLatest:@[
 		organizationDidChangeSignal,
 		activeAccountDidChangeSignal]]
 	 subscribeNext:^(id x) {

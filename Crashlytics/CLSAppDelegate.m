@@ -9,9 +9,9 @@
 #import "CLSAppDelegate.h"
 
 #import "CLSConfiguration.h"
+#import "CLSAnalyticsController.h"
 #import <Crashlytics/Crashlytics.h>
 #import <MagicalRecord/CoreData+MagicalRecord.h>
-#import <Appsee/Appsee.h>
 
 @interface CLSAppDelegate () <CrashlyticsDelegate>
 @end
@@ -21,11 +21,12 @@
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	// Initializar configuration
     [CLSConfiguration sharedInstance];
-    
-    // AppSee
-    [Appsee start:@"e6f5703eda674ec59beb9ab49b712d4a"];
-	
+
+	// Analytics
+	[[CLSAnalyticsController sharedInstance] enableAnalyticsIfNeeded];
+
     // Configuration
 	[[CLSConfiguration sharedInstance] updateConfigurationPlistWithCompletionHandler:^(NSDictionary *defaults, NSError *error) {
 		NSString *apiKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"CrashlyticsAPIKey"];

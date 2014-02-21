@@ -34,6 +34,8 @@
 		5C6D3CF918534CA9005E97D1 /* CLSIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CED18534CA9005E97D1 /* CLSIssue.m */; };
 		5C6D3CFA18534CA9005E97D1 /* CLSBuild.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CEF18534CA9005E97D1 /* CLSBuild.m */; };
 		5C6D3CFB18534CA9005E97D1 /* CLSOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CF118534CA9005E97D1 /* CLSOrganization.m */; };
+		5C71944518B7A3C200465412 /* CLSAnalyticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944418B7A3C200465412 /* CLSAnalyticsController.m */; };
+		5C71944B18B7A7A900465412 /* CLSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944A18B7A7A900465412 /* CLSConstants.m */; };
 		5C85507518720FB8008F5038 /* _CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507218720FB8008F5038 /* _CLSFilter.m */; };
 		5C85507618720FB8008F5038 /* CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507418720FB8008F5038 /* CLSFilter.m */; };
 		5C8550791872191C008F5038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C85507B1872191C008F5038 /* Localizable.strings */; };
@@ -116,6 +118,10 @@
 		5C6D3CEF18534CA9005E97D1 /* CLSBuild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLSBuild.m; path = Crashlytics/CLSBuild.m; sourceTree = SOURCE_ROOT; };
 		5C6D3CF018534CA9005E97D1 /* CLSOrganization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSOrganization.h; path = Crashlytics/CLSOrganization.h; sourceTree = SOURCE_ROOT; };
 		5C6D3CF118534CA9005E97D1 /* CLSOrganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLSOrganization.m; path = Crashlytics/CLSOrganization.m; sourceTree = SOURCE_ROOT; };
+		5C71944318B7A3C200465412 /* CLSAnalyticsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSAnalyticsController.h; sourceTree = "<group>"; };
+		5C71944418B7A3C200465412 /* CLSAnalyticsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSAnalyticsController.m; sourceTree = "<group>"; };
+		5C71944918B7A7A900465412 /* CLSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSConstants.h; sourceTree = "<group>"; };
+		5C71944A18B7A7A900465412 /* CLSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSConstants.m; sourceTree = "<group>"; };
 		5C85507118720FB8008F5038 /* _CLSFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CLSFilter.h; path = Crashlytics/_CLSFilter.h; sourceTree = SOURCE_ROOT; };
 		5C85507218720FB8008F5038 /* _CLSFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _CLSFilter.m; path = Crashlytics/_CLSFilter.m; sourceTree = SOURCE_ROOT; };
 		5C85507318720FB8008F5038 /* CLSFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSFilter.h; path = Crashlytics/CLSFilter.h; sourceTree = SOURCE_ROOT; };
@@ -198,12 +204,11 @@
 		5C3BCF301868AF33004BB1FA /* Generic */ = {
 			isa = PBXGroup;
 			children = (
-				5C6A2BCF18A4121400C529CE /* Image */,
+				5C71944818B7A79C00465412 /* Constants */,
+				5C71944218B7A3AB00465412 /* Analytics */,
 				5CBE4761189D649B002D3E90 /* UIViewController+OpenSource */,
-				5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */,
-				5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */,
-				5CC3F7F018786E7A003C2FAC /* CLSPasteboardObserver.h */,
-				5CC3F7F118786E7A003C2FAC /* CLSPasteboardObserver.m */,
+				5C71944618B7A78F00465412 /* Configuration */,
+				5C71944718B7A79400465412 /* Pasteboard */,
 				5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */,
 				5CE94DF018534976003C7DB1 /* Supporting Files */,
 			);
@@ -277,13 +282,6 @@
 			name = Abstract;
 			sourceTree = "<group>";
 		};
-		5C6A2BCF18A4121400C529CE /* Image */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Image;
-			sourceTree = "<group>";
-		};
 		5C6D3CDD18534CA9005E97D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +323,42 @@
 				5C6D3CE718534CA9005E97D1 /* _CLSOrganization.m */,
 			);
 			name = Internals;
+			sourceTree = "<group>";
+		};
+		5C71944218B7A3AB00465412 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				5C71944318B7A3C200465412 /* CLSAnalyticsController.h */,
+				5C71944418B7A3C200465412 /* CLSAnalyticsController.m */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		5C71944618B7A78F00465412 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */,
+				5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		5C71944718B7A79400465412 /* Pasteboard */ = {
+			isa = PBXGroup;
+			children = (
+				5CC3F7F018786E7A003C2FAC /* CLSPasteboardObserver.h */,
+				5CC3F7F118786E7A003C2FAC /* CLSPasteboardObserver.m */,
+			);
+			name = Pasteboard;
+			sourceTree = "<group>";
+		};
+		5C71944818B7A79C00465412 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5C71944918B7A7A900465412 /* CLSConstants.h */,
+				5C71944A18B7A7A900465412 /* CLSConstants.m */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		5CB3C0821871BDFC00CE00D7 /* Filters */ = {
@@ -617,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CE94DF618534976003C7DB1 /* main.m in Sources */,
+				5C71944518B7A3C200465412 /* CLSAnalyticsController.m in Sources */,
 				5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */,
 				5C4B0684185356000061485A /* CLSOrganizationsViewController.m in Sources */,
 				5C6D3CF818534CA9005E97D1 /* CLSApplication.m in Sources */,
@@ -641,6 +676,7 @@
 				5C4B0691185392A00061485A /* CLSAPIClient.m in Sources */,
 				5C3BCF2F1868AF20004BB1FA /* CLSIssueDetailsViewController.m in Sources */,
 				5C85507518720FB8008F5038 /* _CLSFilter.m in Sources */,
+				5C71944B18B7A7A900465412 /* CLSConstants.m in Sources */,
 				5C3BCF2B1868AD1D004BB1FA /* CLSIncident.m in Sources */,
 				5C85507618720FB8008F5038 /* CLSFilter.m in Sources */,
 				5CB3C0881871BE5200CE00D7 /* CLSFiltersViewController.m in Sources */,
