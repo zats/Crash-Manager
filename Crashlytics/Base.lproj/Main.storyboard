@@ -337,7 +337,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgM-WJ-5zE">
-                                            <rect key="frame" x="13" y="9" width="14" height="15"/>
+                                            <rect key="frame" x="20" y="9" width="14" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -377,7 +377,8 @@
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xko-PF-16z" secondAttribute="trailing" constant="10" id="J0Y-IB-QP0"/>
                                         <constraint firstItem="36w-ld-r7M" firstAttribute="top" secondItem="Xko-PF-16z" secondAttribute="bottom" constant="2" id="N1I-nX-tdX"/>
                                         <constraint firstAttribute="centerY" secondItem="Xko-PF-16z" secondAttribute="centerY" constant="-2" id="RmR-i2-Bhi"/>
-                                        <constraint firstItem="FgM-WJ-5zE" firstAttribute="leading" secondItem="w5g-k1-w2A" secondAttribute="leading" constant="13" id="SZB-6E-8WT"/>
+                                        <constraint firstItem="FgM-WJ-5zE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="w5g-k1-w2A" secondAttribute="leading" constant="5" id="SZB-6E-8WT"/>
+                                        <constraint firstItem="aWX-2a-3ZE" firstAttribute="leading" secondItem="FgM-WJ-5zE" secondAttribute="trailing" constant="7" id="bdT-dN-5pL"/>
                                         <constraint firstItem="aWX-2a-3ZE" firstAttribute="leading" secondItem="w5g-k1-w2A" secondAttribute="leading" constant="41" id="olh-OA-qYI"/>
                                         <constraint firstItem="Xko-PF-16z" firstAttribute="leading" secondItem="w5g-k1-w2A" secondAttribute="leading" constant="41" id="pyW-p0-b1m"/>
                                         <constraint firstItem="36w-ld-r7M" firstAttribute="leading" secondItem="w5g-k1-w2A" secondAttribute="leading" constant="41" id="qAP-oD-6h8"/>
