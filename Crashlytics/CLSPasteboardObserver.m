@@ -9,6 +9,7 @@
 #import "CLSPasteboardObserver.h"
 
 #import "CLSOrganization.h"
+#import "CLSConstants.h"
 #import "CLSApplication.h"
 #import "CLSIssue.h"
 #import "CLSApplicationsTableViewController.h"
@@ -165,6 +166,7 @@
 	}
 	
 	self.lastNavigatedURLString = urlString;
+
 	
     // Using first object rather than keyWindow property since it's invalid
     // when alert or action sheet is presented.
@@ -268,7 +270,20 @@
 	if (!self) {
 		return nil;
 	}
-
+	
+	self.lastNavigatedURLString = [[NSUserDefaults standardUserDefaults] objectForKey:CLSLastPasteboardedIssueIDKey];
+	
+	[RACObserve(self, lastNavigatedURLString)
+		subscribeNext:^(NSString *lastNavigatedURLString) {
+			if (!lastNavigatedURLString) {
+				[[NSUserDefaults standardUserDefaults] removeObjectForKey:CLSLastPasteboardedIssueIDKey];
+			} else {
+				[[NSUserDefaults standardUserDefaults] setObject:lastNavigatedURLString
+														  forKey:CLSLastPasteboardedIssueIDKey];
+			}
+			[[NSUserDefaults standardUserDefaults] synchronize];		 
+		}];
+			
 	return self;
 }
 
