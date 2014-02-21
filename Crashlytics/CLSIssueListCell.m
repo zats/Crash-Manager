@@ -13,6 +13,7 @@
 @property (weak, nonatomic, readwrite) IBOutlet UILabel *issueTitleLabel;
 @property (weak, nonatomic, readwrite) IBOutlet UILabel *issueSubtitleLabel;
 @property (weak, nonatomic, readwrite) IBOutlet UILabel *issueDetailsLabel;
+@property (weak, nonatomic, readwrite) IBOutlet UIImageView *impactLevelImageView;
 @property (weak, nonatomic, readwrite) IBOutlet NSLayoutConstraint *baseLayoutConstraint;
 @end
 

@@ -50,6 +50,7 @@
 	self.crashesCount = dictionary[@"crashes_count"];
 	self.devicesAffected = dictionary[@"impacted_devices_count"];
 	self.urlString = dictionary[@"url"];
+	self.impactLevel = dictionary[@"impact_level"];
 	
 	// resolution date
 	NSString *dateString = dictionary[@"resolved_at"];

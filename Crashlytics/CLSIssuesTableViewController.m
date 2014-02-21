@@ -53,6 +53,8 @@
 	cell.issueTitleLabel.textColor = [issue isResolved] ? [UIColor lightGrayColor] : [UIColor blackColor];
 	cell.issueTitleLabel.text = issue.title;
 	cell.issueSubtitleLabel.text = issue.subtitle;
+	cell.impactLevelImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"issue-impact-level-%@", issue.impactLevel]];
+	
 	NSString *crashesString = TTTLocalizedPluralString(issue.crashesCountValue, @"CLSIssueListCrashesCount", @"Crashes count for issues list screen");
 	NSString *usersAffected = TTTLocalizedPluralString(issue.devicesAffectedValue, @"CLSIssueListUsersAffected", @"Users affected count for issues list screen");
 	cell.issueDetailsLabel.text = [NSString stringWithFormat:@"%@  %@  %@", issue.build.buildID, crashesString,  usersAffected];

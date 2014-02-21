@@ -41,6 +41,7 @@
         <attribute name="crashesCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="devicesAffected" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="displayID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="impactLevel" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="issueID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastSession" optional="YES" transient="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="lastSessionData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>

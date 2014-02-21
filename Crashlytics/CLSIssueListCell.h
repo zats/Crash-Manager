@@ -13,6 +13,7 @@
 @property (weak, nonatomic, readonly) UILabel *issueTitleLabel;
 @property (weak, nonatomic, readonly) UILabel *issueSubtitleLabel;
 @property (weak, nonatomic, readonly) UILabel *issueDetailsLabel;
+@property (weak, nonatomic, readonly) UIImageView *impactLevelImageView;
 
-@property (strong, nonatomic, readonly) NSLayoutConstraint *baseLayoutConstraint;
+@property (weak, nonatomic, readonly) NSLayoutConstraint *baseLayoutConstraint;
 @end
