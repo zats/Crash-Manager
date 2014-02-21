@@ -15,6 +15,8 @@
 #import <GoogleAnalytics-iOS-SDK/GAILogger.h>
 
 @interface CLSAnalyticsController ()
+@property (nonatomic, assign) BOOL appseeEnabled;
+@property (nonatomic, assign) BOOL googleAnalyticsEnabled;
 @end
 
 @implementation CLSAnalyticsController
@@ -50,13 +52,39 @@
 #pragma mark - Public
 
 - (void)enableAnalyticsIfNeeded {
+	[self _enableAnalyticsWithConfiguration:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
+}
+
+#pragma mark - Private
+
+- (void)_enableAnalyticsWithConfiguration:(NSDictionary *)configuration {
+	BOOL isAppseeEnabled = [configuration[CLSAppseeEnabledKey] boolValue];
+	BOOL isGoogleAnalyticsEnabled = [configuration[CLSGoogleAnalyticsEnabledKey] boolValue];
+	if (self.appseeEnabled == isAppseeEnabled &&
+		self.googleAnalyticsEnabled == isGoogleAnalyticsEnabled) {
+		return;
+	}
+	
+	// Google Analytics
+	if (self.googleAnalyticsEnabled != isGoogleAnalyticsEnabled) {
+		[self _setGoogleAnalyticsEnabled:isGoogleAnalyticsEnabled];
+	}
+	
+	// Appsee
+	if (self.appseeEnabled != isAppseeEnabled) {
+		[self _setAppseeEnabled:isAppseeEnabled];
+	}
+}
+
+- (void)_setGoogleAnalyticsEnabled:(BOOL)isGoogleAnalyticsEnabled {
+	self.googleAnalyticsEnabled = isGoogleAnalyticsEnabled;
+	
 	// Google Analytics
 	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 	if (!tracker) {
 		tracker = [[GAI sharedInstance] trackerWithTrackingId:CLSGoogleAnalyticsIdenitifer];
 	}
 	
-	BOOL isGoogleAnalyticsEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:CLSGoogleAnalyticsEnabledKey];
 	if (isGoogleAnalyticsEnabled) {
 		[GAI sharedInstance].optOut = NO;
 		[DDLog addLogger:[CLSGoogleAnalyticsLogger sharedInstance]];
@@ -69,9 +97,11 @@
 	[GAI sharedInstance].logger.logLevel = kGAILogLevelVerbose;
 #endif
 	DDLogVerbose(@"Google Analytics is %@", isGoogleAnalyticsEnabled ? @"enabled" : @"disabled");
+}
+
+- (void)_setAppseeEnabled:(BOOL)isAppseeEnabled {
+	self.appseeEnabled = isAppseeEnabled;
 	
-	// Appsee
-	BOOL isAppseeEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:CLSAppseeEnabledKey];
 	if (isAppseeEnabled) {
 		[Appsee start:CLSAppseeAPIKey];
 	} else {
