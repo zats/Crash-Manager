@@ -11,7 +11,8 @@
 #import "CLSLoginViewController.h"
 #import "CLSAccount.h"
 #import "UIViewController+OpenSource.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <GoogleAnalytics-iOS-SDK/GAI.h>
+#import <GoogleAnalytics-iOS-SDK/GAIFields.h>
 
 @interface CLSViewController ()
 @property (nonatomic, strong) RACSubject *disappearingSubject;
@@ -49,6 +50,10 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
+	
+	id tracker = [[GAI sharedInstance] defaultTracker];
+	[tracker set:kGAIScreenName
+		   value:NSStringFromClass([self class])];
 
 	RACSignal *viewWillDisappearSignal = [self rac_signalForSelector:@selector(viewWillDisappear:)];
 	

@@ -11,7 +11,8 @@
 #import "CLSAccount.h"
 #import "CLSOrganization.h"
 #import "UIViewController+OpenSource.h"
-#import <Crashlytics/Crashlytics.h>
+#import <GoogleAnalytics-iOS-SDK/GAI.h>
+#import <GoogleAnalytics-iOS-SDK/GAIFields.h>
 
 @interface CLSTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -25,6 +26,8 @@
 @end
 
 @implementation CLSTableViewController
+
+#pragma mark - Public
 
 - (BOOL)isFirstRowInSectionAtIndexPath:(NSIndexPath *)indexPath {
 	indexPath = [self coreDataIndexPathForDisplayIndexPath:indexPath];
@@ -70,6 +73,10 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
+	
+	id tracker = [[GAI sharedInstance] defaultTracker];
+	[tracker set:kGAIScreenName
+		   value:NSStringFromClass([self class])];
 	
     RACSignal *viewWillDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
 	[[[[[CLSAccount activeAccountChangedSignal] takeUntil:viewWillDisappear] distinctUntilChanged] filter:^BOOL(CLSAccount *account) {

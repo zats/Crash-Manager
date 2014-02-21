@@ -11,6 +11,7 @@
 #import "CLSConstants.h"
 #import <Appsee/Appsee.h>
 #import <GoogleAnalytics-iOS-SDK/GAI.h>
+#import <GoogleAnalytics-iOS-SDK/GAILogger.h>
 
 @interface CLSAnalyticsController ()
 @end
@@ -53,6 +54,7 @@
 	if (!tracker) {
 		tracker = [[GAI sharedInstance] trackerWithTrackingId:CLSGoogleAnalyticsIdenitifer];
 	}
+	
 	BOOL isGoogleAnalyticsEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:CLSGoogleAnalyticsEnabledKey];
 	if (isGoogleAnalyticsEnabled) {
 		[GAI sharedInstance].optOut = NO;
@@ -63,6 +65,10 @@
 		// TODO: Remove Google Analytics logger
 		// [DDLog removeLogger:<#(id<DDLogger>)#>]
 	}
+#ifdef DEBUG
+	[GAI sharedInstance].dryRun = YES;
+	[GAI sharedInstance].logger.logLevel = kGAILogLevelVerbose;
+#endif
 	DDLogVerbose(@"Google Analytics is %@", isGoogleAnalyticsEnabled ? @"enabled" : @"disabled");
 	
 	// Appsee
