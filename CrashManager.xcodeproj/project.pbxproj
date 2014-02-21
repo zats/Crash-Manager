@@ -37,6 +37,7 @@
 		5C71944518B7A3C200465412 /* CLSAnalyticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944418B7A3C200465412 /* CLSAnalyticsController.m */; };
 		5C71944B18B7A7A900465412 /* CLSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944A18B7A7A900465412 /* CLSConstants.m */; };
 		5C71944F18B7AD5600465412 /* CLSIssueImpactLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944E18B7AD5600465412 /* CLSIssueImpactLevelView.m */; };
+		5C71945318B7B49100465412 /* CLSGoogleAnalyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71945218B7B49100465412 /* CLSGoogleAnalyticsLogger.m */; };
 		5C85507518720FB8008F5038 /* _CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507218720FB8008F5038 /* _CLSFilter.m */; };
 		5C85507618720FB8008F5038 /* CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507418720FB8008F5038 /* CLSFilter.m */; };
 		5C8550791872191C008F5038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C85507B1872191C008F5038 /* Localizable.strings */; };
@@ -125,6 +126,8 @@
 		5C71944A18B7A7A900465412 /* CLSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSConstants.m; sourceTree = "<group>"; };
 		5C71944D18B7AD5600465412 /* CLSIssueImpactLevelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueImpactLevelView.h; sourceTree = "<group>"; };
 		5C71944E18B7AD5600465412 /* CLSIssueImpactLevelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueImpactLevelView.m; sourceTree = "<group>"; };
+		5C71945118B7B49100465412 /* CLSGoogleAnalyticsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSGoogleAnalyticsLogger.h; sourceTree = "<group>"; };
+		5C71945218B7B49100465412 /* CLSGoogleAnalyticsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSGoogleAnalyticsLogger.m; sourceTree = "<group>"; };
 		5C85507118720FB8008F5038 /* _CLSFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CLSFilter.h; path = Crashlytics/_CLSFilter.h; sourceTree = SOURCE_ROOT; };
 		5C85507218720FB8008F5038 /* _CLSFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _CLSFilter.m; path = Crashlytics/_CLSFilter.m; sourceTree = SOURCE_ROOT; };
 		5C85507318720FB8008F5038 /* CLSFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSFilter.h; path = Crashlytics/CLSFilter.h; sourceTree = SOURCE_ROOT; };
@@ -207,6 +210,7 @@
 		5C3BCF301868AF33004BB1FA /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				5C71945018B7B40900465412 /* GoogleAnalytics CocoaLumberjack */,
 				5C71944C18B7AD4300465412 /* Impact Level */,
 				5C71944818B7A79C00465412 /* Constants */,
 				5C71944218B7A3AB00465412 /* Analytics */,
@@ -372,6 +376,15 @@
 				5C71944E18B7AD5600465412 /* CLSIssueImpactLevelView.m */,
 			);
 			name = "Impact Level";
+			sourceTree = "<group>";
+		};
+		5C71945018B7B40900465412 /* GoogleAnalytics CocoaLumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				5C71945118B7B49100465412 /* CLSGoogleAnalyticsLogger.h */,
+				5C71945218B7B49100465412 /* CLSGoogleAnalyticsLogger.m */,
+			);
+			name = "GoogleAnalytics CocoaLumberjack";
 			sourceTree = "<group>";
 		};
 		5CB3C0821871BDFC00CE00D7 /* Filters */ = {
@@ -680,6 +693,7 @@
 				5C6BF2B018637E34007C483D /* CLSResponseSerializer.m in Sources */,
 				5C9AC77C186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m in Sources */,
 				5C6D3CFB18534CA9005E97D1 /* CLSOrganization.m in Sources */,
+				5C71945318B7B49100465412 /* CLSGoogleAnalyticsLogger.m in Sources */,
 				5C6D3CF418534CA9005E97D1 /* _CLSIssue.m in Sources */,
 				5CC3F7EB1876C933003C2FAC /* CLSError.m in Sources */,
 				5C6D3CF918534CA9005E97D1 /* CLSIssue.m in Sources */,

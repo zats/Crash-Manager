@@ -9,6 +9,7 @@
 #import "CLSAnalyticsController.h"
 
 #import "CLSConstants.h"
+#import "CLSGoogleAnalyticsLogger.h"
 #import <Appsee/Appsee.h>
 #import <GoogleAnalytics-iOS-SDK/GAI.h>
 #import <GoogleAnalytics-iOS-SDK/GAILogger.h>
@@ -58,12 +59,10 @@
 	BOOL isGoogleAnalyticsEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:CLSGoogleAnalyticsEnabledKey];
 	if (isGoogleAnalyticsEnabled) {
 		[GAI sharedInstance].optOut = NO;
-		// TODO: Add Google Analytics logger
-		// [DDLog addLogger:<#(id<DDLogger>)#>]
+		[DDLog addLogger:[CLSGoogleAnalyticsLogger sharedInstance]];
 	} else {
 		[GAI sharedInstance].optOut = YES;
-		// TODO: Remove Google Analytics logger
-		// [DDLog removeLogger:<#(id<DDLogger>)#>]
+		[DDLog removeLogger:[CLSGoogleAnalyticsLogger sharedInstance]];
 	}
 #ifdef DEBUG
 	[GAI sharedInstance].dryRun = YES;
