@@ -65,12 +65,13 @@
 																	sortedBy:CLSApplicationAttributes.name
 																   ascending:YES];
 		self.fetchedResultsController.fetchRequest.sortDescriptors = @[
-			[NSSortDescriptor sortDescriptorWithKey:CLSApplicationAttributes.impactedDevicesCount
-										  ascending:NO],
 			[NSSortDescriptor sortDescriptorWithKey:CLSApplicationAttributes.name
-										  ascending:YES],
+										  ascending:YES
+										   selector:@selector(localizedCaseInsensitiveCompare:)],
 			[NSSortDescriptor sortDescriptorWithKey:CLSApplicationAttributes.bundleID
 										  ascending:YES],
+			[NSSortDescriptor sortDescriptorWithKey:CLSApplicationAttributes.impactedDevicesCount
+										  ascending:NO],
 		];
 		[self.fetchedResultsController performFetch:nil];
 	}];
