@@ -7,6 +7,7 @@ const struct CLSIssueAttributes CLSIssueAttributes = {
 	.crashesCount = @"crashesCount",
 	.devicesAffected = @"devicesAffected",
 	.displayID = @"displayID",
+	.impactLevel = @"impactLevel",
 	.issueID = @"issueID",
 	.lastSession = @"lastSession",
 	.lastSessionData = @"lastSessionData",
@@ -63,6 +64,11 @@ const struct CLSIssueFetchedProperties CLSIssueFetchedProperties = {
 	}
 	if ([key isEqualToString:@"displayIDValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"displayID"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"impactLevelValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"impactLevel"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -145,6 +151,32 @@ const struct CLSIssueFetchedProperties CLSIssueFetchedProperties = {
 
 - (void)setPrimitiveDisplayIDValue:(int32_t)value_ {
 	[self setPrimitiveDisplayID:[NSNumber numberWithInt:value_]];
+}
+
+
+
+
+
+@dynamic impactLevel;
+
+
+
+- (int32_t)impactLevelValue {
+	NSNumber *result = [self impactLevel];
+	return [result intValue];
+}
+
+- (void)setImpactLevelValue:(int32_t)value_ {
+	[self setImpactLevel:[NSNumber numberWithInt:value_]];
+}
+
+- (int32_t)primitiveImpactLevelValue {
+	NSNumber *result = [self primitiveImpactLevel];
+	return [result intValue];
+}
+
+- (void)setPrimitiveImpactLevelValue:(int32_t)value_ {
+	[self setPrimitiveImpactLevel:[NSNumber numberWithInt:value_]];
 }
 
 

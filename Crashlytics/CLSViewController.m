@@ -10,8 +10,8 @@
 
 #import "CLSLoginViewController.h"
 #import "CLSAccount.h"
+#import "CLSAnalyticsController.h"
 #import "UIViewController+OpenSource.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface CLSViewController ()
 @property (nonatomic, strong) RACSubject *disappearingSubject;
@@ -49,7 +49,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-
+	
+	[[CLSAnalyticsController sharedInstance] trackViewController:self];
+	
 	RACSignal *viewWillDisappearSignal = [self rac_signalForSelector:@selector(viewWillDisappear:)];
 	
 	[[[CLSAccount activeAccountChangedSignal] takeUntil:viewWillDisappearSignal] subscribeNext:^(id x) {

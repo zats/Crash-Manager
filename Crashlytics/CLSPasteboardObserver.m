@@ -9,10 +9,11 @@
 #import "CLSPasteboardObserver.h"
 
 #import "CLSOrganization.h"
+#import "CLSConstants.h"
 #import "CLSApplication.h"
 #import "CLSIssue.h"
-#import "CLSApplicationsTableViewController.h"
-#import "CLSIssuesTableViewController.h"
+#import "CLSApplicationsViewController.h"
+#import "CLSIssuesViewController.h"
 #import "CLSIssueDetailsViewController.h"
 #import <Crashlytics/Crashlytics.h>
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
@@ -165,6 +166,7 @@
 	}
 	
 	self.lastNavigatedURLString = urlString;
+
 	
     // Using first object rather than keyWindow property since it's invalid
     // when alert or action sheet is presented.
@@ -211,10 +213,10 @@
 		
 		UIViewController *organizationsViewController = [self.navigationController.viewControllers firstObject];
 
-		CLSApplicationsTableViewController *appViewController = [storyboard instantiateViewControllerWithIdentifier:@"applications"];
+		CLSApplicationsViewController *appViewController = [storyboard instantiateViewControllerWithIdentifier:@"applications"];
 		appViewController.organization = organization;
 		
-		CLSIssuesTableViewController *issuesViewController = [storyboard instantiateViewControllerWithIdentifier:@"issues"];
+		CLSIssuesViewController *issuesViewController = [storyboard instantiateViewControllerWithIdentifier:@"issues"];
 		issuesViewController.application = application;
 		
 		CLSIssueDetailsViewController *issueDetailsViewController = [storyboard instantiateViewControllerWithIdentifier:@"issueDetails"];
@@ -268,7 +270,20 @@
 	if (!self) {
 		return nil;
 	}
-
+	
+	self.lastNavigatedURLString = [[NSUserDefaults standardUserDefaults] objectForKey:CLSLastPasteboardedIssueIDKey];
+	
+	[RACObserve(self, lastNavigatedURLString)
+		subscribeNext:^(NSString *lastNavigatedURLString) {
+			if (!lastNavigatedURLString) {
+				[[NSUserDefaults standardUserDefaults] removeObjectForKey:CLSLastPasteboardedIssueIDKey];
+			} else {
+				[[NSUserDefaults standardUserDefaults] setObject:lastNavigatedURLString
+														  forKey:CLSLastPasteboardedIssueIDKey];
+			}
+			[[NSUserDefaults standardUserDefaults] synchronize];		 
+		}];
+			
 	return self;
 }
 

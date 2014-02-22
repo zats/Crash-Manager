@@ -17,6 +17,11 @@ typedef void(^CLSSettingsUpdateHandler)(NSDictionary *defaults, NSError *error);
 @property (nonatomic, readonly) NSURL *signUpURL;
 @property (nonatomic, readonly) NSURL *forgotPasswordURL;
 
+/**
+ Runs through initial setup of the configuration: sets up logger and the
+ */
+- (void)setup;
+
 - (NSURL *)implementationURLForClass:(Class)className;
 - (NSURL *)interfaceURLForClass:(Class)className;
 

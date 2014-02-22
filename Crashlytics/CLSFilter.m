@@ -1,6 +1,8 @@
 #import "CLSFilter.h"
 
 #import "CLSBuild.h"
+#import "CLSIssue.h"
+#import "CLSApplication.h"
 
 NSString *const CLSFilterIssueStatusAll = @"all";
 NSString *const CLSFilterIssueStatusUnresolved = @"unresolved";
@@ -130,6 +132,11 @@ NSArray *CLSFilterTimeRanges;
 	return [result length] ? result : nil;
 }
 
+- (NSPredicate *)predicate {
+	NSPredicate *result = [NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.application, self.application];
+	return result;
+}
+
 #pragma mark - NSManagedObject
 
 - (void)awakeFromInsert {
@@ -142,5 +149,34 @@ NSArray *CLSFilterTimeRanges;
 }
 
 #undef CLSStrignify
+
+@end
+
+@implementation CLSFilter (CLSPredicate)
+
+- (NSPredicate *)emptyFilterPreidacte {
+	return [NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.application, self.application];
+}
+
+- (NSPredicate *)predicate {
+	NSMutableArray *predicates = [NSMutableArray arrayWithObject:[self emptyFilterPreidacte]];
+	if ([self isStatusFilterSet]) {
+		if ([self.issueStatus isEqualToString:CLSFilterIssueStatusResolved]) {
+			[predicates addObject:[NSPredicate predicateWithFormat:@"%K != nil", CLSIssueAttributes.resolvedAt]];
+		} else if ([self.issueStatus isEqualToString:CLSFilterIssueStatusUnresolved]) {
+			[predicates addObject:[NSPredicate predicateWithFormat:@"%K == nil", CLSIssueAttributes.resolvedAt]];
+		}
+	}
+	if ([self isBuildFilterSet]) {
+		[predicates addObject:[NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.build, self.build]];
+	}
+	if ([self isTimeRangeFilterSet]) {
+		// No predicate can match time range
+	}
+	if ([predicates count] == 1) {
+		return [predicates firstObject];
+	}
+	return [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
+}
 
 @end

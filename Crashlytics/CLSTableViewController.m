@@ -11,7 +11,7 @@
 #import "CLSAccount.h"
 #import "CLSOrganization.h"
 #import "UIViewController+OpenSource.h"
-#import <Crashlytics/Crashlytics.h>
+#import "CLSAnalyticsController.h"
 
 @interface CLSTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -25,6 +25,8 @@
 @end
 
 @implementation CLSTableViewController
+
+#pragma mark - Public
 
 - (BOOL)isFirstRowInSectionAtIndexPath:(NSIndexPath *)indexPath {
 	indexPath = [self coreDataIndexPathForDisplayIndexPath:indexPath];
@@ -71,6 +73,8 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
+	[[CLSAnalyticsController sharedInstance] trackViewController:self];
+
     RACSignal *viewWillDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
 	[[[[[CLSAccount activeAccountChangedSignal] takeUntil:viewWillDisappear] distinctUntilChanged] filter:^BOOL(CLSAccount *account) {
 		return ![account canCreateSession];

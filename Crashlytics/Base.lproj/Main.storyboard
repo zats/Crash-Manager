@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="553" y="122"/>
         </scene>
-        <!--Applications Table View Controller - Applications-->
+        <!--Applications View Controller - Applications-->
         <scene sceneID="BOz-Ck-b50">
             <objects>
-                <tableViewController storyboardIdentifier="applications" id="hD6-6o-zBf" customClass="CLSApplicationsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="applications" id="hD6-6o-zBf" customClass="CLSApplicationsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="d93-5c-yOP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,14 +175,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Build Version" id="r36-pS-SHm">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" style="done" id="Eo9-rW-Qdb">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Eo9-rW-Qdb">
                             <connections>
                                 <action selector="_filterBarButtonItemHandler:" destination="9Qu-u3-lee" id="eGG-mq-ZSc"/>
+                                <segue destination="yVQ-Ga-t3L" kind="unwind" unwindAction="_unwindFiltersViewController:" id="3Jg-B5-SNe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Guu-JO-bxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yVQ-Ga-t3L" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2639" y="-1333"/>
         </scene>
@@ -308,21 +310,28 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Filters" id="gcj-tE-rPm">
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="a5K-8r-sW4">
+                            <connections>
+                                <segue destination="piZ-D8-UFw" kind="unwind" unwindAction="_unwindFiltersViewController:" id="wLb-JA-pAE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="s6U-hO-VpU">
                             <connections>
                                 <action selector="_filterBarButtonItemHandler:" destination="l2d-5d-xO1" id="6ab-Hb-8Qs"/>
+                                <segue destination="piZ-D8-UFw" kind="unwind" unwindAction="_unwindFiltersViewController:" id="fmY-rD-wTP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GU0-tP-SYS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="piZ-D8-UFw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2269" y="-611"/>
         </scene>
-        <!--Issues Table View Controller - Issues-->
+        <!--Issues View Controller - Issues-->
         <scene sceneID="Ztd-nv-mXT">
             <objects>
-                <tableViewController storyboardIdentifier="issues" id="Dfk-2b-2i1" customClass="CLSIssuesTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="issues" id="Dfk-2b-2i1" customClass="CLSIssuesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="Bpu-ky-ePF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -337,7 +346,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgM-WJ-5zE">
-                                            <rect key="frame" x="13" y="9" width="14" height="15"/>
+                                            <rect key="frame" x="20" y="9" width="14" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -347,14 +356,14 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CoreFoundation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWX-2a-3ZE">
                                             <rect key="frame" x="41" y="3" width="130" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[NSObject(NSObject) doesNotRecognizeSelector:]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xko-PF-16z">
                                             <rect key="frame" x="41" y="23" width="235" height="12"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -362,11 +371,15 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.9.22 (671)  10 crashes  5 users" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36w-ld-r7M">
                                             <rect key="frame" x="41" y="37" width="153" height="12"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="issue-impact-level-1" translatesAutoresizingMaskIntoConstraints="NO" id="ghi-Zg-GKW">
+                                            <rect key="frame" x="28" y="38" width="6" height="9"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
@@ -376,8 +389,11 @@
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="36w-ld-r7M" secondAttribute="trailing" constant="10" id="HWA-iu-7d4"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xko-PF-16z" secondAttribute="trailing" constant="10" id="J0Y-IB-QP0"/>
                                         <constraint firstItem="36w-ld-r7M" firstAttribute="top" secondItem="Xko-PF-16z" secondAttribute="bottom" constant="2" id="N1I-nX-tdX"/>
+                                        <constraint firstItem="ghi-Zg-GKW" firstAttribute="trailing" secondItem="FgM-WJ-5zE" secondAttribute="trailing" id="RbD-f3-0mQ"/>
                                         <constraint firstAttribute="centerY" secondItem="Xko-PF-16z" secondAttribute="centerY" constant="-2" id="RmR-i2-Bhi"/>
-                                        <constraint firstItem="FgM-WJ-5zE" firstAttribute="leading" secondItem="w5g-k1-w2A" secondAttribute="leading" constant="13" id="SZB-6E-8WT"/>
+                                        <constraint firstItem="FgM-WJ-5zE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="w5g-k1-w2A" secondAttribute="leading" constant="5" id="SZB-6E-8WT"/>
+                                        <constraint firstItem="aWX-2a-3ZE" firstAttribute="leading" secondItem="FgM-WJ-5zE" secondAttribute="trailing" constant="7" id="bdT-dN-5pL"/>
+                                        <constraint firstItem="ghi-Zg-GKW" firstAttribute="bottom" secondItem="36w-ld-r7M" secondAttribute="bottom" constant="-2" id="m8o-PZ-TKu"/>
                                         <constraint firstItem="aWX-2a-3ZE" firstAttribute="leading" secondItem="w5g-k1-w2A" secondAttribute="leading" constant="41" id="olh-OA-qYI"/>
                                         <constraint firstItem="Xko-PF-16z" firstAttribute="leading" secondItem="w5g-k1-w2A" secondAttribute="leading" constant="41" id="pyW-p0-b1m"/>
                                         <constraint firstItem="36w-ld-r7M" firstAttribute="leading" secondItem="w5g-k1-w2A" secondAttribute="leading" constant="41" id="qAP-oD-6h8"/>
@@ -386,6 +402,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="baseLayoutConstraint" destination="RmR-i2-Bhi" id="vqh-wN-YHZ"/>
+                                    <outlet property="impactLevelImageView" destination="ghi-Zg-GKW" id="pR3-KQ-IgN"/>
                                     <outlet property="issueDetailsLabel" destination="36w-ld-r7M" id="MhL-KB-ItS"/>
                                     <outlet property="issueNumberLabel" destination="FgM-WJ-5zE" id="2im-YQ-w79"/>
                                     <outlet property="issueSubtitleLabel" destination="Xko-PF-16z" id="AnK-jI-6Ro"/>
@@ -457,7 +474,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="wqQ-n5-cMc"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="65" id="wqQ-n5-cMc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -519,10 +536,10 @@
             </objects>
             <point key="canvasLocation" x="1907" y="122"/>
         </scene>
-        <!--Issue Exception Table View Controller-->
+        <!--Issue Exception View Controller-->
         <scene sceneID="y4h-3v-ceJ">
             <objects>
-                <viewController storyboardIdentifier="IssueException" id="Ihb-lI-4jC" customClass="CLSIssueExceptionTableViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IssueException" id="Ihb-lI-4jC" customClass="CLSIssueExceptionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IW4-dx-dqR"/>
                         <viewControllerLayoutGuide type="bottom" id="CcU-69-gOZ"/>
@@ -535,13 +552,13 @@
                                 <rect key="frame" x="150" y="274" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mSW-tt-22E">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="mSW-tt-22E">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExceptionCellIdentifier" textLabel="owb-oB-36n" detailTextLabel="NUo-cb-7V2" style="IBUITableViewCellStyleSubtitle" id="lJS-vj-E2E">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJS-vj-E2E" id="oaG-AL-Vsb">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -624,14 +641,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Issue Status" id="wNp-rF-Wd3">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" style="done" id="keR-J7-4gB">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="keR-J7-4gB">
                             <connections>
                                 <action selector="_filterBarButtonItemHandler:" destination="VGm-Bx-7xJ" id="jGR-oC-geQ"/>
+                                <segue destination="ufW-O7-met" kind="unwind" unwindAction="_unwindFiltersViewController:" id="enb-mU-vAx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIg-fW-ij2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ufW-O7-met" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2639" y="-611"/>
         </scene>
@@ -669,21 +688,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Time Range" id="l3h-lR-fjN">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" style="done" id="2BL-Uq-3uV">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="2BL-Uq-3uV">
                             <connections>
                                 <action selector="_filterBarButtonItemHandler:" destination="ySE-FS-Bh7" id="Hib-Aj-rNw"/>
+                                <segue destination="08u-aw-JaE" kind="unwind" unwindAction="_unwindFiltersViewController:" id="byb-7c-y1d"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrn-hS-56h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="08u-aw-JaE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2639" y="122"/>
         </scene>
-        <!--Threads Table View Controller-->
+        <!--Threads View Controller-->
         <scene sceneID="aIL-bi-Mdr">
             <objects>
-                <viewController storyboardIdentifier="IssueDetailsThreads" id="gvt-Xj-bzR" customClass="CLSThreadsTableViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IssueDetailsThreads" id="gvt-Xj-bzR" customClass="CLSThreadsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7H9-kG-6ss"/>
                         <viewControllerLayoutGuide type="bottom" id="XoO-Vo-CSP"/>
@@ -1087,6 +1108,9 @@
             <point key="canvasLocation" x="1907" y="-611"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="issue-impact-level-1" width="6" height="9"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -50,8 +50,13 @@
 		
 		self.fetchedResultsController = [CLSBuild MR_fetchAllGroupedBy:nil
 														 withPredicate:predicate
-															  sortedBy:CLSBuildAttributes.buildID
+															  sortedBy:nil
 															 ascending:NO];
+		
+		self.fetchedResultsController.fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:CLSBuildAttributes.buildID
+																									 ascending:NO
+																									  selector:@selector(localizedStandardCompare:)]];
+		[self.fetchedResultsController performFetch:nil];
 	}];
 }
 

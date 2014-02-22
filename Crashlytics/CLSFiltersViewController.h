@@ -9,16 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @class CLSApplication;
-@protocol CLSFilterViewControllerDelegate;
 @interface CLSFiltersViewController : UITableViewController
 
-@property (nonatomic, weak) id<CLSFilterViewControllerDelegate> delegate;
 @property (nonatomic, weak) CLSApplication *application;
-@end
 
-@protocol CLSFilterViewControllerDelegate <NSObject>
-	
-@optional
-- (void)filterViewControllerDidFinish:(CLSFiltersViewController *)filterViewController;
-	
 @end

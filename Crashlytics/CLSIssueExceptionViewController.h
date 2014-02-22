@@ -8,6 +8,6 @@
 
 #import "CLSSessionDetailsAbstractViewController.h"
 
-@interface CLSIssueExceptionTableViewController : CLSSessionDetailsAbstractViewController
+@interface CLSIssueExceptionViewController : CLSSessionDetailsAbstractViewController
 
 @end

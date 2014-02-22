@@ -8,6 +8,6 @@
 
 #import "CLSSessionDetailsAbstractViewController.h"
 
-@interface CLSThreadsTableViewController : CLSSessionDetailsAbstractViewController
+@interface CLSThreadsViewController : CLSSessionDetailsAbstractViewController
 
 @end

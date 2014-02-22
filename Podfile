@@ -2,18 +2,18 @@
 # Crash Manager target
 #
 target "CrashManager" do
-	pod 'MagicalRecord'
 	pod 'AFNetworking'
-	pod 'ReactiveCocoa'
-	pod 'ProtobufObjC'
-	pod 'GroundControl'
-	pod 'SHUIKitBlocks'
-	pod 'TTTLocalizedPluralString'
 	pod 'CocoaLumberjack'
-    pod 'Appsee'
-    pod 'SSKeychain'
-    pod 'PBWebViewController'
-    
+	pod 'ColorArt'
+	pod 'GoogleAnalytics-iOS-SDK'
+	pod 'GroundControl'
+	pod 'MagicalRecord'
+	pod 'PBWebViewController'
+	pod 'ProtobufObjC'
+	pod 'ReactiveCocoa'
+	pod 'SHUIKitBlocks'
+	pod 'SSKeychain'
+	pod 'TTTLocalizedPluralString'
 	inhibit_all_warnings!
 end
 

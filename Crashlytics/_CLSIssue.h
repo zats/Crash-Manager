@@ -8,6 +8,7 @@ extern const struct CLSIssueAttributes {
 	__unsafe_unretained NSString *crashesCount;
 	__unsafe_unretained NSString *devicesAffected;
 	__unsafe_unretained NSString *displayID;
+	__unsafe_unretained NSString *impactLevel;
 	__unsafe_unretained NSString *issueID;
 	__unsafe_unretained NSString *lastSession;
 	__unsafe_unretained NSString *lastSessionData;
@@ -28,6 +29,7 @@ extern const struct CLSIssueFetchedProperties {
 
 @class CLSApplication;
 @class CLSBuild;
+
 
 
 
@@ -91,6 +93,20 @@ extern const struct CLSIssueFetchedProperties {
 - (void)setDisplayIDValue:(int32_t)value_;
 
 //- (BOOL)validateDisplayID:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSNumber* impactLevel;
+
+
+
+@property int32_t impactLevelValue;
+- (int32_t)impactLevelValue;
+- (void)setImpactLevelValue:(int32_t)value_;
+
+//- (BOOL)validateImpactLevel:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -223,6 +239,15 @@ extern const struct CLSIssueFetchedProperties {
 
 - (int32_t)primitiveDisplayIDValue;
 - (void)setPrimitiveDisplayIDValue:(int32_t)value_;
+
+
+
+
+- (NSNumber*)primitiveImpactLevel;
+- (void)setPrimitiveImpactLevel:(NSNumber*)value;
+
+- (int32_t)primitiveImpactLevelValue;
+- (void)setPrimitiveImpactLevelValue:(int32_t)value_;
 
 
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class CLSSession;
-@interface CLSSessionDetailsAbstractViewController : UIViewController
+@interface CLSSessionDetailsAbstractViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak, readonly) UITableView *tableView;
 

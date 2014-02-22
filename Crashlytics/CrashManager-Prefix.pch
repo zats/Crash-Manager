@@ -24,5 +24,6 @@
 #else
     static const int ddLogLevel = LOG_LEVEL_WARN;
 #endif
+	#import "CLSDefines.h"
 
 #endif

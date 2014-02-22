@@ -27,6 +27,7 @@
 
 - (CGFloat)deviceAvailableDiskSpacePercentage;
 
+- (CLSSessionException *)lastException;
 
 @end
 

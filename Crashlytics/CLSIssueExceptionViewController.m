@@ -6,18 +6,18 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSIssueExceptionTableViewController.h"
+#import "CLSIssueExceptionViewController.h"
 
 #import "CLSIncident.h"
 #import "CLSIncident_Session+Crashlytics.h"
 #import "UIViewController+OpenSource.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
-@interface CLSIssueExceptionTableViewController ()
+@interface CLSIssueExceptionViewController ()
 
 @end
 
-@implementation CLSIssueExceptionTableViewController
+@implementation CLSIssueExceptionViewController
 
 #pragma mark - UITableViewDataSource
 
@@ -57,6 +57,7 @@
 	
 	return cell;
 }
+
 
 #pragma mark - UITableViewDelegate
 

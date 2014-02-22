@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSThreadsTableViewController.h"
+#import "CLSThreadsViewController.h"
 
 #import "CLSIncident.h"
 #import "CLSIncident_Session+Crashlytics.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
-@interface CLSThreadsTableViewController ()
+@interface CLSThreadsViewController ()
 
 @property (nonatomic, weak) CLSSessionEvent *event;
 @property (nonatomic, weak) CLSSessionExecution *execution;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation CLSThreadsTableViewController
+@implementation CLSThreadsViewController
 @synthesize session = _session;
 
 
