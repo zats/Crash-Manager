@@ -14,4 +14,6 @@
 
 - (void)enableAnalyticsIfNeeded;
 
+- (void)trackViewController:(UIViewController *)viewController;
+
 @end

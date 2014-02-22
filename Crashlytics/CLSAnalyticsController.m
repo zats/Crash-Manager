@@ -12,6 +12,8 @@
 #import "CLSGoogleAnalyticsLogger.h"
 #import <GoogleAnalytics-iOS-SDK/GAI.h>
 #import <GoogleAnalytics-iOS-SDK/GAILogger.h>
+#import <GoogleAnalytics-iOS-SDK/GAIFields.h>
+#import <GoogleAnalytics-iOS-SDK/GAIDictionaryBuilder.h>
 
 @interface CLSAnalyticsController ()
 @property (nonatomic, assign) BOOL googleAnalyticsEnabled;
@@ -84,10 +86,18 @@
 		[DDLog removeLogger:[CLSGoogleAnalyticsLogger sharedInstance]];
 	}
 #ifdef DEBUG
-	[GAI sharedInstance].dryRun = YES;
+//	[GAI sharedInstance].dryRun = YES;
 	[GAI sharedInstance].logger.logLevel = kGAILogLevelVerbose;
 #endif
 	DDLogVerbose(@"Google Analytics is %@", isGoogleAnalyticsEnabled ? @"enabled" : @"disabled");
+}
+
+- (void)trackViewController:(UIViewController *)viewController {
+	id tracker = [[GAI sharedInstance] defaultTracker];
+	[tracker set:kGAIScreenName
+		   value:NSStringFromClass([viewController class])];
+	[tracker send:[[GAIDictionaryBuilder createAppView] build]];
+
 }
 
 @end

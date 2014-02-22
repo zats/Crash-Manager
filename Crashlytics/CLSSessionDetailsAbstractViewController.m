@@ -7,6 +7,8 @@
 //
 
 #import "CLSSessionDetailsAbstractViewController.h"
+
+#import "CLSAnalyticsController.h"
 #import "UIViewController+OpenSource.h"
 
 @interface CLSSessionDetailsAbstractViewController ()
@@ -57,7 +59,12 @@
         @strongify(self);
         [self.tableView reloadData];
     }];
+}
 
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+
+	[[CLSAnalyticsController sharedInstance] trackViewController:self];
 }
 
 @end

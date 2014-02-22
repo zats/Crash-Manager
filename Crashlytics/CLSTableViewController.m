@@ -11,8 +11,7 @@
 #import "CLSAccount.h"
 #import "CLSOrganization.h"
 #import "UIViewController+OpenSource.h"
-#import <GoogleAnalytics-iOS-SDK/GAI.h>
-#import <GoogleAnalytics-iOS-SDK/GAIFields.h>
+#import "CLSAnalyticsController.h"
 
 @interface CLSTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -74,10 +73,8 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
-	id tracker = [[GAI sharedInstance] defaultTracker];
-	[tracker set:kGAIScreenName
-		   value:NSStringFromClass([self class])];
-	
+	[[CLSAnalyticsController sharedInstance] trackViewController:self];
+
     RACSignal *viewWillDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
 	[[[[[CLSAccount activeAccountChangedSignal] takeUntil:viewWillDisappear] distinctUntilChanged] filter:^BOOL(CLSAccount *account) {
 		return ![account canCreateSession];
