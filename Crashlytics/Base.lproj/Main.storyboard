@@ -833,6 +833,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="SNe-ge-YZe" kind="push" identifier="issueDetails-log" id="m5P-d4-gQP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
