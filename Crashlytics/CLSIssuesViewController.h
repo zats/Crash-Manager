@@ -9,7 +9,7 @@
 #import "CLSTableViewController.h"
 
 @class CLSApplication;
-@interface CLSIssuesTableViewController : UITableViewController
+@interface CLSIssuesViewController : UITableViewController
 
 @property (nonatomic, weak) CLSApplication *application;
 

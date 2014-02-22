@@ -10,7 +10,7 @@
 
 #import "CLSAPIClient.h"
 #import "CLSAccount.h"
-#import "CLSApplicationsTableViewController.h"
+#import "CLSApplicationsViewController.h"
 #import "CLSOrganization.h"
 #import <Crashlytics/Crashlytics.h>
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
@@ -87,7 +87,7 @@
     if ([segue.identifier isEqualToString:@"organizations-applications"]) {
 		NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
 		CLSOrganization *selectedOrganization = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
-		[((CLSApplicationsTableViewController *)segue.destinationViewController) setOrganization:selectedOrganization];
+		[((CLSApplicationsViewController *)segue.destinationViewController) setOrganization:selectedOrganization];
     }
 }
 

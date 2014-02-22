@@ -12,8 +12,8 @@
 #import "CLSConstants.h"
 #import "CLSApplication.h"
 #import "CLSIssue.h"
-#import "CLSApplicationsTableViewController.h"
-#import "CLSIssuesTableViewController.h"
+#import "CLSApplicationsViewController.h"
+#import "CLSIssuesViewController.h"
 #import "CLSIssueDetailsViewController.h"
 #import <Crashlytics/Crashlytics.h>
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
@@ -213,10 +213,10 @@
 		
 		UIViewController *organizationsViewController = [self.navigationController.viewControllers firstObject];
 
-		CLSApplicationsTableViewController *appViewController = [storyboard instantiateViewControllerWithIdentifier:@"applications"];
+		CLSApplicationsViewController *appViewController = [storyboard instantiateViewControllerWithIdentifier:@"applications"];
 		appViewController.organization = organization;
 		
-		CLSIssuesTableViewController *issuesViewController = [storyboard instantiateViewControllerWithIdentifier:@"issues"];
+		CLSIssuesViewController *issuesViewController = [storyboard instantiateViewControllerWithIdentifier:@"issues"];
 		issuesViewController.application = application;
 		
 		CLSIssueDetailsViewController *issueDetailsViewController = [storyboard instantiateViewControllerWithIdentifier:@"issueDetails"];

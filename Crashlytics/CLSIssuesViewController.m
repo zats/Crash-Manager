@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSIssuesTableViewController.h"
+#import "CLSIssuesViewController.h"
 
 #import "CLSAPIClient.h"
 #import "CLSAccount.h"
@@ -19,14 +19,14 @@
 #import "CLSIssueListCell.h"
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
 
-@interface CLSIssuesTableViewController () <CLSFilterViewControllerDelegate>
+@interface CLSIssuesViewController () <CLSFilterViewControllerDelegate>
 @property (nonatomic, strong) NSString *applicationID;
 @property (nonatomic, strong) NSPredicate *basicPredicate;
 @property (nonatomic, strong) RACDisposable *fetchIssuesDisposable;
 @property (nonatomic, strong) NSArray *issueIDs;
 @end
 
-@implementation CLSIssuesTableViewController
+@implementation CLSIssuesViewController
 
 #pragma mark - Public
 

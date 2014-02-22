@@ -6,25 +6,25 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSApplicationsTableViewController.h"
+#import "CLSApplicationsViewController.h"
 
 #import "CLSAPIClient.h"
 #import "CLSAccount.h"
 #import "CLSApplication.h"
 #import "CLSApplicationCell.h"
 #import "CLSBuild.h"
-#import "CLSIssuesTableViewController.h"
+#import "CLSIssuesViewController.h"
 #import "CLSOrganization.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
 
-@interface CLSApplicationsTableViewController ()
+@interface CLSApplicationsViewController ()
 
 @property (nonatomic, strong) NSString *orgnaizationID;
 
 @end
 
-@implementation CLSApplicationsTableViewController
+@implementation CLSApplicationsViewController
 
 #pragma mark - Public
 
@@ -81,7 +81,7 @@
 	CLSApplication *selectedApplcation = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
 
 	if ([segue.identifier isEqualToString:@"applications-issues"]) {
-		CLSIssuesTableViewController *issuesTableViewController = segue.destinationViewController;
+		CLSIssuesViewController *issuesTableViewController = segue.destinationViewController;
 		
 		issuesTableViewController.title = [NSString stringWithFormat:NSLocalizedString(@"CLSIssueListTitleFormat", @"Format for the title of the issues list screen, application name will be substituded"), selectedApplcation.name];
 		issuesTableViewController.application = selectedApplcation;

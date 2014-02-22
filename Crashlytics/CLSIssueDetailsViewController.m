@@ -12,7 +12,7 @@
 #import "CLSAPIClient.h"
 #import "CLSAccount.h"
 #import "CLSIncident.h"
-#import "CLSIssueExceptionTableViewController.h"
+#import "CLSIssueExceptionViewController.h"
 #import <ReactiveCocoa/RACEXTScope.h>
 #import <SHActionSheetBlocks/SHActionSheetBlocks.h>
 #import "CLSIncident_Session+Crashlytics.h"
