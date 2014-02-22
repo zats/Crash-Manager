@@ -10,12 +10,10 @@
 
 #import "CLSConstants.h"
 #import "CLSGoogleAnalyticsLogger.h"
-#import <Appsee/Appsee.h>
 #import <GoogleAnalytics-iOS-SDK/GAI.h>
 #import <GoogleAnalytics-iOS-SDK/GAILogger.h>
 
 @interface CLSAnalyticsController ()
-@property (nonatomic, assign) BOOL appseeEnabled;
 @property (nonatomic, assign) BOOL googleAnalyticsEnabled;
 @end
 
@@ -58,21 +56,14 @@
 #pragma mark - Private
 
 - (void)_enableAnalyticsWithConfiguration:(NSDictionary *)configuration {
-	BOOL isAppseeEnabled = [configuration[CLSAppseeEnabledKey] boolValue];
 	BOOL isGoogleAnalyticsEnabled = [configuration[CLSGoogleAnalyticsEnabledKey] boolValue];
-	if (self.appseeEnabled == isAppseeEnabled &&
-		self.googleAnalyticsEnabled == isGoogleAnalyticsEnabled) {
+	if (self.googleAnalyticsEnabled == isGoogleAnalyticsEnabled) {
 		return;
 	}
 	
 	// Google Analytics
 	if (self.googleAnalyticsEnabled != isGoogleAnalyticsEnabled) {
 		[self _setGoogleAnalyticsEnabled:isGoogleAnalyticsEnabled];
-	}
-	
-	// Appsee
-	if (self.appseeEnabled != isAppseeEnabled) {
-		[self _setAppseeEnabled:isAppseeEnabled];
 	}
 }
 
@@ -97,17 +88,6 @@
 	[GAI sharedInstance].logger.logLevel = kGAILogLevelVerbose;
 #endif
 	DDLogVerbose(@"Google Analytics is %@", isGoogleAnalyticsEnabled ? @"enabled" : @"disabled");
-}
-
-- (void)_setAppseeEnabled:(BOOL)isAppseeEnabled {
-	self.appseeEnabled = isAppseeEnabled;
-	
-	if (isAppseeEnabled) {
-		[Appsee start:CLSAppseeAPIKey];
-	} else {
-		[Appsee stopAndUpload];
-	}
-	DDLogVerbose(@"Appsee analytics is %@", isAppseeEnabled ? @"enabled" : @"disabled");
 }
 
 @end

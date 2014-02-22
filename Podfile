@@ -3,7 +3,6 @@
 #
 target "CrashManager" do
 	pod 'AFNetworking'
-	pod 'Appsee'
 	pod 'CocoaLumberjack'
 	pod 'ColorArt'
 	pod 'GoogleAnalytics-iOS-SDK'

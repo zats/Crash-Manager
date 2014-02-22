@@ -10,11 +10,9 @@
 
 // Analytics Keys
 extern NSString *const CLSGoogleAnalyticsEnabledKey;
-extern NSString *const CLSAppseeEnabledKey;
 
 // API Keys
 extern NSString *const CLSGoogleAnalyticsIdenitifer;
-extern NSString *const CLSAppseeAPIKey;
 
 // Pasteboard Keys
 extern NSString *const CLSLastPasteboardedIssueIDKey;

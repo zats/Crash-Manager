@@ -12,24 +12,6 @@
 			<key>Title</key>
 			<string></string>
 			<key>FooterText</key>
-			<string>AppSeeFooter</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>AppSee</string>
-			<key>Key</key>
-			<string>CLSAppseeEnabledKey</string>
-			<key>DefaultValue</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string></string>
-			<key>FooterText</key>
 			<string>GoogleAnalyticsFooter</string>
 		</dict>
 		<dict>
