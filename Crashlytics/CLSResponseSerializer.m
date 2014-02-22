@@ -95,9 +95,11 @@ static inline NSDictionary *CLSSimplifyDictionary(NSDictionary *dictionary) {
 	
 	if (isErrorResponse) {
 		// an error message?
-		*error = [NSError errorWithDomain:CLSErrorDomain
-									 code:((NSHTTPURLResponse *)response).statusCode
-								 userInfo:@{ NSLocalizedDescriptionKey: result[@"message"] }];
+		if (error) {
+			*error = [NSError errorWithDomain:CLSErrorDomain
+										 code:((NSHTTPURLResponse *)response).statusCode
+									 userInfo:@{ NSLocalizedDescriptionKey: result[@"message"] }];
+		}
 		return nil;
 	}
 
