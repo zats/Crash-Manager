@@ -27,6 +27,10 @@
 	return [exception hasType] && [exception hasReason];
 }
 
+- (CLSSessionException *)lastException {
+	return [self lastEvent].app.execution.exception;
+}
+
 - (CLSSessionBinaryImage *)binaryImageForAddress:(uint64_t)address {
 	for (CLSSessionBinaryImage *binaryImage in [self lastEvent].app.execution.binaries) {
 		if (binaryImage.baseAddress <= address && binaryImage.baseAddress + binaryImage.size > address) {

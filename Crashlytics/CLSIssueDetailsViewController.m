@@ -146,15 +146,32 @@ typedef enum _CLSDetailsSegment {
 	RACSignal *activeAccountDidChangeSignal = [[CLSAccount activeAccountChangedSignal] filter:^BOOL(id account) {
 		return account != nil;
 	}];
-		
+	
 	@weakify(self);
+	[[RACSignal
+		combineLatest:@[
+			RACObserve(self, issue.subtitle),
+			RACObserve(self, issue.lastSession)]]
+		subscribeNext:^(id x) {
+			@strongify(self);
+
+			NSString *additionalInformation = self.issue.subtitle;
+			CLSSessionException *exception = [self.issue.lastSession lastException];
+			if ([exception.type length]) {
+				additionalInformation = [additionalInformation stringByAppendingFormat:@"\n%@", exception.type];
+			}
+			if ([exception.reason length]) {
+				additionalInformation = [additionalInformation stringByAppendingFormat:@"\n%@", exception.reason];
+			}
+			self.exceptionDescriptionLabel.text = additionalInformation;
+		}];
+		
 	[[RACSignal
 		combineLatest:@[issueDidChangeSignal, activeAccountDidChangeSignal]]
 		subscribeNext:^(id x) {
 			@strongify(self);
 			self.title = [NSString stringWithFormat:@"Issue #%@", self.issue.displayID];
 			self.exceptionTypeLabel.text = self.issue.title;
-			self.exceptionDescriptionLabel.text = self.issue.subtitle;
 			
 			if (self.issue.lastSession) {
 				[self _processIncidentSession:self.issue.lastSession];

@@ -227,7 +227,7 @@
 			name = Generic;
 			sourceTree = "<group>";
 		};
-		5C40185D186B827A00CC71AE /* Crash Details */ = {
+		5C40185D186B827A00CC71AE /* Issue Details */ = {
 			isa = PBXGroup;
 			children = (
 				5C3BCF2D1868AF20004BB1FA /* CLSIssueDetailsViewController.h */,
@@ -235,7 +235,7 @@
 				5C401861186C27D600CC71AE /* Crash Details View Controllers */,
 				5CB3C0821871BDFC00CE00D7 /* Filters */,
 			);
-			name = "Crash Details";
+			name = "Issue Details";
 			sourceTree = "<group>";
 		};
 		5C401861186C27D600CC71AE /* Crash Details View Controllers */ = {
@@ -489,7 +489,7 @@
 				5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */,
 				5C3CEAB518671C4000F8DDC6 /* CLSIssuesViewController.h */,
 				5C3CEAB618671C4000F8DDC6 /* CLSIssuesViewController.m */,
-				5C40185D186B827A00CC71AE /* Crash Details */,
+				5C40185D186B827A00CC71AE /* Issue Details */,
 			);
 			name = "Issues List";
 			sourceTree = "<group>";
