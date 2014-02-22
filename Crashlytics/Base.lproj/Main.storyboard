@@ -310,6 +310,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Filters" id="gcj-tE-rPm">
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="a5K-8r-sW4">
+                            <connections>
+                                <segue destination="piZ-D8-UFw" kind="unwind" unwindAction="_unwindFiltersViewController:" id="wLb-JA-pAE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="s6U-hO-VpU">
                             <connections>
                                 <action selector="_filterBarButtonItemHandler:" destination="l2d-5d-xO1" id="6ab-Hb-8Qs"/>
