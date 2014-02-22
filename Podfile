@@ -5,6 +5,7 @@ target "CrashManager" do
 	pod 'AFNetworking'
 	pod 'Appsee'
 	pod 'CocoaLumberjack'
+	pod 'ColorArt'
 	pod 'GoogleAnalytics-iOS-SDK'
 	pod 'GroundControl'
 	pod 'MagicalRecord'
@@ -14,7 +15,6 @@ target "CrashManager" do
 	pod 'SHUIKitBlocks'
 	pod 'SSKeychain'
 	pod 'TTTLocalizedPluralString'
-	
 	inhibit_all_warnings!
 end
 
