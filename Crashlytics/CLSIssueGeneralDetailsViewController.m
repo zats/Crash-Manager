@@ -277,6 +277,7 @@ titleForFooterInSection:(NSInteger)section {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == kCLSSectionLogs) {
+		// being handled by storyboard
 		return;
 	}
 	
