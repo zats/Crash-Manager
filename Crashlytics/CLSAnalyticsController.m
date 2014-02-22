@@ -87,7 +87,7 @@
 		[DDLog removeLogger:[CLSGoogleAnalyticsLogger sharedInstance]];
 	}
 #ifdef DEBUG
-//	[GAI sharedInstance].dryRun = YES;
+	[GAI sharedInstance].dryRun = YES;
 	[GAI sharedInstance].logger.logLevel = kGAILogLevelVerbose;
 #endif
 	DDLogVerbose(@"Google Analytics is %@", isGoogleAnalyticsEnabled ? @"enabled" : @"disabled");
