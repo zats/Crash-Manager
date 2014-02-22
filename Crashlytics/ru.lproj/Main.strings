@@ -14,13 +14,13 @@
 
 // Issues screen
 // Title
-"ug4-61-S1t.title" = "Issues";
+"ug4-61-S1t.title" = "Проблемы";
 // Show Filters Button title
 "Fgo-qE-AWu.title" = "Фильтры";
 
 // Filters Screen
 // Title
-"gcj-tE-rPm.title" = "Filters";
+"gcj-tE-rPm.title" = "Фильтры";
 // Build Version
 "Kcn-a3-uGf.text" = "Версия";
 // Issue Status
@@ -33,20 +33,14 @@
 // Build Versions Filters
 // Title
 "r36-pS-SHm.title" = "Версия";
-// Apply filter button
-"Eo9-rW-Qdb.title" = "Фильтровать";
 
 // Issue Status Filters
 // Title
-"wNp-rF-Wd3.title" = "Issue Status";
-// Apply Filters Button
-"keR-J7-4gB.title" = "Фильтровать";
+"wNp-rF-Wd3.title" = "Статус Проблемы";
 
 // Time Range Filters
 // Title
 "l3h-lR-fjN.title" = "Временной диапазон";
-// Apply Filters Buttons
-"2BL-Uq-3uV.title" = "Фильтровать";
 
 // Issue Details
 // Logs Button label
@@ -62,7 +56,7 @@
 // Password label
 "Er9-bS-fe2.text" = "Пароль";
 // Password placeholder
-"qba-px-JCb.placeholder" = "сикрет";
+"qba-px-JCb.placeholder" = "секрет";
 // Sign In button title
 "wPs-3D-iTV.text" = "Войти";
 // Sign Up button title

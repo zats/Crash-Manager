@@ -1,7 +1,4 @@
 
-/* Class = "IBUIBarButtonItem"; title = "Filter"; ObjectID = "2BL-Uq-3uV"; */
-"2BL-Uq-3uV.title" = "Filter";
-
 /* Class = "IBUILabel"; text = "0.9.22 (671)  10 crashes  5 users"; ObjectID = "36w-ld-r7M"; */
 "36w-ld-r7M.text" = "0.9.22 (671)  10 crashes  5 users";
 
@@ -28,9 +25,6 @@
 
 /* Class = "IBUILabel"; text = "Title"; ObjectID = "Dxa-mK-vkI"; */
 "Dxa-mK-vkI.text" = "Title";
-
-/* Class = "IBUIBarButtonItem"; title = "Filter"; ObjectID = "Eo9-rW-Qdb"; */
-"Eo9-rW-Qdb.title" = "Filter";
 
 /* Class = "IBUILabel"; text = "Password"; ObjectID = "Er9-bS-fe2"; */
 "Er9-bS-fe2.text" = "Password";
@@ -109,9 +103,6 @@
 
 /* Class = "IBUILabel"; text = "iOS  999 issues affecting 999 users"; ObjectID = "jcE-Ol-dfz"; */
 "jcE-Ol-dfz.text" = "iOS  999 issues affecting 999 users";
-
-/* Class = "IBUIBarButtonItem"; title = "Filter"; ObjectID = "keR-J7-4gB"; */
-"keR-J7-4gB.title" = "Filter";
 
 /* Class = "IBUINavigationItem"; title = "Time Range"; ObjectID = "l3h-lR-fjN"; */
 "l3h-lR-fjN.title" = "Time Range";
