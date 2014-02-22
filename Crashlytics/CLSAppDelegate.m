@@ -22,7 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Initializar configuration
-    [CLSConfiguration sharedInstance];
+    [[CLSConfiguration sharedInstance] setup];
 
 	// Analytics
 	[[CLSAnalyticsController sharedInstance] enableAnalyticsIfNeeded];
