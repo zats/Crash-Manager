@@ -92,25 +92,27 @@
 }
 
 - (CLSIssue *)_issueForIndexPath:(NSIndexPath *)indexPath {
-	NSAssert(indexPath.row < [self.issueIDs count], @"Specified index path is out of bounds of issue IDs: %@ %@", indexPath, self.issueIDs);
-	NSString *issueID = self.issueIDs[indexPath.row];
-	return [CLSIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
-								   withValue:issueID];
+	return [self.fetchedResultsController objectAtIndexPath:indexPath];
+}
+
+- (NSInteger)_numberOfIssues {
+	id<NSFetchedResultsSectionInfo> sectionInfo  = [self.fetchedResultsController.sections firstObject];
+	return sectionInfo.numberOfObjects;
 }
 
 - (BOOL)_isOnlyRowAtIndexPath:(NSIndexPath *)indexPath {
 	return (indexPath.row == 0 &&
-			[self.issueIDs count] == 1);
+			[self _numberOfIssues] == 1);
 }
 
 - (BOOL)_isFirstRowAtIndexPath:(NSIndexPath *)indexPath {
 	return (indexPath.row == 0 &&
-			[self.issueIDs count] > 0);
+			[self _numberOfIssues] > 0);
 }
 
 - (BOOL)_isLastRowAtIndexPath:(NSIndexPath *)indexPath {
-	return ([self.issueIDs count] != 0 &&
-			indexPath.row == [self.issueIDs count] - 1);
+	return ([self _numberOfIssues] != 0 &&
+			indexPath.row == [self _numberOfIssues] - 1);
 }
 
 #pragma mark - UIViewController
@@ -121,54 +123,78 @@
 	NSAssert(self.application != nil, @"Application is not set");
 	
 	@weakify(self);
-	[[RACObserve(self.application, filter)
-		filter:^BOOL(CLSApplication *application) {
-			return application != nil;
-		}]
-		subscribeNext:^(CLSFilter *filter) {
-			[[[RACSignal
-				combineLatest:@[
-                    RACObserve(filter, build),
-                    RACObserve(filter, issueStatus),
-                    RACObserve(filter, issueNewerThen),
-                    RACObserve(filter, issueOlderThen)]]
-				distinctUntilChanged]
-				subscribeNext:^(id x) {
-					// We don't get issues creation date in response we can not use
-					// fetched results controller for fetching issues filtered by time.
-					// Because of that I ended up using a simple array for this case
-					// However we still trying to prepopulate array for other fitlers
-					// or for whe no filters selected
-					@strongify(self);
-					CLSFilter *filter = self.application.filter;
-					if ([filter isTimeRangeFilterSet]) {
-						self.issueIDs = [NSArray array];
-					} else {
-						NSMutableArray *predicatesArray = [NSMutableArray array];
-						if ([filter isBuildFilterSet]) {
-							[predicatesArray addObject:[NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.build, filter.build]];
-						}
-						if ([filter isStatusFilterSet]) {
-							if ([filter.issueStatus isEqualToString:CLSFilterIssueStatusResolved]) {
-								[predicatesArray addObject:[NSPredicate predicateWithFormat:@"%K != nil", CLSIssueAttributes.resolvedAt]];
-							} else if ([filter.issueStatus isEqualToString:CLSFilterIssueStatusUnresolved]) {
-								[predicatesArray addObject:[NSPredicate predicateWithFormat:@"%K == nil", CLSIssueAttributes.resolvedAt]];
-							}
-						}
-						[predicatesArray addObject:[NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.application, self.application]];
-						NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicatesArray];
-						NSString *sortString = [NSString stringWithFormat:@"%@,%@,%@", CLSIssueAttributes.crashesCount, CLSIssueAttributes.devicesAffected, CLSIssueAttributes.title];
-						NSArray *issues = [CLSIssue MR_findAllSortedBy:sortString ascending:NO withPredicate:predicate];
-						self.issueIDs = [issues valueForKey:CLSIssueAttributes.issueID];
-					}
-					[self _beginLoading];
-				}];
-		}];
-	
-	[RACObserve(self, issueIDs) subscribeNext:^(id x) {
+	[RACObserve(self, application) subscribeNext:^(CLSApplication *application) {
 		@strongify(self);
-		[self.tableView reloadData];
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.application, application];
+		self.fetchedResultsController = [CLSIssue MR_fetchAllGroupedBy:nil
+														 withPredicate:predicate
+															  sortedBy:nil
+															 ascending:YES];
+		NSArray *sortDescriptors = @[
+			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.impactLevel ascending:NO],
+			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.crashesCount ascending:NO],
+			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.devicesAffected ascending:NO],
+			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.resolvedAt ascending:YES],
+			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.title ascending:YES selector:@selector(localizedStandardCompare:)],
+		];
+		self.fetchedResultsController.fetchRequest.sortDescriptors = sortDescriptors;
+		
+		NSError *error = nil;
+		if (![self.fetchedResultsController performFetch:&error]) {
+			DDLogError(@"Failed to fetch issues for application %@\n%@", application.name, error);
+		}
+		
+		[self _beginLoading];
 	}];
+	
+//	[[RACObserve(self.application, filter)
+//		filter:^BOOL(CLSApplication *application) {
+//			return application != nil;
+//		}]
+//		subscribeNext:^(CLSFilter *filter) {
+//			[[[RACSignal
+//				combineLatest:@[
+//                    RACObserve(filter, build),
+//                    RACObserve(filter, issueStatus),
+//                    RACObserve(filter, issueNewerThen),
+//                    RACObserve(filter, issueOlderThen)]]
+//				distinctUntilChanged]
+//				subscribeNext:^(id x) {
+//					// We don't get issues creation date in response we can not use
+//					// fetched results controller for fetching issues filtered by time.
+//					// Because of that I ended up using a simple array for this case
+//					// However we still trying to prepopulate array for other fitlers
+//					// or for whe no filters selected
+//					@strongify(self);
+//					CLSFilter *filter = self.application.filter;
+//					if ([filter isTimeRangeFilterSet]) {
+//						self.issueIDs = [NSArray array];
+//					} else {
+//						NSMutableArray *predicatesArray = [NSMutableArray array];
+//						if ([filter isBuildFilterSet]) {
+//							[predicatesArray addObject:[NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.build, filter.build]];
+//						}
+//						if ([filter isStatusFilterSet]) {
+//							if ([filter.issueStatus isEqualToString:CLSFilterIssueStatusResolved]) {
+//								[predicatesArray addObject:[NSPredicate predicateWithFormat:@"%K != nil", CLSIssueAttributes.resolvedAt]];
+//							} else if ([filter.issueStatus isEqualToString:CLSFilterIssueStatusUnresolved]) {
+//								[predicatesArray addObject:[NSPredicate predicateWithFormat:@"%K == nil", CLSIssueAttributes.resolvedAt]];
+//							}
+//						}
+//						[predicatesArray addObject:[NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.application, self.application]];
+//						NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicatesArray];
+//						NSString *sortString = [NSString stringWithFormat:@"%@,%@,%@", CLSIssueAttributes.crashesCount, CLSIssueAttributes.devicesAffected, CLSIssueAttributes.title];
+//						NSArray *issues = [CLSIssue MR_findAllSortedBy:sortString ascending:NO withPredicate:predicate];
+//						self.issueIDs = [issues valueForKey:CLSIssueAttributes.issueID];
+//					}
+//					[self _beginLoading];
+//				}];
+//		}];
+//	
+//	[RACObserve(self, issueIDs) subscribeNext:^(id x) {
+//		@strongify(self);
+//		[self.tableView reloadData];
+//	}];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -189,9 +215,9 @@
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [self.issueIDs count];
-}
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//	return [self.issueIDs count];
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
