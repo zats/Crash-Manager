@@ -1,4 +1,4 @@
-# 1.0.1 (25)
+# 1.0.1 (26)
 
 * Added exception information in the issue details view controller
 * Added issue impact level indicator
