@@ -74,14 +74,6 @@ typedef NS_ENUM(NSInteger, CLSFilterTableViewCell) {
 	return applicaiton.filter;
 }
 
-#pragma mark - Actions
-	
-- (IBAction)_filterBarButtonItemHandler:(id)sender {
-	if ([self.delegate respondsToSelector:@selector(filterViewControllerDidFinish:)]) {
-		[self.delegate filterViewControllerDidFinish:self];
-	}
-}
-
 #pragma mark - UIViewController
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

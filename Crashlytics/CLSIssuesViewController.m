@@ -19,7 +19,7 @@
 #import "CLSIssueListCell.h"
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
 
-@interface CLSIssuesViewController () <CLSFilterViewControllerDelegate>
+@interface CLSIssuesViewController ()
 @property (nonatomic, strong) NSString *applicationID;
 @property (nonatomic, strong) NSPredicate *basicPredicate;
 @property (nonatomic, strong) RACDisposable *fetchIssuesDisposable;
@@ -43,6 +43,10 @@
 
 - (IBAction)_refreshControlHandler:(id)sender {
 	[self _beginLoading];
+}
+
+- (IBAction)_unwindFiltersViewController:(UIStoryboardSegue *)segue {
+	
 }
 
 #pragma mark - Private
@@ -201,7 +205,6 @@
 	if ([segue.identifier isEqualToString:@"bugs-filter"]) {
 		CLSFiltersViewController *filterViewController = [((UINavigationController *)segue.destinationViewController).viewControllers firstObject];
 		filterViewController.application = self.application;
-		filterViewController.delegate = self;
 	} else if ([segue.identifier isEqualToString:@"issues-details"]) {
 		self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] init];
 		self.navigationItem.backBarButtonItem.title = @"";
@@ -274,12 +277,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 			return 60.0f;
 		}
 	return 54.0;
-}
-
-#pragma mark - CLSFilterViewControllerDelegate
-
-- (void)filterViewControllerDidFinish:(CLSFiltersViewController *)filterViewController {
-	[filterViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
