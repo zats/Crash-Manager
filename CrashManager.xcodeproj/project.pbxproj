@@ -38,7 +38,6 @@
 		5C71944518B7A3C200465412 /* CLSAnalyticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944418B7A3C200465412 /* CLSAnalyticsController.m */; };
 		5C71944B18B7A7A900465412 /* CLSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944A18B7A7A900465412 /* CLSConstants.m */; };
 		5C71945318B7B49100465412 /* CLSGoogleAnalyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71945218B7B49100465412 /* CLSGoogleAnalyticsLogger.m */; };
-		5C71946118B8B8F900465412 /* CrashManager-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C71946018B8B8F900465412 /* CrashManager-Info.plist */; };
 		5C71946C18B8BE2900465412 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C71946A18B8BE2900465412 /* InfoPlist.strings */; };
 		5C85507518720FB8008F5038 /* _CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507218720FB8008F5038 /* _CLSFilter.m */; };
 		5C85507618720FB8008F5038 /* CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507418720FB8008F5038 /* CLSFilter.m */; };
@@ -520,7 +519,6 @@
 				5CDE08DB188A872F0051124A /* Automatic Build incrementation */,
 				8AF3D6D6FDA9447EBB27B388 /* Copy Pods Resources */,
 				5C6BF2AA18637D38007C483D /* Crashlytics */,
-				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
 				5CBE4765189D7A25002D3E90 /* Convert TODO and FIXME into warnings */,
 			);
 			buildRules = (
@@ -576,7 +574,6 @@
 				5CE8926F186F13860017F68A /* configuration.plist in Resources */,
 				5C046FDC1872B64600E4998C /* Settings.bundle in Resources */,
 				5CE94DFD18534976003C7DB1 /* Main.storyboard in Resources */,
-				5C71946118B8B8F900465412 /* CrashManager-Info.plist in Resources */,
 				5C8550791872191C008F5038 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,20 +652,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
-		};
-		OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Objective-Clean Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# \"${LOCAL_APPS_DIR}\"/Objective-Clean.app/Contents/Resources/ObjClean.app/Contents/MacOS/ObjClean \"${SRCROOT}\"?CLS";
 		};
 /* End PBXShellScriptBuildPhase section */
 

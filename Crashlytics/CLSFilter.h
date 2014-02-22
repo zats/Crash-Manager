@@ -48,3 +48,11 @@ static inline NSString *CLSLocalizedDisplayStringForFilterTimeRange(NSArray *tim
 - (NSString *)summaryString;
 
 @end
+
+@interface CLSFilter (CLSPredicate)
+
+- (NSPredicate *)emptyFilterPreidacte;
+
+- (NSPredicate *)predicate;
+
+@end

@@ -46,7 +46,18 @@
 }
 
 - (IBAction)_unwindFiltersViewController:(UIStoryboardSegue *)segue {
-	
+	NSPredicate *newPredicate = [self.application.filter predicate];
+	BOOL hasPredicateChanged = ![self.fetchedResultsController.fetchRequest.predicate isEqual:newPredicate];
+	if (!hasPredicateChanged) {
+		return;
+	}
+	self.fetchedResultsController.fetchRequest.predicate = newPredicate;
+	NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+		DDLogError(@"Failed to fetch with predicate: %@ for filter %@\n%@", newPredicate,self.application.filter, error);
+	}
+	[self.tableView reloadData];
+	[self _beginLoading];
 }
 
 #pragma mark - Private
@@ -129,17 +140,28 @@
 	@weakify(self);
 	[RACObserve(self, application) subscribeNext:^(CLSApplication *application) {
 		@strongify(self);
-		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.application, application];
 		self.fetchedResultsController = [CLSIssue MR_fetchAllGroupedBy:nil
-														 withPredicate:predicate
+														 withPredicate:[application.filter predicate]
 															  sortedBy:nil
 															 ascending:YES];
 		NSArray *sortDescriptors = @[
-			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.impactLevel ascending:NO],
-			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.crashesCount ascending:NO],
-			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.devicesAffected ascending:NO],
-			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.resolvedAt ascending:YES],
-			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.title ascending:YES selector:@selector(localizedStandardCompare:)],
+			// Impact Level
+			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.impactLevel
+										  ascending:NO],
+			// Number of crashes
+			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.crashesCount
+										  ascending:NO],
+			// Number of users affected by the crash
+			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.devicesAffected
+										  ascending:NO],
+			// Unresolved issues should come before resovled
+			// Issues resolved today yesterday should go before issues resolved yesterday
+			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.resolvedAt
+										  ascending:YES],
+			// As a final meause, we sort by the title
+			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.title
+										  ascending:NO
+										   selector:@selector(localizedStandardCompare:)],
 		];
 		self.fetchedResultsController.fetchRequest.sortDescriptors = sortDescriptors;
 		
@@ -151,6 +173,7 @@
 		[self _beginLoading];
 	}];
 	
+
 //	[[RACObserve(self.application, filter)
 //		filter:^BOOL(CLSApplication *application) {
 //			return application != nil;
@@ -218,16 +241,12 @@
 
 #pragma mark - UITableViewDataSource
 
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//	return [self.issueIDs count];
-//}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	CLSIssueListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueCellIdentifier"
 															forIndexPath:indexPath];
-    [self _configureCell:cell forIndexPath:indexPath];
+	[self _configureCell:cell forIndexPath:indexPath];
     return cell;
 }
 

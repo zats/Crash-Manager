@@ -12,4 +12,5 @@
 @interface CLSFiltersViewController : UITableViewController
 
 @property (nonatomic, weak) CLSApplication *application;
+
 @end
