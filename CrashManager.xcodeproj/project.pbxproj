@@ -40,6 +40,7 @@
 		5C71945318B7B49100465412 /* CLSGoogleAnalyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71945218B7B49100465412 /* CLSGoogleAnalyticsLogger.m */; };
 		5C71946C18B8BE2900465412 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C71946A18B8BE2900465412 /* InfoPlist.strings */; };
 		5C757E7A18C1D5E900C50A72 /* CLSCrashlyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E7918C1D5E900C50A72 /* CLSCrashlyticsLogger.m */; };
+		5C757E7F18C1D83500C50A72 /* CLSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E7E18C1D83500C50A72 /* CLSAboutViewController.m */; };
 		5C85507518720FB8008F5038 /* _CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507218720FB8008F5038 /* _CLSFilter.m */; };
 		5C85507618720FB8008F5038 /* CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507418720FB8008F5038 /* CLSFilter.m */; };
 		5C8550791872191C008F5038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C85507B1872191C008F5038 /* Localizable.strings */; };
@@ -137,6 +138,8 @@
 		5C71946D18B8BE3000465412 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5C757E7818C1D5E900C50A72 /* CLSCrashlyticsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSCrashlyticsLogger.h; sourceTree = "<group>"; };
 		5C757E7918C1D5E900C50A72 /* CLSCrashlyticsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSCrashlyticsLogger.m; sourceTree = "<group>"; };
+		5C757E7D18C1D83500C50A72 /* CLSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSAboutViewController.h; sourceTree = "<group>"; };
+		5C757E7E18C1D83500C50A72 /* CLSAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSAboutViewController.m; sourceTree = "<group>"; };
 		5C85507118720FB8008F5038 /* _CLSFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CLSFilter.h; path = Crashlytics/_CLSFilter.h; sourceTree = SOURCE_ROOT; };
 		5C85507218720FB8008F5038 /* _CLSFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _CLSFilter.m; path = Crashlytics/_CLSFilter.m; sourceTree = SOURCE_ROOT; };
 		5C85507318720FB8008F5038 /* CLSFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSFilter.h; path = Crashlytics/CLSFilter.h; sourceTree = SOURCE_ROOT; };
@@ -262,6 +265,7 @@
 		5C4B0681185355C50061485A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5C757E7C18C1D82800C50A72 /* About */,
 				5C4B0682185356000061485A /* CLSOrganizationsViewController.h */,
 				5C4B0683185356000061485A /* CLSOrganizationsViewController.m */,
 				5CC3F7E51876B11B003C2FAC /* Login */,
@@ -395,6 +399,15 @@
 				5C757E7918C1D5E900C50A72 /* CLSCrashlyticsLogger.m */,
 			);
 			name = CrashlyticsLogger;
+			sourceTree = "<group>";
+		};
+		5C757E7C18C1D82800C50A72 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				5C757E7D18C1D83500C50A72 /* CLSAboutViewController.h */,
+				5C757E7E18C1D83500C50A72 /* CLSAboutViewController.m */,
+			);
+			name = About;
 			sourceTree = "<group>";
 		};
 		5CB3C0821871BDFC00CE00D7 /* Filters */ = {
@@ -692,6 +705,7 @@
 				5C9AC77C186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m in Sources */,
 				5C6D3CFB18534CA9005E97D1 /* CLSOrganization.m in Sources */,
 				5C71945318B7B49100465412 /* CLSGoogleAnalyticsLogger.m in Sources */,
+				5C757E7F18C1D83500C50A72 /* CLSAboutViewController.m in Sources */,
 				5C6D3CF418534CA9005E97D1 /* _CLSIssue.m in Sources */,
 				5CC3F7EB1876C933003C2FAC /* CLSError.m in Sources */,
 				5C6D3CF918534CA9005E97D1 /* CLSIssue.m in Sources */,

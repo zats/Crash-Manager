@@ -25,7 +25,8 @@
 
 #pragma mark - Actions
 
-- (IBAction)_aboutBarButtonItemHandler:(id)sender {
+- (IBAction)_unwindOrganizationViewControllerHandler:(UIStoryboardSegue *)sender {
+	
 }
 
 - (IBAction)_logoutBarButtonItemHandler:(id)sender {
