@@ -11,6 +11,7 @@
 #import "CLSAccount.h"
 #import "CLSAPIClient.h"
 #import "CLSConfiguration.h"
+#import "UIViewController+OpenSource.h"
 
 typedef NS_ENUM(NSInteger, CLSLoginSections) {
 	kCLSLoginSectionCredentials = 0,
@@ -116,6 +117,8 @@ typedef NS_ENUM(NSInteger, CLSHelpSectionRow) {
 	UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"crashington"]];
 	imageView.center = CGPointMake(CGRectGetMidX(self.view.frame), -150);
 	[self.tableView addSubview:imageView];
+	
+	[self cls_exposeSource];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
