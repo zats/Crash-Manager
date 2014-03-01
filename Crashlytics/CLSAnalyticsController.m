@@ -75,7 +75,7 @@
 	// Google Analytics
 	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 	if (!tracker) {
-		[GAI sharedInstance].trackUncaughtExceptions = NO;
+		[GAI sharedInstance].trackUncaughtExceptions = YES;
 		tracker = [[GAI sharedInstance] trackerWithTrackingId:CLSGoogleAnalyticsIdenitifer];
 	}
 	
