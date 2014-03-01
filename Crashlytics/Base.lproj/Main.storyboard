@@ -53,6 +53,11 @@
                                 <action selector="_logoutBarButtonItemHandler:" destination="khs-6S-axm" id="1ha-xI-woR"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="About" id="C3C-aA-eW7">
+                            <connections>
+                                <action selector="_aboutBarButtonItemHandler:" destination="khs-6S-axm" id="Sl3-0h-iVe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1a-9K-sqg" userLabel="First Responder" sceneMemberID="firstResponder"/>

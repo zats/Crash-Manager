@@ -1,6 +1,6 @@
 //
 //  CLSPasteboardObserver.m
-//  Crashlytics
+//  Crash Manager
 //
 //  Created by Sasha Zats on 1/4/14.
 //  Copyright (c) 2014 Sasha Zats. All rights reserved.

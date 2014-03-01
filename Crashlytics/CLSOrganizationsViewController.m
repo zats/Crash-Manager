@@ -1,6 +1,6 @@
 //
 //  CLSOrganizationsViewController.m
-//  Crashlytics
+//  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
@@ -24,6 +24,9 @@
 @implementation CLSOrganizationsViewController
 
 #pragma mark - Actions
+
+- (IBAction)_aboutBarButtonItemHandler:(id)sender {
+}
 
 - (IBAction)_logoutBarButtonItemHandler:(id)sender {
 	UIAlertView *alert = [UIAlertView SH_alertViewWithTitle:NSLocalizedString(@"CLSLogoutAlertTitle", nil)

@@ -39,6 +39,7 @@
 		5C71944B18B7A7A900465412 /* CLSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944A18B7A7A900465412 /* CLSConstants.m */; };
 		5C71945318B7B49100465412 /* CLSGoogleAnalyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71945218B7B49100465412 /* CLSGoogleAnalyticsLogger.m */; };
 		5C71946C18B8BE2900465412 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C71946A18B8BE2900465412 /* InfoPlist.strings */; };
+		5C757E7A18C1D5E900C50A72 /* CLSCrashlyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E7918C1D5E900C50A72 /* CLSCrashlyticsLogger.m */; };
 		5C85507518720FB8008F5038 /* _CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507218720FB8008F5038 /* _CLSFilter.m */; };
 		5C85507618720FB8008F5038 /* CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507418720FB8008F5038 /* CLSFilter.m */; };
 		5C8550791872191C008F5038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C85507B1872191C008F5038 /* Localizable.strings */; };
@@ -71,16 +72,16 @@
 		5C046FDB1872B64600E4998C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		5C3BCF291868AD1D004BB1FA /* CLSIncident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSIncident.h; path = Crashlytics/CLSIncident.h; sourceTree = SOURCE_ROOT; };
 		5C3BCF2A1868AD1D004BB1FA /* CLSIncident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLSIncident.m; path = Crashlytics/CLSIncident.m; sourceTree = SOURCE_ROOT; };
-		5C3BCF2D1868AF20004BB1FA /* CLSIssueDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueDetailsViewController.h; sourceTree = "<group>"; };
-		5C3BCF2E1868AF20004BB1FA /* CLSIssueDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueDetailsViewController.m; sourceTree = "<group>"; };
+		5C3BCF2D1868AF20004BB1FA /* CLSIssueDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSIssueDetailsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5C3BCF2E1868AF20004BB1FA /* CLSIssueDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSIssueDetailsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C3CEAB518671C4000F8DDC6 /* CLSIssuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssuesViewController.h; sourceTree = "<group>"; };
 		5C3CEAB618671C4000F8DDC6 /* CLSIssuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssuesViewController.m; sourceTree = "<group>"; };
-		5C401851186B3ABA00CC71AE /* CLSIssueExceptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueExceptionViewController.h; sourceTree = "<group>"; };
-		5C401852186B3ABA00CC71AE /* CLSIssueExceptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueExceptionViewController.m; sourceTree = "<group>"; };
+		5C401851186B3ABA00CC71AE /* CLSIssueExceptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSIssueExceptionViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5C401852186B3ABA00CC71AE /* CLSIssueExceptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSIssueExceptionViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C40185E186B829600CC71AE /* CLSThreadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSThreadsViewController.h; sourceTree = "<group>"; };
 		5C40185F186B829600CC71AE /* CLSThreadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSThreadsViewController.m; sourceTree = "<group>"; };
-		5C401862186C2CE000CC71AE /* CLSIncident_Session+Crashlytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CLSIncident_Session+Crashlytics.h"; path = "Crashlytics/CLSIncident_Session+Crashlytics.h"; sourceTree = SOURCE_ROOT; };
-		5C401863186C2CE000CC71AE /* CLSIncident_Session+Crashlytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CLSIncident_Session+Crashlytics.m"; path = "Crashlytics/CLSIncident_Session+Crashlytics.m"; sourceTree = SOURCE_ROOT; };
+		5C401862186C2CE000CC71AE /* CLSIncident_Session+Crashlytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "CLSIncident_Session+Crashlytics.h"; path = "Crashlytics/CLSIncident_Session+Crashlytics.h"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5C401863186C2CE000CC71AE /* CLSIncident_Session+Crashlytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "CLSIncident_Session+Crashlytics.m"; path = "Crashlytics/CLSIncident_Session+Crashlytics.m"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C4B0682185356000061485A /* CLSOrganizationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSOrganizationsViewController.h; sourceTree = "<group>"; };
 		5C4B0683185356000061485A /* CLSOrganizationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSOrganizationsViewController.m; sourceTree = "<group>"; };
 		5C4B068518535B6F0061485A /* CLSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLoginViewController.h; sourceTree = "<group>"; };
@@ -89,16 +90,16 @@
 		5C4B068918535D760061485A /* CLSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSViewController.m; sourceTree = "<group>"; };
 		5C4B068B18535D9A0061485A /* CLSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSTableViewController.h; sourceTree = "<group>"; };
 		5C4B068C18535D9A0061485A /* CLSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSTableViewController.m; sourceTree = "<group>"; };
-		5C4B068F185392A00061485A /* CLSAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSAPIClient.h; sourceTree = "<group>"; };
-		5C4B0690185392A00061485A /* CLSAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSAPIClient.m; sourceTree = "<group>"; };
-		5C4B069318545AFD0061485A /* CLSApplicationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSApplicationsViewController.h; sourceTree = "<group>"; };
-		5C4B069418545AFD0061485A /* CLSApplicationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSApplicationsViewController.m; sourceTree = "<group>"; };
+		5C4B068F185392A00061485A /* CLSAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSAPIClient.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5C4B0690185392A00061485A /* CLSAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSAPIClient.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5C4B069318545AFD0061485A /* CLSApplicationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSApplicationsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5C4B069418545AFD0061485A /* CLSApplicationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSApplicationsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C4B0696185465480061485A /* CLSRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSRequestSerializer.h; sourceTree = "<group>"; };
 		5C4B0697185465480061485A /* CLSRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSRequestSerializer.m; sourceTree = "<group>"; };
 		5C5ABF641871C48A00FB2A77 /* CLSIssueStatusFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueStatusFilterViewController.h; sourceTree = "<group>"; };
 		5C5ABF651871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueStatusFilterViewController.m; sourceTree = "<group>"; };
-		5C67C71318662F8700EC5943 /* CLSBuildsFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSBuildsFilterViewController.h; sourceTree = "<group>"; };
-		5C67C71418662F8700EC5943 /* CLSBuildsFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSBuildsFilterViewController.m; sourceTree = "<group>"; };
+		5C67C71318662F8700EC5943 /* CLSBuildsFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSBuildsFilterViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5C67C71418662F8700EC5943 /* CLSBuildsFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSBuildsFilterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C6BF2AE18637E34007C483D /* CLSResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSResponseSerializer.h; sourceTree = "<group>"; };
 		5C6BF2AF18637E34007C483D /* CLSResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSResponseSerializer.m; sourceTree = "<group>"; };
 		5C6D3CDE18534CA9005E97D1 /* _CLSAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CLSAccount.h; path = Crashlytics/_CLSAccount.h; sourceTree = SOURCE_ROOT; };
@@ -134,6 +135,8 @@
 		5C71946018B8B8F900465412 /* CrashManager-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CrashManager-Info.plist"; sourceTree = "<group>"; };
 		5C71946B18B8BE2900465412 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5C71946D18B8BE3000465412 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5C757E7818C1D5E900C50A72 /* CLSCrashlyticsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSCrashlyticsLogger.h; sourceTree = "<group>"; };
+		5C757E7918C1D5E900C50A72 /* CLSCrashlyticsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSCrashlyticsLogger.m; sourceTree = "<group>"; };
 		5C85507118720FB8008F5038 /* _CLSFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CLSFilter.h; path = Crashlytics/_CLSFilter.h; sourceTree = SOURCE_ROOT; };
 		5C85507218720FB8008F5038 /* _CLSFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _CLSFilter.m; path = Crashlytics/_CLSFilter.m; sourceTree = SOURCE_ROOT; };
 		5C85507318720FB8008F5038 /* CLSFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSFilter.h; path = Crashlytics/CLSFilter.h; sourceTree = SOURCE_ROOT; };
@@ -141,12 +144,12 @@
 		5C85507A1872191C008F5038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5C87FC7618A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSSessionDetailsAbstractViewController.h; sourceTree = "<group>"; };
 		5C87FC7718A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSSessionDetailsAbstractViewController.m; sourceTree = "<group>"; };
-		5C9AC77A186C74190037DC36 /* CLSIssueGeneralDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueGeneralDetailsViewController.h; sourceTree = "<group>"; };
-		5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueGeneralDetailsViewController.m; sourceTree = "<group>"; };
+		5C9AC77A186C74190037DC36 /* CLSIssueGeneralDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSIssueGeneralDetailsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSIssueGeneralDetailsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5CA538B41872D4E200544C7A /* CLSTimeRangeFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSTimeRangeFilterViewController.h; sourceTree = "<group>"; };
 		5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSTimeRangeFilterViewController.m; sourceTree = "<group>"; };
-		5CB3C0861871BE5200CE00D7 /* CLSFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSFiltersViewController.h; sourceTree = "<group>"; };
-		5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSFiltersViewController.m; sourceTree = "<group>"; };
+		5CB3C0861871BE5200CE00D7 /* CLSFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSFiltersViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSFiltersViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5CBE4755189D4A05002D3E90 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
 		5CBE475E189D58A6002D3E90 /* NSURLRequest+CLSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+CLSLogging.h"; sourceTree = "<group>"; };
 		5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+CLSLogging.m"; sourceTree = "<group>"; };
@@ -154,8 +157,8 @@
 		5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+OpenSource.m"; sourceTree = "<group>"; };
 		5CC3F7E21876A12D003C2FAC /* CLSLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLogViewController.h; sourceTree = "<group>"; };
 		5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSLogViewController.m; sourceTree = "<group>"; };
-		5CC3F7E91876C933003C2FAC /* CLSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSError.h; sourceTree = "<group>"; };
-		5CC3F7EA1876C933003C2FAC /* CLSError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSError.m; sourceTree = "<group>"; };
+		5CC3F7E91876C933003C2FAC /* CLSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSError.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5CC3F7EA1876C933003C2FAC /* CLSError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSError.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5CC3F7EE1876D80D003C2FAC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		5CC3F7EF1876D856003C2FAC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5CC3F7F018786E7A003C2FAC /* CLSPasteboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSPasteboardObserver.h; sourceTree = "<group>"; };
@@ -167,18 +170,18 @@
 		5CE94DED18534976003C7DB1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5CE94DF518534976003C7DB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5CE94DF718534976003C7DB1 /* CrashManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrashManager-Prefix.pch"; sourceTree = "<group>"; };
-		5CE94DF818534976003C7DB1 /* CLSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLSAppDelegate.h; sourceTree = "<group>"; };
-		5CE94DF918534976003C7DB1 /* CLSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLSAppDelegate.m; sourceTree = "<group>"; };
+		5CE94DF818534976003C7DB1 /* CLSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5CE94DF918534976003C7DB1 /* CLSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5CE94DFC18534976003C7DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CE94E0118534976003C7DB1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5CE94E0818534976003C7DB1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5CE94E2118534BE0003C7DB1 /* Crashlytics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crashlytics.xcdatamodel; sourceTree = "<group>"; };
 		5CEDD1C318703DDC00B6A39A /* CLSIssueListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueListCell.h; sourceTree = "<group>"; };
 		5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueListCell.m; sourceTree = "<group>"; };
-		5CEDD1C8187050BC00B6A39A /* CLSApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSApplicationCell.h; sourceTree = "<group>"; };
-		5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSApplicationCell.m; sourceTree = "<group>"; };
-		5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSConfiguration.h; sourceTree = "<group>"; };
-		5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSConfiguration.m; sourceTree = "<group>"; };
+		5CEDD1C8187050BC00B6A39A /* CLSApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSApplicationCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSApplicationCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSConfiguration.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSConfiguration.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrashManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashManager.xcconfig"; path = "Pods/Pods-CrashManager.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,8 +220,9 @@
 			children = (
 				5C71944218B7A3AB00465412 /* Analytics */,
 				5C71944618B7A78F00465412 /* Configuration */,
+				5C757E7B18C1D5EB00C50A72 /* CrashlyticsLogger */,
 				5C71944818B7A79C00465412 /* Constants */,
-				5C71945018B7B40900465412 /* GoogleAnalytics CocoaLumberjack */,
+				5C71945018B7B40900465412 /* GoogleAnalytics+CocoaLumberjack */,
 				5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */,
 				5C71944718B7A79400465412 /* Pasteboard */,
 				5CBE4761189D649B002D3E90 /* UIViewController+OpenSource */,
@@ -375,13 +379,22 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
-		5C71945018B7B40900465412 /* GoogleAnalytics CocoaLumberjack */ = {
+		5C71945018B7B40900465412 /* GoogleAnalytics+CocoaLumberjack */ = {
 			isa = PBXGroup;
 			children = (
 				5C71945118B7B49100465412 /* CLSGoogleAnalyticsLogger.h */,
 				5C71945218B7B49100465412 /* CLSGoogleAnalyticsLogger.m */,
 			);
-			name = "GoogleAnalytics CocoaLumberjack";
+			name = "GoogleAnalytics+CocoaLumberjack";
+			sourceTree = "<group>";
+		};
+		5C757E7B18C1D5EB00C50A72 /* CrashlyticsLogger */ = {
+			isa = PBXGroup;
+			children = (
+				5C757E7818C1D5E900C50A72 /* CLSCrashlyticsLogger.h */,
+				5C757E7918C1D5E900C50A72 /* CLSCrashlyticsLogger.m */,
+			);
+			name = CrashlyticsLogger;
 			sourceTree = "<group>";
 		};
 		5CB3C0821871BDFC00CE00D7 /* Filters */ = {
@@ -672,6 +685,7 @@
 				5CEDD1CA187050BC00B6A39A /* CLSApplicationCell.m in Sources */,
 				5C6D3CFA18534CA9005E97D1 /* CLSBuild.m in Sources */,
 				5C6D3CF218534CA9005E97D1 /* _CLSAccount.m in Sources */,
+				5C757E7A18C1D5E900C50A72 /* CLSCrashlyticsLogger.m in Sources */,
 				5CC3F7E41876A12D003C2FAC /* CLSLogViewController.m in Sources */,
 				5C6D3CF318534CA9005E97D1 /* _CLSApplication.m in Sources */,
 				5C6BF2B018637E34007C483D /* CLSResponseSerializer.m in Sources */,

@@ -1,6 +1,6 @@
 //
 //  CLSIssueListCell.m
-//  Crashlytics
+//  Crash Manager
 //
 //  Created by Sasha Zats on 12/29/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.

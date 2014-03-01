@@ -1,6 +1,6 @@
 //
 //  CLSAppDelegate.m
-//  Crashlytics
+//  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
@@ -21,6 +21,10 @@
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	// Crashlytics
+	NSString *apiKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"CrashlyticsAPIKey"];
+	[Crashlytics startWithAPIKey:apiKey];
+	
 	// Initializar configuration
     [[CLSConfiguration sharedInstance] setup];
 
@@ -29,9 +33,6 @@
 
     // Configuration
 	[[CLSConfiguration sharedInstance] updateConfigurationPlistWithCompletionHandler:^(NSDictionary *defaults, NSError *error) {
-		NSString *apiKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"CrashlyticsAPIKey"];
-		[Crashlytics startWithAPIKey:apiKey];
-		
 		if (error) {
             DDLogError(@"Failed to fetch remote plist: %@", error);
 		}

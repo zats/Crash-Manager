@@ -1,6 +1,6 @@
 //
 //  CLSSettings.m
-//  Crashlytics
+//  Crash Manager
 //
 //  Created by Sasha Zats on 12/29/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
@@ -8,6 +8,7 @@
 
 #import "CLSConfiguration.h"
 
+#import "CLSCrashlyticsLogger.h"
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import <CocoaLumberjack/DDFileLogger.h>
 #import <GroundControl/NSUserDefaults+GroundControl.h>
@@ -202,6 +203,7 @@
 
 - (void)_setupLogger {
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
+	[DDLog addLogger:[CLSCrashlyticsLogger sharedInstance]];
 }
 
 - (void)_setupConfigurationFile {
