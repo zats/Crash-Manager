@@ -63,3 +63,5 @@
 "3zs-do-QLf.text" = "Создать Аккаунт";
 // Forgot Password button label
 "TNx-n0-xIV.text" = "Восстановить Пароль";
+// Password security explanation text
+"BGl-sn-VoP.footerTitle" = "Мы храним пароль в вашей Связке Ключей и используем только для аутентификации с Crashlytics";

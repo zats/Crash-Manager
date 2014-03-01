@@ -113,7 +113,13 @@ typedef NS_ENUM(NSInteger, CLSHelpSectionRow) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+	
+	NSString *username = nil, *password = nil;
+	[CLSAccount getKeychainedLastUsedUsername:&username
+									 password:&password];
+	self.emailTextField.text = username;
+//	self.passwordTextField.text = password;
+	
 	UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"crashington"]];
 	imageView.center = CGPointMake(CGRectGetMidX(self.view.frame), -150);
 	[self.tableView addSubview:imageView];
@@ -158,6 +164,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[textField resignFirstResponder];
+	// this is the basic check for the password and email to be non-empty strings
+	// TODO: extract client side validation from _login so it can be called directly
+	if ([self.passwordTextField.text length] &&
+		[self.emailTextField.text length]) {
+		[self _login];
+	}
 	return YES;
 }
 

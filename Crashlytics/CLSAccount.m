@@ -165,3 +165,25 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 }
 
 @end
+
+@implementation CLSAccount (CLSUtility)
+
++ (void)getKeychainedLastUsedUsername:(NSString **)username
+							 password:(NSString **)password {
+	if (!username || !password) {
+		return;
+	}
+
+	// Retrieving last used keychain account
+	NSSortDescriptor *sortByDateDescriptor = [NSSortDescriptor sortDescriptorWithKey:kSSKeychainLastModifiedKey
+																		   ascending:NO];
+	NSArray *accounts = [[SSKeychain allAccounts] sortedArrayUsingDescriptors:@[ sortByDateDescriptor ]];
+	NSDictionary *lastUsedAccount = [accounts firstObject];
+	if (username) {
+		*username = lastUsedAccount[ kSSKeychainAccountKey ];
+	}
+	*password = [SSKeychain passwordForService:CLSKeychainServiceName
+									   account:*username];
+}
+
+@end

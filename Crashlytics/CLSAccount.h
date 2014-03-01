@@ -28,3 +28,10 @@ extern NSString *const CLSActiveAccountDidChangeNotification;
 + (void)setCurrentAccount:(CLSAccount *)account;
 
 @end
+
+@interface CLSAccount (CLSUtility)
+
++ (void)getKeychainedLastUsedUsername:(NSString **)username
+							 password:(NSString **)password;
+
+@end
