@@ -27,6 +27,13 @@ typedef void(^CLSSettingsUpdateHandler)(NSDictionary *defaults, NSError *error);
 
 @end
 
+@interface CLSConfiguration (CLSMarketing)
+
+- (NSURL *)marketingURL;
+- (NSString *)appDisplayName;
+
+@end
+
 @interface CLSConfiguration (CLSOpenSource)
 
 - (NSURL *)implementationURLForClass:(Class)className;

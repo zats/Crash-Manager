@@ -91,3 +91,6 @@
 "CLSLogoutAlertMessage" = "Вы уверенны что хотите выйти?";
 "CLSLogoutAlertCancelTitle" = "Отменить";
 "CLSLogoutAlertLogoutTitle" = "Выйти";
+
+// Sharing
+"CLSSharingFormatString" = "%@ – клиент для Crashlytics с открытым исходным кодом"; // app name, app store link

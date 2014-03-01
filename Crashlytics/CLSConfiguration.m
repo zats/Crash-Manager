@@ -129,11 +129,11 @@
 }
 
 - (NSURL *)signUpURL {
-	return [NSURL URLWithString: [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"CrashlyticsLinks.signUp"]];
+	return [NSURL URLWithString: [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"CrashlyticsLinks.SignUp"]];
 }
 
 - (NSURL *)forgotPasswordURL {
-	return [NSURL URLWithString: [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"CrashlyticsLinks.forgotPassword"]];
+	return [NSURL URLWithString: [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"CrashlyticsLinks.ForgotPassword"]];
 }
 
 #pragma mark - Private
@@ -277,6 +277,19 @@
     
     NSURL *URL = [NSURL URLWithString:URLString];
     return URL;
+}
+
+@end
+
+@implementation CLSConfiguration (CLSMarketing)
+
+- (NSURL *)marketingURL {
+	NSString *URLString = [[NSUserDefaults standardUserDefaults] valueForKey:@"MarketingLink"];
+	return [NSURL URLWithString:URLString];
+}
+
+- (NSString *)appDisplayName {
+	return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
 }
 
 @end

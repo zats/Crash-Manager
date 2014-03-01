@@ -11,6 +11,8 @@
 #import "CLSConfiguration.h"
 #import <PBWebViewController/PBWebViewController.h>
 #import <SHBarButtonItemBlocks/SHBarButtonItemBlocks.h>
+#import <TUSafariActivity/TUSafariActivity.h>
+#import <ARChromeActivity/ARChromeActivity.h>
 
 @implementation UIViewController (OpenSource)
 
@@ -49,6 +51,7 @@
 - (void)_showWebViewControllerWithURL:(NSURL *)URL {
     PBWebViewController *webViewController = [[PBWebViewController alloc] init];
     webViewController.URL = URL;
+	webViewController.applicationActivities = @[ [TUSafariActivity new], [ARChromeActivity new] ];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:webViewController];
 
     UIBarButtonItem *closeBarButtonItem = [UIBarButtonItem SH_barButtonItemWithBarButtonSystemItem:UIBarButtonSystemItemCancel withBlock:^(UIBarButtonItem *sender) {

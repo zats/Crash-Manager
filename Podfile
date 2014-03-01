@@ -18,6 +18,8 @@ pod 'ReactiveCocoa', '2.2.4'
 pod 'SHUIKitBlocks', '2.3.0'
 pod 'SSKeychain', '1.2.1'
 pod 'TTTLocalizedPluralString', '0.0.9'
+pod 'TUSafariActivity', '1.0.0'
+pod 'ARChromeActivity', :git => 'https://github.com/alextrob/ARChromeActivity/'
 
 post_install do | installer |
 	require 'fileutils'

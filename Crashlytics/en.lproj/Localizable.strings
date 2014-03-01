@@ -79,3 +79,12 @@
 "CLSPasteboardObserverURLDetectedMessageIssue" = "Issue: %@\n";
 "CLSPasteboardObserverURLDetectedMessageNavigateTitle" = "Navigate";
 "CLSPasteboardObserverURLDetectedMessageCancelTitle" = "Cancel";
+
+// Logout
+"CLSLogoutAlertTitle" = "Logout?";
+"CLSLogoutAlertMessage" = "Are you sure you want to logout?";
+"CLSLogoutAlertCancelTitle" = "Cancel";
+"CLSLogoutAlertLogoutTitle" = "Logout";
+
+// Sharing
+"CLSSharingFormatString" = "%@ – an open source Crashlytics client for iOS"; // app name, app store link

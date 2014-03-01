@@ -8,6 +8,7 @@
 
 #import "CLSAboutViewController.h"
 
+#import "ADNActivityCollection.h"
 #import "CLSConfiguration.h"
 #import "UIViewController+OpenSource.h"
 
@@ -50,7 +51,7 @@ typedef NS_ENUM(NSInteger, CLSSections) {
 }
 
 - (void)_configureAppName {
-	self.appTitleLabel.text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+	self.appTitleLabel.text = [[CLSConfiguration sharedInstance] appDisplayName];
 }
 
 - (void)_configureCells {
@@ -89,8 +90,10 @@ shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
 		}
 			
 		case CLSVersionShareSection: {
-			NSArray *activityItems = @[@"Crash Manager – an open source Crashlytics client for iOS", [NSURL URLWithString:@"http://google.com"]];
-			UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+			NSString *shareString = [NSString stringWithFormat:NSLocalizedString(@"CLSSharingFormatString", nil), [[CLSConfiguration sharedInstance] appDisplayName]];
+			NSArray *activityItems = @[ shareString, [[CLSConfiguration sharedInstance] marketingURL] ];
+			UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems
+																								 applicationActivities:[ADNActivityCollection allActivities]];
 			[self presentViewController:activityViewController
 							   animated:YES
 							 completion:nil];

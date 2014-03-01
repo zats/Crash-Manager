@@ -20,13 +20,15 @@
 	</array>
 	<key>CrashlyticsLinks</key>
 	<dict>
-		<key>forgotPassword</key>
+		<key>ForgotPassword</key>
 		<string>https://crashlytics.com/accounts/password/new</string>
-		<key>signUp</key>
+		<key>SignUp</key>
 		<string>http://try.crashlytics.com/</string>
 	</dict>
 	<key>CrashlyticsDeveloperToken</key>
 	<string>7ce58b3d8d5439aa2a98f837d804619beebf0641</string>
+	<key>MarketingLink</key>
+	<string>http://zats.io/crash-manager/</string>
 	<key>CrashlyticsAPIKey</key>
 	<string>1806f0e415eca8782897d8254a1363122c77c03a</string>
 	<key>CrashlyticsDeviceModels</key>

@@ -134,6 +134,8 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
+	
 
 	NSAssert(self.application != nil, @"Application is not set");
 	
