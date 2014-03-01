@@ -22,9 +22,15 @@ typedef void(^CLSSettingsUpdateHandler)(NSDictionary *defaults, NSError *error);
  */
 - (void)setup;
 
+//
+- (void)updateConfigurationPlistWithCompletionHandler:(CLSSettingsUpdateHandler)completion;
+
+@end
+
+@interface CLSConfiguration (CLSOpenSource)
+
 - (NSURL *)implementationURLForClass:(Class)className;
 - (NSURL *)interfaceURLForClass:(Class)className;
-
-- (void)updateConfigurationPlistWithCompletionHandler:(CLSSettingsUpdateHandler)completion;
+- (NSURL *)gitHubPageURL;
 
 @end

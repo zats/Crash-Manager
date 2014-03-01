@@ -132,11 +132,6 @@ NSArray *CLSFilterTimeRanges;
 	return [result length] ? result : nil;
 }
 
-- (NSPredicate *)predicate {
-	NSPredicate *result = [NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.application, self.application];
-	return result;
-}
-
 #pragma mark - NSManagedObject
 
 - (void)awakeFromInsert {

@@ -64,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="553" y="122"/>
         </scene>
-        <!--About View Controller-->
+        <!--About View Controller - About-->
         <scene sceneID="KcW-J1-kh7">
             <objects>
                 <tableViewController id="E5V-b6-SDB" customClass="CLSAboutViewController" sceneMemberID="viewController">
@@ -101,20 +101,44 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="mrl-ZJ-SE3">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="nIf-gE-zsL" style="IBUITableViewCellStyleDefault" id="1n9-Uv-HRQ">
+                                        <rect key="frame" x="0.0" y="163" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1n9-Uv-HRQ" id="onD-gh-Wqw">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Share" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nIf-gE-zsL">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection id="vPx-ni-1qc">
+                                <string key="footerTitle">This is a project with open source code, which means you can:
+• Pinch on any screen to see the source (try it here)
+• Open an issue
+• Submit a pull request
+• Just pick into the source code</string>
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="M0o-g7-Ma0" style="IBUITableViewCellStyleDefault" id="7fY-CO-dGv">
-                                        <rect key="frame" x="0.0" y="163" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="227" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7fY-CO-dGv" id="ryF-sx-PFj">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M0o-g7-Ma0">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Open GitHub page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M0o-g7-Ma0">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -128,14 +152,17 @@
                             <outlet property="delegate" destination="E5V-b6-SDB" id="nN1-ex-3iP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dWW-EA-vE8">
+                    <navigationItem key="navigationItem" title="About" id="dWW-EA-vE8">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Daf-aZ-PF4">
                             <connections>
-                                <segue destination="hax-iO-lta" kind="unwind" unwindAction="_unwindHandler:" id="jgb-iI-GWc"/>
+                                <segue destination="hax-iO-lta" kind="unwind" unwindAction="_unwindOrganizationViewControllerHandler:" id="ikK-WQ-wkg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="appTitleLabel" destination="g2G-x4-aSn" id="tBy-So-WyH"/>
+                        <outlet property="openGitHubPageLabel" destination="M0o-g7-Ma0" id="yC3-qU-7Mm"/>
+                        <outlet property="shareLabel" destination="nIf-gE-zsL" id="Sl6-6e-yQf"/>
                         <outlet property="versionLabel" destination="8wn-it-zOF" id="ngc-iT-ZTS"/>
                     </connections>
                 </tableViewController>

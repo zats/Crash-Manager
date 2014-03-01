@@ -175,6 +175,8 @@
 	</array>
 	<key>CrashManagerSource</key>
 	<dict>
+		<key>GitHub</key>
+		<string>https://github.com/zats/Crash-Manager</string>
 		<key>Implementation</key>
 		<string>https://github.com/zats/Crash-Manager/blob/#{version}/Crashlytics/#{class}.m</string>
 		<key>Interface</key>

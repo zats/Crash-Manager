@@ -21,12 +21,12 @@
 #pragma mark - UIApplicationDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	// Initializar configuration
+    [[CLSConfiguration sharedInstance] setup];
+
 	// Crashlytics
 	NSString *apiKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"CrashlyticsAPIKey"];
 	[Crashlytics startWithAPIKey:apiKey];
-	
-	// Initializar configuration
-    [[CLSConfiguration sharedInstance] setup];
 
 	// Analytics
 	[[CLSAnalyticsController sharedInstance] enableAnalyticsIfNeeded];

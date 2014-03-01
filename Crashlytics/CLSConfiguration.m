@@ -57,6 +57,7 @@
 }
 
 - (void)updateConfigurationPlistWithCompletionHandler:(CLSSettingsUpdateHandler)completion {
+	return;
 	NSURL *URL = [NSURL URLWithString:@"http://crashlytics-ios.herokuapp.com/configuration.plist"];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     @weakify(self);
@@ -135,16 +136,6 @@
 	return [NSURL URLWithString: [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"CrashlyticsLinks.forgotPassword"]];
 }
 
-- (NSURL *)implementationURLForClass:(Class)className {
-    NSString *URLString = [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"CrashManagerSource.Implementation"];
-    return [self _URLForTemplateURLString:URLString class:className];
-}
-
-- (NSURL *)interfaceURLForClass:(Class)className {
-    NSString *URLString = [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"CrashManagerSource.Interface"];
-    return [self _URLForTemplateURLString:URLString class:className];
-}
-
 #pragma mark - Private
 
 - (void)_serializeConfigurationDictionary:(NSDictionary *)defaults
@@ -170,35 +161,6 @@
         return;
     }
     completion(defaults, nil);
-}
-
-- (NSURL *)_URLForTemplateURLString:(NSString *)URLString class:(Class)className {
-    if (!URLString) {
-        return nil;
-    }
-
-    URLString = [URLString stringByReplacingOccurrencesOfString:@"#{class}"
-                                                     withString:NSStringFromClass(className)];
-
-    // We can cache the build version.
-    static NSString *appBuildVersion;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        NSString *gitSHA = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GitSHA"];
-        if ([gitSHA length]) {
-            appBuildVersion = gitSHA;
-        } else {
-            // it's a stable build, use full semantic version
-            appBuildVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleVersionKey];
-        }
-    });
-    NSString *version = [NSString stringWithFormat:@"v%@", appBuildVersion];
-    
-    URLString = [URLString stringByReplacingOccurrencesOfString:@"#{version}"
-                                                     withString:version];
-    
-    NSURL *URL = [NSURL URLWithString:URLString];
-    return URL;
 }
 
 - (void)_setupLogger {
@@ -263,6 +225,58 @@
         DDLogError(@"Could not copy plist from %@ to %@: %@", [[self class] builtinConfigurationPlistPath], destinationPath, [error localizedDescription]);
     }
     
+}
+
+@end
+
+@implementation CLSConfiguration (CLSOpenSource)
+
+#pragma mark - Public
+
+- (NSURL *)implementationURLForClass:(Class)className {
+    NSString *URLString = [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"CrashManagerSource.Implementation"];
+    return [self _URLForTemplateURLString:URLString class:className];
+}
+
+- (NSURL *)interfaceURLForClass:(Class)className {
+    NSString *URLString = [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"CrashManagerSource.Interface"];
+    return [self _URLForTemplateURLString:URLString class:className];
+}
+
+- (NSURL *)gitHubPageURL {
+    NSString *URLString = [[NSUserDefaults standardUserDefaults] valueForKeyPath:@"CrashManagerSource.GitHub"];
+	return [NSURL URLWithString:URLString];
+}
+
+#pragma mark - Private
+
+- (NSURL *)_URLForTemplateURLString:(NSString *)URLString class:(Class)className {
+    if (!URLString) {
+        return nil;
+    }
+	
+    URLString = [URLString stringByReplacingOccurrencesOfString:@"#{class}"
+                                                     withString:NSStringFromClass(className)];
+	
+    // We can cache the build version.
+    static NSString *appBuildVersion;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *gitSHA = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"GitSHA"];
+        if ([gitSHA length]) {
+            appBuildVersion = gitSHA;
+        } else {
+            // it's a stable build, use full semantic version
+            appBuildVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleVersionKey];
+        }
+    });
+    NSString *version = [NSString stringWithFormat:@"v%@", appBuildVersion];
+    
+    URLString = [URLString stringByReplacingOccurrencesOfString:@"#{version}"
+                                                     withString:version];
+    
+    NSURL *URL = [NSURL URLWithString:URLString];
+    return URL;
 }
 
 @end

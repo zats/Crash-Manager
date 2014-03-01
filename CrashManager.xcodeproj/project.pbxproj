@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58FC3CCCF47E4B17A8DA8334 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F76C7585C649F2A4194805 /* libPods.a */; };
 		5C046FDC1872B64600E4998C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C046FDB1872B64600E4998C /* Settings.bundle */; };
 		5C3BCF2B1868AD1D004BB1FA /* CLSIncident.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BCF2A1868AD1D004BB1FA /* CLSIncident.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5C3BCF2F1868AF20004BB1FA /* CLSIssueDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BCF2E1868AF20004BB1FA /* CLSIssueDetailsViewController.m */; };
@@ -66,10 +67,10 @@
 		5CEDD1C518703DDC00B6A39A /* CLSIssueListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */; };
 		5CEDD1CA187050BC00B6A39A /* CLSApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */; };
 		5CEDD1CD18705DE500B6A39A /* CLSConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */; };
-		61DBF5D7659F4A42874FA875 /* libPods-CrashManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16F76C7585C649F2A4194805 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C046FDB1872B64600E4998C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		5C3BCF291868AD1D004BB1FA /* CLSIncident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSIncident.h; path = Crashlytics/CLSIncident.h; sourceTree = SOURCE_ROOT; };
 		5C3BCF2A1868AD1D004BB1FA /* CLSIncident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLSIncident.m; path = Crashlytics/CLSIncident.m; sourceTree = SOURCE_ROOT; };
@@ -186,7 +187,7 @@
 		5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSConfiguration.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSConfiguration.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrashManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashManager.xcconfig"; path = "Pods/Pods-CrashManager.xcconfig"; sourceTree = "<group>"; };
+		CC95309D65084713A2B48175 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +199,7 @@
 				5CBE4756189D4A05002D3E90 /* Crashlytics.framework in Frameworks */,
 				5CE94DEE18534976003C7DB1 /* UIKit.framework in Frameworks */,
 				5CE94DEA18534976003C7DB1 /* Foundation.framework in Frameworks */,
-				61DBF5D7659F4A42874FA875 /* libPods-CrashManager.a in Frameworks */,
+				58FC3CCCF47E4B17A8DA8334 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +459,7 @@
 				5CE94DEF18534976003C7DB1 /* Crashlytics */,
 				5CE94DE818534976003C7DB1 /* Frameworks */,
 				5CE94DE718534976003C7DB1 /* Products */,
-				EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */,
+				CC95309D65084713A2B48175 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -479,6 +480,7 @@
 				5CE94DED18534976003C7DB1 /* UIKit.framework */,
 				5CE94E0818534976003C7DB1 /* XCTest.framework */,
 				B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */,
+				16F76C7585C649F2A4194805 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -661,7 +663,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-CrashManager-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B1FA73BB547446999FFD095D /* Check Pods Manifest.lock */ = {
@@ -773,6 +775,132 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5C757E8018C1E76000C50A72 /* Debug Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = "Debug Beta";
+		};
+		5C757E8118C1E76000C50A72 /* Debug Beta */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC95309D65084713A2B48175 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLSBundleSuffix = .beta;
+				CLSDisplayNameSuffix = " β";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Crashlytics",
+					/Users/zats/Documents/Crashlytics/Crashlytics,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Crashlytics/CrashManager-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Crashlytics/CrashManager-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zats/Documents/Crashlytics,
+				);
+				PRODUCT_NAME = CrashManager;
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Debug Beta";
+		};
+		5C757E8218C1E76600C50A72 /* Release Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release Beta";
+		};
+		5C757E8318C1E76600C50A72 /* Release Beta */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC95309D65084713A2B48175 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLSBundleSuffix = .beta;
+				CLSDisplayNameSuffix = " β";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Crashlytics",
+					/Users/zats/Documents/Crashlytics/Crashlytics,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Crashlytics/CrashManager-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "Crashlytics/CrashManager-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zats/Documents/Crashlytics,
+				);
+				PRODUCT_NAME = CrashManager;
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Release Beta";
+		};
 		5CE94E1618534976003C7DB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -847,10 +975,12 @@
 		};
 		5CE94E1918534976003C7DB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */;
+			baseConfigurationReference = CC95309D65084713A2B48175 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLSBundleSuffix = "";
+				CLSDisplayNameSuffix = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -859,14 +989,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crashlytics/CrashManager-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/MagicalRecord\"",
-					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
-					"\"${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa\"",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Crashlytics/CrashManager-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -879,10 +1002,12 @@
 		};
 		5CE94E1A18534976003C7DB1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */;
+			baseConfigurationReference = CC95309D65084713A2B48175 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLSBundleSuffix = "";
+				CLSDisplayNameSuffix = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -891,14 +1016,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crashlytics/CrashManager-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/MagicalRecord\"",
-					"\"${PODS_ROOT}/Headers/ReactiveCocoa\"",
-					"\"${PODS_ROOT}/Headers/ReactiveCocoa/ReactiveCocoa\"",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Crashlytics/CrashManager-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -916,7 +1034,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CE94E1618534976003C7DB1 /* Debug */,
+				5C757E8018C1E76000C50A72 /* Debug Beta */,
 				5CE94E1718534976003C7DB1 /* Release */,
+				5C757E8218C1E76600C50A72 /* Release Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -925,7 +1045,9 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CE94E1918534976003C7DB1 /* Debug */,
+				5C757E8118C1E76000C50A72 /* Debug Beta */,
 				5CE94E1A18534976003C7DB1 /* Release */,
+				5C757E8318C1E76600C50A72 /* Release Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

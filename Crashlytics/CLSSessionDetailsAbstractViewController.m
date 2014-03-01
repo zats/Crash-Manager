@@ -67,4 +67,20 @@
 	[[CLSAnalyticsController sharedInstance] trackViewController:self];
 }
 
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+	// stub implementation
+	NSAssert(NO, @"Subclasses must ovveride this");
+	return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	// stub implementation
+	NSAssert(NO, @"Subclasses must ovveride this");
+	return nil;
+}
+
 @end
