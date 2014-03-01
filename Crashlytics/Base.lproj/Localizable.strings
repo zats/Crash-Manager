@@ -79,3 +79,9 @@
 "CLSPasteboardObserverURLDetectedMessageIssue" = "Issue: %@\n";
 "CLSPasteboardObserverURLDetectedMessageNavigateTitle" = "Navigate";
 "CLSPasteboardObserverURLDetectedMessageCancelTitle" = "Cancel";
+
+// Logout
+"CLSLogoutAlertTitle" = "Logout?";
+"CLSLogoutAlertMessage" = "Are you sure you want to logout?";
+"CLSLogoutAlertCancelTitle" = "Cancel";
+"CLSLogoutAlertLogoutTitle" = "Logout";

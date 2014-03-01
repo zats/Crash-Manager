@@ -85,3 +85,9 @@
 "CLSPasteboardObserverURLDetectedMessageIssue" = "Проблема: %@\n";
 "CLSPasteboardObserverURLDetectedMessageNavigateTitle" = "Перейти";
 "CLSPasteboardObserverURLDetectedMessageCancelTitle" = "Отменить";
+
+// Logout
+"CLSLogoutAlertTitle" = "Выйти?";
+"CLSLogoutAlertMessage" = "Вы уверенны что хотите выйти?";
+"CLSLogoutAlertCancelTitle" = "Отменить";
+"CLSLogoutAlertLogoutTitle" = "Выйти";

@@ -26,9 +26,10 @@
 #pragma mark - Actions
 
 - (IBAction)_logoutBarButtonItemHandler:(id)sender {
-	UIAlertView *alert = [UIAlertView SH_alertViewWithTitle:@"Logout?" withMessage:@"Are you sure you want to logout?"];
-	[alert SH_addButtonCancelWithTitle:@"Cancel" withBlock:nil];
-	[alert SH_addButtonWithTitle:@"Logout" withBlock:^(NSInteger theButtonIndex) {
+	UIAlertView *alert = [UIAlertView SH_alertViewWithTitle:NSLocalizedString(@"CLSLogoutAlertTitle", nil)
+												withMessage:NSLocalizedString(@"CLSLogoutAlertMessage", nil)];
+	[alert SH_addButtonCancelWithTitle:NSLocalizedString(@"CLSLogoutAlertCancelTitle", nil) withBlock:nil];
+	[alert SH_addButtonWithTitle:NSLocalizedString(@"CLSLogoutAlertLogoutTitle", nil) withBlock:^(NSInteger theButtonIndex) {
 		[CLSAccount setCurrentAccount:nil];
 		
 		
