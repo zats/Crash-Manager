@@ -2,7 +2,7 @@
 
 You can try me on the App Store!
 
-![Get me](/Resources/GitHub/app-store-badge.png)
+[![Get me](/Resources/GitHub/app-store-badge.png)](https://itunes.apple.com/il/app/crash-manager/id806327079?mt=8)
 
 # Changes
 
