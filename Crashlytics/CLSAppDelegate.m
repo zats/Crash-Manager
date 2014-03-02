@@ -39,6 +39,7 @@
 	
     // Core Data stack
 	[MagicalRecord setupAutoMigratingCoreDataStack];
+	[MagicalRecord setShouldDeleteStoreOnModelMismatch:YES];
 	
 	self.window.tintColor = [UIColor colorWithRed:0.706 green:0.141 blue:0.063 alpha:1.000];
 	
