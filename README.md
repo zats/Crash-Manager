@@ -1,6 +1,10 @@
 ![Hey There](/Resources/GitHub/splash.png)
 
-You can try me on the App Store!
+Issues Managers for Crashlytics: inspect and modify your issue on the go! 
+
+• Full issue details: logs & custom keys 
+• Thread stack & Exception details 
+• Close and reopen your issues
 
 [![Get me](/Resources/GitHub/app-store-badge.png)](https://itunes.apple.com/il/app/crash-manager/id806327079?mt=8)
 
