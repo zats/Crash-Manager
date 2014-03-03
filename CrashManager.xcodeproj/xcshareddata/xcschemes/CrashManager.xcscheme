@@ -38,6 +38,16 @@
                ReferencedContainer = "container:CrashManager.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5C1E022618C5214800DC4F79"
+               BuildableName = "CrashManager Functional Tests.octest"
+               BlueprintName = "CrashManager Functional Tests"
+               ReferencedContainer = "container:CrashManager.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

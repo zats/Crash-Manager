@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		58FC3CCCF47E4B17A8DA8334 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F76C7585C649F2A4194805 /* libPods.a */; };
+		302D59AC5E804438839BCDB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F12A6AEB95D4E7A8B2DA3F8 /* libPods.a */; };
+		32FD5F859A5F4DC6A6BBD5B2 /* libPods-CrashManager Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B8BB13C3104881B55D2335 /* libPods-CrashManager Tests.a */; };
+		4984128B10024B53BA51DA02 /* libPods-CrashManager Functional Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 420E78492E334557B9F2DA96 /* libPods-CrashManager Functional Tests.a */; };
 		5C046FDC1872B64600E4998C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C046FDB1872B64600E4998C /* Settings.bundle */; };
+		5C1E022818C5214800DC4F79 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94E0818534976003C7DB1 /* XCTest.framework */; };
+		5C1E022918C5214800DC4F79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94DE918534976003C7DB1 /* Foundation.framework */; };
+		5C1E022A18C5214800DC4F79 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94DED18534976003C7DB1 /* UIKit.framework */; };
+		5C1E023018C5214800DC4F79 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C1E022E18C5214800DC4F79 /* InfoPlist.strings */; };
+		5C1E023218C5214800DC4F79 /* CrashManager_Functional_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1E023118C5214800DC4F79 /* CrashManager_Functional_Tests.m */; };
 		5C3BCF2B1868AD1D004BB1FA /* CLSIncident.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BCF2A1868AD1D004BB1FA /* CLSIncident.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5C3BCF2F1868AF20004BB1FA /* CLSIssueDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BCF2E1868AF20004BB1FA /* CLSIssueDetailsViewController.m */; };
 		5C3CEAB718671C4000F8DDC6 /* CLSIssuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CEAB618671C4000F8DDC6 /* CLSIssuesViewController.m */; };
@@ -52,6 +59,11 @@
 		5C85507618720FB8008F5038 /* CLSFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507418720FB8008F5038 /* CLSFilter.m */; };
 		5C8550791872191C008F5038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C85507B1872191C008F5038 /* Localizable.strings */; };
 		5C87FC7818A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C87FC7718A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m */; };
+		5C97B47718C523A10025D54D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94E0818534976003C7DB1 /* XCTest.framework */; };
+		5C97B47818C523A10025D54D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94DE918534976003C7DB1 /* Foundation.framework */; };
+		5C97B47918C523A10025D54D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94DED18534976003C7DB1 /* UIKit.framework */; };
+		5C97B47F18C523A10025D54D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C97B47D18C523A10025D54D /* InfoPlist.strings */; };
+		5C97B48118C523A10025D54D /* CrashManager_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C97B48018C523A10025D54D /* CrashManager_Tests.m */; };
 		5C9AC77C186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */; };
 		5CA538B61872D4E200544C7A /* CLSTimeRangeFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */; };
 		5CB3C0881871BE5200CE00D7 /* CLSFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */; };
@@ -73,11 +85,29 @@
 		5CEDD1C518703DDC00B6A39A /* CLSIssueListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */; };
 		5CEDD1CA187050BC00B6A39A /* CLSApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */; };
 		5CEDD1CD18705DE500B6A39A /* CLSConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */; };
+		61DBF5D7659F4A42874FA875 /* libPods-CrashManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */; };
+		B86949587432435F934DF123 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F12A6AEB95D4E7A8B2DA3F8 /* libPods.a */; };
+		F5D7634FB053431B803628B8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F12A6AEB95D4E7A8B2DA3F8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5C1E023418C5214800DC4F79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CE94DDE18534976003C7DB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CE94DE518534976003C7DB1;
+			remoteInfo = CrashManager;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		16F76C7585C649F2A4194805 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		420E78492E334557B9F2DA96 /* libPods-CrashManager Functional Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrashManager Functional Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C046FDB1872B64600E4998C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		5C1E022718C5214800DC4F79 /* CrashManager Functional Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CrashManager Functional Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C1E022D18C5214800DC4F79 /* CrashManager Functional Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrashManager Functional Tests-Info.plist"; sourceTree = "<group>"; };
+		5C1E022F18C5214800DC4F79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5C1E023118C5214800DC4F79 /* CrashManager_Functional_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashManager_Functional_Tests.m; sourceTree = "<group>"; };
+		5C1E023318C5214800DC4F79 /* CrashManager Functional Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrashManager Functional Tests-Prefix.pch"; sourceTree = "<group>"; };
 		5C3BCF291868AD1D004BB1FA /* CLSIncident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLSIncident.h; path = Crashlytics/CLSIncident.h; sourceTree = SOURCE_ROOT; };
 		5C3BCF2A1868AD1D004BB1FA /* CLSIncident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CLSIncident.m; path = Crashlytics/CLSIncident.m; sourceTree = SOURCE_ROOT; };
 		5C3BCF2D1868AF20004BB1FA /* CLSIssueDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSIssueDetailsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -166,8 +196,13 @@
 		5C85507A1872191C008F5038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5C87FC7618A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSSessionDetailsAbstractViewController.h; sourceTree = "<group>"; };
 		5C87FC7718A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSSessionDetailsAbstractViewController.m; sourceTree = "<group>"; };
-		5C9AC77A186C74190037DC36 /* CLSIssueGeneralDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSIssueGeneralDetailsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSIssueGeneralDetailsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5C97B47618C523A10025D54D /* CrashManager Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CrashManager Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C97B47C18C523A10025D54D /* CrashManager Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrashManager Tests-Info.plist"; sourceTree = "<group>"; };
+		5C97B47E18C523A10025D54D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5C97B48018C523A10025D54D /* CrashManager_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashManager_Tests.m; sourceTree = "<group>"; };
+		5C97B48218C523A10025D54D /* CrashManager Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrashManager Tests-Prefix.pch"; sourceTree = "<group>"; };
+		5C9AC77A186C74190037DC36 /* CLSIssueGeneralDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueGeneralDetailsViewController.h; sourceTree = "<group>"; };
+		5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueGeneralDetailsViewController.m; sourceTree = "<group>"; };
 		5CA538B41872D4E200544C7A /* CLSTimeRangeFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSTimeRangeFilterViewController.h; sourceTree = "<group>"; };
 		5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSTimeRangeFilterViewController.m; sourceTree = "<group>"; };
 		5CB3C0861871BE5200CE00D7 /* CLSFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSFiltersViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -200,15 +235,44 @@
 		5CE94E2118534BE0003C7DB1 /* Crashlytics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crashlytics.xcdatamodel; sourceTree = "<group>"; };
 		5CEDD1C318703DDC00B6A39A /* CLSIssueListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueListCell.h; sourceTree = "<group>"; };
 		5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueListCell.m; sourceTree = "<group>"; };
-		5CEDD1C8187050BC00B6A39A /* CLSApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSApplicationCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSApplicationCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSConfiguration.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSConfiguration.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5CEDD1C8187050BC00B6A39A /* CLSApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSApplicationCell.h; sourceTree = "<group>"; };
+		5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSApplicationCell.m; sourceTree = "<group>"; };
+		5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSConfiguration.h; sourceTree = "<group>"; };
+		5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSConfiguration.m; sourceTree = "<group>"; };
+		5D2CAD97374244ADB844A8F8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		62B8BB13C3104881B55D2335 /* libPods-CrashManager Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrashManager Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F12A6AEB95D4E7A8B2DA3F8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrashManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC95309D65084713A2B48175 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E47DB7898B3842D99D1821D3 /* Pods-CrashManager Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashManager Tests.xcconfig"; path = "Pods/Pods-CrashManager Tests.xcconfig"; sourceTree = "<group>"; };
+		EA113CD5E9BF4A9C986EA109 /* Pods-CrashManager Functional Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashManager Functional Tests.xcconfig"; path = "Pods/Pods-CrashManager Functional Tests.xcconfig"; sourceTree = "<group>"; };
+		EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashManager.xcconfig"; path = "Pods/Pods-CrashManager.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5C1E022418C5214800DC4F79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C1E022818C5214800DC4F79 /* XCTest.framework in Frameworks */,
+				5C1E022A18C5214800DC4F79 /* UIKit.framework in Frameworks */,
+				5C1E022918C5214800DC4F79 /* Foundation.framework in Frameworks */,
+				4984128B10024B53BA51DA02 /* libPods-CrashManager Functional Tests.a in Frameworks */,
+				302D59AC5E804438839BCDB9 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C97B47318C523A10025D54D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C97B47718C523A10025D54D /* XCTest.framework in Frameworks */,
+				5C97B47918C523A10025D54D /* UIKit.framework in Frameworks */,
+				5C97B47818C523A10025D54D /* Foundation.framework in Frameworks */,
+				B86949587432435F934DF123 /* libPods.a in Frameworks */,
+				32FD5F859A5F4DC6A6BBD5B2 /* libPods-CrashManager Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5CE94DE318534976003C7DB1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,13 +281,33 @@
 				5CBE4756189D4A05002D3E90 /* Crashlytics.framework in Frameworks */,
 				5CE94DEE18534976003C7DB1 /* UIKit.framework in Frameworks */,
 				5CE94DEA18534976003C7DB1 /* Foundation.framework in Frameworks */,
-				58FC3CCCF47E4B17A8DA8334 /* libPods.a in Frameworks */,
+				61DBF5D7659F4A42874FA875 /* libPods-CrashManager.a in Frameworks */,
+				F5D7634FB053431B803628B8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C1E022B18C5214800DC4F79 /* CrashManager Functional Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5C1E023118C5214800DC4F79 /* CrashManager_Functional_Tests.m */,
+				5C1E022C18C5214800DC4F79 /* Supporting Files */,
+			);
+			path = "CrashManager Functional Tests";
+			sourceTree = "<group>";
+		};
+		5C1E022C18C5214800DC4F79 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C1E022D18C5214800DC4F79 /* CrashManager Functional Tests-Info.plist */,
+				5C1E022E18C5214800DC4F79 /* InfoPlist.strings */,
+				5C1E023318C5214800DC4F79 /* CrashManager Functional Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5C3BCF2C1868AF0B004BB1FA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,6 +540,25 @@
 			path = ADNActivities;
 			sourceTree = "<group>";
 		};
+		5C97B47A18C523A10025D54D /* CrashManager Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5C97B48018C523A10025D54D /* CrashManager_Tests.m */,
+				5C97B47B18C523A10025D54D /* Supporting Files */,
+			);
+			path = "CrashManager Tests";
+			sourceTree = "<group>";
+		};
+		5C97B47B18C523A10025D54D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C97B47C18C523A10025D54D /* CrashManager Tests-Info.plist */,
+				5C97B47D18C523A10025D54D /* InfoPlist.strings */,
+				5C97B48218C523A10025D54D /* CrashManager Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5CB3C0821871BDFC00CE00D7 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,10 +605,15 @@
 			isa = PBXGroup;
 			children = (
 				5CE94DEF18534976003C7DB1 /* Crashlytics */,
+				5C1E022B18C5214800DC4F79 /* CrashManager Functional Tests */,
+				5C97B47A18C523A10025D54D /* CrashManager Tests */,
 				5CE94DE818534976003C7DB1 /* Frameworks */,
 				5CE94DE718534976003C7DB1 /* Products */,
 				5C757E8418C200B700C50A72 /* Vendor */,
-				CC95309D65084713A2B48175 /* Pods.xcconfig */,
+				EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */,
+				5D2CAD97374244ADB844A8F8 /* Pods.xcconfig */,
+				EA113CD5E9BF4A9C986EA109 /* Pods-CrashManager Functional Tests.xcconfig */,
+				E47DB7898B3842D99D1821D3 /* Pods-CrashManager Tests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -513,6 +621,8 @@
 			isa = PBXGroup;
 			children = (
 				5CE94DE618534976003C7DB1 /* CrashManager.app */,
+				5C1E022718C5214800DC4F79 /* CrashManager Functional Tests.octest */,
+				5C97B47618C523A10025D54D /* CrashManager Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -526,7 +636,9 @@
 				5CE94DED18534976003C7DB1 /* UIKit.framework */,
 				5CE94E0818534976003C7DB1 /* XCTest.framework */,
 				B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */,
-				16F76C7585C649F2A4194805 /* libPods.a */,
+				9F12A6AEB95D4E7A8B2DA3F8 /* libPods.a */,
+				420E78492E334557B9F2DA96 /* libPods-CrashManager Functional Tests.a */,
+				62B8BB13C3104881B55D2335 /* libPods-CrashManager Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -582,6 +694,45 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5C1E022618C5214800DC4F79 /* CrashManager Functional Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C1E023818C5214800DC4F79 /* Build configuration list for PBXNativeTarget "CrashManager Functional Tests" */;
+			buildPhases = (
+				2546920FE0C949069AFAE44B /* Check Pods Manifest.lock */,
+				5C1E022318C5214800DC4F79 /* Sources */,
+				5C1E022418C5214800DC4F79 /* Frameworks */,
+				5C1E022518C5214800DC4F79 /* Resources */,
+				BEF44CD602AA415D94A4BF95 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C1E023518C5214800DC4F79 /* PBXTargetDependency */,
+			);
+			name = "CrashManager Functional Tests";
+			productName = "CrashManager Functional Tests";
+			productReference = 5C1E022718C5214800DC4F79 /* CrashManager Functional Tests.octest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5C97B47518C523A10025D54D /* CrashManager Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C97B48518C523A10025D54D /* Build configuration list for PBXNativeTarget "CrashManager Tests" */;
+			buildPhases = (
+				7D461148018C4CF69C3928D6 /* Check Pods Manifest.lock */,
+				5C97B47218C523A10025D54D /* Sources */,
+				5C97B47318C523A10025D54D /* Frameworks */,
+				5C97B47418C523A10025D54D /* Resources */,
+				98FCFA6B329E4AEBB4B4EDF7 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CrashManager Tests";
+			productName = "CrashManager Tests";
+			productReference = 5C97B47618C523A10025D54D /* CrashManager Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5CE94DE518534976003C7DB1 /* CrashManager */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CE94E1818534976003C7DB1 /* Build configuration list for PBXNativeTarget "CrashManager" */;
@@ -614,6 +765,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Sasha Zats";
 				TargetAttributes = {
+					5C1E022618C5214800DC4F79 = {
+						TestTargetID = 5CE94DE518534976003C7DB1;
+					};
 					5CE94DE518534976003C7DB1 = {
 						DevelopmentTeam = 5KE88HWMKJ;
 					};
@@ -634,11 +788,29 @@
 			projectRoot = "";
 			targets = (
 				5CE94DE518534976003C7DB1 /* CrashManager */,
+				5C1E022618C5214800DC4F79 /* CrashManager Functional Tests */,
+				5C97B47518C523A10025D54D /* CrashManager Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5C1E022518C5214800DC4F79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C1E023018C5214800DC4F79 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C97B47418C523A10025D54D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C97B47F18C523A10025D54D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5CE94DE418534976003C7DB1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -655,6 +827,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2546920FE0C949069AFAE44B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		5C6BF2AA18637D38007C483D /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -697,6 +884,21 @@
 			shellPath = /bin/sh;
 			shellScript = "# increment build number only when building release builds that are not app store.\n# this way we keep the same version number for a tested version in production\nif [[ ! ${CONFIGURATION} =~ Appstore ]] && [[ ${CONFIGURATION} =~ Release ]] ; then\necho \"Increment version number - release build detected\"\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\nfi";
 		};
+		7D461148018C4CF69C3928D6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		8AF3D6D6FDA9447EBB27B388 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -710,6 +912,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98FCFA6B329E4AEBB4B4EDF7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-CrashManager Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B1FA73BB547446999FFD095D /* Check Pods Manifest.lock */ = {
@@ -727,9 +944,40 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		BEF44CD602AA415D94A4BF95 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5C1E022318C5214800DC4F79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C1E023218C5214800DC4F79 /* CrashManager_Functional_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C97B47218C523A10025D54D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C97B48118C523A10025D54D /* CrashManager_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5CE94DE218534976003C7DB1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -794,7 +1042,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5C1E023518C5214800DC4F79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CE94DE518534976003C7DB1 /* CrashManager */;
+			targetProxy = 5C1E023418C5214800DC4F79 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		5C1E022E18C5214800DC4F79 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C1E022F18C5214800DC4F79 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		5C71946A18B8BE2900465412 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -814,6 +1078,14 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		5C97B47D18C523A10025D54D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C97B47E18C523A10025D54D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		5CE94DFB18534976003C7DB1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -827,131 +1099,89 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		5C757E8018C1E76000C50A72 /* Debug Beta */ = {
+		5C1E023618C5214800DC4F79 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D2CAD97374244ADB844A8F8 /* Pods.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CrashManager.app/CrashManager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CrashManager Functional Tests/CrashManager Functional Tests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				INFOPLIST_FILE = "CrashManager Functional Tests/CrashManager Functional Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
 			};
-			name = "Debug Beta";
+			name = Debug;
 		};
-		5C757E8118C1E76000C50A72 /* Debug Beta */ = {
+		5C1E023718C5214800DC4F79 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC95309D65084713A2B48175 /* Pods.xcconfig */;
+			baseConfigurationReference = 5D2CAD97374244ADB844A8F8 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLSBundleSuffix = .beta;
-				CLSDisplayNameSuffix = " β";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Crashlytics",
-					/Users/zats/Documents/Crashlytics/Crashlytics,
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Crashlytics/CrashManager-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "Crashlytics/CrashManager-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/zats/Documents/Crashlytics,
-				);
-				PRODUCT_NAME = CrashManager;
-				WRAPPER_EXTENSION = app;
-			};
-			name = "Debug Beta";
-		};
-		5C757E8218C1E76600C50A72 /* Release Beta */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = "Release Beta";
-		};
-		5C757E8318C1E76600C50A72 /* Release Beta */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC95309D65084713A2B48175 /* Pods.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLSBundleSuffix = .beta;
-				CLSDisplayNameSuffix = " β";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CrashManager.app/CrashManager";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Crashlytics",
-					/Users/zats/Documents/Crashlytics/Crashlytics,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Crashlytics/CrashManager-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "Crashlytics/CrashManager-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/zats/Documents/Crashlytics,
-				);
-				PRODUCT_NAME = CrashManager;
-				WRAPPER_EXTENSION = app;
+				GCC_PREFIX_HEADER = "CrashManager Functional Tests/CrashManager Functional Tests-Prefix.pch";
+				INFOPLIST_FILE = "CrashManager Functional Tests/CrashManager Functional Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
 			};
-			name = "Release Beta";
+			name = Release;
+		};
+		5C97B48318C523A10025D54D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E47DB7898B3842D99D1821D3 /* Pods-CrashManager Tests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CrashManager Tests/CrashManager Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CrashManager Tests/CrashManager Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5C97B48418C523A10025D54D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E47DB7898B3842D99D1821D3 /* Pods-CrashManager Tests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CrashManager Tests/CrashManager Tests-Prefix.pch";
+				INFOPLIST_FILE = "CrashManager Tests/CrashManager Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
 		};
 		5CE94E1618534976003C7DB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1027,7 +1257,7 @@
 		};
 		5CE94E1918534976003C7DB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC95309D65084713A2B48175 /* Pods.xcconfig */;
+			baseConfigurationReference = 5D2CAD97374244ADB844A8F8 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1054,7 +1284,7 @@
 		};
 		5CE94E1A18534976003C7DB1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC95309D65084713A2B48175 /* Pods.xcconfig */;
+			baseConfigurationReference = 5D2CAD97374244ADB844A8F8 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1082,6 +1312,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5C1E023818C5214800DC4F79 /* Build configuration list for PBXNativeTarget "CrashManager Functional Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C1E023618C5214800DC4F79 /* Debug */,
+				5C1E023718C5214800DC4F79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C97B48518C523A10025D54D /* Build configuration list for PBXNativeTarget "CrashManager Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C97B48318C523A10025D54D /* Debug */,
+				5C97B48418C523A10025D54D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5CE94DE118534976003C7DB1 /* Build configuration list for PBXProject "CrashManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
