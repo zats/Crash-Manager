@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044A29F0437344028F8C9B47 /* libPods-CrashManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */; };
 		302D59AC5E804438839BCDB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F12A6AEB95D4E7A8B2DA3F8 /* libPods.a */; };
 		32FD5F859A5F4DC6A6BBD5B2 /* libPods-CrashManager Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B8BB13C3104881B55D2335 /* libPods-CrashManager Tests.a */; };
 		4984128B10024B53BA51DA02 /* libPods-CrashManager Functional Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 420E78492E334557B9F2DA96 /* libPods-CrashManager Functional Tests.a */; };
+		5136E66DFA764784AF5C83F8 /* libPods-CrashManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */; };
 		5C046FDC1872B64600E4998C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C046FDB1872B64600E4998C /* Settings.bundle */; };
 		5C1E022818C5214800DC4F79 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94E0818534976003C7DB1 /* XCTest.framework */; };
 		5C1E022918C5214800DC4F79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94DE918534976003C7DB1 /* Foundation.framework */; };
@@ -30,6 +32,7 @@
 		5C4B069518545AFD0061485A /* CLSApplicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B069418545AFD0061485A /* CLSApplicationsViewController.m */; };
 		5C4B0698185465480061485A /* CLSRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B0697185465480061485A /* CLSRequestSerializer.m */; };
 		5C5ABF661871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5ABF651871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m */; };
+		5C62E95518C52F7B002BCE33 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C62E95418C52F7B002BCE33 /* Crashlytics.framework */; };
 		5C67C71518662F8700EC5943 /* CLSBuildsFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C67C71418662F8700EC5943 /* CLSBuildsFilterViewController.m */; };
 		5C6BF2B018637E34007C483D /* CLSResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6BF2AF18637E34007C483D /* CLSResponseSerializer.m */; };
 		5C6D3CF218534CA9005E97D1 /* _CLSAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CDF18534CA9005E97D1 /* _CLSAccount.m */; };
@@ -67,7 +70,6 @@
 		5C9AC77C186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */; };
 		5CA538B61872D4E200544C7A /* CLSTimeRangeFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */; };
 		5CB3C0881871BE5200CE00D7 /* CLSFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */; };
-		5CBE4756189D4A05002D3E90 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBE4755189D4A05002D3E90 /* Crashlytics.framework */; };
 		5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */; };
 		5CBE4764189D64AF002D3E90 /* UIViewController+OpenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */; };
 		5CC3F7E41876A12D003C2FAC /* CLSLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */; };
@@ -85,9 +87,8 @@
 		5CEDD1C518703DDC00B6A39A /* CLSIssueListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */; };
 		5CEDD1CA187050BC00B6A39A /* CLSApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */; };
 		5CEDD1CD18705DE500B6A39A /* CLSConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */; };
-		61DBF5D7659F4A42874FA875 /* libPods-CrashManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */; };
+		70C4ABCC75CE40DBA26D25C2 /* libPods-CrashManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */; };
 		B86949587432435F934DF123 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F12A6AEB95D4E7A8B2DA3F8 /* libPods.a */; };
-		F5D7634FB053431B803628B8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F12A6AEB95D4E7A8B2DA3F8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		5C4B0697185465480061485A /* CLSRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSRequestSerializer.m; sourceTree = "<group>"; };
 		5C5ABF641871C48A00FB2A77 /* CLSIssueStatusFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueStatusFilterViewController.h; sourceTree = "<group>"; };
 		5C5ABF651871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueStatusFilterViewController.m; sourceTree = "<group>"; };
+		5C62E95418C52F7B002BCE33 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		5C67C71318662F8700EC5943 /* CLSBuildsFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSBuildsFilterViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5C67C71418662F8700EC5943 /* CLSBuildsFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSBuildsFilterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C6BF2AE18637E34007C483D /* CLSResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSResponseSerializer.h; sourceTree = "<group>"; };
@@ -207,7 +209,6 @@
 		5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSTimeRangeFilterViewController.m; sourceTree = "<group>"; };
 		5CB3C0861871BE5200CE00D7 /* CLSFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSFiltersViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSFiltersViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		5CBE4755189D4A05002D3E90 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
 		5CBE475E189D58A6002D3E90 /* NSURLRequest+CLSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+CLSLogging.h"; sourceTree = "<group>"; };
 		5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+CLSLogging.m"; sourceTree = "<group>"; };
 		5CBE4762189D64AF002D3E90 /* UIViewController+OpenSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+OpenSource.h"; sourceTree = "<group>"; };
@@ -239,13 +240,10 @@
 		5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSApplicationCell.m; sourceTree = "<group>"; };
 		5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSConfiguration.h; sourceTree = "<group>"; };
 		5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSConfiguration.m; sourceTree = "<group>"; };
-		5D2CAD97374244ADB844A8F8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		62B8BB13C3104881B55D2335 /* libPods-CrashManager Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrashManager Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F12A6AEB95D4E7A8B2DA3F8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrashManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E47DB7898B3842D99D1821D3 /* Pods-CrashManager Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashManager Tests.xcconfig"; path = "Pods/Pods-CrashManager Tests.xcconfig"; sourceTree = "<group>"; };
-		EA113CD5E9BF4A9C986EA109 /* Pods-CrashManager Functional Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashManager Functional Tests.xcconfig"; path = "Pods/Pods-CrashManager Functional Tests.xcconfig"; sourceTree = "<group>"; };
-		EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashManager.xcconfig"; path = "Pods/Pods-CrashManager.xcconfig"; sourceTree = "<group>"; };
+		DE3E494A56AE4761B9A0A858 /* Pods-CrashManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashManager.xcconfig"; path = "Pods/Pods-CrashManager.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +256,7 @@
 				5C1E022918C5214800DC4F79 /* Foundation.framework in Frameworks */,
 				4984128B10024B53BA51DA02 /* libPods-CrashManager Functional Tests.a in Frameworks */,
 				302D59AC5E804438839BCDB9 /* libPods.a in Frameworks */,
+				5136E66DFA764784AF5C83F8 /* libPods-CrashManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +269,7 @@
 				5C97B47818C523A10025D54D /* Foundation.framework in Frameworks */,
 				B86949587432435F934DF123 /* libPods.a in Frameworks */,
 				32FD5F859A5F4DC6A6BBD5B2 /* libPods-CrashManager Tests.a in Frameworks */,
+				044A29F0437344028F8C9B47 /* libPods-CrashManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,11 +278,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CE94DEC18534976003C7DB1 /* CoreGraphics.framework in Frameworks */,
-				5CBE4756189D4A05002D3E90 /* Crashlytics.framework in Frameworks */,
+				5C62E95518C52F7B002BCE33 /* Crashlytics.framework in Frameworks */,
 				5CE94DEE18534976003C7DB1 /* UIKit.framework in Frameworks */,
 				5CE94DEA18534976003C7DB1 /* Foundation.framework in Frameworks */,
-				61DBF5D7659F4A42874FA875 /* libPods-CrashManager.a in Frameworks */,
-				F5D7634FB053431B803628B8 /* libPods.a in Frameworks */,
+				70C4ABCC75CE40DBA26D25C2 /* libPods-CrashManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +515,7 @@
 		5C757E8418C200B700C50A72 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				5C62E95418C52F7B002BCE33 /* Crashlytics.framework */,
 				5C757E8518C200B700C50A72 /* ADNActivities */,
 			);
 			path = Vendor;
@@ -610,10 +610,7 @@
 				5CE94DE818534976003C7DB1 /* Frameworks */,
 				5CE94DE718534976003C7DB1 /* Products */,
 				5C757E8418C200B700C50A72 /* Vendor */,
-				EFF3E9908B2D4B7A9A4FA74A /* Pods-CrashManager.xcconfig */,
-				5D2CAD97374244ADB844A8F8 /* Pods.xcconfig */,
-				EA113CD5E9BF4A9C986EA109 /* Pods-CrashManager Functional Tests.xcconfig */,
-				E47DB7898B3842D99D1821D3 /* Pods-CrashManager Tests.xcconfig */,
+				DE3E494A56AE4761B9A0A858 /* Pods-CrashManager.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -630,7 +627,6 @@
 		5CE94DE818534976003C7DB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5CBE4755189D4A05002D3E90 /* Crashlytics.framework */,
 				5CE94DE918534976003C7DB1 /* Foundation.framework */,
 				5CE94DEB18534976003C7DB1 /* CoreGraphics.framework */,
 				5CE94DED18534976003C7DB1 /* UIKit.framework */,
@@ -737,14 +733,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CE94E1818534976003C7DB1 /* Build configuration list for PBXNativeTarget "CrashManager" */;
 			buildPhases = (
-				B1FA73BB547446999FFD095D /* Check Pods Manifest.lock */,
+				B1EBAB7A165A42A78AF4F817 /* Check Pods Manifest.lock */,
 				5CE94DE218534976003C7DB1 /* Sources */,
 				5CE94DE318534976003C7DB1 /* Frameworks */,
 				5CE94DE418534976003C7DB1 /* Resources */,
 				5CDE08DB188A872F0051124A /* Automatic Build incrementation */,
-				8AF3D6D6FDA9447EBB27B388 /* Copy Pods Resources */,
 				5C6BF2AA18637D38007C483D /* Crashlytics */,
 				5CBE4765189D7A25002D3E90 /* Convert TODO and FIXME into warnings */,
+				E3032C45F99F4BC994E9486B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -899,21 +895,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8AF3D6D6FDA9447EBB27B388 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		98FCFA6B329E4AEBB4B4EDF7 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -926,10 +907,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-CrashManager Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-CrashManager-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B1FA73BB547446999FFD095D /* Check Pods Manifest.lock */ = {
+		B1EBAB7A165A42A78AF4F817 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -956,7 +937,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-CrashManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3032C45F99F4BC994E9486B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-CrashManager-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1101,7 +1097,6 @@
 /* Begin XCBuildConfiguration section */
 		5C1E023618C5214800DC4F79 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D2CAD97374244ADB844A8F8 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CrashManager.app/CrashManager";
@@ -1125,7 +1120,6 @@
 		};
 		5C1E023718C5214800DC4F79 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D2CAD97374244ADB844A8F8 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CrashManager.app/CrashManager";
@@ -1145,7 +1139,6 @@
 		};
 		5C97B48318C523A10025D54D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E47DB7898B3842D99D1821D3 /* Pods-CrashManager Tests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1167,7 +1160,6 @@
 		};
 		5C97B48418C523A10025D54D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E47DB7898B3842D99D1821D3 /* Pods-CrashManager Tests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1257,7 +1249,7 @@
 		};
 		5CE94E1918534976003C7DB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D2CAD97374244ADB844A8F8 /* Pods.xcconfig */;
+			baseConfigurationReference = DE3E494A56AE4761B9A0A858 /* Pods-CrashManager.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1268,6 +1260,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Crashlytics",
 					/Users/zats/Documents/Crashlytics/Crashlytics,
+					/Users/zats/Documents/Crashlytics/Vendor,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crashlytics/CrashManager-Prefix.pch";
@@ -1284,7 +1277,7 @@
 		};
 		5CE94E1A18534976003C7DB1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D2CAD97374244ADB844A8F8 /* Pods.xcconfig */;
+			baseConfigurationReference = DE3E494A56AE4761B9A0A858 /* Pods-CrashManager.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1295,6 +1288,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Crashlytics",
 					/Users/zats/Documents/Crashlytics/Crashlytics,
+					/Users/zats/Documents/Crashlytics/Vendor,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Crashlytics/CrashManager-Prefix.pch";
@@ -1334,9 +1328,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CE94E1618534976003C7DB1 /* Debug */,
-				5C757E8018C1E76000C50A72 /* Debug Beta */,
 				5CE94E1718534976003C7DB1 /* Release */,
-				5C757E8218C1E76600C50A72 /* Release Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1345,9 +1337,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5CE94E1918534976003C7DB1 /* Debug */,
-				5C757E8118C1E76000C50A72 /* Debug Beta */,
 				5CE94E1A18534976003C7DB1 /* Release */,
-				5C757E8318C1E76600C50A72 /* Release Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
