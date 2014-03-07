@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CLSAnalyticsController : NSObject
+@interface CRMAnalyticsController : NSObject
 
 + (instancetype)sharedInstance;
 

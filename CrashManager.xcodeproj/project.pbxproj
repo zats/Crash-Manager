@@ -36,7 +36,7 @@
 		5C6D3CFA18534CA9005E97D1 /* CRMBuild.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CEF18534CA9005E97D1 /* CRMBuild.m */; };
 		5C6D3CFB18534CA9005E97D1 /* CRMOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CF118534CA9005E97D1 /* CRMOrganization.m */; };
 		5C707FFE18B8D57A00C79F20 /* CLSDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C707FFD18B8D57A00C79F20 /* CLSDefines.m */; };
-		5C71944518B7A3C200465412 /* CLSAnalyticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944418B7A3C200465412 /* CLSAnalyticsController.m */; };
+		5C71944518B7A3C200465412 /* CRMAnalyticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944418B7A3C200465412 /* CRMAnalyticsController.m */; };
 		5C71944B18B7A7A900465412 /* CLSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944A18B7A7A900465412 /* CLSConstants.m */; };
 		5C71945318B7B49100465412 /* CLSGoogleAnalyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71945218B7B49100465412 /* CLSGoogleAnalyticsLogger.m */; };
 		5C71946C18B8BE2900465412 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C71946A18B8BE2900465412 /* InfoPlist.strings */; };
@@ -132,8 +132,8 @@
 		5C6D3CF118534CA9005E97D1 /* CRMOrganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRMOrganization.m; path = Crashlytics/CRMOrganization.m; sourceTree = SOURCE_ROOT; };
 		5C707FFC18B8D57A00C79F20 /* CLSDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSDefines.h; sourceTree = "<group>"; };
 		5C707FFD18B8D57A00C79F20 /* CLSDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSDefines.m; sourceTree = "<group>"; };
-		5C71944318B7A3C200465412 /* CLSAnalyticsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSAnalyticsController.h; sourceTree = "<group>"; };
-		5C71944418B7A3C200465412 /* CLSAnalyticsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSAnalyticsController.m; sourceTree = "<group>"; };
+		5C71944318B7A3C200465412 /* CRMAnalyticsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMAnalyticsController.h; sourceTree = "<group>"; };
+		5C71944418B7A3C200465412 /* CRMAnalyticsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMAnalyticsController.m; sourceTree = "<group>"; };
 		5C71944918B7A7A900465412 /* CLSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSConstants.h; sourceTree = "<group>"; };
 		5C71944A18B7A7A900465412 /* CLSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSConstants.m; sourceTree = "<group>"; };
 		5C71945118B7B49100465412 /* CLSGoogleAnalyticsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSGoogleAnalyticsLogger.h; sourceTree = "<group>"; };
@@ -367,8 +367,8 @@
 		5C71944218B7A3AB00465412 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				5C71944318B7A3C200465412 /* CLSAnalyticsController.h */,
-				5C71944418B7A3C200465412 /* CLSAnalyticsController.m */,
+				5C71944318B7A3C200465412 /* CRMAnalyticsController.h */,
+				5C71944418B7A3C200465412 /* CRMAnalyticsController.m */,
 			);
 			name = Analytics;
 			sourceTree = "<group>";
@@ -735,7 +735,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CE94DF618534976003C7DB1 /* main.m in Sources */,
-				5C71944518B7A3C200465412 /* CLSAnalyticsController.m in Sources */,
+				5C71944518B7A3C200465412 /* CRMAnalyticsController.m in Sources */,
 				5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */,
 				5C4B0684185356000061485A /* CLSOrganizationsViewController.m in Sources */,
 				5C6D3CF818534CA9005E97D1 /* CRMApplication.m in Sources */,

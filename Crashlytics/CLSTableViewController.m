@@ -11,7 +11,7 @@
 #import "CRMAccount.h"
 #import "CRMOrganization.h"
 #import "UIViewController+OpenSource.h"
-#import "CLSAnalyticsController.h"
+#import "CRMAnalyticsController.h"
 
 @interface CLSTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -73,7 +73,7 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
-	[[CLSAnalyticsController sharedInstance] trackViewController:self];
+	[[CRMAnalyticsController sharedInstance] trackViewController:self];
 
     RACSignal *viewWillDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
 	[[[[[CRMAccount activeAccountChangedSignal] takeUntil:viewWillDisappear] distinctUntilChanged] filter:^BOOL(CRMAccount *account) {

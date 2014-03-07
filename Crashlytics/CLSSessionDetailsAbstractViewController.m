@@ -8,7 +8,7 @@
 
 #import "CLSSessionDetailsAbstractViewController.h"
 
-#import "CLSAnalyticsController.h"
+#import "CRMAnalyticsController.h"
 #import "UIViewController+OpenSource.h"
 
 @interface CLSSessionDetailsAbstractViewController ()
@@ -64,7 +64,7 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 
-	[[CLSAnalyticsController sharedInstance] trackViewController:self];
+	[[CRMAnalyticsController sharedInstance] trackViewController:self];
 }
 
 #pragma mark - UITableViewDataSource

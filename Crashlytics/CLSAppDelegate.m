@@ -9,7 +9,7 @@
 #import "CLSAppDelegate.h"
 
 #import "CLSConfiguration.h"
-#import "CLSAnalyticsController.h"
+#import "CRMAnalyticsController.h"
 #import <Crashlytics/Crashlytics.h>
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 
@@ -29,7 +29,7 @@
 	[Crashlytics startWithAPIKey:apiKey];
 
 	// Analytics
-	[[CLSAnalyticsController sharedInstance] enableAnalyticsIfNeeded];
+	[[CRMAnalyticsController sharedInstance] enableAnalyticsIfNeeded];
 
     // Configuration
 	[[CLSConfiguration sharedInstance] updateConfigurationPlistWithCompletionHandler:^(NSDictionary *defaults, NSError *error) {

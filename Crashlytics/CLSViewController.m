@@ -10,7 +10,7 @@
 
 #import "CLSLoginViewController.h"
 #import "CRMAccount.h"
-#import "CLSAnalyticsController.h"
+#import "CRMAnalyticsController.h"
 #import "UIViewController+OpenSource.h"
 
 @interface CLSViewController ()
@@ -50,7 +50,7 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
-	[[CLSAnalyticsController sharedInstance] trackViewController:self];
+	[[CRMAnalyticsController sharedInstance] trackViewController:self];
 	
 	RACSignal *viewWillDisappearSignal = [self rac_signalForSelector:@selector(viewWillDisappear:)];
 	

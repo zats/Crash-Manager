@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Sasha Zats. All rights reserved.
 //
 
-#import "CLSAnalyticsController.h"
+#import "CRMAnalyticsController.h"
 
 #import "CLSConstants.h"
 #import "CLSGoogleAnalyticsLogger.h"
@@ -15,19 +15,19 @@
 #import <GoogleAnalytics-iOS-SDK/GAIFields.h>
 #import <GoogleAnalytics-iOS-SDK/GAIDictionaryBuilder.h>
 
-@interface CLSAnalyticsController ()
+@interface CRMAnalyticsController ()
 @property (nonatomic, assign) BOOL googleAnalyticsEnabled;
 @end
 
-@implementation CLSAnalyticsController
+@implementation CRMAnalyticsController
 
 #pragma mark - Initialization
 
 + (instancetype)sharedInstance {
-	static CLSAnalyticsController *instnace;
+	static CRMAnalyticsController *instnace;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		instnace = [[CLSAnalyticsController alloc] init];
+		instnace = [[CRMAnalyticsController alloc] init];
 	});
 	return instnace;
 }
