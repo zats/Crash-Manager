@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class CLSSession;
+@class CRMSession;
 @interface CLSSessionDetailsAbstractViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak, readonly) UITableView *tableView;
 
-@property (nonatomic, weak) CLSSession *session;
+@property (nonatomic, weak) CRMSession *session;
 @property (nonatomic, strong, readonly) RACSignal *sessionChangedSignal;
 
 @end

@@ -28,7 +28,7 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 
 @end
 
-@implementation CRMAccount (CLSSession)
+@implementation CRMAccount (CRMSession)
 
 - (void)updateWithContentsOfDictionary:(NSDictionary *)dictionary {
 	self.userID = dictionary[@"id"];

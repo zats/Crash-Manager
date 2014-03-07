@@ -82,9 +82,9 @@
 	}
 }
 
-- (CLSSession *)lastSession {
+- (CRMSession *)lastSession {
 	[self willAccessValueForKey:CLSIssueAttributes.lastSession];
-	CLSSession *lastSession = self.primitiveLastSession;
+	CRMSession *lastSession = self.primitiveLastSession;
 	[self didAccessValueForKey:CLSIssueAttributes.lastSession];
 
 	if (lastSession) {
@@ -94,7 +94,7 @@
 	if (!self.lastSessionData) {
 		return nil;
 	}
-	lastSession = [CLSSession parseFromData:self.lastSessionData];
+	lastSession = [CRMSession parseFromData:self.lastSessionData];
 	self.primitiveLastSession = lastSession;
 	return lastSession;
 }
@@ -110,7 +110,7 @@
 #pragma mark - NSManagedObject
 
 - (void)willSave {
-	self.primitiveLastSessionData = ((CLSSession *)self.primitiveLastSession).data;
+	self.primitiveLastSessionData = ((CRMSession *)self.primitiveLastSession).data;
 	[super willSave];
 }
 

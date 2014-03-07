@@ -8,7 +8,7 @@
 
 #import "CLSIssueGeneralDetailsViewController.h"
 
-#import "CLSIncident.h"
+#import "CRMIncident.h"
 #import "CLSIncident_Session+Crashlytics.h"
 #import "CLSLogViewController.h"
 #import "UIViewController+OpenSource.h"
@@ -189,7 +189,7 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 
 - (void)_configureKeyCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath
 {
-	CLSSessionCustomAttribute *attribute = [[self.session lastEvent].app customAttributesAtIndex:indexPath.row];
+	CRMSessionCustomAttribute *attribute = [[self.session lastEvent].app customAttributesAtIndex:indexPath.row];
 	cell.textLabel.text = attribute.key;
 	cell.detailTextLabel.text = attribute.value;
 }

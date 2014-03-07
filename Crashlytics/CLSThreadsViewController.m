@@ -8,16 +8,16 @@
 
 #import "CLSThreadsViewController.h"
 
-#import "CLSIncident.h"
+#import "CRMIncident.h"
 #import "CLSIncident_Session+Crashlytics.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
 @interface CLSThreadsViewController ()
 
-@property (nonatomic, weak) CLSSessionEvent *event;
-@property (nonatomic, weak) CLSSessionExecution *execution;
+@property (nonatomic, weak) CRMSessionEvent *event;
+@property (nonatomic, weak) CRMSessionExecution *execution;
 @property (nonatomic, weak) PBArray *threads;
-@property (nonatomic, weak) CLSSessionThread *crashedThread;
+@property (nonatomic, weak) CRMSessionThread *crashedThread;
 
 @end
 
@@ -31,7 +31,7 @@
     [super viewDidLoad];
     
     @weakify(self);
-    [self.sessionChangedSignal subscribeNext:^(CLSSession *session) {
+    [self.sessionChangedSignal subscribeNext:^(CRMSession *session) {
         @strongify(self);
 
     	if (![session.events count]) {
@@ -58,14 +58,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-	CLSSessionThread *thread = [self.threads objectAtIndex:section];
+	CRMSessionThread *thread = [self.threads objectAtIndex:section];
 	return [thread.frames count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView
 titleForHeaderInSection:(NSInteger)section {
 	
-	CLSSessionThread *thread = [self.threads objectAtIndex:section];
+	CRMSessionThread *thread = [self.threads objectAtIndex:section];
 	BOOL isCrashedThread = (self.crashedThread == thread);
 	NSString *crashedSymbol = isCrashedThread ? @"★ " : @"";
 	NSString *threadName = [thread.name length] ? thread.name : [NSString stringWithFormat:@"Thread #%u", section];
@@ -78,9 +78,9 @@ titleForHeaderInSection:(NSInteger)section {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ThreadFrameCellIdentifier"
 															forIndexPath:indexPath];
 	
-	CLSSessionThread *thread = [self.threads objectAtIndex:indexPath.section];
-	CLSSessionFrame *frame = [thread.frames objectAtIndex:indexPath.row];
-	CLSSessionBinaryImage *correspondingBinaryImage = [self.session binaryImageForAddress:frame.pc + frame.offset];
+	CRMSessionThread *thread = [self.threads objectAtIndex:indexPath.section];
+	CRMSessionFrame *frame = [thread.frames objectAtIndex:indexPath.row];
+	CRMSessionBinaryImage *correspondingBinaryImage = [self.session binaryImageForAddress:frame.pc + frame.offset];
 	
 	NSString *binaryName = correspondingBinaryImage.name;
 	NSURL *binaryImageURL = [NSURL fileURLWithPath:correspondingBinaryImage.name];

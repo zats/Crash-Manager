@@ -32,12 +32,12 @@
     @weakify(self);
 
     // Hide table view while we don't have data to show
-    RAC(self.tableView, hidden) = [self.sessionChangedSignal map:^id(CLSSession *session) {
+    RAC(self.tableView, hidden) = [self.sessionChangedSignal map:^id(CRMSession *session) {
         return @(session == nil);
     }];
     
     // Start spinner animation
-    RACSignal *noSessionSignal = [self.sessionChangedSignal filter:^BOOL(CLSSession *session) {
+    RACSignal *noSessionSignal = [self.sessionChangedSignal filter:^BOOL(CRMSession *session) {
         return session == nil;
     }];
     [noSessionSignal subscribeNext:^(id x) {
@@ -46,7 +46,7 @@
     }];
 
     // Stop spinner animation
-    RACSignal *hasSessionSignal = [self.sessionChangedSignal filter:^BOOL(CLSSession *session) {
+    RACSignal *hasSessionSignal = [self.sessionChangedSignal filter:^BOOL(CRMSession *session) {
         return session != nil;
     }];
     [hasSessionSignal subscribeNext:^(id x) {

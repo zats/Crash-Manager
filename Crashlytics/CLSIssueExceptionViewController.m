@@ -8,7 +8,7 @@
 
 #import "CLSIssueExceptionViewController.h"
 
-#import "CLSIncident.h"
+#import "CRMIncident.h"
 #import "CLSIncident_Session+Crashlytics.h"
 #import "UIViewController+OpenSource.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
@@ -30,16 +30,16 @@
 	if (![self.session.events count]) {
 		return 0;
 	}
-	CLSSessionEvent *event = [self.session.events objectAtIndex:0];
+	CRMSessionEvent *event = [self.session.events objectAtIndex:0];
 	return [event.app.execution.exception.frames count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-	CLSSessionFrame *frame = [[self.session lastEvent].app.execution.exception.frames objectAtIndex:indexPath.row];
+	CRMSessionFrame *frame = [[self.session lastEvent].app.execution.exception.frames objectAtIndex:indexPath.row];
 	uint64_t framePosition = frame.pc + frame.offset;
-	CLSSessionBinaryImage *correspondingBinaryImage = [self.session binaryImageForAddress:framePosition];
+	CRMSessionBinaryImage *correspondingBinaryImage = [self.session binaryImageForAddress:framePosition];
 	NSString *binaryName = correspondingBinaryImage.name;
 	NSURL *binaryImageURL = [NSURL fileURLWithPath:correspondingBinaryImage.name];
 	if (binaryImageURL) {

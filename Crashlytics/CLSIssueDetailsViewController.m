@@ -11,7 +11,7 @@
 #import "CRMIssue.h"
 #import "CLSAPIClient.h"
 #import "CRMAccount.h"
-#import "CLSIncident.h"
+#import "CRMIncident.h"
 #import "CLSIssueExceptionViewController.h"
 #import <ReactiveCocoa/RACEXTScope.h>
 #import <SHActionSheetBlocks/SHActionSheetBlocks.h>
@@ -36,8 +36,8 @@ typedef enum _CLSDetailsSegment {
 
 // Data
 @property (nonatomic, strong) NSString *issueID;
-@property (nonatomic, strong) CLSSession *session;
-@property (nonatomic, weak) CLSSessionEvent *lastEvent;
+@property (nonatomic, strong) CRMSession *session;
+@property (nonatomic, weak) CRMSessionEvent *lastEvent;
 @end
 
 @implementation CLSIssueDetailsViewController
@@ -81,7 +81,7 @@ typedef enum _CLSDetailsSegment {
 
 #pragma mark - Private
 
-- (void)_processIncidentSession:(CLSSession *)session {
+- (void)_processIncidentSession:(CRMSession *)session {
 	if (![session.events count]) {
 		return;
 	}
@@ -156,7 +156,7 @@ typedef enum _CLSDetailsSegment {
 			@strongify(self);
 
 			NSString *additionalInformation = self.issue.subtitle;
-			CLSSessionException *exception = [self.issue.lastSession lastException];
+			CRMSessionException *exception = [self.issue.lastSession lastException];
 			if ([exception.type length]) {
 				additionalInformation = [additionalInformation stringByAppendingFormat:@"\n%@", exception.type];
 			}
@@ -184,7 +184,7 @@ typedef enum _CLSDetailsSegment {
 						self.exceptionDescriptionLabel.text = self.issue.subtitle;
 						
 						[[[CLSAPIClient sharedInstance] detailsForIssue:self.issue]
-						 subscribeNext:^(CLSSession *session) {
+						 subscribeNext:^(CRMSession *session) {
 							@strongify(self);
 							[self _processIncidentSession:session];
 						}];

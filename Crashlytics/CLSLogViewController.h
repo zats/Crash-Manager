@@ -8,9 +8,9 @@
 
 #import "CLSViewController.h"
 
-@class CLSSession;
+@class CRMSession;
 @interface CLSLogViewController : CLSViewController
 
-@property (nonatomic, weak) CLSSession *session;
+@property (nonatomic, weak) CRMSession *session;
 
 @end

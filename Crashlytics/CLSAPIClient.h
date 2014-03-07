@@ -16,7 +16,7 @@
     
 @end
 
-@interface CLSAPIClient (CLSSession)
+@interface CLSAPIClient (CRMSession)
 
 - (RACSignal *)createSessionWithAccount:(CRMAccount *)account;
 

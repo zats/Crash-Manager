@@ -8,7 +8,7 @@
 
 #import "CLSLogViewController.h"
 
-#import "CLSIncident.h"
+#import "CRMIncident.h"
 #import "CLSIncident_Session+Crashlytics.h"
 #import <SHUIKitBlocks/SHUIKitBlocks.h>
 
@@ -36,7 +36,7 @@
 	@weakify(self);
 	[[RACObserve(self, session) filter:^BOOL(id value) {
 		return value != nil;
-	}] subscribeNext:^(CLSSession *session) {
+	}] subscribeNext:^(CRMSession *session) {
 		@strongify(self);
 		self.textView.text = [session lastEvent].log.content;
 	}];

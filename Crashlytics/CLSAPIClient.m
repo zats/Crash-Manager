@@ -14,7 +14,7 @@
 #import "CRMBuild.h"
 #import "CRMFilter.h"
 #import "CLSRequestSerializer.h"
-#import "CLSIncident.h"
+#import "CRMIncident.h"
 #import "CRMIssue.h"
 #import "CRMOrganization.h"
 #import "CLSResponseSerializer.h"
@@ -65,7 +65,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 
 @end
 
-@implementation CLSAPIClient (CLSSession)
+@implementation CLSAPIClient (CRMSession)
 
 - (RACSignal *)createSessionWithAccount:(CRMAccount *)account {
 	NSParameterAssert(account.email);
@@ -240,7 +240,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 	NSDictionary *parameters = @{ @"suppress_previous_next" : @YES };
 	RACReplaySubject *subject = [RACReplaySubject subject];
 	[self GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-		CLSSession *session = [CLSSession parseFromData:responseObject];
+		CRMSession *session = [CRMSession parseFromData:responseObject];
 		CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
 												  withValue:issueID];
 		issue.lastSession = session;

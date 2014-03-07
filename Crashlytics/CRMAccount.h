@@ -9,7 +9,7 @@ extern NSString *const CLSActiveAccountDidChangeNotification;
 
 @end
 
-@interface CRMAccount (CLSSession)
+@interface CRMAccount (CRMSession)
 
 - (void)updateWithContentsOfDictionary:(NSDictionary *)dictionary;
 - (void)updateOrganizationsWithContentsOfArray:(NSArray *)organizationsArray;

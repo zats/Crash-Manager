@@ -1,6 +1,6 @@
 #import "_CRMIssue.h"
 
-#import "CLSIncident.h"
+#import "CRMIncident.h"
 
 @interface CRMIssue : _CRMIssue {}
 
@@ -13,7 +13,7 @@
 
 - (NSURL *)URL;
 
-@property (nonatomic, strong) CLSSession *lastSession;
+@property (nonatomic, strong) CRMSession *lastSession;
 
 - (void)updateWithContentsOfDictionary:(NSDictionary *)dictionary;
 

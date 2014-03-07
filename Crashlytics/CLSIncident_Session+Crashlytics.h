@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSIncident.h"
+#import "CRMIncident.h"
 
-@interface CLSSession (Crashlytics)
+@interface CRMSession (Crashlytics)
 
-- (CLSSessionEvent *)lastEvent;
+- (CRMSessionEvent *)lastEvent;
 
-- (CLSSessionBinaryImage *)binaryImageForAddress:(uint64_t)address;
+- (CRMSessionBinaryImage *)binaryImageForAddress:(uint64_t)address;
 
 - (BOOL)containsException;
 
@@ -21,42 +21,42 @@
  
  @return A thread with containing crashed frame or `nil` if it can not be found.
  */
-- (CLSSessionThread *)crashedThread;
+- (CRMSessionThread *)crashedThread;
 
 - (CGFloat)deviceAvailableRamPercentage;
 
 - (CGFloat)deviceAvailableDiskSpacePercentage;
 
-- (CLSSessionException *)lastException;
+- (CRMSessionException *)lastException;
 
 @end
 
-@interface CLSSessionSignal (Crashlytics)
+@interface CRMSessionSignal (Crashlytics)
 
 - (NSString *)displayString;
 
 @end
 
-@interface CLSSessionUser (Crashlytics)
+@interface CRMSessionUser (Crashlytics)
 
 - (NSString *)displayString;
 
 @end
 
-@interface CLSSessionDevice (Crashlytics)
+@interface CRMSessionDevice (Crashlytics)
 
 - (NSString *)displayString;
 
 @end
 
-@interface CLSSessionEventDevice (Crashlytics)
+@interface CRMSessionEventDevice (Crashlytics)
 
 - (NSString *)batteryDisplayString;
 - (NSString *)orientationDisplayString;
 
 @end
 
-@interface CLSSessionOperatingSystem (Crashlytics)
+@interface CRMSessionOperatingSystem (Crashlytics)
 
 - (NSString *)displayString;
 
