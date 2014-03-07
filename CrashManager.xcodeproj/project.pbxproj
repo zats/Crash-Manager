@@ -498,7 +498,7 @@
 		5CE94DDD18534976003C7DB1 = {
 			isa = PBXGroup;
 			children = (
-				5CE94DEF18534976003C7DB1 /* Crashlytics */,
+				5CE94DEF18534976003C7DB1 /* CrashManager */,
 				5CE94DE818534976003C7DB1 /* Frameworks */,
 				5CE94DE718534976003C7DB1 /* Products */,
 				5C757E8418C200B700C50A72 /* Vendor */,
@@ -528,7 +528,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5CE94DEF18534976003C7DB1 /* Crashlytics */ = {
+		5CE94DEF18534976003C7DB1 /* CrashManager */ = {
 			isa = PBXGroup;
 			children = (
 				5CE94DF818534976003C7DB1 /* CLSAppDelegate.h */,
@@ -539,6 +539,7 @@
 				5C3BCF2C1868AF0B004BB1FA /* Resources */,
 				5C4B0681185355C50061485A /* View Controllers */,
 			);
+			name = CrashManager;
 			path = Crashlytics;
 			sourceTree = "<group>";
 		};
