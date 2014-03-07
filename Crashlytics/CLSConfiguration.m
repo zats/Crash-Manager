@@ -8,7 +8,7 @@
 
 #import "CLSConfiguration.h"
 
-#import "CLSCrashlyticsLogger.h"
+#import "CRMCrashlyticsLogger.h"
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import <CocoaLumberjack/DDFileLogger.h>
 #import <GroundControl/NSUserDefaults+GroundControl.h>
@@ -165,7 +165,7 @@
 
 - (void)_setupLogger {
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
-	[DDLog addLogger:[CLSCrashlyticsLogger sharedInstance]];
+	[DDLog addLogger:[CRMCrashlyticsLogger sharedInstance]];
 }
 
 - (void)_setupConfigurationFile {

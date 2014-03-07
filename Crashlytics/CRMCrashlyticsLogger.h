@@ -8,7 +8,7 @@
 
 #import "DDLog.h"
 
-@interface CLSCrashlyticsLogger : DDAbstractLogger
+@interface CRMCrashlyticsLogger : DDAbstractLogger
 
 + (instancetype)sharedInstance;
 

@@ -6,21 +6,21 @@
 //  Copyright (c) 2014 Sasha Zats. All rights reserved.
 //
 
-#import "CLSCrashlyticsLogger.h"
+#import "CRMCrashlyticsLogger.h"
 
 #import <Crashlytics/Crashlytics.h>
 
-@interface CLSCrashlyticsLogger ()
+@interface CRMCrashlyticsLogger ()
 
 @end
 
-@implementation CLSCrashlyticsLogger
+@implementation CRMCrashlyticsLogger
 
 + (instancetype)sharedInstance {
-	static CLSCrashlyticsLogger *instnace;
+	static CRMCrashlyticsLogger *instnace;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		instnace = [[CLSCrashlyticsLogger alloc] init];
+		instnace = [[CRMCrashlyticsLogger alloc] init];
 	});
 	return instnace;
 }
