@@ -8,8 +8,8 @@
 
 #import "CLSTableViewController.h"
 
-#import "CLSAccount.h"
-#import "CLSOrganization.h"
+#import "CRMAccount.h"
+#import "CRMOrganization.h"
 #import "UIViewController+OpenSource.h"
 #import "CLSAnalyticsController.h"
 
@@ -76,9 +76,9 @@
 	[[CLSAnalyticsController sharedInstance] trackViewController:self];
 
     RACSignal *viewWillDisappear = [self rac_signalForSelector:@selector(viewWillDisappear:)];
-	[[[[[CLSAccount activeAccountChangedSignal] takeUntil:viewWillDisappear] distinctUntilChanged] filter:^BOOL(CLSAccount *account) {
+	[[[[[CRMAccount activeAccountChangedSignal] takeUntil:viewWillDisappear] distinctUntilChanged] filter:^BOOL(CRMAccount *account) {
 		return ![account canCreateSession];
-	}] subscribeNext:^(CLSAccount *account) {
+	}] subscribeNext:^(CRMAccount *account) {
 		UINavigationController *loginNavigationViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
 		[self presentViewController:loginNavigationViewController
 						   animated:YES

@@ -1,7 +1,7 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to CLSAccount.m instead.
 
-#import "_CLSAccount.h"
+#import "_CRMAccount.h"
 
 const struct CLSAccountAttributes CLSAccountAttributes = {
 	.email = @"email",
@@ -21,7 +21,7 @@ const struct CLSAccountFetchedProperties CLSAccountFetchedProperties = {
 @implementation CLSAccountID
 @end
 
-@implementation _CLSAccount
+@implementation _CRMAccount
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);

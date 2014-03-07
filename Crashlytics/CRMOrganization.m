@@ -1,16 +1,16 @@
-#import "CLSOrganization.h"
+#import "CRMOrganization.h"
 
-#import "CLSApplication.h"
+#import "CRMApplication.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 
-@interface CLSOrganization ()
+@interface CRMOrganization ()
 
 // Private interface goes here.
 
 @end
 
 
-@implementation CLSOrganization
+@implementation CRMOrganization
 
 + (instancetype)organizationWithContentsOfDictionary:(NSDictionary *)dictionary
 										   inContext:(NSManagedObjectContext *)context {
@@ -19,11 +19,11 @@
 		return nil;
 	}
 	
-	CLSOrganization *organization = [CLSOrganization MR_findFirstByAttribute:CLSOrganizationAttributes.organizationID
+	CRMOrganization *organization = [CRMOrganization MR_findFirstByAttribute:CLSOrganizationAttributes.organizationID
 																   withValue:organizationID
 																   inContext:context];
 	if (!organization) {
-		organization = [CLSOrganization MR_createInContext:context];
+		organization = [CRMOrganization MR_createInContext:context];
 		organization.organizationID = organizationID;
 	}
 	
@@ -52,7 +52,7 @@
 - (void)updateApplicationsWithContentsOfArray:(NSArray *)array {
 	NSMutableSet *applicationsSet = [NSMutableSet setWithCapacity:[array count]];
 	for (NSDictionary *applicationDictionary in array) {
-		CLSApplication *application = [CLSApplication applicationWithContentsOfDictionary:applicationDictionary
+		CRMApplication *application = [CRMApplication applicationWithContentsOfDictionary:applicationDictionary
 																				inContext:self.managedObjectContext];
 		if (application) {
 			[applicationsSet addObject:application];

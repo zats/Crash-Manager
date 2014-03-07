@@ -1,18 +1,18 @@
-#import "CLSApplication.h"
+#import "CRMApplication.h"
 
-#import "CLSBuild.h"
-#import "CLSIssue.h"
-#import "CLSFilter.h"
+#import "CRMBuild.h"
+#import "CRMIssue.h"
+#import "CRMFilter.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 
-@interface CLSApplication ()
+@interface CRMApplication ()
 
 // Private interface goes here.
 
 @end
 
 
-@implementation CLSApplication
+@implementation CRMApplication
 
 + (instancetype)applicationWithContentsOfDictionary:(NSDictionary *)dictionary
 										  inContext:(NSManagedObjectContext *)context {
@@ -24,11 +24,11 @@
 		return nil;
 	}
 	
-	CLSApplication *application = [CLSApplication MR_findFirstByAttribute:CLSApplicationAttributes.applicationID
+	CRMApplication *application = [CRMApplication MR_findFirstByAttribute:CLSApplicationAttributes.applicationID
 																withValue:applicationID
 																inContext:context];
 	if (!application) {
-		application = [CLSApplication MR_createInContext:context];
+		application = [CRMApplication MR_createInContext:context];
 		application.applicationID = applicationID;
 	}
 	[application updateWithContentsOfDictionary:dictionary];
@@ -69,7 +69,7 @@
 	NSParameterAssert(array);
 	NSMutableSet *buildsSet = [NSMutableSet setWithCapacity:[array count]];
 	for (NSDictionary *buildDictionary in array) {
-		CLSBuild *build = [CLSBuild buildWithContentsOfDictionary:buildDictionary
+		CRMBuild *build = [CRMBuild buildWithContentsOfDictionary:buildDictionary
 														inContext:self.managedObjectContext];
 		if (build) {
 			[buildsSet addObject:build];
@@ -84,7 +84,7 @@
 	for (NSDictionary *issueDictionary in array) {
 		// parses an issue from the dictionary and associates it
 		// with according build
-		CLSIssue *issue = [CLSIssue issueWithContentsOfDictionary:issueDictionary
+		CRMIssue *issue = [CRMIssue issueWithContentsOfDictionary:issueDictionary
 														inContext:self.managedObjectContext];
 		if (issue) {
 			[issuesSet addObject:issue];
@@ -98,7 +98,7 @@
 - (void)awakeFromInsert {
 	[super awakeFromInsert];
 
-	self.filter = [CLSFilter MR_createInContext:self.managedObjectContext];
+	self.filter = [CRMFilter MR_createInContext:self.managedObjectContext];
 }
 
 @end

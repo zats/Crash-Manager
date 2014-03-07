@@ -1,5 +1,5 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to CLSFilter.h instead.
+// Make changes to CRMFilter.h instead.
 
 #import <CoreData/CoreData.h>
 
@@ -18,8 +18,8 @@ extern const struct CLSFilterRelationships {
 extern const struct CLSFilterFetchedProperties {
 } CLSFilterFetchedProperties;
 
-@class CLSApplication;
-@class CLSBuild;
+@class CRMApplication;
+@class CRMBuild;
 
 
 
@@ -28,7 +28,7 @@ extern const struct CLSFilterFetchedProperties {
 @interface CLSFilterID : NSManagedObjectID {}
 @end
 
-@interface _CLSFilter : NSManagedObject {}
+@interface _CRMFilter : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
@@ -76,14 +76,14 @@ extern const struct CLSFilterFetchedProperties {
 
 
 
-@property (nonatomic, strong) CLSApplication *application;
+@property (nonatomic, strong) CRMApplication *application;
 
 //- (BOOL)validateApplication:(id*)value_ error:(NSError**)error_;
 
 
 
 
-@property (nonatomic, strong) CLSBuild *build;
+@property (nonatomic, strong) CRMBuild *build;
 
 //- (BOOL)validateBuild:(id*)value_ error:(NSError**)error_;
 
@@ -93,11 +93,11 @@ extern const struct CLSFilterFetchedProperties {
 
 @end
 
-@interface _CLSFilter (CoreDataGeneratedAccessors)
+@interface _CRMFilter (CoreDataGeneratedAccessors)
 
 @end
 
-@interface _CLSFilter (CoreDataGeneratedPrimitiveAccessors)
+@interface _CRMFilter (CoreDataGeneratedPrimitiveAccessors)
 
 
 - (NSNumber*)primitiveIssueNewerThen;
@@ -125,13 +125,13 @@ extern const struct CLSFilterFetchedProperties {
 
 
 
-- (CLSApplication*)primitiveApplication;
-- (void)setPrimitiveApplication:(CLSApplication*)value;
+- (CRMApplication*)primitiveApplication;
+- (void)setPrimitiveApplication:(CRMApplication*)value;
 
 
 
-- (CLSBuild*)primitiveBuild;
-- (void)setPrimitiveBuild:(CLSBuild*)value;
+- (CRMBuild*)primitiveBuild;
+- (void)setPrimitiveBuild:(CRMBuild*)value;
 
 
 @end

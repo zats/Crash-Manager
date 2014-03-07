@@ -8,9 +8,9 @@
 
 #import "CLSTableViewController.h"
 
-@class CLSOrganization;
+@class CRMOrganization;
 @interface CLSApplicationsViewController : CLSTableViewController
 
-@property (nonatomic, weak) CLSOrganization *organization;
+@property (nonatomic, weak) CRMOrganization *organization;
 
 @end

@@ -1,5 +1,5 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to CLSAccount.h instead.
+// Make changes to CRMAccount.h instead.
 
 #import <CoreData/CoreData.h>
 
@@ -19,7 +19,7 @@ extern const struct CLSAccountRelationships {
 extern const struct CLSAccountFetchedProperties {
 } CLSAccountFetchedProperties;
 
-@class CLSOrganization;
+@class CRMOrganization;
 
 
 
@@ -30,7 +30,7 @@ extern const struct CLSAccountFetchedProperties {
 @interface CLSAccountID : NSManagedObjectID {}
 @end
 
-@interface _CLSAccount : NSManagedObject {}
+@interface _CRMAccount : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
@@ -100,16 +100,16 @@ extern const struct CLSAccountFetchedProperties {
 
 @end
 
-@interface _CLSAccount (CoreDataGeneratedAccessors)
+@interface _CRMAccount (CoreDataGeneratedAccessors)
 
 - (void)addOrganizations:(NSSet*)value_;
 - (void)removeOrganizations:(NSSet*)value_;
-- (void)addOrganizationsObject:(CLSOrganization*)value_;
-- (void)removeOrganizationsObject:(CLSOrganization*)value_;
+- (void)addOrganizationsObject:(CRMOrganization*)value_;
+- (void)removeOrganizationsObject:(CRMOrganization*)value_;
 
 @end
 
-@interface _CLSAccount (CoreDataGeneratedPrimitiveAccessors)
+@interface _CRMAccount (CoreDataGeneratedPrimitiveAccessors)
 
 
 - (NSString*)primitiveEmail;

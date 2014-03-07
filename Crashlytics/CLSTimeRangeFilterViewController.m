@@ -8,7 +8,7 @@
 
 #import "CLSTimeRangeFilterViewController.h"
 
-#import "CLSFilter.h"
+#import "CRMFilter.h"
 #import <ReactiveCocoa/RACEXTScope.h>
 
 @interface CLSTimeRangeFilterViewController ()
@@ -29,7 +29,7 @@
 	[super viewDidLoad];
 	
 	@weakify(self);
-	[RACObserve(self, filter) subscribeNext:^(CLSFilter *filter) {
+	[RACObserve(self, filter) subscribeNext:^(CRMFilter *filter) {
 		@strongify(self);
 		if ([self isViewLoaded]) {
 			[self.tableView reloadData];

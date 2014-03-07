@@ -8,10 +8,10 @@
 
 #import "CLSTableViewController.h"
 
-@class CLSFilter;
+@class CRMFilter;
 @interface CLSBuildsFilterViewController : CLSTableViewController
 
-@property (nonatomic, weak) CLSFilter *filter;
+@property (nonatomic, weak) CRMFilter *filter;
 
 @end
 

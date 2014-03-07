@@ -1,8 +1,8 @@
-#import "CLSFilter.h"
+#import "CRMFilter.h"
 
-#import "CLSBuild.h"
-#import "CLSIssue.h"
-#import "CLSApplication.h"
+#import "CRMBuild.h"
+#import "CRMIssue.h"
+#import "CRMApplication.h"
 
 NSString *const CLSFilterIssueStatusAll = @"all";
 NSString *const CLSFilterIssueStatusUnresolved = @"unresolved";
@@ -24,12 +24,12 @@ NSArray *CLSFilterTimeRanges;
 
 #define CLSStrignify( key ) (@#key)
 
-@interface CLSFilter ()
+@interface CRMFilter ()
 
 @end
 
 
-@implementation CLSFilter
+@implementation CRMFilter
 
 + (void)initialize {
 	@autoreleasepool {
@@ -147,7 +147,7 @@ NSArray *CLSFilterTimeRanges;
 
 @end
 
-@implementation CLSFilter (CLSPredicate)
+@implementation CRMFilter (CLSPredicate)
 
 - (NSPredicate *)emptyFilterPreidacte {
 	return [NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.application, self.application];

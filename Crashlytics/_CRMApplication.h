@@ -26,10 +26,10 @@ extern const struct CLSApplicationRelationships {
 extern const struct CLSApplicationFetchedProperties {
 } CLSApplicationFetchedProperties;
 
-@class CLSBuild;
-@class CLSFilter;
-@class CLSIssue;
-@class CLSOrganization;
+@class CRMBuild;
+@class CRMFilter;
+@class CRMIssue;
+@class CRMOrganization;
 
 
 
@@ -44,7 +44,7 @@ extern const struct CLSApplicationFetchedProperties {
 @interface CLSApplicationID : NSManagedObjectID {}
 @end
 
-@interface _CLSApplication : NSManagedObject {}
+@interface _CRMApplication : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
@@ -159,7 +159,7 @@ extern const struct CLSApplicationFetchedProperties {
 
 
 
-@property (nonatomic, strong) CLSFilter *filter;
+@property (nonatomic, strong) CRMFilter *filter;
 
 //- (BOOL)validateFilter:(id*)value_ error:(NSError**)error_;
 
@@ -173,7 +173,7 @@ extern const struct CLSApplicationFetchedProperties {
 
 
 
-@property (nonatomic, strong) CLSOrganization *organization;
+@property (nonatomic, strong) CRMOrganization *organization;
 
 //- (BOOL)validateOrganization:(id*)value_ error:(NSError**)error_;
 
@@ -183,21 +183,21 @@ extern const struct CLSApplicationFetchedProperties {
 
 @end
 
-@interface _CLSApplication (CoreDataGeneratedAccessors)
+@interface _CRMApplication (CoreDataGeneratedAccessors)
 
 - (void)addBuilds:(NSSet*)value_;
 - (void)removeBuilds:(NSSet*)value_;
-- (void)addBuildsObject:(CLSBuild*)value_;
-- (void)removeBuildsObject:(CLSBuild*)value_;
+- (void)addBuildsObject:(CRMBuild*)value_;
+- (void)removeBuildsObject:(CRMBuild*)value_;
 
 - (void)addIssues:(NSSet*)value_;
 - (void)removeIssues:(NSSet*)value_;
-- (void)addIssuesObject:(CLSIssue*)value_;
-- (void)removeIssuesObject:(CLSIssue*)value_;
+- (void)addIssuesObject:(CRMIssue*)value_;
+- (void)removeIssuesObject:(CRMIssue*)value_;
 
 @end
 
-@interface _CLSApplication (CoreDataGeneratedPrimitiveAccessors)
+@interface _CRMApplication (CoreDataGeneratedPrimitiveAccessors)
 
 
 - (NSString*)primitiveApplicationID;
@@ -266,8 +266,8 @@ extern const struct CLSApplicationFetchedProperties {
 
 
 
-- (CLSFilter*)primitiveFilter;
-- (void)setPrimitiveFilter:(CLSFilter*)value;
+- (CRMFilter *)primitiveFilter;
+- (void)setPrimitiveFilter:(CRMFilter *)value;
 
 
 
@@ -276,8 +276,8 @@ extern const struct CLSApplicationFetchedProperties {
 
 
 
-- (CLSOrganization*)primitiveOrganization;
-- (void)setPrimitiveOrganization:(CLSOrganization*)value;
+- (CRMOrganization*)primitiveOrganization;
+- (void)setPrimitiveOrganization:(CRMOrganization*)value;
 
 
 @end

@@ -1,8 +1,8 @@
-#import "_CLSIssue.h"
+#import "_CRMIssue.h"
 
 #import "CLSIncident.h"
 
-@interface CLSIssue : _CLSIssue {}
+@interface CRMIssue : _CRMIssue {}
 
 + (NSDateFormatter *)formatter;
 

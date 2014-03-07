@@ -1,7 +1,7 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to CLSFilter.m instead.
+// Make changes to CRMFilter.m instead.
 
-#import "_CLSFilter.h"
+#import "_CRMFilter.h"
 
 const struct CLSFilterAttributes CLSFilterAttributes = {
 	.issueNewerThen = @"issueNewerThen",
@@ -20,7 +20,7 @@ const struct CLSFilterFetchedProperties CLSFilterFetchedProperties = {
 @implementation CLSFilterID
 @end
 
-@implementation _CLSFilter
+@implementation _CRMFilter
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);

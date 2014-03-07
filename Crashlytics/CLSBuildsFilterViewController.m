@@ -9,10 +9,10 @@
 #import "CLSBuildsFilterViewController.h"
 
 #import "CLSAPIClient.h"
-#import "CLSBuild.h"
-#import "CLSFilter.h"
-#import "CLSApplication.h"
-#import "CLSAccount.h"
+#import "CRMBuild.h"
+#import "CRMFilter.h"
+#import "CRMApplication.h"
+#import "CRMAccount.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 
 @interface CLSBuildsFilterViewController ()
@@ -29,10 +29,10 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	RACSignal *applicationDidChangeSignal = [RACObserve(self.filter, application) filter:^BOOL(CLSApplication *application) {
+	RACSignal *applicationDidChangeSignal = [RACObserve(self.filter, application) filter:^BOOL(CRMApplication *application) {
 		return application != nil;
 	}];
-	RACSignal *activeAccountDidChangeSignal = [[CLSAccount activeAccountChangedSignal] filter:^BOOL(id account) {
+	RACSignal *activeAccountDidChangeSignal = [[CRMAccount activeAccountChangedSignal] filter:^BOOL(id account) {
 		return account != nil;
 	}];
 	
@@ -48,7 +48,7 @@
 		// All builds of the current application
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K.%K == %@", CLSBuildRelationships.application, CLSApplicationAttributes.applicationID, self.filter.application.applicationID];
 		
-		self.fetchedResultsController = [CLSBuild MR_fetchAllGroupedBy:nil
+		self.fetchedResultsController = [CRMBuild MR_fetchAllGroupedBy:nil
 														 withPredicate:predicate
 															  sortedBy:nil
 															 ascending:NO];
@@ -85,7 +85,7 @@
 		cell.textLabel.text = @"All Builds";
 		cell.accessoryType = self.filter.build ? UITableViewCellAccessoryNone : UITableViewCellAccessoryCheckmark;
 	} else {
-		CLSBuild *build = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row
+		CRMBuild *build = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row
 																							  inSection:0]];
 		cell.textLabel.text = build.buildID;
 		cell.accessoryType = (self.filter.build == build) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
@@ -114,7 +114,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	cell.accessoryType = UITableViewCellAccessoryNone;
 	
 	
-	CLSBuild *build = nil;
+	CRMBuild *build = nil;
 	if (indexPath.section == 1) {
 		build = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row
 																					inSection:0]];

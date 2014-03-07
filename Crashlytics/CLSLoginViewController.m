@@ -8,7 +8,7 @@
 
 #import "CLSLoginViewController.h"
 
-#import "CLSAccount.h"
+#import "CRMAccount.h"
 #import "CLSAPIClient.h"
 #import "CLSConfiguration.h"
 #import "UIViewController+OpenSource.h"
@@ -54,9 +54,9 @@ typedef NS_ENUM(NSInteger, CLSHelpSectionRow) {
 		return;
 	}
 	
-	CLSAccount *account = [CLSAccount activeAccount];
+	CRMAccount *account = [CRMAccount activeAccount];
 	if (!account) {
-		account = [CLSAccount MR_createEntity];
+		account = [CRMAccount MR_createEntity];
 	}
 	account.email = email;
 	account.password = password;
@@ -70,10 +70,10 @@ typedef NS_ENUM(NSInteger, CLSHelpSectionRow) {
 	@weakify(self);
 	[[[CLSAPIClient sharedInstance] createSessionWithAccount:account]
 	 subscribeNext:^(id x) {
-		 [CLSAccount setCurrentAccount:account];
+		 [CRMAccount setCurrentAccount:account];
 	 } error:^(NSError *error) {
 		@strongify(self);
-		[CLSAccount setCurrentAccount:nil];
+		[CRMAccount setCurrentAccount:nil];
 		[self _setEnabled:YES];
 		[[[UIAlertView alloc] initWithTitle:@"Login Error"
 									message:[error localizedDescription]
@@ -115,7 +115,7 @@ typedef NS_ENUM(NSInteger, CLSHelpSectionRow) {
     [super viewDidLoad];
 	
 	NSString *username = nil, *password = nil;
-	[CLSAccount getKeychainedLastUsedUsername:&username
+	[CRMAccount getKeychainedLastUsedUsername:&username
 									 password:&password];
 	self.emailTextField.text = username;
 //	self.passwordTextField.text = password;

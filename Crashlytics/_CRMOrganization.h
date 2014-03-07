@@ -21,8 +21,8 @@ extern const struct CLSOrganizationRelationships {
 extern const struct CLSOrganizationFetchedProperties {
 } CLSOrganizationFetchedProperties;
 
-@class CLSAccount;
-@class CLSApplication;
+@class CRMAccount;
+@class CRMApplication;
 
 
 
@@ -34,7 +34,7 @@ extern const struct CLSOrganizationFetchedProperties {
 @interface CLSOrganizationID : NSManagedObjectID {}
 @end
 
-@interface _CLSOrganization : NSManagedObject {}
+@interface _CRMOrganization : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
@@ -129,21 +129,21 @@ extern const struct CLSOrganizationFetchedProperties {
 
 @end
 
-@interface _CLSOrganization (CoreDataGeneratedAccessors)
+@interface _CRMOrganization (CoreDataGeneratedAccessors)
 
 - (void)addAccounts:(NSSet*)value_;
 - (void)removeAccounts:(NSSet*)value_;
-- (void)addAccountsObject:(CLSAccount*)value_;
-- (void)removeAccountsObject:(CLSAccount*)value_;
+- (void)addAccountsObject:(CRMAccount*)value_;
+- (void)removeAccountsObject:(CRMAccount*)value_;
 
 - (void)addApplications:(NSSet*)value_;
 - (void)removeApplications:(NSSet*)value_;
-- (void)addApplicationsObject:(CLSApplication*)value_;
-- (void)removeApplicationsObject:(CLSApplication*)value_;
+- (void)addApplicationsObject:(CRMApplication*)value_;
+- (void)removeApplicationsObject:(CRMApplication*)value_;
 
 @end
 
-@interface _CLSOrganization (CoreDataGeneratedPrimitiveAccessors)
+@interface _CRMOrganization (CoreDataGeneratedPrimitiveAccessors)
 
 
 - (NSNumber*)primitiveAccountsCount;

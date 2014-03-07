@@ -8,9 +8,9 @@
 
 #import "CLSFiltersViewController.h"
 
-#import "CLSApplication.h"
-#import "CLSFilter.h"
-#import "CLSBuild.h"
+#import "CRMApplication.h"
+#import "CRMFilter.h"
+#import "CRMBuild.h"
 #import "CLSIssueStatusFilterViewController.h"
 #import "CLSBuildsFilterViewController.h"
 #import "CLSTimeRangeFilterViewController.h"
@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, CLSFilterTableViewCell) {
 @interface CLSFiltersViewController ()
 
 @property (nonatomic, strong) NSString *applicationID;
-@property (nonatomic, weak, readonly) CLSFilter *filter;
+@property (nonatomic, weak, readonly) CRMFilter *filter;
 
 @end
 
@@ -33,7 +33,7 @@ typedef NS_ENUM(NSInteger, CLSFilterTableViewCell) {
 
 #pragma mark - Public
 
-- (void)setApplication:(CLSApplication *)application {
+- (void)setApplication:(CRMApplication *)application {
 	self.applicationID = application.applicationID;
 	
 	@weakify(self);
@@ -60,15 +60,15 @@ typedef NS_ENUM(NSInteger, CLSFilterTableViewCell) {
 	}];
 }
 
-- (CLSApplication *)application {
-	return [CLSApplication MR_findFirstByAttribute:CLSApplicationAttributes.applicationID
+- (CRMApplication *)application {
+	return [CRMApplication MR_findFirstByAttribute:CLSApplicationAttributes.applicationID
 										 withValue:self.applicationID];
 }
 
-- (CLSFilter *)filter {
-	CLSApplication *applicaiton = self.application;
+- (CRMFilter *)filter {
+	CRMApplication *applicaiton = self.application;
 	if (!applicaiton.filter) {
-		applicaiton.filter = [CLSFilter MR_createInContext:applicaiton.managedObjectContext];
+		applicaiton.filter = [CRMFilter MR_createInContext:applicaiton.managedObjectContext];
 		[applicaiton.filter.managedObjectContext MR_saveToPersistentStoreAndWait];
 	}
 	return applicaiton.filter;

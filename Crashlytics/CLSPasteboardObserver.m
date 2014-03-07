@@ -8,10 +8,10 @@
 
 #import "CLSPasteboardObserver.h"
 
-#import "CLSOrganization.h"
+#import "CRMOrganization.h"
 #import "CLSConstants.h"
-#import "CLSApplication.h"
-#import "CLSIssue.h"
+#import "CRMApplication.h"
+#import "CRMIssue.h"
 #import "CLSApplicationsViewController.h"
 #import "CLSIssuesViewController.h"
 #import "CLSIssueDetailsViewController.h"
@@ -193,17 +193,17 @@
 	[alert SH_addButtonWithTitle:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageCancelTitle", nil)
 					   withBlock:nil];
 	[alert SH_addButtonCancelWithTitle:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageNavigateTitle", nil) withBlock:^(NSInteger theButtonIndex) {		
-		CLSOrganization *organization = [CLSOrganization MR_findFirstByAttribute:CLSOrganizationAttributes.alias
+		CRMOrganization *organization = [CRMOrganization MR_findFirstByAttribute:CLSOrganizationAttributes.alias
 																	   withValue:organizationAlias];
 		
-		CLSApplication *application = [CLSApplication MR_findFirstByAttribute:CLSApplicationAttributes.bundleID
+		CRMApplication *application = [CRMApplication MR_findFirstByAttribute:CLSApplicationAttributes.bundleID
 																	withValue:bundleID];
 
-		CLSIssue *issue = [CLSIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
+		CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
 										 withValue:issueID];
 		
 		if (!issue) {
-			issue = [CLSIssue MR_createEntity];
+			issue = [CRMIssue MR_createEntity];
 			issue.issueID = issueID;
 			issue.application = application;
 			[issue.managedObjectContext MR_saveToPersistentStoreAndWait];
@@ -244,14 +244,14 @@
 		return NO;
 	}
 	
-	CLSIssue *issue = [CLSIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
+	CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
 											  withValue:issueID];
 	if (!issue) {
-		issue = [CLSIssue MR_createEntity];
+		issue = [CRMIssue MR_createEntity];
 		issue.issueID = issueID;
 	}
 
-	CLSApplication *application = [CLSApplication MR_findFirstByAttribute:CLSApplicationAttributes.bundleID
+	CRMApplication *application = [CRMApplication MR_findFirstByAttribute:CLSApplicationAttributes.bundleID
 																	withValue:bundleID];
 		
 	if (!issue.application) {

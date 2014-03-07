@@ -1,6 +1,6 @@
-#import "_CLSApplication.h"
+#import "_CRMApplication.h"
 
-@interface CLSApplication : _CLSApplication {}
+@interface CRMApplication : _CRMApplication {}
 
 + (instancetype)applicationWithContentsOfDictionary:(NSDictionary *)dictionary
 										  inContext:(NSManagedObjectContext *)context;

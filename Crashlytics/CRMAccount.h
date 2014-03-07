@@ -1,15 +1,15 @@
-#import "_CLSAccount.h"
+#import "_CRMAccount.h"
 
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 
 extern NSString *const CLSActiveAccountDidChangeNotification;
 
 @class RACSubject;
-@interface CLSAccount : _CLSAccount {}
+@interface CRMAccount : _CRMAccount {}
 
 @end
 
-@interface CLSAccount (CLSSession)
+@interface CRMAccount (CLSSession)
 
 - (void)updateWithContentsOfDictionary:(NSDictionary *)dictionary;
 - (void)updateOrganizationsWithContentsOfArray:(NSArray *)organizationsArray;
@@ -19,17 +19,17 @@ extern NSString *const CLSActiveAccountDidChangeNotification;
 
 @end
 
-@interface CLSAccount (CLSCurrentAccount)
+@interface CRMAccount (CLSCurrentAccount)
 
 + (RACSubject *)activeAccountChangedSignal;
 
 + (instancetype)activeAccount;
 + (instancetype)currentAccountInContext:(NSManagedObjectContext *)context;
-+ (void)setCurrentAccount:(CLSAccount *)account;
++ (void)setCurrentAccount:(CRMAccount *)account;
 
 @end
 
-@interface CLSAccount (CLSUtility)
+@interface CRMAccount (CLSUtility)
 
 + (void)getKeychainedLastUsedUsername:(NSString **)username
 							 password:(NSString **)password;

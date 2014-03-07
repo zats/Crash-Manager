@@ -1,12 +1,12 @@
-#import "CLSIssue.h"
+#import "CRMIssue.h"
 
-#import "CLSBuild.h"
+#import "CRMBuild.h"
 
-@interface CLSIssue ()
+@interface CRMIssue ()
 
 @end
 
-@implementation CLSIssue
+@implementation CRMIssue
 @dynamic lastSession;
 
 + (NSDateFormatter *)formatter {
@@ -29,11 +29,11 @@
 	if (!issueID) {
 		return nil;
 	}
-	CLSIssue *issue = [CLSIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
+	CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
 											  withValue:issueID
 											  inContext:context];
 	if (!issue) {
-		issue = [CLSIssue MR_createInContext:context];
+		issue = [CRMIssue MR_createInContext:context];
 		issue.issueID = issueID;
 	}
 	
@@ -58,13 +58,13 @@
 	
 	// corresponding build object
 	NSString *buildID = dictionary[@"build"];
-	CLSBuild *build = [CLSBuild MR_findFirstByAttribute:CLSBuildAttributes.buildID
+	CRMBuild *build = [CRMBuild MR_findFirstByAttribute:CLSBuildAttributes.buildID
 											  withValue:buildID
 											  inContext:self.managedObjectContext];
 	if (!build) {
 		// we have to create a container build object just to encapsulate
 		// all the issues
-		build = [CLSBuild MR_createInContext:self.managedObjectContext];
+		build = [CRMBuild MR_createInContext:self.managedObjectContext];
 		build.buildID = buildID;
 	}
 	self.build = build;

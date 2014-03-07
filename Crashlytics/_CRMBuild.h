@@ -18,9 +18,9 @@ extern const struct CLSBuildRelationships {
 extern const struct CLSBuildFetchedProperties {
 } CLSBuildFetchedProperties;
 
-@class CLSApplication;
-@class CLSFilter;
-@class CLSIssue;
+@class CRMApplication;
+@class CRMFilter;
+@class CRMIssue;
 
 
 
@@ -28,7 +28,7 @@ extern const struct CLSBuildFetchedProperties {
 @interface CLSBuildID : NSManagedObjectID {}
 @end
 
-@interface _CLSBuild : NSManagedObject {}
+@interface _CRMBuild : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
@@ -62,14 +62,14 @@ extern const struct CLSBuildFetchedProperties {
 
 
 
-@property (nonatomic, strong) CLSApplication *application;
+@property (nonatomic, strong) CRMApplication *application;
 
 //- (BOOL)validateApplication:(id*)value_ error:(NSError**)error_;
 
 
 
 
-@property (nonatomic, strong) CLSFilter *filters;
+@property (nonatomic, strong) CRMFilter *filters;
 
 //- (BOOL)validateFilters:(id*)value_ error:(NSError**)error_;
 
@@ -86,16 +86,16 @@ extern const struct CLSBuildFetchedProperties {
 
 @end
 
-@interface _CLSBuild (CoreDataGeneratedAccessors)
+@interface _CRMBuild (CoreDataGeneratedAccessors)
 
 - (void)addIssues:(NSSet*)value_;
 - (void)removeIssues:(NSSet*)value_;
-- (void)addIssuesObject:(CLSIssue*)value_;
-- (void)removeIssuesObject:(CLSIssue*)value_;
+- (void)addIssuesObject:(CRMIssue*)value_;
+- (void)removeIssuesObject:(CRMIssue*)value_;
 
 @end
 
-@interface _CLSBuild (CoreDataGeneratedPrimitiveAccessors)
+@interface _CRMBuild (CoreDataGeneratedPrimitiveAccessors)
 
 
 - (NSString*)primitiveBuildID;
@@ -114,13 +114,13 @@ extern const struct CLSBuildFetchedProperties {
 
 
 
-- (CLSApplication*)primitiveApplication;
-- (void)setPrimitiveApplication:(CLSApplication*)value;
+- (CRMApplication*)primitiveApplication;
+- (void)setPrimitiveApplication:(CRMApplication*)value;
 
 
 
-- (CLSFilter*)primitiveFilters;
-- (void)setPrimitiveFilters:(CLSFilter*)value;
+- (CRMFilter *)primitiveFilters;
+- (void)setPrimitiveFilters:(CRMFilter *)value;
 
 
 

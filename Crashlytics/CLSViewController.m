@@ -9,7 +9,7 @@
 #import "CLSViewController.h"
 
 #import "CLSLoginViewController.h"
-#import "CLSAccount.h"
+#import "CRMAccount.h"
 #import "CLSAnalyticsController.h"
 #import "UIViewController+OpenSource.h"
 
@@ -28,7 +28,7 @@
 #pragma mark - Private
 
 - (void)_showLoginViewControllerIfNeeded {
-	if (![[CLSAccount activeAccount] canRestoreSession]) {
+	if (![[CRMAccount activeAccount] canRestoreSession]) {
 		[self _showLoginViewController];
 	}
 }
@@ -54,7 +54,7 @@
 	
 	RACSignal *viewWillDisappearSignal = [self rac_signalForSelector:@selector(viewWillDisappear:)];
 	
-	[[[CLSAccount activeAccountChangedSignal] takeUntil:viewWillDisappearSignal] subscribeNext:^(id x) {
+	[[[CRMAccount activeAccountChangedSignal] takeUntil:viewWillDisappearSignal] subscribeNext:^(id x) {
 		[self _showLoginViewControllerIfNeeded];
 	}];
 }

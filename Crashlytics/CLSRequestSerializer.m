@@ -9,7 +9,7 @@
 #import "CLSRequestSerializer.h"
 
 #import "NSURLRequest+CLSLogging.h"
-#import "CLSAccount.h"
+#import "CRMAccount.h"
 
 @interface CLSRequestSerializer ()
 
@@ -42,8 +42,8 @@ forHTTPHeaderField:@"Accept"];
 	[request setValue:developerToken
    forHTTPHeaderField:@"X-CRASHLYTICS-DEVELOPER-TOKEN"];
 	
-	if ([[CLSAccount activeAccount] canRestoreSession]) {
-		[request setValue:[CLSAccount activeAccount].token
+	if ([[CRMAccount activeAccount] canRestoreSession]) {
+		[request setValue:[CRMAccount activeAccount].token
 	   forHTTPHeaderField:@"X-CRASHLYTICS-ACCESS-TOKEN"];
 	}
     DDLogVerbose(@"%@", [request cls_cURLCommand]);

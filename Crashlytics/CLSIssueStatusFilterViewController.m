@@ -8,7 +8,7 @@
 
 #import "CLSIssueStatusFilterViewController.h"
 
-#import "CLSFilter.h"
+#import "CRMFilter.h"
 
 
 @interface CLSIssueStatusFilterViewController ()

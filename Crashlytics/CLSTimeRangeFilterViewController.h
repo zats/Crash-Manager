@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class CLSFilter;
+@class CRMFilter;
 @interface CLSTimeRangeFilterViewController : UITableViewController
 
-@property (nonatomic, weak) CLSFilter *filter;
+@property (nonatomic, weak) CRMFilter *filter;
 
 @end

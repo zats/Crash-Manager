@@ -1,7 +1,7 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to CLSOrganization.m instead.
 
-#import "_CLSOrganization.h"
+#import "_CRMOrganization.h"
 
 const struct CLSOrganizationAttributes CLSOrganizationAttributes = {
 	.accountsCount = @"accountsCount",
@@ -23,7 +23,7 @@ const struct CLSOrganizationFetchedProperties CLSOrganizationFetchedProperties =
 @implementation CLSOrganizationID
 @end
 
-@implementation _CLSOrganization
+@implementation _CRMOrganization
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);

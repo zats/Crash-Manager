@@ -8,9 +8,9 @@
 
 #import "CLSIssueDetailsViewController.h"
 
-#import "CLSIssue.h"
+#import "CRMIssue.h"
 #import "CLSAPIClient.h"
-#import "CLSAccount.h"
+#import "CRMAccount.h"
 #import "CLSIncident.h"
 #import "CLSIssueExceptionViewController.h"
 #import <ReactiveCocoa/RACEXTScope.h>
@@ -46,12 +46,12 @@ typedef enum _CLSDetailsSegment {
 	return NO;
 }
 
-- (void)setIssue:(CLSIssue *)issue {
+- (void)setIssue:(CRMIssue *)issue {
 	self.issueID = issue.issueID;
 }
 
-- (CLSIssue *)issue {
-	return [CLSIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
+- (CRMIssue *)issue {
+	return [CRMIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
 								   withValue:self.issueID];
 }
 
@@ -140,10 +140,10 @@ typedef enum _CLSDetailsSegment {
 										 animated:NO];
 	
 	// Wiring signals
-	RACSignal *issueDidChangeSignal = [RACObserve(self, issue) filter:^BOOL(CLSIssue *issue) {
+	RACSignal *issueDidChangeSignal = [RACObserve(self, issue) filter:^BOOL(CRMIssue *issue) {
 		return issue != nil;
 	}];
-	RACSignal *activeAccountDidChangeSignal = [[CLSAccount activeAccountChangedSignal] filter:^BOOL(id account) {
+	RACSignal *activeAccountDidChangeSignal = [[CRMAccount activeAccountChangedSignal] filter:^BOOL(id account) {
 		return account != nil;
 	}];
 	

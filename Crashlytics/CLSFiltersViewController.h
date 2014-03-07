@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class CLSApplication;
+@class CRMApplication;
 @interface CLSFiltersViewController : UITableViewController
 
-@property (nonatomic, weak) CLSApplication *application;
+@property (nonatomic, weak) CRMApplication *application;
 
 @end

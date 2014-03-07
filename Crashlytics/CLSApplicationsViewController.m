@@ -9,12 +9,12 @@
 #import "CLSApplicationsViewController.h"
 
 #import "CLSAPIClient.h"
-#import "CLSAccount.h"
-#import "CLSApplication.h"
+#import "CRMAccount.h"
+#import "CRMApplication.h"
 #import "CLSApplicationCell.h"
-#import "CLSBuild.h"
+#import "CRMBuild.h"
 #import "CLSIssuesViewController.h"
-#import "CLSOrganization.h"
+#import "CRMOrganization.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
 
@@ -28,12 +28,12 @@
 
 #pragma mark - Public
 
-- (void)setOrganization:(CLSOrganization *)organization {
+- (void)setOrganization:(CRMOrganization *)organization {
 	self.orgnaizationID = organization.organizationID;
 }
 
-- (CLSOrganization *)organization {
-	CLSOrganization *organization = [CLSOrganization MR_findFirstByAttribute:CLSOrganizationAttributes.organizationID
+- (CRMOrganization *)organization {
+	CRMOrganization *organization = [CRMOrganization MR_findFirstByAttribute:CLSOrganizationAttributes.organizationID
 																   withValue:self.orgnaizationID];
 	return organization;
 }
@@ -43,10 +43,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	RACSignal *organizationDidChangeSignal = [RACObserve(self, organization) filter:^BOOL(CLSOrganization *organization) {
+	RACSignal *organizationDidChangeSignal = [RACObserve(self, organization) filter:^BOOL(CRMOrganization *organization) {
 		return organization != nil;
 	}];
-	RACSignal *activeAccountDidChangeSignal = [[CLSAccount activeAccountChangedSignal] filter:^BOOL(id account) {
+	RACSignal *activeAccountDidChangeSignal = [[CRMAccount activeAccountChangedSignal] filter:^BOOL(id account) {
 		return account != nil;
 	}];
 	
@@ -59,7 +59,7 @@
 	
 	[organizationDidChangeSignal subscribeNext:^(id x) {
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K.%K == %@", CLSApplicationRelationships.organization, CLSOrganizationAttributes.organizationID, self.orgnaizationID];
-		self.fetchedResultsController = [CLSApplication MR_fetchAllGroupedBy:nil
+		self.fetchedResultsController = [CRMApplication MR_fetchAllGroupedBy:nil
 															   withPredicate:predicate
 																	sortedBy:CLSApplicationAttributes.name
 																   ascending:YES];
@@ -78,7 +78,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-	CLSApplication *selectedApplcation = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
+	CRMApplication *selectedApplcation = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
 
 	if ([segue.identifier isEqualToString:@"applications-issues"]) {
 		CLSIssuesViewController *issuesTableViewController = segue.destinationViewController;
@@ -96,7 +96,7 @@
 	CLSApplicationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ApplicationCellIdentifier"
 															   forIndexPath:indexPath];
 	
-	CLSApplication *application = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	CRMApplication *application = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	cell.applicationNameLabel.text = application.name;
 	cell.applicationNameLabel.textColor = [application.status isEqualToString:@"activated"] ? [UIColor blackColor] : [UIColor lightGrayColor];
 	cell.applicationBundleIDLabel.text = [NSString stringWithFormat:@"%@  %@", application.bundleID, application.latestBuild ?: @""];

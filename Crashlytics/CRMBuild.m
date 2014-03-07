@@ -1,15 +1,15 @@
-#import "CLSBuild.h"
+#import "CRMBuild.h"
 
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 
-@interface CLSBuild ()
+@interface CRMBuild ()
 
 // Private interface goes here.
 
 @end
 
 
-@implementation CLSBuild
+@implementation CRMBuild
 
 + (instancetype)buildWithContentsOfDictionary:(NSDictionary *)dictionary
 									inContext:(NSManagedObjectContext *)context {
@@ -18,11 +18,11 @@
 		return nil;
 	}
 	
-	CLSBuild *build = [CLSBuild MR_findFirstByAttribute:CLSBuildAttributes.buildID
+	CRMBuild *build = [CRMBuild MR_findFirstByAttribute:CLSBuildAttributes.buildID
 											  withValue:buildID
 											  inContext:context];
 	if (!build) {
-		build = [CLSBuild MR_createInContext:context];
+		build = [CRMBuild MR_createInContext:context];
 		build.buildID = buildID;
 	}
 	[build updateWithContentsOfDictionary:dictionary];

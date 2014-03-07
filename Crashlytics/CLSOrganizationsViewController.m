@@ -9,9 +9,9 @@
 #import "CLSOrganizationsViewController.h"
 
 #import "CLSAPIClient.h"
-#import "CLSAccount.h"
+#import "CRMAccount.h"
 #import "CLSApplicationsViewController.h"
-#import "CLSOrganization.h"
+#import "CRMOrganization.h"
 #import <Crashlytics/Crashlytics.h>
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
 #import <SHUIKitBlocks/SHUIKitBlocks.h>
@@ -34,7 +34,7 @@
 												withMessage:NSLocalizedString(@"CLSLogoutAlertMessage", nil)];
 	[alert SH_addButtonCancelWithTitle:NSLocalizedString(@"CLSLogoutAlertCancelTitle", nil) withBlock:nil];
 	[alert SH_addButtonWithTitle:NSLocalizedString(@"CLSLogoutAlertLogoutTitle", nil) withBlock:^(NSInteger theButtonIndex) {
-		[CLSAccount setCurrentAccount:nil];
+		[CRMAccount setCurrentAccount:nil];
 		
 		
 		NSPersistentStore *persistentStore = [NSPersistentStore MR_defaultPersistentStore];
@@ -59,15 +59,15 @@
 	
 
 	@weakify(self);
-	[[[CLSAccount activeAccountChangedSignal]
-		filter:^BOOL(CLSAccount *account) {
+	[[[CRMAccount activeAccountChangedSignal]
+		filter:^BOOL(CRMAccount *account) {
 			return account != nil;
 		}]
-		subscribeNext:^(CLSAccount *account) {
+		subscribeNext:^(CRMAccount *account) {
 			@strongify(self);
 			NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ in %K", account, CLSOrganizationRelationships.accounts];
 
-			self.fetchedResultsController = [CLSOrganization MR_fetchAllGroupedBy:nil
+			self.fetchedResultsController = [CRMOrganization MR_fetchAllGroupedBy:nil
 																 withPredicate:predicate
 																	  sortedBy:CLSOrganizationAttributes.name
 																	 ascending:YES];
@@ -79,11 +79,11 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
-	[[[CLSAccount activeAccountChangedSignal]
-	  filter:^BOOL(CLSAccount *account) {
+	[[[CRMAccount activeAccountChangedSignal]
+	  filter:^BOOL(CRMAccount *account) {
 		  return account != nil;
 	  }]
-	 subscribeNext:^(CLSAccount *account) {
+	 subscribeNext:^(CRMAccount *account) {
 		 [[CLSAPIClient sharedInstance] organizations];
 	 }];
 }
@@ -91,7 +91,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"organizations-applications"]) {
 		NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-		CLSOrganization *selectedOrganization = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
+		CRMOrganization *selectedOrganization = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
 		[((CLSApplicationsViewController *)segue.destinationViewController) setOrganization:selectedOrganization];
     }
 }
@@ -104,7 +104,7 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OrganizationCellIdentifier"
 															forIndexPath:indexPath];
 	
-	CLSOrganization *organization = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	CRMOrganization *organization = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	cell.textLabel.text = organization.name;
 	if (!organization.appsCountValue) {
 		cell.detailTextLabel.text = NSLocalizedString(@"CLSOrganizationNoApps", @"No applications string for organization screen");

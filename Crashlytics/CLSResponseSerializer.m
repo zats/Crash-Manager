@@ -9,7 +9,7 @@
 #import "CLSResponseSerializer.h"
 
 #import "CLSError.h"
-#import "CLSAccount.h"
+#import "CRMAccount.h"
 
 static inline NSArray *CLSSimplifyArray(NSArray *array);
 static inline NSDictionary *CLSSimplifyDictionary(NSDictionary *dictionary);
@@ -85,7 +85,7 @@ static inline NSDictionary *CLSSimplifyDictionary(NSDictionary *dictionary) {
 	
 	if (isAuthenticationError) {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[CLSAccount setCurrentAccount:nil];
+			[CRMAccount setCurrentAccount:nil];
 		});
 	}
 	

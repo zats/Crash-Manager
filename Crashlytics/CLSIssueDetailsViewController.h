@@ -8,10 +8,10 @@
 
 #import "CLSViewController.h"
 
-@class CLSIssue;
+@class CRMIssue;
 @interface CLSIssueDetailsViewController : CLSViewController
 
-@property (nonatomic, weak) CLSIssue *issue;
+@property (nonatomic, weak) CRMIssue *issue;
 
 
 

@@ -8,7 +8,7 @@
 
 #import "AFHTTPRequestOperationManager.h"
 
-@class CLSAccount, CLSApplication, CLSBuild, CLSIssue, CLSOrganization;
+@class CRMAccount, CRMApplication, CRMBuild, CRMIssue, CRMOrganization;
 @interface CLSAPIClient : AFHTTPRequestOperationManager
 
 + (instancetype)sharedInstance;
@@ -18,31 +18,31 @@
 
 @interface CLSAPIClient (CLSSession)
 
-- (RACSignal *)createSessionWithAccount:(CLSAccount *)account;
+- (RACSignal *)createSessionWithAccount:(CRMAccount *)account;
 
 @end
 
 @interface CLSAPIClient (CLSOrganization)
 
-- (RACSignal *)applicationsForOrganization:(CLSOrganization *)organization;
+- (RACSignal *)applicationsForOrganization:(CRMOrganization *)organization;
 - (RACSignal *)organizations;
 
 @end
 
 @interface CLSAPIClient (CLSBuild)
 
-- (RACSignal *)buildsForApplication:(CLSApplication *)application;
-- (RACSignal *)setReportCollectionForBuild:(CLSBuild *)build
+- (RACSignal *)buildsForApplication:(CRMApplication *)application;
+- (RACSignal *)setReportCollectionForBuild:(CRMBuild *)build
 								   enabled:(BOOL)enabled;
 
 @end
 
 @interface CLSAPIClient (CLSIssues)
 
-- (RACSignal *)issuesForApplication:(CLSApplication *)application;
-- (RACSignal *)latestIncidentForIssue:(CLSIssue *)issue;
-- (RACSignal *)detailsForIssue:(CLSIssue *)issue;
+- (RACSignal *)issuesForApplication:(CRMApplication *)application;
+- (RACSignal *)latestIncidentForIssue:(CRMIssue *)issue;
+- (RACSignal *)detailsForIssue:(CRMIssue *)issue;
 - (RACSignal *)setResolved:(BOOL)resolved
-				  forIssue:(CLSIssue *)issue;
+				  forIssue:(CRMIssue *)issue;
 
 @end

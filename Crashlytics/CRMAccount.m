@@ -1,6 +1,6 @@
-#import "CLSAccount.h"
+#import "CRMAccount.h"
 
-#import "CLSOrganization.h"
+#import "CRMOrganization.h"
 #import <SSKeychain/SSKeychain.h>
 
 static NSString *const CLSCurrentAccountKeyName = @"CLSCurrentAccountKeyName";
@@ -8,14 +8,14 @@ static NSString *const CLSKeychainServiceName = @"CLSKeychainServiceName";
 
 NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidChangeNotification";
 
-@interface CLSAccount ()
+@interface CRMAccount ()
 
 + (RACSubject *)activeAccountInternalSignal;
 
 @end
 
 
-@implementation CLSAccount
+@implementation CRMAccount
 
 + (RACSubject *)activeAccountInternalSignal {
 	static RACSubject *instance;
@@ -28,7 +28,7 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 
 @end
 
-@implementation CLSAccount (CLSSession)
+@implementation CRMAccount (CLSSession)
 
 - (void)updateWithContentsOfDictionary:(NSDictionary *)dictionary {
 	self.userID = dictionary[@"id"];
@@ -38,7 +38,7 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 	if (dictionary[@"organizations"]) {
 		NSMutableSet *organizations = [NSMutableSet set];
 		for (NSDictionary *organizationDictionary in dictionary[@"organizations"]) {
-			CLSOrganization *organization = [CLSOrganization organizationWithContentsOfDictionary:organizationDictionary
+			CRMOrganization *organization = [CRMOrganization organizationWithContentsOfDictionary:organizationDictionary
 																						inContext:self.managedObjectContext];
 			if (organization) {
 				[organizations addObject:organization];
@@ -52,7 +52,7 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 	NSManagedObjectContext *defaultContext = [NSManagedObjectContext MR_defaultContext];
 	NSMutableSet *organizationsSet = [NSMutableSet setWithCapacity:[organizationsArray count]];
 	for (NSDictionary *organizationDictioanry in organizationsArray) {
-		CLSOrganization *organization = [CLSOrganization organizationWithContentsOfDictionary:organizationDictioanry
+		CRMOrganization *organization = [CRMOrganization organizationWithContentsOfDictionary:organizationDictioanry
 																					inContext:defaultContext];
 		if (organization) {
 			[organizationsSet addObject:organization];
@@ -108,7 +108,7 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 
 @end
 
-@implementation CLSAccount (CLSCurrentAccount)
+@implementation CRMAccount (CLSCurrentAccount)
 
 + (RACSignal *)activeAccountChangedSignal {
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
@@ -118,7 +118,7 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
     }];
 }
 
-+ (void)setCurrentAccount:(CLSAccount *)account {
++ (void)setCurrentAccount:(CRMAccount *)account {
 	if (!account) {
 		[[NSUserDefaults standardUserDefaults] removeObjectForKey:CLSCurrentAccountKeyName];
 		[[NSUserDefaults standardUserDefaults] synchronize];
@@ -155,7 +155,7 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 	}
 	
     NSError *error = nil;
-	CLSAccount *currentAccount = (CLSAccount *)[context existingObjectWithID:objectID error:&error];
+	CRMAccount *currentAccount = (CRMAccount *)[context existingObjectWithID:objectID error:&error];
 #ifdef DEBUG
     if (error) {
         NSLog(@"%@", error);
@@ -166,7 +166,7 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 
 @end
 
-@implementation CLSAccount (CLSUtility)
+@implementation CRMAccount (CLSUtility)
 
 + (void)getKeychainedLastUsedUsername:(NSString **)username
 							 password:(NSString **)password {

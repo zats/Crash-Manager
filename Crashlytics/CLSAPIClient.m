@@ -9,14 +9,14 @@
 #import "CLSAPIClient.h"
 
 #import "NSURLRequest+CLSLogging.h"
-#import "CLSAccount.h"
-#import "CLSApplication.h"
-#import "CLSBuild.h"
-#import "CLSFilter.h"
+#import "CRMAccount.h"
+#import "CRMApplication.h"
+#import "CRMBuild.h"
+#import "CRMFilter.h"
 #import "CLSRequestSerializer.h"
 #import "CLSIncident.h"
-#import "CLSIssue.h"
-#import "CLSOrganization.h"
+#import "CRMIssue.h"
+#import "CRMOrganization.h"
 #import "CLSResponseSerializer.h"
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
@@ -67,7 +67,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 
 @implementation CLSAPIClient (CLSSession)
 
-- (RACSignal *)createSessionWithAccount:(CLSAccount *)account {
+- (RACSignal *)createSessionWithAccount:(CRMAccount *)account {
 	NSParameterAssert(account.email);
 	NSParameterAssert(account.password);
 	NSAssert(![account.objectID isTemporaryID], @"Account is not persisted");
@@ -79,11 +79,11 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 	};
 	[self POST:@"api/v2/session" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
 		NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-		CLSAccount *account = (CLSAccount *)[context objectRegisteredForID:accountObjectID];
+		CRMAccount *account = (CRMAccount *)[context objectRegisteredForID:accountObjectID];
 		[account updateWithContentsOfDictionary:responseObject];
 		[context MR_saveToPersistentStoreAndWait];
 		
-		[subject sendNext:[CLSAccount activeAccount]];
+		[subject sendNext:[CRMAccount activeAccount]];
 		[subject sendCompleted];
 	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 		[subject sendError:error];
@@ -95,12 +95,12 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 
 @implementation CLSAPIClient (CLSOrganization)
 
-- (RACSignal *)applicationsForOrganization:(CLSOrganization *)organization {
+- (RACSignal *)applicationsForOrganization:(CRMOrganization *)organization {
 	NSParameterAssert(organization.organizationID);
 	NSString *orgnaizationID = organization.organizationID;
 	RACReplaySubject *subject = [RACReplaySubject subject];
 	[self GET:[NSString stringWithFormat:@"api/v2/organizations/%@/apps", organization.organizationID] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-		CLSOrganization *organization = [CLSOrganization MR_findFirstByAttribute:CLSOrganizationAttributes.organizationID
+		CRMOrganization *organization = [CRMOrganization MR_findFirstByAttribute:CLSOrganizationAttributes.organizationID
 																	   withValue:orgnaizationID];
 		[organization updateApplicationsWithContentsOfArray:responseObject];
 		[organization.managedObjectContext MR_saveToPersistentStoreAndWait];
@@ -116,9 +116,9 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 - (RACSignal *)organizations {
 	RACReplaySubject *subject = [RACReplaySubject subject];
 	[self GET:@"api/v2/organizations" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-		[[CLSAccount activeAccount] updateOrganizationsWithContentsOfArray:responseObject];
+		[[CRMAccount activeAccount] updateOrganizationsWithContentsOfArray:responseObject];
 		[[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-		[subject sendNext:[CLSAccount activeAccount].organizations];
+		[subject sendNext:[CRMAccount activeAccount].organizations];
 		[subject sendCompleted];
 	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 		[subject sendError:error];
@@ -130,14 +130,14 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 
 @implementation CLSAPIClient (CLSBuild)
 
-- (RACSignal *)buildsForApplication:(CLSApplication *)application {
+- (RACSignal *)buildsForApplication:(CRMApplication *)application {
 	NSParameterAssert(application.applicationID);
 	NSAssert(application.organization.organizationID, @"Organization is not set for the application %@", application);
 	NSString *applicationID = application.applicationID;
 	NSString *path = [NSString stringWithFormat:@"api/v2/organizations/%@/apps/%@/builds", application.organization.organizationID, application.applicationID];
 	RACReplaySubject *subject = [RACReplaySubject subject];
 	[self GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-		CLSApplication *application = [CLSApplication MR_findFirstByAttribute:CLSApplicationAttributes.applicationID
+		CRMApplication *application = [CRMApplication MR_findFirstByAttribute:CLSApplicationAttributes.applicationID
 																	withValue:applicationID];
 		[application updateBuildsWithContentsOfArray:responseObject];
 		[application.managedObjectContext MR_saveToPersistentStoreAndWait];
@@ -150,7 +150,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 	return subject;
 }
 
-- (RACSignal *)setReportCollectionForBuild:(CLSBuild *)build
+- (RACSignal *)setReportCollectionForBuild:(CRMBuild *)build
 								   enabled:(BOOL)enabled {
 	NSParameterAssert(build.buildID);
 	NSParameterAssert(build.application.organization.organizationID);
@@ -171,7 +171,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 
 @implementation CLSAPIClient (CLSIssues)
 
-- (RACSignal *)issuesForApplication:(CLSApplication *)application {
+- (RACSignal *)issuesForApplication:(CRMApplication *)application {
 	NSParameterAssert(application.applicationID);
 	NSParameterAssert(application.organization.organizationID);
 	
@@ -191,7 +191,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 	
 	return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
 		AFHTTPRequestOperation *operation = [self GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-			CLSApplication *application = [CLSApplication MR_findFirstByAttribute:CLSApplicationAttributes.applicationID
+			CRMApplication *application = [CRMApplication MR_findFirstByAttribute:CLSApplicationAttributes.applicationID
 																		withValue:applicationID];
 			[application updateIssuesWithContentsOfArray:responseObject];
 			[application.managedObjectContext MR_saveToPersistentStoreAndWait];
@@ -208,7 +208,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 	}];
 }
 
-- (RACSignal *)latestIncidentForIssue:(CLSIssue *)issue {
+- (RACSignal *)latestIncidentForIssue:(CRMIssue *)issue {
 	NSParameterAssert(issue.issueID);
 	NSParameterAssert(issue.application.organization.organizationID);
 	NSParameterAssert(issue.application.applicationID);
@@ -217,7 +217,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 	NSString *path = [NSString stringWithFormat:@"api/v2/organizations/%@/apps/%@/issues/%@", issue.application.organization.organizationID, issue.application.applicationID, issueID];
 	NSDictionary *parameters = nil;
 	[self GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-		CLSIssue *issue = [CLSIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
+		CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
 												  withValue:issueID];
 		[issue updateWithContentsOfDictionary:responseObject];
 		[issue.managedObjectContext MR_saveToPersistentStoreAndWait];
@@ -230,7 +230,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 	return replaySubject;
 }
 
-- (RACSignal *)detailsForIssue:(CLSIssue *)issue {
+- (RACSignal *)detailsForIssue:(CRMIssue *)issue {
 	NSParameterAssert(issue.issueID);
 	NSParameterAssert(issue.latestIncidentID);
 	NSParameterAssert(issue.application.organization.organizationID);
@@ -241,7 +241,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 	RACReplaySubject *subject = [RACReplaySubject subject];
 	[self GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
 		CLSSession *session = [CLSSession parseFromData:responseObject];
-		CLSIssue *issue = [CLSIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
+		CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
 												  withValue:issueID];
 		issue.lastSession = session;
 		[issue.managedObjectContext MR_saveToPersistentStoreAndWait];
@@ -254,7 +254,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 }
 
 - (RACSignal *)setResolved:(BOOL)resolved
-				  forIssue:(CLSIssue *)issue {
+				  forIssue:(CRMIssue *)issue {
 	NSDate *oldResolvedAtValue = [issue.resolvedAt copy];
 	if (resolved) {
 		issue.resolvedAt = [NSDate date];
@@ -269,7 +269,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 	NSAssert([issue.application.organization.organizationID length], @"Invalid organization ID");
 	RACReplaySubject *subject = [RACReplaySubject subject];
 	NSString *path = [NSString stringWithFormat:@"api/v2/organizations/%@/apps/%@/issues/%@", issue.application.organization.organizationID, issue.application.applicationID, issue.issueID];
-	id resolvedAt = resolved ? [[CLSIssue formatter] stringFromDate:issue.resolvedAt] : [NSNull null];
+	id resolvedAt = resolved ? [[CRMIssue formatter] stringFromDate:issue.resolvedAt] : [NSNull null];
 	NSDictionary *parameters = @{ @"resolved_at" : resolvedAt };
 	[self PUT:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //		CLSIssue *issue = [CLSIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
@@ -277,7 +277,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 //		[issue.managedObjectContext MR_saveToPersistentStoreAndWait];
 		[subject sendCompleted];
 	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-		CLSIssue *issue = [CLSIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
+		CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
 												  withValue:issueID];
 		issue.resolvedAt = oldResolvedAtValue;
 		[issue.managedObjectContext MR_saveToPersistentStoreAndWait];

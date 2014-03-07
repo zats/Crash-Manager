@@ -1,7 +1,7 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to CLSIssue.m instead.
 
-#import "_CLSIssue.h"
+#import "_CRMIssue.h"
 
 const struct CLSIssueAttributes CLSIssueAttributes = {
 	.crashesCount = @"crashesCount",
@@ -29,7 +29,7 @@ const struct CLSIssueFetchedProperties CLSIssueFetchedProperties = {
 @implementation CLSIssueID
 @end
 
-@implementation _CLSIssue
+@implementation _CRMIssue
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);

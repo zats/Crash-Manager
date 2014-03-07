@@ -1,7 +1,7 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to CLSBuild.m instead.
 
-#import "_CLSBuild.h"
+#import "_CRMBuild.h"
 
 const struct CLSBuildAttributes CLSBuildAttributes = {
 	.buildID = @"buildID",
@@ -20,7 +20,7 @@ const struct CLSBuildFetchedProperties CLSBuildFetchedProperties = {
 @implementation CLSBuildID
 @end
 
-@implementation _CLSBuild
+@implementation _CRMBuild
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);

@@ -1,4 +1,4 @@
-#import "_CLSFilter.h"
+#import "_CRMFilter.h"
 
 extern NSString *const CLSFilterLabelKey;
 extern NSString *const CLSFilterValueKey;
@@ -33,7 +33,7 @@ static inline NSString *CLSLocalizedDisplayStringForFilterTimeRange(NSArray *tim
 	return nil;
 }
 
-@interface CLSFilter : _CLSFilter {}
+@interface CRMFilter : _CRMFilter {}
 
 - (NSArray *)issueTimeRangeArray;
 - (void)setIssueTimeRangeArray:(NSArray *)array;
@@ -49,7 +49,7 @@ static inline NSString *CLSLocalizedDisplayStringForFilterTimeRange(NSArray *tim
 
 @end
 
-@interface CLSFilter (CLSPredicate)
+@interface CRMFilter (CLSPredicate)
 
 - (NSPredicate *)emptyFilterPreidacte;
 

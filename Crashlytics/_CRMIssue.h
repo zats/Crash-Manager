@@ -27,8 +27,8 @@ extern const struct CLSIssueRelationships {
 extern const struct CLSIssueFetchedProperties {
 } CLSIssueFetchedProperties;
 
-@class CLSApplication;
-@class CLSBuild;
+@class CRMApplication;
+@class CRMBuild;
 
 
 
@@ -46,7 +46,7 @@ extern const struct CLSIssueFetchedProperties {
 @interface CLSIssueID : NSManagedObjectID {}
 @end
 
-@interface _CLSIssue : NSManagedObject {}
+@interface _CRMIssue : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
@@ -192,14 +192,14 @@ extern const struct CLSIssueFetchedProperties {
 
 
 
-@property (nonatomic, strong) CLSApplication *application;
+@property (nonatomic, strong) CRMApplication *application;
 
 //- (BOOL)validateApplication:(id*)value_ error:(NSError**)error_;
 
 
 
 
-@property (nonatomic, strong) CLSBuild *build;
+@property (nonatomic, strong) CRMBuild *build;
 
 //- (BOOL)validateBuild:(id*)value_ error:(NSError**)error_;
 
@@ -209,11 +209,11 @@ extern const struct CLSIssueFetchedProperties {
 
 @end
 
-@interface _CLSIssue (CoreDataGeneratedAccessors)
+@interface _CRMIssue (CoreDataGeneratedAccessors)
 
 @end
 
-@interface _CLSIssue (CoreDataGeneratedPrimitiveAccessors)
+@interface _CRMIssue (CoreDataGeneratedPrimitiveAccessors)
 
 
 - (NSNumber*)primitiveCrashesCount;
@@ -301,13 +301,13 @@ extern const struct CLSIssueFetchedProperties {
 
 
 
-- (CLSApplication*)primitiveApplication;
-- (void)setPrimitiveApplication:(CLSApplication*)value;
+- (CRMApplication*)primitiveApplication;
+- (void)setPrimitiveApplication:(CRMApplication*)value;
 
 
 
-- (CLSBuild*)primitiveBuild;
-- (void)setPrimitiveBuild:(CLSBuild*)value;
+- (CRMBuild*)primitiveBuild;
+- (void)setPrimitiveBuild:(CRMBuild*)value;
 
 
 @end

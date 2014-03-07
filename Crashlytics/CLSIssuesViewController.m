@@ -9,12 +9,12 @@
 #import "CLSIssuesViewController.h"
 
 #import "CLSAPIClient.h"
-#import "CLSAccount.h"
-#import "CLSFilter.h"
-#import "CLSApplication.h"
-#import "CLSBuild.h"
+#import "CRMAccount.h"
+#import "CRMFilter.h"
+#import "CRMApplication.h"
+#import "CRMBuild.h"
 #import "CLSFiltersViewController.h"
-#import "CLSIssue.h"
+#import "CRMIssue.h"
 #import "CLSIssueDetailsViewController.h"
 #import "CLSIssueListCell.h"
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
@@ -30,12 +30,12 @@
 
 #pragma mark - Public
 
-- (void)setApplication:(CLSApplication *)application {
+- (void)setApplication:(CRMApplication *)application {
 	self.applicationID = application.applicationID;
 }
 
-- (CLSApplication *)application {
-	return [CLSApplication MR_findFirstByAttribute:CLSApplicationAttributes.applicationID
+- (CRMApplication *)application {
+	return [CRMApplication MR_findFirstByAttribute:CLSApplicationAttributes.applicationID
 										 withValue:self.applicationID];
 }
 
@@ -63,7 +63,7 @@
 #pragma mark - Private
 
 - (void)_configureCell:(CLSIssueListCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-	CLSIssue *issue = [self _issueForIndexPath:indexPath];
+	CRMIssue *issue = [self _issueForIndexPath:indexPath];
 	cell.issueNumberLabel.text = [issue.displayID description];
 	cell.issueTitleLabel.textColor = [issue isResolved] ? [UIColor lightGrayColor] : [UIColor blackColor];
 	cell.issueTitleLabel.text = issue.title;
@@ -106,7 +106,7 @@
 
 }
 
-- (CLSIssue *)_issueForIndexPath:(NSIndexPath *)indexPath {
+- (CRMIssue *)_issueForIndexPath:(NSIndexPath *)indexPath {
 	return [self.fetchedResultsController objectAtIndexPath:indexPath];
 }
 
@@ -140,9 +140,9 @@
 	NSAssert(self.application != nil, @"Application is not set");
 	
 	@weakify(self);
-	[RACObserve(self, application) subscribeNext:^(CLSApplication *application) {
+	[RACObserve(self, application) subscribeNext:^(CRMApplication *application) {
 		@strongify(self);
-		self.fetchedResultsController = [CLSIssue MR_fetchAllGroupedBy:nil
+		self.fetchedResultsController = [CRMIssue MR_fetchAllGroupedBy:nil
 														 withPredicate:[application.filter predicate]
 															  sortedBy:nil
 															 ascending:YES];
@@ -180,7 +180,7 @@
 //		filter:^BOOL(CLSApplication *application) {
 //			return application != nil;
 //		}]
-//		subscribeNext:^(CLSFilter *filter) {
+//		subscribeNext:^(CRMFilter *filter) {
 //			[[[RACSignal
 //				combineLatest:@[
 //                    RACObserve(filter, build),
@@ -195,7 +195,7 @@
 //					// However we still trying to prepopulate array for other fitlers
 //					// or for whe no filters selected
 //					@strongify(self);
-//					CLSFilter *filter = self.application.filter;
+//					CRMFilter *filter = self.application.filter;
 //					if ([filter isTimeRangeFilterSet]) {
 //						self.issueIDs = [NSArray array];
 //					} else {
@@ -234,7 +234,7 @@
 		self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] init];
 		self.navigationItem.backBarButtonItem.title = @"";
 		
-		CLSIssue *issue = [self _issueForIndexPath:self.tableView.indexPathForSelectedRow];
+		CRMIssue *issue = [self _issueForIndexPath:self.tableView.indexPathForSelectedRow];
 		CLSIssueDetailsViewController *issueDetailsViewController = segue.destinationViewController;
 		issueDetailsViewController.issue = issue;
 		issueDetailsViewController.title = issue.title;
@@ -269,7 +269,7 @@ canEditRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (NSString *)tableView:(UITableView *)tableView
 titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
-	CLSIssue *issue = [self _issueForIndexPath:indexPath];
+	CRMIssue *issue = [self _issueForIndexPath:indexPath];
     return issue.resolvedAt ? NSLocalizedString(@"CLSIssueListReopenIssue", @"") : NSLocalizedString(@"CLSIssueListCloseIssues", @"") ;
 }
 
@@ -279,7 +279,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle != UITableViewCellEditingStyleDelete) {
         return;
     }
-    CLSIssue *issue = [self _issueForIndexPath:indexPath];
+    CRMIssue *issue = [self _issueForIndexPath:indexPath];
     [[CLSAPIClient sharedInstance] setResolved:![issue isResolved]
                                       forIssue:issue];
     

@@ -1,6 +1,6 @@
-#import "_CLSBuild.h"
+#import "_CRMBuild.h"
 
-@interface CLSBuild : _CLSBuild {}
+@interface CRMBuild : _CRMBuild {}
 
 + (instancetype)buildWithContentsOfDictionary:(NSDictionary *)dictionary
 									inContext:(NSManagedObjectContext *)context;

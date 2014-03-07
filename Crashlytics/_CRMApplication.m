@@ -1,7 +1,7 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to CLSApplication.m instead.
 
-#import "_CLSApplication.h"
+#import "_CRMApplication.h"
 
 const struct CLSApplicationAttributes CLSApplicationAttributes = {
 	.applicationID = @"applicationID",
@@ -28,7 +28,7 @@ const struct CLSApplicationFetchedProperties CLSApplicationFetchedProperties = {
 @implementation CLSApplicationID
 @end
 
-@implementation _CLSApplication
+@implementation _CRMApplication
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);

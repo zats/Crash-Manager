@@ -1,6 +1,6 @@
-#import "_CLSOrganization.h"
+#import "_CRMOrganization.h"
 
-@interface CLSOrganization : _CLSOrganization {}
+@interface CRMOrganization : _CRMOrganization {}
 
 + (instancetype)organizationWithContentsOfDictionary:(NSDictionary *)dictionary
 										   inContext:(NSManagedObjectContext *)context;
