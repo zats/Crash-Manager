@@ -9,7 +9,7 @@
 #import "CLSPasteboardObserver.h"
 
 #import "CRMOrganization.h"
-#import "CLSConstants.h"
+#import "CRMConstants.h"
 #import "CRMApplication.h"
 #import "CRMIssue.h"
 #import "CLSApplicationsViewController.h"

@@ -8,7 +8,7 @@
 
 #import "CRMAnalyticsController.h"
 
-#import "CLSConstants.h"
+#import "CRMConstants.h"
 #import "CLSGoogleAnalyticsLogger.h"
 #import <GoogleAnalytics-iOS-SDK/GAI.h>
 #import <GoogleAnalytics-iOS-SDK/GAILogger.h>
