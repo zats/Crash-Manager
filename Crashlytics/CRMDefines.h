@@ -1,5 +1,5 @@
 //
-//  CLSDefines.h
+//  CRMDefines.h
 //  CrashManager
 //
 //  Created by Sasha Zats on 2/22/14.
@@ -25,7 +25,11 @@
  // Verifies "isFinished" exists on instances of NSOperation.
  NSString *key = SQTypedKeyPath(NSOperation, isFinished);
  */
-#define SQKeyPath(object, keyPath) ({ if (NO) { (void)((object).keyPath); } @#keyPath; })
+#ifdef DEBUG
+    #define SQKeyPath(object, keyPath) ({ if (NO) { (void)((object).keyPath); } @#keyPath; })
+#else 
+    #define SQKeyPath(object, keyPath) ({ @#keyPath; })
+#endif
 
 #define SQSelfKeyPath(keyPath) SQKeyPath(self, keyPath)
 #define SQTypedKeyPath(ObjectClass, keyPath) SQKeyPath(((ObjectClass *)nil), keyPath)
