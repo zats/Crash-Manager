@@ -1,30 +1,30 @@
 //
-//  CLSApplicationsViewController.m
+//  CRMApplicationsViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/8/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSApplicationsViewController.h"
+#import "CRMApplicationsViewController.h"
 
 #import "CRMAPIClient.h"
 #import "CRMAccount.h"
 #import "CRMApplication.h"
-#import "CLSApplicationCell.h"
+#import "CRMApplicationCell.h"
 #import "CRMBuild.h"
 #import "CLSIssuesViewController.h"
 #import "CRMOrganization.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
 
-@interface CLSApplicationsViewController ()
+@interface CRMApplicationsViewController ()
 
 @property (nonatomic, strong) NSString *orgnaizationID;
 
 @end
 
-@implementation CLSApplicationsViewController
+@implementation CRMApplicationsViewController
 
 #pragma mark - Public
 
@@ -93,7 +93,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	CLSApplicationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ApplicationCellIdentifier"
+	CRMApplicationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ApplicationCellIdentifier"
 															   forIndexPath:indexPath];
 	
 	CRMApplication *application = [self.fetchedResultsController objectAtIndexPath:indexPath];

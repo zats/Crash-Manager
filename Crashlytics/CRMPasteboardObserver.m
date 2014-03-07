@@ -12,7 +12,7 @@
 #import "CRMConstants.h"
 #import "CRMApplication.h"
 #import "CRMIssue.h"
-#import "CLSApplicationsViewController.h"
+#import "CRMApplicationsViewController.h"
 #import "CLSIssuesViewController.h"
 #import "CLSIssueDetailsViewController.h"
 #import <Crashlytics/Crashlytics.h>
@@ -213,7 +213,7 @@
 		
 		UIViewController *organizationsViewController = [self.navigationController.viewControllers firstObject];
 
-		CLSApplicationsViewController *appViewController = [storyboard instantiateViewControllerWithIdentifier:@"applications"];
+		CRMApplicationsViewController *appViewController = [storyboard instantiateViewControllerWithIdentifier:@"applications"];
 		appViewController.organization = organization;
 		
 		CLSIssuesViewController *issuesViewController = [storyboard instantiateViewControllerWithIdentifier:@"issues"];

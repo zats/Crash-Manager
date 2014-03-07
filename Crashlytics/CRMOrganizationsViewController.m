@@ -10,7 +10,7 @@
 
 #import "CRMAPIClient.h"
 #import "CRMAccount.h"
-#import "CLSApplicationsViewController.h"
+#import "CRMApplicationsViewController.h"
 #import "CRMOrganization.h"
 #import <Crashlytics/Crashlytics.h>
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
@@ -92,7 +92,7 @@
     if ([segue.identifier isEqualToString:@"organizations-applications"]) {
 		NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
 		CRMOrganization *selectedOrganization = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
-		[((CLSApplicationsViewController *)segue.destinationViewController) setOrganization:selectedOrganization];
+		[((CRMApplicationsViewController *)segue.destinationViewController) setOrganization:selectedOrganization];
     }
 }
 

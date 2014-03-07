@@ -1,5 +1,5 @@
 //
-//  CLSApplicationCell.h
+//  CRMApplicationCell.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/29/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CLSApplicationCell : UITableViewCell
+@interface CRMApplicationCell : UITableViewCell
 
 @property (weak, nonatomic, readonly) UIImageView *applicationIconImageView;
 @property (weak, nonatomic, readonly) UILabel *applicationNameLabel;

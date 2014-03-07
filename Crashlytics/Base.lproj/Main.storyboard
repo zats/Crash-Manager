@@ -174,13 +174,13 @@
         <!--Applications View Controller - Applications-->
         <scene sceneID="BOz-Ck-b50">
             <objects>
-                <tableViewController storyboardIdentifier="applications" id="hD6-6o-zBf" customClass="CLSApplicationsViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="applications" id="hD6-6o-zBf" customClass="CRMApplicationsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="d93-5c-yOP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ApplicationCellIdentifier" rowHeight="60" id="VfB-sj-1qk" customClass="CLSApplicationCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ApplicationCellIdentifier" rowHeight="60" id="VfB-sj-1qk" customClass="CRMApplicationCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VfB-sj-1qk" id="APy-W3-bri">

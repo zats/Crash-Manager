@@ -1,5 +1,5 @@
 //
-//  CLSApplicationsViewController.h
+//  CRMApplicationsViewController.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/8/13.
@@ -9,7 +9,7 @@
 #import "CLSTableViewController.h"
 
 @class CRMOrganization;
-@interface CLSApplicationsViewController : CLSTableViewController
+@interface CRMApplicationsViewController : CLSTableViewController
 
 @property (nonatomic, weak) CRMOrganization *organization;
 

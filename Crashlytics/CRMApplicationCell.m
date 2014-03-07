@@ -1,14 +1,14 @@
 //
-//  CLSApplicationCell.m
+//  CRMApplicationCell.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/29/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSApplicationCell.h"
+#import "CRMApplicationCell.h"
 
-@interface CLSApplicationCell ()
+@interface CRMApplicationCell ()
 @property (weak, nonatomic, readwrite) IBOutlet UIImageView *applicationIconImageView;
 @property (weak, nonatomic, readwrite) IBOutlet UILabel *applicationNameLabel;
 @property (weak, nonatomic, readwrite) IBOutlet UILabel *applicationBundleIDLabel;
@@ -17,7 +17,7 @@
 @property (strong, nonatomic, readwrite) IBOutlet NSLayoutConstraint *baseLayoutConstraint;
 @end
 
-@implementation CLSApplicationCell
+@implementation CRMApplicationCell
 
 #pragma mark - Private
 
