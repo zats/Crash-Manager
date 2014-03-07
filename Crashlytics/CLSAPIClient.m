@@ -8,7 +8,7 @@
 
 #import "CLSAPIClient.h"
 
-#import "NSURLRequest+CLSLogging.h"
+#import "NSURLRequest+CRMLogging.h"
 #import "CRMAccount.h"
 #import "CRMApplication.h"
 #import "CRMBuild.h"

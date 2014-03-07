@@ -1,5 +1,5 @@
 //
-//  NSURLRequest+CLSLogging.h
+//  NSURLRequest+CRMLogging.h
 //  CrashManager
 //
 //  Created by Sasha Zats on 2/1/14.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSURLRequest (CLSLogging)
+@interface NSURLRequest (CRMLogging)
 
 /**
  @see https://github.com/mattt/FormatterKit/blame/master/FormatterKit/TTTURLRequestFormatter.m#L45

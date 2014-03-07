@@ -8,7 +8,7 @@
 
 #import "CLSRequestSerializer.h"
 
-#import "NSURLRequest+CLSLogging.h"
+#import "NSURLRequest+CRMLogging.h"
 #import "CRMAccount.h"
 
 @interface CLSRequestSerializer ()

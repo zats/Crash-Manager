@@ -1,14 +1,14 @@
 //
-//  NSURLRequest+CLSLogging.m
+//  NSURLRequest+CRMLogging.m
 //  CrashManager
 //
 //  Created by Sasha Zats on 2/1/14.
 //  Copyright (c) 2014 Sasha Zats. All rights reserved.
 //
 
-#import "NSURLRequest+CLSLogging.h"
+#import "NSURLRequest+CRMLogging.h"
 
-@implementation NSURLRequest (CLSLogging)
+@implementation NSURLRequest (CRMLogging)
 
 - (NSString *)cls_cURLCommand {
     NSMutableString *command = [NSMutableString stringWithString:@"curl"];

@@ -55,7 +55,7 @@
 		5CA538B61872D4E200544C7A /* CLSTimeRangeFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */; };
 		5CB3C0881871BE5200CE00D7 /* CLSFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */; };
 		5CBE4756189D4A05002D3E90 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBE4755189D4A05002D3E90 /* Crashlytics.framework */; };
-		5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */; };
+		5CBE4760189D58A6002D3E90 /* NSURLRequest+CRMLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE475F189D58A6002D3E90 /* NSURLRequest+CRMLogging.m */; };
 		5CBE4764189D64AF002D3E90 /* UIViewController+OpenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */; };
 		5CC3F7E41876A12D003C2FAC /* CLSLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */; };
 		5CC3F7EB1876C933003C2FAC /* CLSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7EA1876C933003C2FAC /* CLSError.m */; };
@@ -171,8 +171,8 @@
 		5CB3C0861871BE5200CE00D7 /* CLSFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSFiltersViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSFiltersViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5CBE4755189D4A05002D3E90 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
-		5CBE475E189D58A6002D3E90 /* NSURLRequest+CLSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+CLSLogging.h"; sourceTree = "<group>"; };
-		5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+CLSLogging.m"; sourceTree = "<group>"; };
+		5CBE475E189D58A6002D3E90 /* NSURLRequest+CRMLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+CRMLogging.h"; sourceTree = "<group>"; };
+		5CBE475F189D58A6002D3E90 /* NSURLRequest+CRMLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+CRMLogging.m"; sourceTree = "<group>"; };
 		5CBE4762189D64AF002D3E90 /* UIViewController+OpenSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+OpenSource.h"; sourceTree = "<group>"; };
 		5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+OpenSource.m"; sourceTree = "<group>"; };
 		5CC3F7E21876A12D003C2FAC /* CLSLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLogViewController.h; sourceTree = "<group>"; };
@@ -471,8 +471,8 @@
 		5CBE475B189D587D002D3E90 /* NSURLRequest+Logging */ = {
 			isa = PBXGroup;
 			children = (
-				5CBE475E189D58A6002D3E90 /* NSURLRequest+CLSLogging.h */,
-				5CBE475F189D58A6002D3E90 /* NSURLRequest+CLSLogging.m */,
+				5CBE475E189D58A6002D3E90 /* NSURLRequest+CRMLogging.h */,
+				5CBE475F189D58A6002D3E90 /* NSURLRequest+CRMLogging.m */,
 			);
 			name = "NSURLRequest+Logging";
 			sourceTree = "<group>";
@@ -734,7 +734,7 @@
 			files = (
 				5CE94DF618534976003C7DB1 /* main.m in Sources */,
 				5C71944518B7A3C200465412 /* CRMAnalyticsController.m in Sources */,
-				5CBE4760189D58A6002D3E90 /* NSURLRequest+CLSLogging.m in Sources */,
+				5CBE4760189D58A6002D3E90 /* NSURLRequest+CRMLogging.m in Sources */,
 				5C4B0684185356000061485A /* CLSOrganizationsViewController.m in Sources */,
 				5C6D3CF818534CA9005E97D1 /* CRMApplication.m in Sources */,
 				5C5ABF661871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m in Sources */,
