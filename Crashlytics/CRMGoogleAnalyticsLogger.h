@@ -9,7 +9,7 @@
 #import "DDLog.h"
 
 @protocol GAILogger;
-@interface CLSGoogleAnalyticsLogger : DDAbstractLogger
+@interface CRMGoogleAnalyticsLogger : DDAbstractLogger
 
 + (instancetype)sharedInstance;
 

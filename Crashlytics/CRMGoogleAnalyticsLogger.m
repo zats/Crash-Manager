@@ -6,24 +6,24 @@
 //  Copyright (c) 2014 Sasha Zats. All rights reserved.
 //
 
-#import "CLSGoogleAnalyticsLogger.h"
+#import "CRMGoogleAnalyticsLogger.h"
 
 #import <GoogleAnalytics-iOS-SDK/GAI.h>
 #import <GoogleAnalytics-iOS-SDK/GAILogger.h>
 
-@interface CLSGoogleAnalyticsLogger ()
+@interface CRMGoogleAnalyticsLogger ()
 
 @end
 
-@implementation CLSGoogleAnalyticsLogger
+@implementation CRMGoogleAnalyticsLogger
 
 #pragma mark - Initialization
 
 + (instancetype)sharedInstance {
-	static CLSGoogleAnalyticsLogger *instnace;
+	static CRMGoogleAnalyticsLogger *instnace;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		instnace = [[CLSGoogleAnalyticsLogger alloc] init];
+		instnace = [[CRMGoogleAnalyticsLogger alloc] init];
 	});
 	return instnace;
 }

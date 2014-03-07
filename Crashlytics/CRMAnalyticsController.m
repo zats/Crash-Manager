@@ -9,7 +9,7 @@
 #import "CRMAnalyticsController.h"
 
 #import "CRMConstants.h"
-#import "CLSGoogleAnalyticsLogger.h"
+#import "CRMGoogleAnalyticsLogger.h"
 #import <GoogleAnalytics-iOS-SDK/GAI.h>
 #import <GoogleAnalytics-iOS-SDK/GAILogger.h>
 #import <GoogleAnalytics-iOS-SDK/GAIFields.h>
@@ -81,10 +81,10 @@
 	
 	if (isGoogleAnalyticsEnabled) {
 		[GAI sharedInstance].optOut = NO;
-		[DDLog addLogger:[CLSGoogleAnalyticsLogger sharedInstance]];
+		[DDLog addLogger:[CRMGoogleAnalyticsLogger sharedInstance]];
 	} else {
 		[GAI sharedInstance].optOut = YES;
-		[DDLog removeLogger:[CLSGoogleAnalyticsLogger sharedInstance]];
+		[DDLog removeLogger:[CRMGoogleAnalyticsLogger sharedInstance]];
 	}
 #ifdef DEBUG
 	[GAI sharedInstance].dryRun = YES;
