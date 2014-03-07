@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     // Expose sources for subclasses
-    [self cls_exposeSource];
+    [self crm_exposeSource];
     
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.sessionChangedSignal = [RACObserve(self, session) distinctUntilChanged];

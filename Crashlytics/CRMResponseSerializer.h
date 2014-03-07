@@ -1,5 +1,5 @@
 //
-//  CLSResponseSerializer.h
+//  CRMResponseSerializer.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/19/13.
@@ -8,7 +8,7 @@
 
 #import "AFURLResponseSerialization.h"
 
-@interface CLSResponseSerializer : AFJSONResponseSerializer
+@interface CRMResponseSerializer : AFJSONResponseSerializer
 
 
 @end

@@ -8,7 +8,7 @@
 
 #import "CLSApplicationsViewController.h"
 
-#import "CLSAPIClient.h"
+#import "CRMAPIClient.h"
 #import "CRMAccount.h"
 #import "CRMApplication.h"
 #import "CLSApplicationCell.h"
@@ -54,7 +54,7 @@
 		organizationDidChangeSignal,
 		activeAccountDidChangeSignal]]
 	 subscribeNext:^(id x) {
-		[[CLSAPIClient sharedInstance] applicationsForOrganization:self.organization];
+		[[CRMAPIClient sharedInstance] applicationsForOrganization:self.organization];
 	 }];
 	
 	[organizationDidChangeSignal subscribeNext:^(id x) {

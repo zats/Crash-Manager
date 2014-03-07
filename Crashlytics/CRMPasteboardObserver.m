@@ -1,12 +1,12 @@
 //
-//  CLSPasteboardObserver.m
+//  CRMPasteboardObserver.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 1/4/14.
 //  Copyright (c) 2014 Sasha Zats. All rights reserved.
 //
 
-#import "CLSPasteboardObserver.h"
+#import "CRMPasteboardObserver.h"
 
 #import "CRMOrganization.h"
 #import "CRMConstants.h"
@@ -18,18 +18,18 @@
 #import <Crashlytics/Crashlytics.h>
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
-@interface CLSPasteboardObserver ()
+@interface CRMPasteboardObserver ()
 @property (nonatomic, weak) UINavigationController *navigationController;
 @property (nonatomic, copy) NSString *lastNavigatedURLString;
 @end
 
-@implementation CLSPasteboardObserver
+@implementation CRMPasteboardObserver
 
 + (instancetype)sharedInstance {
-	static CLSPasteboardObserver *instance;
+	static CRMPasteboardObserver *instance;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		instance = [[CLSPasteboardObserver alloc] init];
+		instance = [[CRMPasteboardObserver alloc] init];
 	});
 	return instance;
 }

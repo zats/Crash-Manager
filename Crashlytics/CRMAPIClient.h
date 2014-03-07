@@ -1,5 +1,5 @@
 //
-//  CLSAPIClient.h
+//  CRMAPIClient.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
@@ -9,27 +9,27 @@
 #import "AFHTTPRequestOperationManager.h"
 
 @class CRMAccount, CRMApplication, CRMBuild, CRMIssue, CRMOrganization;
-@interface CLSAPIClient : AFHTTPRequestOperationManager
+@interface CRMAPIClient : AFHTTPRequestOperationManager
 
 + (instancetype)sharedInstance;
 
     
 @end
 
-@interface CLSAPIClient (CRMSession)
+@interface CRMAPIClient (CRMSession)
 
 - (RACSignal *)createSessionWithAccount:(CRMAccount *)account;
 
 @end
 
-@interface CLSAPIClient (CLSOrganization)
+@interface CRMAPIClient (CLSOrganization)
 
 - (RACSignal *)applicationsForOrganization:(CRMOrganization *)organization;
 - (RACSignal *)organizations;
 
 @end
 
-@interface CLSAPIClient (CLSBuild)
+@interface CRMAPIClient (CLSBuild)
 
 - (RACSignal *)buildsForApplication:(CRMApplication *)application;
 - (RACSignal *)setReportCollectionForBuild:(CRMBuild *)build
@@ -37,7 +37,7 @@
 
 @end
 
-@interface CLSAPIClient (CLSIssues)
+@interface CRMAPIClient (CLSIssues)
 
 - (RACSignal *)issuesForApplication:(CRMApplication *)application;
 - (RACSignal *)latestIncidentForIssue:(CRMIssue *)issue;

@@ -8,4 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *CLSErrorDomain;
+extern NSString *CRMErrorDomain;

@@ -8,7 +8,7 @@
 
 #import "CLSIssuesViewController.h"
 
-#import "CLSAPIClient.h"
+#import "CRMAPIClient.h"
 #import "CRMAccount.h"
 #import "CRMFilter.h"
 #import "CRMApplication.h"
@@ -93,7 +93,7 @@
 	[self.fetchIssuesDisposable dispose];
 
 	@weakify(self);
-	self.fetchIssuesDisposable = [[[CLSAPIClient sharedInstance] issuesForApplication:self.application] subscribeNext:^(NSArray *fetchedIssueIDs) {
+	self.fetchIssuesDisposable = [[[CRMAPIClient sharedInstance] issuesForApplication:self.application] subscribeNext:^(NSArray *fetchedIssueIDs) {
 		@strongify(self);
 		self.issueIDs = fetchedIssueIDs;//[self.issueIDs arrayByAddingObjectsFromArray:fetchedIssueIDs];
 	} error:^(NSError *error) {
@@ -280,7 +280,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         return;
     }
     CRMIssue *issue = [self _issueForIndexPath:indexPath];
-    [[CLSAPIClient sharedInstance] setResolved:![issue isResolved]
+    [[CRMAPIClient sharedInstance] setResolved:![issue isResolved]
                                       forIssue:issue];
     
     

@@ -16,7 +16,7 @@
 
 @implementation UIViewController (OpenSource)
 
-- (void)cls_exposeSource {
+- (void)crm_exposeSource {
     NSAssert([self isViewLoaded], @"Can not instantiate source observation before view is loaded");
     if (![self isViewLoaded]) {
         return;

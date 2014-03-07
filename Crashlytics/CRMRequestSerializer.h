@@ -1,5 +1,5 @@
 //
-//  CLSHTTPRequestSerializer.h
+//  CRMRequestSerializer.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/8/13.
@@ -8,6 +8,6 @@
 
 #import "AFURLRequestSerialization.h"
 
-@interface CLSRequestSerializer : AFHTTPRequestSerializer
+@interface CRMRequestSerializer : AFHTTPRequestSerializer
 
 @end

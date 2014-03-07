@@ -64,7 +64,7 @@ typedef NS_ENUM(NSInteger, CLSSections) {
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	[self cls_exposeSource];
+    [self crm_exposeSource];
 	
 	[self _configureCells];
 }

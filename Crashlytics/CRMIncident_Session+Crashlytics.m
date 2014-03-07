@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSIncident_Session+Crashlytics.h"
+#import "CRMIncident_Session+Crashlytics.h"
 
 @implementation CRMSession (Crashlytics)
 

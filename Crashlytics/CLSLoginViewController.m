@@ -9,24 +9,19 @@
 #import "CLSLoginViewController.h"
 
 #import "CRMAccount.h"
-#import "CLSAPIClient.h"
+#import "CRMAPIClient.h"
 #import "CRMConfiguration.h"
 #import "UIViewController+OpenSource.h"
 
-typedef NS_ENUM(NSInteger, CLSLoginSections) {
-	kCLSLoginSectionCredentials = 0,
-	kCLSLoginSectionSignIn,
-	kCLSLoginSectionHelp
+typedef NS_ENUM(NSInteger, CRMLoginSections) {
+	kCRMLoginSectionCredentials = 0,
+    kCRMLoginSectionSignIn = 1,
+    kCRMLoginSectionHelp = 2
 };
 
-typedef NS_ENUM(NSInteger, CLSCredentialsSection) {
-	kCLSCredentialsEmail = 0,
-	kCLSCredentialsPassword
-};
-
-typedef NS_ENUM(NSInteger, CLSHelpSectionRow) {
-	kCLSHelpSectionSignUp = 0,
-	kCLSHelpSectionForgotPassword
+typedef NS_ENUM(NSInteger, CRMHelpSectionRow) {
+	kCRMHelpSectionSignUp = 0,
+    kCRMHelpSectionForgotPassword
 };
 
 @interface CLSLoginViewController () <UITextFieldDelegate>
@@ -68,7 +63,7 @@ typedef NS_ENUM(NSInteger, CLSHelpSectionRow) {
 	[self _setEnabled:NO];
 
 	@weakify(self);
-	[[[CLSAPIClient sharedInstance] createSessionWithAccount:account]
+	[[[CRMAPIClient sharedInstance] createSessionWithAccount:account]
 	 subscribeNext:^(id x) {
 		 [CRMAccount setCurrentAccount:account];
 	 } error:^(NSError *error) {
@@ -98,9 +93,9 @@ typedef NS_ENUM(NSInteger, CLSHelpSectionRow) {
 	static NSArray *indexPathesToHighlight;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		indexPathesToHighlight = @[[NSIndexPath indexPathForRow:0 inSection:kCLSLoginSectionSignIn],
-								   [NSIndexPath indexPathForRow:kCLSHelpSectionSignUp inSection:kCLSLoginSectionHelp],
-								   [NSIndexPath indexPathForRow:kCLSHelpSectionForgotPassword inSection:kCLSLoginSectionHelp]];
+		indexPathesToHighlight = @[[NSIndexPath indexPathForRow:0 inSection:kCRMLoginSectionSignIn],
+                [NSIndexPath indexPathForRow:kCRMHelpSectionSignUp inSection:kCRMLoginSectionHelp],
+                [NSIndexPath indexPathForRow:kCRMHelpSectionForgotPassword inSection:kCRMLoginSectionHelp]];
 	});
 
 	for (NSIndexPath *indexPath in indexPathesToHighlight) {
@@ -123,8 +118,8 @@ typedef NS_ENUM(NSInteger, CLSHelpSectionRow) {
 	UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"crashington"]];
 	imageView.center = CGPointMake(CGRectGetMidX(self.view.frame), -150);
 	[self.tableView addSubview:imageView];
-	
-	[self cls_exposeSource];
+
+    [self crm_exposeSource];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -138,18 +133,18 @@ typedef NS_ENUM(NSInteger, CLSHelpSectionRow) {
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
-	switch ((CLSLoginSections)indexPath.section) {
-		case kCLSLoginSectionSignIn:
+	switch ((CRMLoginSections)indexPath.section) {
+		case kCRMLoginSectionSignIn:
 			[self _login];
 			break;
 
-		case kCLSLoginSectionHelp:
-			switch ((CLSHelpSectionRow)indexPath.row) {
-				case kCLSHelpSectionSignUp:
+		case kCRMLoginSectionHelp:
+			switch ((CRMHelpSectionRow)indexPath.row) {
+				case kCRMHelpSectionSignUp:
 					[[UIApplication sharedApplication] openURL:[CRMConfiguration sharedInstance].signUpURL];
 					break;
 					
-				case kCLSHelpSectionForgotPassword:
+				case kCRMHelpSectionForgotPassword:
 					[[UIApplication sharedApplication] openURL:[CRMConfiguration sharedInstance].forgotPasswordURL];
 					break;
 			}

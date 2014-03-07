@@ -9,7 +9,7 @@
 #import "CLSIssueGeneralDetailsViewController.h"
 
 #import "CRMIncident.h"
-#import "CLSIncident_Session+Crashlytics.h"
+#import "CRMIncident_Session+Crashlytics.h"
 #import "CLSLogViewController.h"
 #import "UIViewController+OpenSource.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>

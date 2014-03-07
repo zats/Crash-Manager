@@ -1,54 +1,54 @@
 //
-//  CLSResponseSerializer.m
+//  CRMResponseSerializer.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/19/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSResponseSerializer.h"
+#import "CRMResponseSerializer.h"
 
-#import "CLSError.h"
+#import "CRMError.h"
 #import "CRMAccount.h"
 
-static inline NSArray *CLSSimplifyArray(NSArray *array);
-static inline NSDictionary *CLSSimplifyDictionary(NSDictionary *dictionary);
+static inline NSArray *CRMSimplifyArray(NSArray *array);
+static inline NSDictionary *CRMSimplifyDictionary(NSDictionary *dictionary);
 
-static inline NSArray *CLSSimplifyArray(NSArray *array) {
+static inline NSArray *CRMSimplifyArray(NSArray *array) {
 	NSMutableArray *result = [array mutableCopy];
 	[array enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
 		NSCAssert((object != [NSNull null]), @"Don't know what to do with [Null null] in the array %@", array);
 		
 		if ([object isKindOfClass:[NSArray class]]) {
 			[result replaceObjectAtIndex:idx
-							  withObject:CLSSimplifyArray(object)];
+							  withObject:CRMSimplifyArray(object)];
 		} else if ([object isKindOfClass:[NSDictionary class]]) {
 			[result replaceObjectAtIndex:idx
-							  withObject:CLSSimplifyDictionary(object)];
+							  withObject:CRMSimplifyDictionary(object)];
 		}
 	}];
 	return [result copy];
 }
 
-static inline NSDictionary *CLSSimplifyDictionary(NSDictionary *dictionary) {
+static inline NSDictionary *CRMSimplifyDictionary(NSDictionary *dictionary) {
 	__block NSMutableDictionary *result = [dictionary mutableCopy];
 	for (NSString *key in dictionary) {
 		if (result[key] == [NSNull null]) {
 			[result removeObjectForKey:key];
 		} else if ([result[key] isKindOfClass:[NSDictionary class]]) {
-			result[key] = CLSSimplifyDictionary(dictionary[key]);
+			result[key] = CRMSimplifyDictionary(dictionary[key]);
 		} else if ([result[key] isKindOfClass:[NSArray class]]) {
-			result[key] = CLSSimplifyArray(dictionary[key]);
+			result[key] = CRMSimplifyArray(dictionary[key]);
 		}
 	}
 	return [result copy];
 }
 
-@interface CLSResponseSerializer ()
+@interface CRMResponseSerializer ()
 
 @end
 
-@implementation CLSResponseSerializer
+@implementation CRMResponseSerializer
 
 - (instancetype)init {
 	self = [super init];
@@ -96,7 +96,7 @@ static inline NSDictionary *CLSSimplifyDictionary(NSDictionary *dictionary) {
 	if (isErrorResponse) {
 		// an error message?
 		if (error) {
-			*error = [NSError errorWithDomain:CLSErrorDomain
+			*error = [NSError errorWithDomain:CRMErrorDomain
 										 code:((NSHTTPURLResponse *)response).statusCode
 									 userInfo:@{ NSLocalizedDescriptionKey: result[@"message"] }];
 		}
@@ -104,9 +104,9 @@ static inline NSDictionary *CLSSimplifyDictionary(NSDictionary *dictionary) {
 	}
 
 	if ([result isKindOfClass:[NSDictionary class]]) {
-		result = CLSSimplifyDictionary(result);
+		result = CRMSimplifyDictionary(result);
 	} else if ([result isKindOfClass:[NSArray class]]) {
-		result = CLSSimplifyArray(result);
+		result = CRMSimplifyArray(result);
 	}
 	return result;
 }

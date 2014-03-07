@@ -6,6 +6,6 @@
 //  Copyright (c) 2014 Sasha Zats. All rights reserved.
 //
 
-#import "CLSError.h"
+#import "CRMError.h"
 
-NSString *CLSErrorDomain = @"CLSErrorDomain";
+NSString *CRMErrorDomain = @"CRMErrorDomain";

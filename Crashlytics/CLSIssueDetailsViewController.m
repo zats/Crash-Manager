@@ -9,13 +9,13 @@
 #import "CLSIssueDetailsViewController.h"
 
 #import "CRMIssue.h"
-#import "CLSAPIClient.h"
+#import "CRMAPIClient.h"
 #import "CRMAccount.h"
 #import "CRMIncident.h"
 #import "CLSIssueExceptionViewController.h"
 #import <ReactiveCocoa/RACEXTScope.h>
 #import <SHActionSheetBlocks/SHActionSheetBlocks.h>
-#import "CLSIncident_Session+Crashlytics.h"
+#import "CRMIncident_Session+Crashlytics.h"
 
 typedef enum _CLSDetailsSegment {
 	kCLSExceptionSegment = 2,
@@ -72,7 +72,7 @@ typedef enum _CLSDetailsSegment {
 		[[UIPasteboard generalPasteboard] setURL:URL];
 	}];
 	[action SH_addButtonDestructiveWithTitle:[self.issue isResolved] ? @"Reopen Issue" : @"Close Issue" withBlock:^(NSInteger theButtonIndex) {
-		[[CLSAPIClient sharedInstance] setResolved:![self.issue isResolved]
+		[[CRMAPIClient sharedInstance] setResolved:![self.issue isResolved]
 										  forIssue:self.issue];
 	}];
 	[action SH_addButtonCancelWithTitle:@"Cancel" withBlock:nil];
@@ -176,14 +176,14 @@ typedef enum _CLSDetailsSegment {
 			if (self.issue.lastSession) {
 				[self _processIncidentSession:self.issue.lastSession];
 			} else {
-				[[[CLSAPIClient sharedInstance] latestIncidentForIssue:self.issue]
+				[[[CRMAPIClient sharedInstance] latestIncidentForIssue:self.issue]
 					subscribeNext:^(id x) {
 						@strongify(self);
 						self.title = [NSString stringWithFormat:@"Issue #%@", self.issue.displayID];
 						self.exceptionTypeLabel.text = self.issue.title;
 						self.exceptionDescriptionLabel.text = self.issue.subtitle;
 						
-						[[[CLSAPIClient sharedInstance] detailsForIssue:self.issue]
+						[[[CRMAPIClient sharedInstance] detailsForIssue:self.issue]
 						 subscribeNext:^(CRMSession *session) {
 							@strongify(self);
 							[self _processIncidentSession:session];

@@ -44,7 +44,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self cls_exposeSource];
+    [self crm_exposeSource];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

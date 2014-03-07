@@ -1,27 +1,27 @@
 //
-//  CLSOrganizationsViewController.m
+//  CRMOrganizationsViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSOrganizationsViewController.h"
+#import "CRMOrganizationsViewController.h"
 
-#import "CLSAPIClient.h"
+#import "CRMAPIClient.h"
 #import "CRMAccount.h"
 #import "CLSApplicationsViewController.h"
 #import "CRMOrganization.h"
 #import <Crashlytics/Crashlytics.h>
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
 #import <SHUIKitBlocks/SHUIKitBlocks.h>
-#import "CLSPasteboardObserver.h"
+#import "CRMPasteboardObserver.h"
 
-@interface CLSOrganizationsViewController ()
+@interface CRMOrganizationsViewController ()
 
 @end
 
-@implementation CLSOrganizationsViewController
+@implementation CRMOrganizationsViewController
 
 #pragma mark - Actions
 
@@ -72,7 +72,7 @@
 																	  sortedBy:CLSOrganizationAttributes.name
 																	 ascending:YES];
 			
-			[[CLSPasteboardObserver sharedInstance] startObservingParsteboardWithNavigationController:self.navigationController];
+			[[CRMPasteboardObserver sharedInstance] startObservingParsteboardWithNavigationController:self.navigationController];
 		}];
 }
 
@@ -84,7 +84,7 @@
 		  return account != nil;
 	  }]
 	 subscribeNext:^(CRMAccount *account) {
-		 [[CLSAPIClient sharedInstance] organizations];
+		 [[CRMAPIClient sharedInstance] organizations];
 	 }];
 }
 

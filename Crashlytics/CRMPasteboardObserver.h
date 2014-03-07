@@ -1,5 +1,5 @@
 //
-//  CLSPasteboardObserver.h
+//  CRMPasteboardObserver.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 1/4/14.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CLSPasteboardObserver : NSObject
+@interface CRMPasteboardObserver : NSObject
 
 + (instancetype)sharedInstance;
 

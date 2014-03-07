@@ -8,7 +8,7 @@
 
 #import "CLSBuildsFilterViewController.h"
 
-#import "CLSAPIClient.h"
+#import "CRMAPIClient.h"
 #import "CRMBuild.h"
 #import "CRMFilter.h"
 #import "CRMApplication.h"
@@ -40,7 +40,7 @@
 	[[RACSignal
 		combineLatest:@[ applicationDidChangeSignal, activeAccountDidChangeSignal]]
 		subscribeNext:^(id x) {
-			[[CLSAPIClient sharedInstance] buildsForApplication:self.filter.application];
+			[[CRMAPIClient sharedInstance] buildsForApplication:self.filter.application];
 		}];
 	
 	// Updating fetch results controller

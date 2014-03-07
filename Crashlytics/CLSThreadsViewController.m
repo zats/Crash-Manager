@@ -9,7 +9,7 @@
 #import "CLSThreadsViewController.h"
 
 #import "CRMIncident.h"
-#import "CLSIncident_Session+Crashlytics.h"
+#import "CRMIncident_Session+Crashlytics.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
 @interface CLSThreadsViewController ()

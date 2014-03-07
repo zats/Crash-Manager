@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSRequestSerializer.h"
+#import "CRMRequestSerializer.h"
 
 #import "NSURLRequest+CRMLogging.h"
 #import "CRMAccount.h"
 
-@interface CLSRequestSerializer ()
+@interface CRMRequestSerializer ()
 
 @end
 
-@implementation CLSRequestSerializer
+@implementation CRMRequestSerializer
 
 - (instancetype)init {
 	self = [super init];

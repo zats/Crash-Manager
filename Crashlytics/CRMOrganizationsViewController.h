@@ -1,5 +1,5 @@
 //
-//  CLSOrganizationsViewController.h
+//  CRMOrganizationsViewController.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
@@ -8,6 +8,6 @@
 
 #import "CLSTableViewController.h"
 
-@interface CLSOrganizationsViewController : CLSTableViewController
+@interface CRMOrganizationsViewController : CLSTableViewController
 
 @end

@@ -1,39 +1,39 @@
 //
-//  CLSAPIClient.m
+//  CRMAPIClient.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSAPIClient.h"
+#import "CRMAPIClient.h"
 
 #import "NSURLRequest+CRMLogging.h"
 #import "CRMAccount.h"
 #import "CRMApplication.h"
 #import "CRMBuild.h"
 #import "CRMFilter.h"
-#import "CLSRequestSerializer.h"
+#import "CRMRequestSerializer.h"
 #import "CRMIncident.h"
 #import "CRMIssue.h"
 #import "CRMOrganization.h"
-#import "CLSResponseSerializer.h"
+#import "CRMResponseSerializer.h"
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 
 static NSString *CLSGANetworkErrorCategory = @"Network error";
 
-@interface CLSAPIClient ()
+@interface CRMAPIClient ()
 @end
 
-@implementation CLSAPIClient
+@implementation CRMAPIClient
 
 + (instancetype)sharedInstance {
-	static CLSAPIClient *apiClient;
+	static CRMAPIClient *apiClient;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
 		NSURL *baseURL = [NSURL URLWithString:@"https://api.crashlytics.com/"];
-		apiClient = [[CLSAPIClient alloc] initWithBaseURL:baseURL];
+		apiClient = [[CRMAPIClient alloc] initWithBaseURL:baseURL];
 	});
 	return apiClient;
 }
@@ -44,8 +44,8 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 		return nil;
 	}
 	[AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-	self.requestSerializer = [CLSRequestSerializer serializer];
-	self.responseSerializer = [CLSResponseSerializer serializer];
+	self.requestSerializer = [CRMRequestSerializer serializer];
+	self.responseSerializer = [CRMResponseSerializer serializer];
     
     // Network error tracking
     [[NSNotificationCenter defaultCenter] addObserverForName:AFNetworkingTaskDidCompleteNotification object:Nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
@@ -65,7 +65,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 
 @end
 
-@implementation CLSAPIClient (CRMSession)
+@implementation CRMAPIClient (CRMSession)
 
 - (RACSignal *)createSessionWithAccount:(CRMAccount *)account {
 	NSParameterAssert(account.email);
@@ -93,7 +93,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 
 @end
 
-@implementation CLSAPIClient (CLSOrganization)
+@implementation CRMAPIClient (CLSOrganization)
 
 - (RACSignal *)applicationsForOrganization:(CRMOrganization *)organization {
 	NSParameterAssert(organization.organizationID);
@@ -128,7 +128,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 
 @end
 
-@implementation CLSAPIClient (CLSBuild)
+@implementation CRMAPIClient (CLSBuild)
 
 - (RACSignal *)buildsForApplication:(CRMApplication *)application {
 	NSParameterAssert(application.applicationID);
@@ -169,7 +169,7 @@ static NSString *CLSGANetworkErrorCategory = @"Network error";
 
 @end
 
-@implementation CLSAPIClient (CLSIssues)
+@implementation CRMAPIClient (CLSIssues)
 
 - (RACSignal *)issuesForApplication:(CRMApplication *)application {
 	NSParameterAssert(application.applicationID);

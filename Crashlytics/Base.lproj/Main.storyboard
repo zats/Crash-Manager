@@ -7,7 +7,7 @@
         <!--Organizations View Controller - Organizations-->
         <scene sceneID="xmy-Dc-yVi">
             <objects>
-                <tableViewController storyboardIdentifier="organizations" id="khs-6S-axm" customClass="CLSOrganizationsViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="organizations" id="khs-6S-axm" customClass="CRMOrganizationsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2T9-zK-21R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
