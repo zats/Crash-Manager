@@ -10,20 +10,20 @@
 		58FC3CCCF47E4B17A8DA8334 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F76C7585C649F2A4194805 /* libPods.a */; };
 		5C046FDC1872B64600E4998C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C046FDB1872B64600E4998C /* Settings.bundle */; };
 		5C3BCF2B1868AD1D004BB1FA /* CRMIncident.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BCF2A1868AD1D004BB1FA /* CRMIncident.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5C3BCF2F1868AF20004BB1FA /* CLSIssueDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BCF2E1868AF20004BB1FA /* CLSIssueDetailsViewController.m */; };
-		5C3CEAB718671C4000F8DDC6 /* CLSIssuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CEAB618671C4000F8DDC6 /* CLSIssuesViewController.m */; };
-		5C401853186B3ABA00CC71AE /* CLSIssueExceptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401852186B3ABA00CC71AE /* CLSIssueExceptionViewController.m */; };
-		5C401860186B829600CC71AE /* CLSThreadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C40185F186B829600CC71AE /* CLSThreadsViewController.m */; };
+		5C3BCF2F1868AF20004BB1FA /* CRMIssueDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BCF2E1868AF20004BB1FA /* CRMIssueDetailsViewController.m */; };
+		5C3CEAB718671C4000F8DDC6 /* CRMIssuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CEAB618671C4000F8DDC6 /* CRMIssuesViewController.m */; };
+		5C401853186B3ABA00CC71AE /* CRMIssueExceptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401852186B3ABA00CC71AE /* CRMIssueExceptionViewController.m */; };
+		5C401860186B829600CC71AE /* CRMThreadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C40185F186B829600CC71AE /* CRMThreadsViewController.m */; };
 		5C401864186C2CE000CC71AE /* CRMIncident_Session+Crashlytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401863186C2CE000CC71AE /* CRMIncident_Session+Crashlytics.m */; };
 		5C4B0684185356000061485A /* CRMOrganizationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B0683185356000061485A /* CRMOrganizationsViewController.m */; };
-		5C4B068718535B6F0061485A /* CLSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B068618535B6F0061485A /* CLSLoginViewController.m */; };
+		5C4B068718535B6F0061485A /* CRMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B068618535B6F0061485A /* CRMLoginViewController.m */; };
 		5C4B068A18535D760061485A /* CLSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B068918535D760061485A /* CLSViewController.m */; };
-		5C4B068D18535D9A0061485A /* CLSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B068C18535D9A0061485A /* CLSTableViewController.m */; };
+		5C4B068D18535D9A0061485A /* CRMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B068C18535D9A0061485A /* CRMTableViewController.m */; };
 		5C4B0691185392A00061485A /* CRMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B0690185392A00061485A /* CRMAPIClient.m */; };
 		5C4B069518545AFD0061485A /* CRMApplicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B069418545AFD0061485A /* CRMApplicationsViewController.m */; };
 		5C4B0698185465480061485A /* CRMRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B0697185465480061485A /* CRMRequestSerializer.m */; };
-		5C5ABF661871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5ABF651871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m */; };
-		5C67C71518662F8700EC5943 /* CLSBuildsFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C67C71418662F8700EC5943 /* CLSBuildsFilterViewController.m */; };
+		5C5ABF661871C48A00FB2A77 /* CRMIssueStatusFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5ABF651871C48A00FB2A77 /* CRMIssueStatusFilterViewController.m */; };
+		5C67C71518662F8700EC5943 /* CRMBuildsFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C67C71418662F8700EC5943 /* CRMBuildsFilterViewController.m */; };
 		5C6BF2B018637E34007C483D /* CRMResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6BF2AF18637E34007C483D /* CRMResponseSerializer.m */; };
 		5C6D3CF218534CA9005E97D1 /* _CRMAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CDF18534CA9005E97D1 /* _CRMAccount.m */; };
 		5C6D3CF318534CA9005E97D1 /* _CRMApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D3CE118534CA9005E97D1 /* _CRMApplication.m */; };
@@ -50,14 +50,14 @@
 		5C85507518720FB8008F5038 /* _CRMFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507218720FB8008F5038 /* _CRMFilter.m */; };
 		5C85507618720FB8008F5038 /* CRMFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507418720FB8008F5038 /* CRMFilter.m */; };
 		5C8550791872191C008F5038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C85507B1872191C008F5038 /* Localizable.strings */; };
-		5C87FC7818A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C87FC7718A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m */; };
-		5C9AC77C186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */; };
-		5CA538B61872D4E200544C7A /* CLSTimeRangeFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */; };
-		5CB3C0881871BE5200CE00D7 /* CLSFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */; };
+		5C87FC7818A6B3F200C0E92E /* CRMSessionDetailsAbstractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C87FC7718A6B3F200C0E92E /* CRMSessionDetailsAbstractViewController.m */; };
+		5C9AC77C186C74190037DC36 /* CRMIssueGeneralDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C9AC77B186C74190037DC36 /* CRMIssueGeneralDetailsViewController.m */; };
+		5CA538B61872D4E200544C7A /* CRMTimeRangeFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA538B51872D4E200544C7A /* CRMTimeRangeFilterViewController.m */; };
+		5CB3C0881871BE5200CE00D7 /* CRMFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB3C0871871BE5200CE00D7 /* CRMFiltersViewController.m */; };
 		5CBE4756189D4A05002D3E90 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBE4755189D4A05002D3E90 /* Crashlytics.framework */; };
 		5CBE4760189D58A6002D3E90 /* NSURLRequest+CRMLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE475F189D58A6002D3E90 /* NSURLRequest+CRMLogging.m */; };
 		5CBE4764189D64AF002D3E90 /* UIViewController+OpenSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */; };
-		5CC3F7E41876A12D003C2FAC /* CLSLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */; };
+		5CC3F7E41876A12D003C2FAC /* CRMLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7E31876A12D003C2FAC /* CRMLogViewController.m */; };
 		5CC3F7EB1876C933003C2FAC /* CRMError.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7EA1876C933003C2FAC /* CRMError.m */; };
 		5CC3F7F218786E7A003C2FAC /* CRMPasteboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7F118786E7A003C2FAC /* CRMPasteboardObserver.m */; };
 		5CE8926F186F13860017F68A /* configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CE8926E186F13860017F68A /* configuration.plist */; };
@@ -69,7 +69,7 @@
 		5CE94DFD18534976003C7DB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE94DFB18534976003C7DB1 /* Main.storyboard */; };
 		5CE94E0218534976003C7DB1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE94E0118534976003C7DB1 /* Images.xcassets */; };
 		5CE94E2218534BE0003C7DB1 /* Crashlytics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CE94E2018534BE0003C7DB1 /* Crashlytics.xcdatamodeld */; };
-		5CEDD1C518703DDC00B6A39A /* CLSIssueListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */; };
+		5CEDD1C518703DDC00B6A39A /* CRMIssueListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C418703DDC00B6A39A /* CRMIssueListCell.m */; };
 		5CEDD1CA187050BC00B6A39A /* CRMApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C9187050BC00B6A39A /* CRMApplicationCell.m */; };
 		5CEDD1CD18705DE500B6A39A /* CRMConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1CC18705DE500B6A39A /* CRMConfiguration.m */; };
 /* End PBXBuildFile section */
@@ -79,34 +79,34 @@
 		5C046FDB1872B64600E4998C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		5C3BCF291868AD1D004BB1FA /* CRMIncident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRMIncident.h; path = Crashlytics/CRMIncident.h; sourceTree = SOURCE_ROOT; };
 		5C3BCF2A1868AD1D004BB1FA /* CRMIncident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRMIncident.m; path = Crashlytics/CRMIncident.m; sourceTree = SOURCE_ROOT; };
-		5C3BCF2D1868AF20004BB1FA /* CLSIssueDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSIssueDetailsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		5C3BCF2E1868AF20004BB1FA /* CLSIssueDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSIssueDetailsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		5C3CEAB518671C4000F8DDC6 /* CLSIssuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssuesViewController.h; sourceTree = "<group>"; };
-		5C3CEAB618671C4000F8DDC6 /* CLSIssuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssuesViewController.m; sourceTree = "<group>"; };
-		5C401851186B3ABA00CC71AE /* CLSIssueExceptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSIssueExceptionViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		5C401852186B3ABA00CC71AE /* CLSIssueExceptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSIssueExceptionViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		5C40185E186B829600CC71AE /* CLSThreadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSThreadsViewController.h; sourceTree = "<group>"; };
-		5C40185F186B829600CC71AE /* CLSThreadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSThreadsViewController.m; sourceTree = "<group>"; };
+		5C3BCF2D1868AF20004BB1FA /* CRMIssueDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMIssueDetailsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5C3BCF2E1868AF20004BB1FA /* CRMIssueDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMIssueDetailsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5C3CEAB518671C4000F8DDC6 /* CRMIssuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMIssuesViewController.h; sourceTree = "<group>"; };
+		5C3CEAB618671C4000F8DDC6 /* CRMIssuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMIssuesViewController.m; sourceTree = "<group>"; };
+		5C401851186B3ABA00CC71AE /* CRMIssueExceptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMIssueExceptionViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5C401852186B3ABA00CC71AE /* CRMIssueExceptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMIssueExceptionViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5C40185E186B829600CC71AE /* CRMThreadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMThreadsViewController.h; sourceTree = "<group>"; };
+		5C40185F186B829600CC71AE /* CRMThreadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMThreadsViewController.m; sourceTree = "<group>"; };
 		5C401862186C2CE000CC71AE /* CRMIncident_Session+Crashlytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = "CRMIncident_Session+Crashlytics.h"; path = "Crashlytics/CRMIncident_Session+Crashlytics.h"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5C401863186C2CE000CC71AE /* CRMIncident_Session+Crashlytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = "CRMIncident_Session+Crashlytics.m"; path = "Crashlytics/CRMIncident_Session+Crashlytics.m"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C4B0682185356000061485A /* CRMOrganizationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMOrganizationsViewController.h; sourceTree = "<group>"; };
 		5C4B0683185356000061485A /* CRMOrganizationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMOrganizationsViewController.m; sourceTree = "<group>"; };
-		5C4B068518535B6F0061485A /* CLSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLoginViewController.h; sourceTree = "<group>"; };
-		5C4B068618535B6F0061485A /* CLSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSLoginViewController.m; sourceTree = "<group>"; };
+		5C4B068518535B6F0061485A /* CRMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMLoginViewController.h; sourceTree = "<group>"; };
+		5C4B068618535B6F0061485A /* CRMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMLoginViewController.m; sourceTree = "<group>"; };
 		5C4B068818535D760061485A /* CLSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSViewController.h; sourceTree = "<group>"; };
 		5C4B068918535D760061485A /* CLSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSViewController.m; sourceTree = "<group>"; };
-		5C4B068B18535D9A0061485A /* CLSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSTableViewController.h; sourceTree = "<group>"; };
-		5C4B068C18535D9A0061485A /* CLSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSTableViewController.m; sourceTree = "<group>"; };
+		5C4B068B18535D9A0061485A /* CRMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMTableViewController.h; sourceTree = "<group>"; };
+		5C4B068C18535D9A0061485A /* CRMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMTableViewController.m; sourceTree = "<group>"; };
 		5C4B068F185392A00061485A /* CRMAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMAPIClient.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5C4B0690185392A00061485A /* CRMAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMAPIClient.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C4B069318545AFD0061485A /* CRMApplicationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMApplicationsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5C4B069418545AFD0061485A /* CRMApplicationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMApplicationsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C4B0696185465480061485A /* CRMRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMRequestSerializer.h; sourceTree = "<group>"; };
 		5C4B0697185465480061485A /* CRMRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMRequestSerializer.m; sourceTree = "<group>"; };
-		5C5ABF641871C48A00FB2A77 /* CLSIssueStatusFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueStatusFilterViewController.h; sourceTree = "<group>"; };
-		5C5ABF651871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueStatusFilterViewController.m; sourceTree = "<group>"; };
-		5C67C71318662F8700EC5943 /* CLSBuildsFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSBuildsFilterViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		5C67C71418662F8700EC5943 /* CLSBuildsFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSBuildsFilterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5C5ABF641871C48A00FB2A77 /* CRMIssueStatusFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMIssueStatusFilterViewController.h; sourceTree = "<group>"; };
+		5C5ABF651871C48A00FB2A77 /* CRMIssueStatusFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMIssueStatusFilterViewController.m; sourceTree = "<group>"; };
+		5C67C71318662F8700EC5943 /* CRMBuildsFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMBuildsFilterViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5C67C71418662F8700EC5943 /* CRMBuildsFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMBuildsFilterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5C6BF2AE18637E34007C483D /* CRMResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMResponseSerializer.h; sourceTree = "<group>"; };
 		5C6BF2AF18637E34007C483D /* CRMResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMResponseSerializer.m; sourceTree = "<group>"; };
 		5C6D3CDE18534CA9005E97D1 /* _CRMAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CRMAccount.h; path = Crashlytics/_CRMAccount.h; sourceTree = SOURCE_ROOT; };
@@ -162,21 +162,21 @@
 		5C85507318720FB8008F5038 /* CRMFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRMFilter.h; path = Crashlytics/CRMFilter.h; sourceTree = SOURCE_ROOT; };
 		5C85507418720FB8008F5038 /* CRMFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRMFilter.m; path = Crashlytics/CRMFilter.m; sourceTree = SOURCE_ROOT; };
 		5C85507A1872191C008F5038 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5C87FC7618A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSSessionDetailsAbstractViewController.h; sourceTree = "<group>"; };
-		5C87FC7718A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSSessionDetailsAbstractViewController.m; sourceTree = "<group>"; };
-		5C9AC77A186C74190037DC36 /* CLSIssueGeneralDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSIssueGeneralDetailsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSIssueGeneralDetailsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		5CA538B41872D4E200544C7A /* CLSTimeRangeFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSTimeRangeFilterViewController.h; sourceTree = "<group>"; };
-		5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSTimeRangeFilterViewController.m; sourceTree = "<group>"; };
-		5CB3C0861871BE5200CE00D7 /* CLSFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSFiltersViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSFiltersViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5C87FC7618A6B3F200C0E92E /* CRMSessionDetailsAbstractViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMSessionDetailsAbstractViewController.h; sourceTree = "<group>"; };
+		5C87FC7718A6B3F200C0E92E /* CRMSessionDetailsAbstractViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMSessionDetailsAbstractViewController.m; sourceTree = "<group>"; };
+		5C9AC77A186C74190037DC36 /* CRMIssueGeneralDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMIssueGeneralDetailsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5C9AC77B186C74190037DC36 /* CRMIssueGeneralDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMIssueGeneralDetailsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5CA538B41872D4E200544C7A /* CRMTimeRangeFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMTimeRangeFilterViewController.h; sourceTree = "<group>"; };
+		5CA538B51872D4E200544C7A /* CRMTimeRangeFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMTimeRangeFilterViewController.m; sourceTree = "<group>"; };
+		5CB3C0861871BE5200CE00D7 /* CRMFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMFiltersViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5CB3C0871871BE5200CE00D7 /* CRMFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMFiltersViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5CBE4755189D4A05002D3E90 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
 		5CBE475E189D58A6002D3E90 /* NSURLRequest+CRMLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+CRMLogging.h"; sourceTree = "<group>"; };
 		5CBE475F189D58A6002D3E90 /* NSURLRequest+CRMLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+CRMLogging.m"; sourceTree = "<group>"; };
 		5CBE4762189D64AF002D3E90 /* UIViewController+OpenSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+OpenSource.h"; sourceTree = "<group>"; };
 		5CBE4763189D64AF002D3E90 /* UIViewController+OpenSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+OpenSource.m"; sourceTree = "<group>"; };
-		5CC3F7E21876A12D003C2FAC /* CLSLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSLogViewController.h; sourceTree = "<group>"; };
-		5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSLogViewController.m; sourceTree = "<group>"; };
+		5CC3F7E21876A12D003C2FAC /* CRMLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMLogViewController.h; sourceTree = "<group>"; };
+		5CC3F7E31876A12D003C2FAC /* CRMLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMLogViewController.m; sourceTree = "<group>"; };
 		5CC3F7E91876C933003C2FAC /* CRMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMError.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5CC3F7EA1876C933003C2FAC /* CRMError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMError.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5CC3F7EE1876D80D003C2FAC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -196,8 +196,8 @@
 		5CE94E0118534976003C7DB1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5CE94E0818534976003C7DB1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5CE94E2118534BE0003C7DB1 /* Crashlytics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crashlytics.xcdatamodel; sourceTree = "<group>"; };
-		5CEDD1C318703DDC00B6A39A /* CLSIssueListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSIssueListCell.h; sourceTree = "<group>"; };
-		5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueListCell.m; sourceTree = "<group>"; };
+		5CEDD1C318703DDC00B6A39A /* CRMIssueListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMIssueListCell.h; sourceTree = "<group>"; };
+		5CEDD1C418703DDC00B6A39A /* CRMIssueListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMIssueListCell.m; sourceTree = "<group>"; };
 		5CEDD1C8187050BC00B6A39A /* CRMApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMApplicationCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5CEDD1C9187050BC00B6A39A /* CRMApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMApplicationCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5CEDD1CB18705DE500B6A39A /* CRMConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMConfiguration.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -254,29 +254,29 @@
 		5C40185D186B827A00CC71AE /* Issue Details */ = {
 			isa = PBXGroup;
 			children = (
-				5C3BCF2D1868AF20004BB1FA /* CLSIssueDetailsViewController.h */,
-				5C3BCF2E1868AF20004BB1FA /* CLSIssueDetailsViewController.m */,
-				5C401861186C27D600CC71AE /* Crash Details View Controllers */,
+				5C3BCF2D1868AF20004BB1FA /* CRMIssueDetailsViewController.h */,
+				5C3BCF2E1868AF20004BB1FA /* CRMIssueDetailsViewController.m */,
+				5C401861186C27D600CC71AE /* Crash Details */,
 				5CB3C0821871BDFC00CE00D7 /* Filters */,
 			);
 			name = "Issue Details";
 			sourceTree = "<group>";
 		};
-		5C401861186C27D600CC71AE /* Crash Details View Controllers */ = {
+		5C401861186C27D600CC71AE /* Crash Details */ = {
 			isa = PBXGroup;
 			children = (
-				5C401851186B3ABA00CC71AE /* CLSIssueExceptionViewController.h */,
-				5C401852186B3ABA00CC71AE /* CLSIssueExceptionViewController.m */,
-				5C40185E186B829600CC71AE /* CLSThreadsViewController.h */,
-				5C40185F186B829600CC71AE /* CLSThreadsViewController.m */,
-				5C9AC77A186C74190037DC36 /* CLSIssueGeneralDetailsViewController.h */,
-				5C9AC77B186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m */,
-				5CC3F7E21876A12D003C2FAC /* CLSLogViewController.h */,
-				5CC3F7E31876A12D003C2FAC /* CLSLogViewController.m */,
-				5C87FC7618A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.h */,
-				5C87FC7718A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m */,
+				5C401851186B3ABA00CC71AE /* CRMIssueExceptionViewController.h */,
+				5C401852186B3ABA00CC71AE /* CRMIssueExceptionViewController.m */,
+				5C40185E186B829600CC71AE /* CRMThreadsViewController.h */,
+				5C40185F186B829600CC71AE /* CRMThreadsViewController.m */,
+				5C9AC77A186C74190037DC36 /* CRMIssueGeneralDetailsViewController.h */,
+				5C9AC77B186C74190037DC36 /* CRMIssueGeneralDetailsViewController.m */,
+				5CC3F7E21876A12D003C2FAC /* CRMLogViewController.h */,
+				5CC3F7E31876A12D003C2FAC /* CRMLogViewController.m */,
+				5C87FC7618A6B3F200C0E92E /* CRMSessionDetailsAbstractViewController.h */,
+				5C87FC7718A6B3F200C0E92E /* CRMSessionDetailsAbstractViewController.m */,
 			);
-			name = "Crash Details View Controllers";
+			name = "Crash Details";
 			sourceTree = "<group>";
 		};
 		5C4B0681185355C50061485A /* View Controllers */ = {
@@ -313,8 +313,8 @@
 			children = (
 				5C4B068818535D760061485A /* CLSViewController.h */,
 				5C4B068918535D760061485A /* CLSViewController.m */,
-				5C4B068B18535D9A0061485A /* CLSTableViewController.h */,
-				5C4B068C18535D9A0061485A /* CLSTableViewController.m */,
+				5C4B068B18535D9A0061485A /* CRMTableViewController.h */,
+				5C4B068C18535D9A0061485A /* CRMTableViewController.m */,
 			);
 			name = Abstract;
 			sourceTree = "<group>";
@@ -456,14 +456,14 @@
 		5CB3C0821871BDFC00CE00D7 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
-				5CB3C0861871BE5200CE00D7 /* CLSFiltersViewController.h */,
-				5CB3C0871871BE5200CE00D7 /* CLSFiltersViewController.m */,
-				5C5ABF641871C48A00FB2A77 /* CLSIssueStatusFilterViewController.h */,
-				5C5ABF651871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m */,
-				5CA538B41872D4E200544C7A /* CLSTimeRangeFilterViewController.h */,
-				5CA538B51872D4E200544C7A /* CLSTimeRangeFilterViewController.m */,
-				5C67C71318662F8700EC5943 /* CLSBuildsFilterViewController.h */,
-				5C67C71418662F8700EC5943 /* CLSBuildsFilterViewController.m */,
+				5CB3C0861871BE5200CE00D7 /* CRMFiltersViewController.h */,
+				5CB3C0871871BE5200CE00D7 /* CRMFiltersViewController.m */,
+				5C5ABF641871C48A00FB2A77 /* CRMIssueStatusFilterViewController.h */,
+				5C5ABF651871C48A00FB2A77 /* CRMIssueStatusFilterViewController.m */,
+				5CA538B41872D4E200544C7A /* CRMTimeRangeFilterViewController.h */,
+				5CA538B51872D4E200544C7A /* CRMTimeRangeFilterViewController.m */,
+				5C67C71318662F8700EC5943 /* CRMBuildsFilterViewController.h */,
+				5C67C71418662F8700EC5943 /* CRMBuildsFilterViewController.m */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -489,8 +489,8 @@
 		5CC3F7E51876B11B003C2FAC /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				5C4B068518535B6F0061485A /* CLSLoginViewController.h */,
-				5C4B068618535B6F0061485A /* CLSLoginViewController.m */,
+				5C4B068518535B6F0061485A /* CRMLoginViewController.h */,
+				5C4B068618535B6F0061485A /* CRMLoginViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -557,10 +557,10 @@
 		5CEDD1C218703DB700B6A39A /* Issues List */ = {
 			isa = PBXGroup;
 			children = (
-				5CEDD1C318703DDC00B6A39A /* CLSIssueListCell.h */,
-				5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */,
-				5C3CEAB518671C4000F8DDC6 /* CLSIssuesViewController.h */,
-				5C3CEAB618671C4000F8DDC6 /* CLSIssuesViewController.m */,
+				5CEDD1C318703DDC00B6A39A /* CRMIssueListCell.h */,
+				5CEDD1C418703DDC00B6A39A /* CRMIssueListCell.m */,
+				5C3CEAB518671C4000F8DDC6 /* CRMIssuesViewController.h */,
+				5C3CEAB618671C4000F8DDC6 /* CRMIssuesViewController.m */,
 				5C40185D186B827A00CC71AE /* Issue Details */,
 			);
 			name = "Issues List";
@@ -737,19 +737,19 @@
 				5CBE4760189D58A6002D3E90 /* NSURLRequest+CRMLogging.m in Sources */,
 				5C4B0684185356000061485A /* CRMOrganizationsViewController.m in Sources */,
 				5C6D3CF818534CA9005E97D1 /* CRMApplication.m in Sources */,
-				5C5ABF661871C48A00FB2A77 /* CLSIssueStatusFilterViewController.m in Sources */,
+				5C5ABF661871C48A00FB2A77 /* CRMIssueStatusFilterViewController.m in Sources */,
 				5C757E9318C200B700C50A72 /* ADNActivityCollection.m in Sources */,
 				5CE94DFA18534976003C7DB1 /* CLSAppDelegate.m in Sources */,
-				5C4B068D18535D9A0061485A /* CLSTableViewController.m in Sources */,
+				5C4B068D18535D9A0061485A /* CRMTableViewController.m in Sources */,
 				5C6D3CF618534CA9005E97D1 /* _CRMOrganization.m in Sources */,
 				5CEDD1CA187050BC00B6A39A /* CRMApplicationCell.m in Sources */,
 				5C6D3CFA18534CA9005E97D1 /* CRMBuild.m in Sources */,
 				5C6D3CF218534CA9005E97D1 /* _CRMAccount.m in Sources */,
 				5C757E7A18C1D5E900C50A72 /* CRMCrashlyticsLogger.m in Sources */,
-				5CC3F7E41876A12D003C2FAC /* CLSLogViewController.m in Sources */,
+				5CC3F7E41876A12D003C2FAC /* CRMLogViewController.m in Sources */,
 				5C6D3CF318534CA9005E97D1 /* _CRMApplication.m in Sources */,
 				5C6BF2B018637E34007C483D /* CRMResponseSerializer.m in Sources */,
-				5C9AC77C186C74190037DC36 /* CLSIssueGeneralDetailsViewController.m in Sources */,
+				5C9AC77C186C74190037DC36 /* CRMIssueGeneralDetailsViewController.m in Sources */,
 				5C6D3CFB18534CA9005E97D1 /* CRMOrganization.m in Sources */,
 				5C757E9518C200B700C50A72 /* ADNHappyActivity.m in Sources */,
 				5C71945318B7B49100465412 /* CRMGoogleAnalyticsLogger.m in Sources */,
@@ -759,30 +759,30 @@
 				5CC3F7EB1876C933003C2FAC /* CRMError.m in Sources */,
 				5C757E9218C200B700C50A72 /* ADNActivity.m in Sources */,
 				5C6D3CF918534CA9005E97D1 /* CRMIssue.m in Sources */,
-				5CEDD1C518703DDC00B6A39A /* CLSIssueListCell.m in Sources */,
-				5CA538B61872D4E200544C7A /* CLSTimeRangeFilterViewController.m in Sources */,
+				5CEDD1C518703DDC00B6A39A /* CRMIssueListCell.m in Sources */,
+				5CA538B61872D4E200544C7A /* CRMTimeRangeFilterViewController.m in Sources */,
 				5C401864186C2CE000CC71AE /* CRMIncident_Session+Crashlytics.m in Sources */,
 				5C4B0691185392A00061485A /* CRMAPIClient.m in Sources */,
-				5C3BCF2F1868AF20004BB1FA /* CLSIssueDetailsViewController.m in Sources */,
+				5C3BCF2F1868AF20004BB1FA /* CRMIssueDetailsViewController.m in Sources */,
 				5C85507518720FB8008F5038 /* _CRMFilter.m in Sources */,
 				5C71944B18B7A7A900465412 /* CRMConstants.m in Sources */,
 				5C3BCF2B1868AD1D004BB1FA /* CRMIncident.m in Sources */,
 				5C85507618720FB8008F5038 /* CRMFilter.m in Sources */,
 				5C757E9718C200B700C50A72 /* ADNRiposteActivity.m in Sources */,
-				5CB3C0881871BE5200CE00D7 /* CLSFiltersViewController.m in Sources */,
+				5CB3C0881871BE5200CE00D7 /* CRMFiltersViewController.m in Sources */,
 				5C6D3CF718534CA9005E97D1 /* CRMAccount.m in Sources */,
-				5C4B068718535B6F0061485A /* CLSLoginViewController.m in Sources */,
+				5C4B068718535B6F0061485A /* CRMLoginViewController.m in Sources */,
 				5C757E9418C200B700C50A72 /* ADNFelixActivity.m in Sources */,
-				5C401853186B3ABA00CC71AE /* CLSIssueExceptionViewController.m in Sources */,
+				5C401853186B3ABA00CC71AE /* CRMIssueExceptionViewController.m in Sources */,
 				5CE94E2218534BE0003C7DB1 /* Crashlytics.xcdatamodeld in Sources */,
-				5C401860186B829600CC71AE /* CLSThreadsViewController.m in Sources */,
+				5C401860186B829600CC71AE /* CRMThreadsViewController.m in Sources */,
 				5CBE4764189D64AF002D3E90 /* UIViewController+OpenSource.m in Sources */,
 				5C6D3CF518534CA9005E97D1 /* _CRMBuild.m in Sources */,
 				5C4B069518545AFD0061485A /* CRMApplicationsViewController.m in Sources */,
-				5C87FC7818A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m in Sources */,
+				5C87FC7818A6B3F200C0E92E /* CRMSessionDetailsAbstractViewController.m in Sources */,
 				5CEDD1CD18705DE500B6A39A /* CRMConfiguration.m in Sources */,
-				5C3CEAB718671C4000F8DDC6 /* CLSIssuesViewController.m in Sources */,
-				5C67C71518662F8700EC5943 /* CLSBuildsFilterViewController.m in Sources */,
+				5C3CEAB718671C4000F8DDC6 /* CRMIssuesViewController.m in Sources */,
+				5C67C71518662F8700EC5943 /* CRMBuildsFilterViewController.m in Sources */,
 				5CC3F7F218786E7A003C2FAC /* CRMPasteboardObserver.m in Sources */,
 				5C4B0698185465480061485A /* CRMRequestSerializer.m in Sources */,
 				5C4B068A18535D760061485A /* CLSViewController.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  CLSSessionDetailsAbstractViewController.h
+//  CRMSessionDetailsAbstractViewController.h
 //  CrashManager
 //
 //  Created by Sasha Zats on 2/8/14.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class CRMSession;
-@interface CLSSessionDetailsAbstractViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CRMSessionDetailsAbstractViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak, readonly) UITableView *tableView;
 

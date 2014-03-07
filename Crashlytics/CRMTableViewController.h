@@ -1,5 +1,5 @@
 //
-//  CLSTableViewController.h
+//  CRMTableViewController.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class NSFetchedResultsController;
-@interface CLSTableViewController : UITableViewController
+@interface CRMTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 

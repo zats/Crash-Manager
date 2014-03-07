@@ -1,15 +1,15 @@
 //
-//  CLSBuildsTableViewController.h
+//  CRMBuildsFilterViewController.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/21/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSTableViewController.h"
+#import "CRMTableViewController.h"
 
 @class CRMFilter;
-@interface CLSBuildsFilterViewController : CLSTableViewController
+@interface CRMBuildsFilterViewController : CRMTableViewController
 
 @property (nonatomic, weak) CRMFilter *filter;
 

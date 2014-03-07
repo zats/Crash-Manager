@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSTableViewController.h"
+#import "CRMTableViewController.h"
 
 @class CRMOrganization;
-@interface CRMApplicationsViewController : CLSTableViewController
+@interface CRMApplicationsViewController : CRMTableViewController
 
 @property (nonatomic, weak) CRMOrganization *organization;
 

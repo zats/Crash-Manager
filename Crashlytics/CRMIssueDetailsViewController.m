@@ -1,18 +1,18 @@
 //
-//  CLSIssueDetailsViewController.m
+//  CRMIssueDetailsViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/23/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSIssueDetailsViewController.h"
+#import "CRMIssueDetailsViewController.h"
 
 #import "CRMIssue.h"
 #import "CRMAPIClient.h"
 #import "CRMAccount.h"
 #import "CRMIncident.h"
-#import "CLSIssueExceptionViewController.h"
+#import "CRMIssueExceptionViewController.h"
 #import <ReactiveCocoa/RACEXTScope.h>
 #import <SHActionSheetBlocks/SHActionSheetBlocks.h>
 #import "CRMIncident_Session+Crashlytics.h"
@@ -23,9 +23,9 @@ typedef enum _CLSDetailsSegment {
 	kCLSDeviceSegment = 0,
 } CLSDetailsSegment;
 
-@interface CLSIssueDetailsViewController ()
+@interface CRMIssueDetailsViewController ()
 
-@property (nonatomic, weak) CLSSessionDetailsAbstractViewController *currentDetailsViewController;
+@property (nonatomic, weak) CRMSessionDetailsAbstractViewController *currentDetailsViewController;
 
 // UI
 @property (weak, nonatomic) IBOutlet UILabel *exceptionTypeLabel;
@@ -40,7 +40,7 @@ typedef enum _CLSDetailsSegment {
 @property (nonatomic, weak) CRMSessionEvent *lastEvent;
 @end
 
-@implementation CLSIssueDetailsViewController
+@implementation CRMIssueDetailsViewController
 
 - (BOOL)automaticallyAdjustsScrollViewInsets {
 	return NO;
@@ -98,7 +98,7 @@ typedef enum _CLSDetailsSegment {
 	
 	NSString *identifier = [self _viewControllerIdentifierForSegment:segment];
 	NSAssert(identifier, @"No view controller for chosen segment");
-	CLSSessionDetailsAbstractViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+	CRMSessionDetailsAbstractViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
 	[self addChildViewController:viewController];
 	[self.detailsContainerView addSubview:viewController.view];
 	viewController.view.frame = self.detailsContainerView.bounds;

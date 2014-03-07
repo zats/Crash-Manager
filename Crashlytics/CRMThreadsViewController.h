@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSSessionDetailsAbstractViewController.h"
+#import "CRMSessionDetailsAbstractViewController.h"
 
-@interface CLSThreadsViewController : CLSSessionDetailsAbstractViewController
+@interface CRMThreadsViewController : CRMSessionDetailsAbstractViewController
 
 @end

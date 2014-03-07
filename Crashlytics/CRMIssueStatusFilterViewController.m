@@ -1,20 +1,20 @@
 //
-//  CLSIssueStatusFilterViewController.m
+//  CRMIssueStatusFilterViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/30/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSIssueStatusFilterViewController.h"
+#import "CRMIssueStatusFilterViewController.h"
 
 #import "CRMFilter.h"
 
 
-@interface CLSIssueStatusFilterViewController ()
+@interface CRMIssueStatusFilterViewController ()
 @end
 
-@implementation CLSIssueStatusFilterViewController
+@implementation CRMIssueStatusFilterViewController
 
 - (IBAction)_filterBarButtonItemHandler:(id)sender {
 	[self dismissViewControllerAnimated:YES completion:nil];

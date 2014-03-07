@@ -6,58 +6,58 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSIssueGeneralDetailsViewController.h"
+#import "CRMIssueGeneralDetailsViewController.h"
 
 #import "CRMIncident.h"
 #import "CRMIncident_Session+Crashlytics.h"
-#import "CLSLogViewController.h"
+#import "CRMLogViewController.h"
 #import "UIViewController+OpenSource.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
-typedef NS_ENUM(NSInteger, CLSSections) {
-	kCLSSectionGeneral = 0,
-	kCLSSectionDevice,
-	kCLSSectionOS,
-	kCLSSectionKeys,
-	kCLSSectionLogs
+typedef NS_ENUM(NSInteger, CRMSections) {
+	kCRMSSectionGeneral = 0,
+    kCRMSectionDevice,
+    kCRMSectionOS,
+    kCRMSectionKeys,
+    kCRMSectionLogs
 };
 
-typedef NS_ENUM(NSInteger, CLSGeneralSection) {
-	kCLSGeneralSectionSignal = 0,
-	kCLSGeneralSectionUser
+typedef NS_ENUM(NSInteger, CRMGeneralSection) {
+	kCRMGeneralSectionSignal = 0,
+    kCRMGeneralSectionUser
 };
 
-typedef NS_ENUM(NSInteger, CLSDeviceSection) {
-	kCLSDeviceModel = 0,
-	kCLSDeviceOrientation,
-	kCLSDeviceProximity,
-	kCLSDeviceBattery,
-	kCLSDeviceRam,
-	kCLSDeviceDiskSpace,
+typedef NS_ENUM(NSInteger, CRMDeviceSection) {
+	kCRMDeviceModel = 0,
+    kCRMDeviceOrientation,
+    kCRMDeviceProximity,
+    kCRMDeviceBattery,
+    kCRMDeviceRam,
+    kCRMDeviceDiskSpace,
 };
 
 typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
-	kCLSOperatingSystemVersion = 0,
-	kCLSOperatingSystemJailbroken,
-	kCLSOperatingSystemLanguage
+	kCRMOperatingSystemVersion = 0,
+    kCRMOperatingSystemJailbroken,
+    kCRMOperatingSystemLanguage
 };
 
-@interface CLSIssueGeneralDetailsViewController ()
+@interface CRMIssueGeneralDetailsViewController ()
 @end
 
-@implementation CLSIssueGeneralDetailsViewController
+@implementation CRMIssueGeneralDetailsViewController
 
 #pragma mark - Private
 
 - (void)_configureGeneralCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-	switch ((CLSGeneralSection)indexPath.row) {
-		case kCLSGeneralSectionSignal: {
+	switch ((CRMGeneralSection)indexPath.row) {
+		case kCRMGeneralSectionSignal: {
 			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowSignal", nil);
 			cell.detailTextLabel.text = [[self.session lastEvent].app.execution.signal displayString];
 			break;
 		}
 			
-		case kCLSGeneralSectionUser: {
+		case kCRMGeneralSectionUser: {
 			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowUser", nil);
 			NSString *userDisplayString = [self.session.user displayString];
 			if (!userDisplayString) {
@@ -73,8 +73,8 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 
 
 - (void)_configureDeviceCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-	switch ((CLSDeviceSection)indexPath.row) {
-		case kCLSDeviceBattery: {
+	switch ((CRMDeviceSection)indexPath.row) {
+		case kCRMDeviceBattery: {
 			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowBattery", nil);
 			NSString *batteryLevel = [[self.session lastEvent].device batteryDisplayString];
 			if (!batteryLevel) {
@@ -86,12 +86,12 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 			break;
 		}
 			
-		case kCLSDeviceDiskSpace:
+		case kCRMDeviceDiskSpace:
 			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowDiskSpace", nil);
 			cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f%%", [self.session deviceAvailableDiskSpacePercentage]];
 			break;
 			
-		case kCLSDeviceModel: {
+		case kCRMDeviceModel: {
 			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowModel", nil);
 			NSString *model = [self.session.device displayString];
 			if (!model) {
@@ -103,7 +103,7 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 			break;
 		}
 			
-		case kCLSDeviceOrientation: {
+		case kCRMDeviceOrientation: {
 			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowOrientation", nil);
 			NSString *orienation = [[self.session lastEvent].device orientationDisplayString];
 			if (!orienation) {
@@ -115,12 +115,12 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 			break;
 		}
 			
-		case kCLSDeviceProximity:
+		case kCRMDeviceProximity:
 			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowProximity", nil);
 			cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [self.session lastEvent].device.proximityOn ? NSLocalizedString(@"CLSIssueGeneralDetailsRowValueOn", nil) : NSLocalizedString(@"CLSIssueGeneralDetailsRowValueOff", nil)];
 			break;
 			
-		case kCLSDeviceRam:
+		case kCRMDeviceRam:
 			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowRam", nil);
 			cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f%%", [self.session deviceAvailableRamPercentage]];
 			break;
@@ -130,17 +130,17 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 - (void)_configureOperatingSystemCell:(UITableViewCell *)cell
 						 forIndexPath:(NSIndexPath *)indexPath {
 	switch ((CLSOperatingSystemSection)indexPath.row) {
-		case kCLSOperatingSystemVersion:
+		case kCRMOperatingSystemVersion:
 			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowOS", nil);
 			cell.detailTextLabel.text = [self.session.os displayString];
 			break;
 			
-		case kCLSOperatingSystemJailbroken:
+		case kCRMOperatingSystemJailbroken:
 			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowJailbroken", nil);
 			cell.detailTextLabel.text = self.session.os.jailbroken ? @"Yes" : @"No";
 			break;
 			
-		case kCLSOperatingSystemLanguage:
+		case kCRMOperatingSystemLanguage:
 			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowLanguage", nil);
 			if ([self.session.device.language length]) {
 				cell.detailTextLabel.text = self.session.device.language;
@@ -157,7 +157,7 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([segue.identifier isEqualToString:@"issueDetails-log"]) {
-		CLSLogViewController *loginViewController = segue.destinationViewController;
+		CRMLogViewController *loginViewController = segue.destinationViewController;
 		loginViewController.session = self.session;
 	}
 }
@@ -170,19 +170,19 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	switch ((CLSSections)section) {
-		case kCLSSectionGeneral: {
+		case kCRMSSectionGeneral: {
 			return 2;
 		}
-		case kCLSSectionDevice:
+		case kCRMSectionDevice:
 			return 6;
 			
-		case kCLSSectionOS:
+		case kCRMSectionOS:
 			return 3;
 			
-		case kCLSSectionKeys:
+		case kCRMSectionKeys:
 			return [[self.session lastEvent].app.customAttributes count];
 			
-		case kCLSSectionLogs:
+		case kCRMSectionLogs:
 			return [[self.session lastEvent].log.content length] ? 1 : 0;
 	}
 }
@@ -197,7 +197,7 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 - (UITableViewCell *)tableView:(UITableView *)tableView
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	NSString *cellIdentifier = (indexPath.section == kCLSSectionLogs) ? @"DrillDownCell" : @"RegularCellIdentifier";
+	NSString *cellIdentifier = (indexPath.section == kCRMSectionLogs) ? @"DrillDownCell" : @"RegularCellIdentifier";
 
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier
 															forIndexPath:indexPath];
@@ -205,24 +205,24 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 	cell.detailTextLabel.text = nil;
 	cell.textLabel.text = nil;
 
-	switch ((CLSSections)indexPath.section) {
-		case kCLSSectionGeneral: {
+	switch ((CRMSections)indexPath.section) {
+		case kCRMSSectionGeneral: {
 			[self _configureGeneralCell:cell forIndexPath:indexPath];
 			break;
 		}
-		case kCLSSectionDevice: {
+		case kCRMSectionDevice: {
 			[self _configureDeviceCell:cell forIndexPath:indexPath];
 			break;
 		}
-		case kCLSSectionOS: {
+		case kCRMSectionOS: {
 			[self _configureOperatingSystemCell:cell forIndexPath:indexPath];
 			break;
 		}
-		case kCLSSectionKeys: {
+		case kCRMSectionKeys: {
 			[self _configureKeyCell:cell forIndexPath:indexPath];
 			break;
 		}
-		case kCLSSectionLogs: {
+		case kCRMSectionLogs: {
 			cell.textLabel.text = @"Logs";
 		}
 	}
@@ -235,21 +235,21 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 
 - (NSString *)tableView:(UITableView *)tableView
 titleForHeaderInSection:(NSInteger)section {
-	switch ((CLSSections)section) {
-		case kCLSSectionGeneral:
+	switch ((CRMSections)section) {
+		case kCRMSSectionGeneral:
             
 			return NSLocalizedString(@"CLSIssueGeneralDetailsSectionGeneral", @"");
 
-		case kCLSSectionDevice:
+		case kCRMSectionDevice:
 			return NSLocalizedString(@"CLSIssueGeneralDetailsSectionDevice", @"");
 			
-		case kCLSSectionOS:
+		case kCRMSectionOS:
 			return NSLocalizedString(@"CLSIssueGeneralDetailsSectionOS", @"");
 			
-		case kCLSSectionKeys:
+		case kCRMSectionKeys:
 			return [[self.session lastEvent].app.customAttributes count] ? NSLocalizedString(@"CLSIssueGeneralDetailsSectionKeys", @"") : nil;
 
-		case kCLSSectionLogs:
+		case kCRMSectionLogs:
 			return [[self.session lastEvent].log.content length] ? NSLocalizedString(@"CLSIssueGeneralDetailsSectionLogs", @"") : nil;
 	}
 	return nil;
@@ -257,17 +257,17 @@ titleForHeaderInSection:(NSInteger)section {
 
 - (NSString *)tableView:(UITableView *)tableView
 titleForFooterInSection:(NSInteger)section {
-	switch ((CLSSections)section) {
-		case kCLSSectionGeneral:
-		case kCLSSectionDevice:
-		case kCLSSectionOS:
+	switch ((CRMSections)section) {
+		case kCRMSSectionGeneral:
+		case kCRMSectionDevice:
+		case kCRMSectionOS:
 			return nil;
 			
-		case kCLSSectionKeys:
+		case kCRMSectionKeys:
             
 			return [[self.session lastEvent].app.customAttributes count] ? nil : NSLocalizedString(@"CLSIssueGeneralDetailsNoKeysMessage", @"");
 			
-		case kCLSSectionLogs:
+		case kCRMSectionLogs:
 			return [[self.session lastEvent].log.content length] ? nil : NSLocalizedString(@"CLSIssueGeneralDetailsNoLogsMessage", @"");
 	}
 	return nil;
@@ -276,7 +276,7 @@ titleForFooterInSection:(NSInteger)section {
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section == kCLSSectionLogs) {
+	if (indexPath.section == kCRMSectionLogs) {
 		// being handled by storyboard
 		return;
 	}

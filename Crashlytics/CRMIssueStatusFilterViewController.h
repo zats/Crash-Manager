@@ -1,15 +1,15 @@
 //
-//  CLSTimeRangeFilterViewController.h
+//  CRMIssueStatusFilterViewController.h
 //  Crash Manager
 //
-//  Created by Sasha Zats on 12/31/13.
+//  Created by Sasha Zats on 12/30/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @class CRMFilter;
-@interface CLSTimeRangeFilterViewController : UITableViewController
+@interface CRMIssueStatusFilterViewController : UITableViewController
 
 @property (nonatomic, weak) CRMFilter *filter;
 

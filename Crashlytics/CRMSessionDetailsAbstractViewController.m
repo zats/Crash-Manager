@@ -1,24 +1,24 @@
 //
-//  CLSSessionDetailsAbstractViewController.m
+//  CRMSessionDetailsAbstractViewController.m
 //  CrashManager
 //
 //  Created by Sasha Zats on 2/8/14.
 //  Copyright (c) 2014 Sasha Zats. All rights reserved.
 //
 
-#import "CLSSessionDetailsAbstractViewController.h"
+#import "CRMSessionDetailsAbstractViewController.h"
 
 #import "CRMAnalyticsController.h"
 #import "UIViewController+OpenSource.h"
 
-@interface CLSSessionDetailsAbstractViewController ()
+@interface CRMSessionDetailsAbstractViewController ()
 @property (nonatomic, strong, readwrite) RACSignal *sessionChangedSignal;
 
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, weak, readwrite) IBOutlet UITableView *tableView;
 @end
 
-@implementation CLSSessionDetailsAbstractViewController
+@implementation CRMSessionDetailsAbstractViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

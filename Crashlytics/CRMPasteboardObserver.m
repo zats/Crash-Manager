@@ -13,8 +13,8 @@
 #import "CRMApplication.h"
 #import "CRMIssue.h"
 #import "CRMApplicationsViewController.h"
-#import "CLSIssuesViewController.h"
-#import "CLSIssueDetailsViewController.h"
+#import "CRMIssuesViewController.h"
+#import "CRMIssueDetailsViewController.h"
 #import <Crashlytics/Crashlytics.h>
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
@@ -174,8 +174,8 @@
 	UIViewController *rootViewController = window.rootViewController;
 	if ([rootViewController isKindOfClass:[UINavigationController class]]) {
 		UIViewController *currentlyVisibleViewController = [((UINavigationController *)rootViewController).viewControllers lastObject];
-		if ([currentlyVisibleViewController isKindOfClass:[CLSIssueDetailsViewController class]]) {
-			BOOL alreadyShowsIssue = [((CLSIssueDetailsViewController *)currentlyVisibleViewController).issue.issueID isEqualToString:issueID];
+		if ([currentlyVisibleViewController isKindOfClass:[CRMIssueDetailsViewController class]]) {
+			BOOL alreadyShowsIssue = [((CRMIssueDetailsViewController *)currentlyVisibleViewController).issue.issueID isEqualToString:issueID];
 			if (alreadyShowsIssue) {
 				// no need to prompt user if we're already looking at the issue details
 				return;
@@ -216,10 +216,10 @@
 		CRMApplicationsViewController *appViewController = [storyboard instantiateViewControllerWithIdentifier:@"applications"];
 		appViewController.organization = organization;
 		
-		CLSIssuesViewController *issuesViewController = [storyboard instantiateViewControllerWithIdentifier:@"issues"];
+		CRMIssuesViewController *issuesViewController = [storyboard instantiateViewControllerWithIdentifier:@"issues"];
 		issuesViewController.application = application;
 		
-		CLSIssueDetailsViewController *issueDetailsViewController = [storyboard instantiateViewControllerWithIdentifier:@"issueDetails"];
+		CRMIssueDetailsViewController *issueDetailsViewController = [storyboard instantiateViewControllerWithIdentifier:@"issueDetails"];
 		issueDetailsViewController.issue = issue;
 		
 		// Dismiss any modally presented view controller if any

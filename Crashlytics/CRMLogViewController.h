@@ -1,5 +1,5 @@
 //
-//  CLSLogViewController.h
+//  CRMLogViewController.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 1/3/14.
@@ -9,7 +9,7 @@
 #import "CLSViewController.h"
 
 @class CRMSession;
-@interface CLSLogViewController : CLSViewController
+@interface CRMLogViewController : CLSViewController
 
 @property (nonatomic, weak) CRMSession *session;
 

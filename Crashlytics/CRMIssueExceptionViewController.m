@@ -1,23 +1,23 @@
 //
-//  CLSIssueExceptionTableViewController.m
+//  CRMIssueExceptionViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/25/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSIssueExceptionViewController.h"
+#import "CRMIssueExceptionViewController.h"
 
 #import "CRMIncident.h"
 #import "CRMIncident_Session+Crashlytics.h"
 #import "UIViewController+OpenSource.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
-@interface CLSIssueExceptionViewController ()
+@interface CRMIssueExceptionViewController ()
 
 @end
 
-@implementation CLSIssueExceptionViewController
+@implementation CRMIssueExceptionViewController
 
 #pragma mark - UITableViewDataSource
 

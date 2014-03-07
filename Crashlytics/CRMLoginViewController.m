@@ -1,12 +1,12 @@
 //
-//  CLSLoginViewController.m
+//  CRMLoginViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSLoginViewController.h"
+#import "CRMLoginViewController.h"
 
 #import "CRMAccount.h"
 #import "CRMAPIClient.h"
@@ -24,14 +24,14 @@ typedef NS_ENUM(NSInteger, CRMHelpSectionRow) {
     kCRMHelpSectionForgotPassword
 };
 
-@interface CLSLoginViewController () <UITextFieldDelegate>
+@interface CRMLoginViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *emailTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
-@implementation CLSLoginViewController
+@implementation CRMLoginViewController
 
 #pragma mark - Private
 

@@ -1,5 +1,5 @@
 //
-//  CLSLoginViewController.h
+//  CRMLoginViewController.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
@@ -8,6 +8,6 @@
 
 #import "CLSViewController.h"
 
-@interface CLSLoginViewController : UITableViewController
+@interface CRMLoginViewController : UITableViewController
 
 @end

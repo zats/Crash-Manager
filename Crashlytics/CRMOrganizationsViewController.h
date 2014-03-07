@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSTableViewController.h"
+#import "CRMTableViewController.h"
 
-@interface CRMOrganizationsViewController : CLSTableViewController
+@interface CRMOrganizationsViewController : CRMTableViewController
 
 @end

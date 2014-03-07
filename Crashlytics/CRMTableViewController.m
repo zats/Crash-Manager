@@ -1,19 +1,19 @@
 //
-//  CLSTableViewController.m
+//  CRMTableViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSTableViewController.h"
+#import "CRMTableViewController.h"
 
 #import "CRMAccount.h"
 #import "CRMOrganization.h"
 #import "UIViewController+OpenSource.h"
 #import "CRMAnalyticsController.h"
 
-@interface CLSTableViewController () <NSFetchedResultsControllerDelegate>
+@interface CRMTableViewController () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSMutableIndexSet *deletedSections;
 @property (nonatomic, strong) NSMutableIndexSet *insertedSections;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation CLSTableViewController
+@implementation CRMTableViewController
 
 #pragma mark - Public
 

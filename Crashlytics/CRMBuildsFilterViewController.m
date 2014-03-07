@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSBuildsFilterViewController.h"
+#import "CRMBuildsFilterViewController.h"
 
 #import "CRMAPIClient.h"
 #import "CRMBuild.h"
@@ -15,10 +15,10 @@
 #import "CRMAccount.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 
-@interface CLSBuildsFilterViewController ()
+@interface CRMBuildsFilterViewController ()
 @end
 
-@implementation CLSBuildsFilterViewController
+@implementation CRMBuildsFilterViewController
 
 - (IBAction)_filterBarButtonItemHandler:(id)sender {
 	[self dismissViewControllerAnimated:YES completion:nil];

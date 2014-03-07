@@ -1,19 +1,19 @@
 //
-//  CLSFiltersViewController.m
+//  CRMFiltersViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/30/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSFiltersViewController.h"
+#import "CRMFiltersViewController.h"
 
 #import "CRMApplication.h"
 #import "CRMFilter.h"
 #import "CRMBuild.h"
-#import "CLSIssueStatusFilterViewController.h"
-#import "CLSBuildsFilterViewController.h"
-#import "CLSTimeRangeFilterViewController.h"
+#import "CRMIssueStatusFilterViewController.h"
+#import "CRMBuildsFilterViewController.h"
+#import "CRMTimeRangeFilterViewController.h"
 #import <ReactiveCocoa/RACEXTScope.h>
 
 typedef NS_ENUM(NSInteger, CLSFilterTableViewCell) {
@@ -22,14 +22,14 @@ typedef NS_ENUM(NSInteger, CLSFilterTableViewCell) {
 	kCLSFilterTableViewCellTimeRange = 2
 };
 
-@interface CLSFiltersViewController ()
+@interface CRMFiltersViewController ()
 
 @property (nonatomic, strong) NSString *applicationID;
 @property (nonatomic, weak, readonly) CRMFilter *filter;
 
 @end
 
-@implementation CLSFiltersViewController
+@implementation CRMFiltersViewController
 
 #pragma mark - Public
 
@@ -78,13 +78,13 @@ typedef NS_ENUM(NSInteger, CLSFilterTableViewCell) {
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([segue.identifier isEqualToString:@"filter-issueStatus"]) {
-		CLSIssueStatusFilterViewController *issueStatusFilterViewController = segue.destinationViewController;
+		CRMIssueStatusFilterViewController *issueStatusFilterViewController = segue.destinationViewController;
 		issueStatusFilterViewController.filter = self.filter;
 	} else if ([segue.identifier isEqualToString:@"filter-build"]) {
-		CLSBuildsFilterViewController *buildsFilterViewController = segue.destinationViewController;
+		CRMBuildsFilterViewController *buildsFilterViewController = segue.destinationViewController;
 		buildsFilterViewController.filter = self.filter;
 	} else if ([segue.identifier isEqualToString:@"filter-timeRange"]) {
-		CLSTimeRangeFilterViewController *timeRangeFilterViewController = segue.destinationViewController;
+		CRMTimeRangeFilterViewController *timeRangeFilterViewController = segue.destinationViewController;
 		timeRangeFilterViewController.filter = self.filter;
 	}
 }

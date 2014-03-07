@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSThreadsViewController.h"
+#import "CRMThreadsViewController.h"
 
 #import "CRMIncident.h"
 #import "CRMIncident_Session+Crashlytics.h"
 #import <SHAlertViewBlocks/SHAlertViewBlocks.h>
 
-@interface CLSThreadsViewController ()
+@interface CRMThreadsViewController ()
 
 @property (nonatomic, weak) CRMSessionEvent *event;
 @property (nonatomic, weak) CRMSessionExecution *execution;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation CLSThreadsViewController
+@implementation CRMThreadsViewController
 @synthesize session = _session;
 
 

@@ -1,5 +1,5 @@
 //
-//  CLSIssueDetailsViewController.h
+//  CRMIssueDetailsViewController.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/23/13.
@@ -9,7 +9,7 @@
 #import "CLSViewController.h"
 
 @class CRMIssue;
-@interface CLSIssueDetailsViewController : CLSViewController
+@interface CRMIssueDetailsViewController : CLSViewController
 
 @property (nonatomic, weak) CRMIssue *issue;
 

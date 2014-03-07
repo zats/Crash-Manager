@@ -1,21 +1,21 @@
 //
-//  CLSTimeRangeFilterViewController.m
+//  CRMTimeRangeFilterViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/31/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSTimeRangeFilterViewController.h"
+#import "CRMTimeRangeFilterViewController.h"
 
 #import "CRMFilter.h"
 #import <ReactiveCocoa/RACEXTScope.h>
 
-@interface CLSTimeRangeFilterViewController ()
+@interface CRMTimeRangeFilterViewController ()
 
 @end
 
-@implementation CLSTimeRangeFilterViewController
+@implementation CRMTimeRangeFilterViewController
 
 #pragma mark - Actions
 

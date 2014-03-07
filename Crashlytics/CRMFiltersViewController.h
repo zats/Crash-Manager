@@ -1,5 +1,5 @@
 //
-//  CLSFiltersViewController.h
+//  CRMFiltersViewController.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/30/13.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class CRMApplication;
-@interface CLSFiltersViewController : UITableViewController
+@interface CRMFiltersViewController : UITableViewController
 
 @property (nonatomic, weak) CRMApplication *application;
 

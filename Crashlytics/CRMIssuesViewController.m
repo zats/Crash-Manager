@@ -1,32 +1,32 @@
 //
-//  CLSBugsViewController.m
+//  CRMIssuesViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/22/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSIssuesViewController.h"
+#import "CRMIssuesViewController.h"
 
 #import "CRMAPIClient.h"
 #import "CRMAccount.h"
 #import "CRMFilter.h"
 #import "CRMApplication.h"
 #import "CRMBuild.h"
-#import "CLSFiltersViewController.h"
+#import "CRMFiltersViewController.h"
 #import "CRMIssue.h"
-#import "CLSIssueDetailsViewController.h"
-#import "CLSIssueListCell.h"
+#import "CRMIssueDetailsViewController.h"
+#import "CRMIssueListCell.h"
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
 
-@interface CLSIssuesViewController ()
+@interface CRMIssuesViewController ()
 @property (nonatomic, strong) NSString *applicationID;
 @property (nonatomic, strong) NSPredicate *basicPredicate;
 @property (nonatomic, strong) RACDisposable *fetchIssuesDisposable;
 @property (nonatomic, strong) NSArray *issueIDs;
 @end
 
-@implementation CLSIssuesViewController
+@implementation CRMIssuesViewController
 
 #pragma mark - Public
 
@@ -62,7 +62,7 @@
 
 #pragma mark - Private
 
-- (void)_configureCell:(CLSIssueListCell *)cell forIndexPath:(NSIndexPath *)indexPath {
+- (void)_configureCell:(CRMIssueListCell *)cell forIndexPath:(NSIndexPath *)indexPath {
 	CRMIssue *issue = [self _issueForIndexPath:indexPath];
 	cell.issueNumberLabel.text = [issue.displayID description];
 	cell.issueTitleLabel.textColor = [issue isResolved] ? [UIColor lightGrayColor] : [UIColor blackColor];
@@ -228,14 +228,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([segue.identifier isEqualToString:@"bugs-filter"]) {
-		CLSFiltersViewController *filterViewController = [((UINavigationController *)segue.destinationViewController).viewControllers firstObject];
+		CRMFiltersViewController *filterViewController = [((UINavigationController *)segue.destinationViewController).viewControllers firstObject];
 		filterViewController.application = self.application;
 	} else if ([segue.identifier isEqualToString:@"issues-details"]) {
 		self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] init];
 		self.navigationItem.backBarButtonItem.title = @"";
 		
 		CRMIssue *issue = [self _issueForIndexPath:self.tableView.indexPathForSelectedRow];
-		CLSIssueDetailsViewController *issueDetailsViewController = segue.destinationViewController;
+		CRMIssueDetailsViewController *issueDetailsViewController = segue.destinationViewController;
 		issueDetailsViewController.issue = issue;
 		issueDetailsViewController.title = issue.title;
 	}
@@ -246,7 +246,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	CLSIssueListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueCellIdentifier"
+	CRMIssueListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueCellIdentifier"
 															forIndexPath:indexPath];
 	[self _configureCell:cell forIndexPath:indexPath];
     return cell;

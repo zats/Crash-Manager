@@ -13,7 +13,7 @@
 #import "CRMApplication.h"
 #import "CRMApplicationCell.h"
 #import "CRMBuild.h"
-#import "CLSIssuesViewController.h"
+#import "CRMIssuesViewController.h"
 #import "CRMOrganization.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
@@ -81,7 +81,7 @@
 	CRMApplication *selectedApplcation = [self.fetchedResultsController objectAtIndexPath:selectedIndexPath];
 
 	if ([segue.identifier isEqualToString:@"applications-issues"]) {
-		CLSIssuesViewController *issuesTableViewController = segue.destinationViewController;
+		CRMIssuesViewController *issuesTableViewController = segue.destinationViewController;
 		
 		issuesTableViewController.title = [NSString stringWithFormat:NSLocalizedString(@"CLSIssueListTitleFormat", @"Format for the title of the issues list screen, application name will be substituded"), selectedApplcation.name];
 		issuesTableViewController.application = selectedApplcation;

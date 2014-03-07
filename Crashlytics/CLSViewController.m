@@ -8,7 +8,7 @@
 
 #import "CLSViewController.h"
 
-#import "CLSLoginViewController.h"
+#import "CRMLoginViewController.h"
 #import "CRMAccount.h"
 #import "CRMAnalyticsController.h"
 #import "UIViewController+OpenSource.h"

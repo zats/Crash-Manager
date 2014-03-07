@@ -1,14 +1,14 @@
 //
-//  CLSIssueListCell.m
+//  CRMIssueListCell.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/29/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSIssueListCell.h"
+#import "CRMIssueListCell.h"
 
-@interface CLSIssueListCell ()
+@interface CRMIssueListCell ()
 @property (weak, nonatomic, readwrite) IBOutlet UILabel *issueNumberLabel;
 @property (weak, nonatomic, readwrite) IBOutlet UILabel *issueTitleLabel;
 @property (weak, nonatomic, readwrite) IBOutlet UILabel *issueSubtitleLabel;
@@ -17,6 +17,6 @@
 @property (weak, nonatomic, readwrite) IBOutlet NSLayoutConstraint *baseLayoutConstraint;
 @end
 
-@implementation CLSIssueListCell
+@implementation CRMIssueListCell
 
 @end
