@@ -8,7 +8,7 @@
 
 #import "CLSAppDelegate.h"
 
-#import "CLSConfiguration.h"
+#import "CRMConfiguration.h"
 #import "CRMAnalyticsController.h"
 #import <Crashlytics/Crashlytics.h>
 #import <MagicalRecord/CoreData+MagicalRecord.h>
@@ -22,7 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Initializar configuration
-    [[CLSConfiguration sharedInstance] setup];
+    [[CRMConfiguration sharedInstance] setup];
 
 	// Crashlytics
 	NSString *apiKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"CrashlyticsAPIKey"];
@@ -32,7 +32,7 @@
 	[[CRMAnalyticsController sharedInstance] enableAnalyticsIfNeeded];
 
     // Configuration
-	[[CLSConfiguration sharedInstance] updateConfigurationPlistWithCompletionHandler:^(NSDictionary *defaults, NSError *error) {
+	[[CRMConfiguration sharedInstance] updateConfigurationPlistWithCompletionHandler:^(NSDictionary *defaults, NSError *error) {
 		if (error) {
             DDLogError(@"Failed to fetch remote plist: %@", error);
 		}

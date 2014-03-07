@@ -10,7 +10,7 @@
 
 #import "CRMAccount.h"
 #import "CLSAPIClient.h"
-#import "CLSConfiguration.h"
+#import "CRMConfiguration.h"
 #import "UIViewController+OpenSource.h"
 
 typedef NS_ENUM(NSInteger, CLSLoginSections) {
@@ -146,11 +146,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 		case kCLSLoginSectionHelp:
 			switch ((CLSHelpSectionRow)indexPath.row) {
 				case kCLSHelpSectionSignUp:
-					[[UIApplication sharedApplication] openURL:[CLSConfiguration sharedInstance].signUpURL];
+					[[UIApplication sharedApplication] openURL:[CRMConfiguration sharedInstance].signUpURL];
 					break;
 					
 				case kCLSHelpSectionForgotPassword:
-					[[UIApplication sharedApplication] openURL:[CLSConfiguration sharedInstance].forgotPasswordURL];
+					[[UIApplication sharedApplication] openURL:[CRMConfiguration sharedInstance].forgotPasswordURL];
 					break;
 			}
 			break;

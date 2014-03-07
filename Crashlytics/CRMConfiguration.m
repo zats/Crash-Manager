@@ -6,23 +6,23 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSConfiguration.h"
+#import "CRMConfiguration.h"
 
 #import "CRMCrashlyticsLogger.h"
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import <CocoaLumberjack/DDFileLogger.h>
 #import <GroundControl/NSUserDefaults+GroundControl.h>
 
-@interface CLSConfiguration ()
+@interface CRMConfiguration ()
 @end
 
-@implementation CLSConfiguration
+@implementation CRMConfiguration
 
 + (instancetype)sharedInstance {
-	static CLSConfiguration *settings;
+	static CRMConfiguration *settings;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		settings = [[CLSConfiguration alloc] init];
+		settings = [[CRMConfiguration alloc] init];
 	});
 	return settings;
 }
@@ -229,7 +229,7 @@
 
 @end
 
-@implementation CLSConfiguration (CLSOpenSource)
+@implementation CRMConfiguration (CLSOpenSource)
 
 #pragma mark - Public
 
@@ -281,7 +281,7 @@
 
 @end
 
-@implementation CLSConfiguration (CLSMarketing)
+@implementation CRMConfiguration (CLSMarketing)
 
 - (NSURL *)marketingURL {
 	NSString *URLString = [[NSUserDefaults standardUserDefaults] valueForKey:@"MarketingLink"];

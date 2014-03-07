@@ -71,7 +71,7 @@
 		5CE94E2218534BE0003C7DB1 /* Crashlytics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CE94E2018534BE0003C7DB1 /* Crashlytics.xcdatamodeld */; };
 		5CEDD1C518703DDC00B6A39A /* CLSIssueListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */; };
 		5CEDD1CA187050BC00B6A39A /* CLSApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */; };
-		5CEDD1CD18705DE500B6A39A /* CLSConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */; };
+		5CEDD1CD18705DE500B6A39A /* CRMConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1CC18705DE500B6A39A /* CRMConfiguration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -200,8 +200,8 @@
 		5CEDD1C418703DDC00B6A39A /* CLSIssueListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSIssueListCell.m; sourceTree = "<group>"; };
 		5CEDD1C8187050BC00B6A39A /* CLSApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSApplicationCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5CEDD1C9187050BC00B6A39A /* CLSApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSApplicationCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSConfiguration.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSConfiguration.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5CEDD1CB18705DE500B6A39A /* CRMConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMConfiguration.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5CEDD1CC18705DE500B6A39A /* CRMConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMConfiguration.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrashManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC95309D65084713A2B48175 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -374,8 +374,8 @@
 		5C71944618B7A78F00465412 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				5CEDD1CB18705DE500B6A39A /* CLSConfiguration.h */,
-				5CEDD1CC18705DE500B6A39A /* CLSConfiguration.m */,
+				5CEDD1CB18705DE500B6A39A /* CRMConfiguration.h */,
+				5CEDD1CC18705DE500B6A39A /* CRMConfiguration.m */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -780,7 +780,7 @@
 				5C6D3CF518534CA9005E97D1 /* _CRMBuild.m in Sources */,
 				5C4B069518545AFD0061485A /* CLSApplicationsViewController.m in Sources */,
 				5C87FC7818A6B3F200C0E92E /* CLSSessionDetailsAbstractViewController.m in Sources */,
-				5CEDD1CD18705DE500B6A39A /* CLSConfiguration.m in Sources */,
+				5CEDD1CD18705DE500B6A39A /* CRMConfiguration.m in Sources */,
 				5C3CEAB718671C4000F8DDC6 /* CLSIssuesViewController.m in Sources */,
 				5C67C71518662F8700EC5943 /* CLSBuildsFilterViewController.m in Sources */,
 				5CC3F7F218786E7A003C2FAC /* CLSPasteboardObserver.m in Sources */,

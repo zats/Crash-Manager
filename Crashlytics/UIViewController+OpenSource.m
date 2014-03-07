@@ -8,7 +8,7 @@
 
 #import "UIViewController+OpenSource.h"
 
-#import "CLSConfiguration.h"
+#import "CRMConfiguration.h"
 #import <PBWebViewController/PBWebViewController.h>
 #import <SHBarButtonItemBlocks/SHBarButtonItemBlocks.h>
 #import <TUSafariActivity/TUSafariActivity.h>
@@ -36,7 +36,7 @@
         subscribeNext:^(id x) {
             // We want to resolve URL as late as possible: configuration might
             // be updated remotely
-            NSURL *URL = [[CLSConfiguration sharedInstance] implementationURLForClass:className];
+            NSURL *URL = [[CRMConfiguration sharedInstance] implementationURLForClass:className];
             if (!URL) {
                 return;
             }

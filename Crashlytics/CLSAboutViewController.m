@@ -9,7 +9,7 @@
 #import "CLSAboutViewController.h"
 
 #import "ADNActivityCollection.h"
-#import "CLSConfiguration.h"
+#import "CRMConfiguration.h"
 #import "UIViewController+OpenSource.h"
 
 typedef NS_ENUM(NSInteger, CLSSections) {
@@ -51,7 +51,7 @@ typedef NS_ENUM(NSInteger, CLSSections) {
 }
 
 - (void)_configureAppName {
-	self.appTitleLabel.text = [[CLSConfiguration sharedInstance] appDisplayName];
+	self.appTitleLabel.text = [[CRMConfiguration sharedInstance] appDisplayName];
 }
 
 - (void)_configureCells {
@@ -85,13 +85,13 @@ shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
 
 	switch ((CLSSections)indexPath.section) {
 		case CLSVersionOpenGithubSection: {
-			[[UIApplication sharedApplication] openURL:[[CLSConfiguration sharedInstance] gitHubPageURL]];
+			[[UIApplication sharedApplication] openURL:[[CRMConfiguration sharedInstance] gitHubPageURL]];
 			break;
 		}
 			
 		case CLSVersionShareSection: {
-			NSString *shareString = [NSString stringWithFormat:NSLocalizedString(@"CLSSharingFormatString", nil), [[CLSConfiguration sharedInstance] appDisplayName]];
-			NSArray *activityItems = @[ shareString, [[CLSConfiguration sharedInstance] marketingURL] ];
+			NSString *shareString = [NSString stringWithFormat:NSLocalizedString(@"CLSSharingFormatString", nil), [[CRMConfiguration sharedInstance] appDisplayName]];
+			NSArray *activityItems = @[ shareString, [[CRMConfiguration sharedInstance] marketingURL] ];
 			UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems
 																								 applicationActivities:[ADNActivityCollection allActivities]];
 			[self presentViewController:activityViewController

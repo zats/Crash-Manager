@@ -10,7 +10,7 @@
 
 typedef void(^CLSSettingsUpdateHandler)(NSDictionary *defaults, NSError *error);
 
-@interface CLSConfiguration : NSObject
+@interface CRMConfiguration : NSObject
 
 + (instancetype)sharedInstance;
 
@@ -27,14 +27,14 @@ typedef void(^CLSSettingsUpdateHandler)(NSDictionary *defaults, NSError *error);
 
 @end
 
-@interface CLSConfiguration (CLSMarketing)
+@interface CRMConfiguration (CLSMarketing)
 
 - (NSURL *)marketingURL;
 - (NSString *)appDisplayName;
 
 @end
 
-@interface CLSConfiguration (CLSOpenSource)
+@interface CRMConfiguration (CLSOpenSource)
 
 - (NSURL *)implementationURLForClass:(Class)className;
 - (NSURL *)interfaceURLForClass:(Class)className;
