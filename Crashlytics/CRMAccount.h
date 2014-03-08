@@ -2,7 +2,7 @@
 
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 
-extern NSString *const CLSActiveAccountDidChangeNotification;
+extern NSString *const CRMActiveAccountDidChangeNotification;
 
 @class RACSubject;
 @interface CRMAccount : _CRMAccount {}
@@ -19,7 +19,7 @@ extern NSString *const CLSActiveAccountDidChangeNotification;
 
 @end
 
-@interface CRMAccount (CLSCurrentAccount)
+@interface CRMAccount (CRMCurrentAccount)
 
 + (RACSubject *)activeAccountChangedSignal;
 
@@ -29,7 +29,7 @@ extern NSString *const CLSActiveAccountDidChangeNotification;
 
 @end
 
-@interface CRMAccount (CLSUtility)
+@interface CRMAccount (CRMUtility)
 
 + (void)getKeychainedLastUsedUsername:(NSString **)username
 							 password:(NSString **)password;

@@ -1,5 +1,5 @@
 //
-//  CLSAnalyticsController.h
+//  CRMAnalyticsController.h
 //  CrashManager
 //
 //  Created by Sasha Zats on 2/21/14.

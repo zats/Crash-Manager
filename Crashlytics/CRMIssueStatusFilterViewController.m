@@ -29,16 +29,16 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [CLSFilterIssueStatuses count];
+	return [CRMFilterIssueStatuses count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IssueStatusCellIdentifier"
 															forIndexPath:indexPath];
-	NSDictionary *issueStatusTuple = CLSFilterIssueStatuses[indexPath.row];
-	cell.textLabel.text = issueStatusTuple[ CLSFilterLabelKey ];
-	BOOL isSelectedIssueStatus = [self.filter.issueStatus isEqualToString:issueStatusTuple[ CLSFilterValueKey ]];
+	NSDictionary *issueStatusTuple = CRMFilterIssueStatuses[indexPath.row];
+	cell.textLabel.text = issueStatusTuple[CRMFilterLabelKey];
+	BOOL isSelectedIssueStatus = [self.filter.issueStatus isEqualToString:issueStatusTuple[CRMFilterValueKey]];
 	cell.accessoryType = isSelectedIssueStatus ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 	return cell;
 }
@@ -46,18 +46,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath
 							 animated:YES];
-	NSDictionary *selectedIssueStatusTuple = CLSFilterIssueStatuses[ indexPath.row ];
-	NSString *selectedIssueStatus = selectedIssueStatusTuple[ CLSFilterValueKey ];
+	NSDictionary *selectedIssueStatusTuple = CRMFilterIssueStatuses[ indexPath.row ];
+	NSString *selectedIssueStatus = selectedIssueStatusTuple[CRMFilterValueKey];
 	if ([self.filter.issueStatus isEqualToString:selectedIssueStatus]) {
 		return;
 	}
 	
-	self.filter.issueStatus = selectedIssueStatusTuple[ CLSFilterValueKey ];
+	self.filter.issueStatus = selectedIssueStatusTuple[CRMFilterValueKey];
 	
 	for (NSUInteger row = 0; row < [tableView numberOfRowsInSection:indexPath.section]; ++row) {
-		NSDictionary *issueStatusTuple = CLSFilterIssueStatuses[ row ];
+		NSDictionary *issueStatusTuple = CRMFilterIssueStatuses[ row ];
 		UITableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:indexPath.section]];
-		BOOL isSelectedIssueStatus = [selectedIssueStatus isEqualToString:issueStatusTuple[ CLSFilterValueKey ]];
+		BOOL isSelectedIssueStatus = [selectedIssueStatus isEqualToString:issueStatusTuple[CRMFilterValueKey]];
 		cell.accessoryType = isSelectedIssueStatus ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 	}
 }

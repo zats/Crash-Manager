@@ -1,9 +1,9 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to CLSIssue.m instead.
+// Make changes to CRMIssue.m instead.
 
 #import "_CRMIssue.h"
 
-const struct CLSIssueAttributes CLSIssueAttributes = {
+const struct CRMIssueAttributes CRMIssueAttributes = {
 	.crashesCount = @"crashesCount",
 	.devicesAffected = @"devicesAffected",
 	.displayID = @"displayID",
@@ -18,15 +18,15 @@ const struct CLSIssueAttributes CLSIssueAttributes = {
 	.urlString = @"urlString",
 };
 
-const struct CLSIssueRelationships CLSIssueRelationships = {
+const struct CRMIssueRelationships CRMIssueRelationships = {
 	.application = @"application",
 	.build = @"build",
 };
 
-const struct CLSIssueFetchedProperties CLSIssueFetchedProperties = {
+const struct CRMIssueFetchedProperties CRMIssueFetchedProperties = {
 };
 
-@implementation CLSIssueID
+@implementation CRMIssueID
 @end
 
 @implementation _CRMIssue
@@ -45,8 +45,8 @@ const struct CLSIssueFetchedProperties CLSIssueFetchedProperties = {
 	return [NSEntityDescription entityForName:@"Issue" inManagedObjectContext:moc_];
 }
 
-- (CLSIssueID*)objectID {
-	return (CLSIssueID*)[super objectID];
+- (CRMIssueID *)objectID {
+	return (CRMIssueID *)[super objectID];
 }
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {

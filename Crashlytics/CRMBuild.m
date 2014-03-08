@@ -18,7 +18,7 @@
 		return nil;
 	}
 	
-	CRMBuild *build = [CRMBuild MR_findFirstByAttribute:CLSBuildAttributes.buildID
+	CRMBuild *build = [CRMBuild MR_findFirstByAttribute:CRMBuildAttributes.buildID
 											  withValue:buildID
 											  inContext:context];
 	if (!build) {

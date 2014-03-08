@@ -1,22 +1,22 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to CLSBuild.h instead.
+// Make changes to CRMBuild.h instead.
 
 #import <CoreData/CoreData.h>
 
 
-extern const struct CLSBuildAttributes {
+extern const struct CRMBuildAttributes {
 	__unsafe_unretained NSString *buildID;
 	__unsafe_unretained NSString *collectCrashReports;
-} CLSBuildAttributes;
+} CRMBuildAttributes;
 
-extern const struct CLSBuildRelationships {
+extern const struct CRMBuildRelationships {
 	__unsafe_unretained NSString *application;
 	__unsafe_unretained NSString *filters;
 	__unsafe_unretained NSString *issues;
-} CLSBuildRelationships;
+} CRMBuildRelationships;
 
-extern const struct CLSBuildFetchedProperties {
-} CLSBuildFetchedProperties;
+extern const struct CRMBuildFetchedProperties {
+} CRMBuildFetchedProperties;
 
 @class CRMApplication;
 @class CRMFilter;
@@ -25,14 +25,14 @@ extern const struct CLSBuildFetchedProperties {
 
 
 
-@interface CLSBuildID : NSManagedObjectID {}
+@interface CRMBuildID : NSManagedObjectID {}
 @end
 
 @interface _CRMBuild : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-- (CLSBuildID*)objectID;
+- (CRMBuildID *)objectID;
 
 
 

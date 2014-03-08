@@ -1,5 +1,5 @@
 //
-//  CLSSettings.h
+//  CRMSettings.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/29/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^CLSSettingsUpdateHandler)(NSDictionary *defaults, NSError *error);
+typedef void(^CRMSettingsUpdateHandler)(NSDictionary *defaults, NSError *error);
 
 @interface CRMConfiguration : NSObject
 
@@ -23,18 +23,18 @@ typedef void(^CLSSettingsUpdateHandler)(NSDictionary *defaults, NSError *error);
 - (void)setup;
 
 //
-- (void)updateConfigurationPlistWithCompletionHandler:(CLSSettingsUpdateHandler)completion;
+- (void)updateConfigurationPlistWithCompletionHandler:(CRMSettingsUpdateHandler)completion;
 
 @end
 
-@interface CRMConfiguration (CLSMarketing)
+@interface CRMConfiguration (CRMMarketing)
 
 - (NSURL *)marketingURL;
 - (NSString *)appDisplayName;
 
 @end
 
-@interface CRMConfiguration (CLSOpenSource)
+@interface CRMConfiguration (CRMOpenSource)
 
 - (NSURL *)implementationURLForClass:(Class)className;
 - (NSURL *)interfaceURLForClass:(Class)className;

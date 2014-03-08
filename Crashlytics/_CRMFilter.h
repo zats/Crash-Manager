@@ -4,19 +4,19 @@
 #import <CoreData/CoreData.h>
 
 
-extern const struct CLSFilterAttributes {
+extern const struct CRMFilterAttributes {
 	__unsafe_unretained NSString *issueNewerThen;
 	__unsafe_unretained NSString *issueOlderThen;
 	__unsafe_unretained NSString *issueStatus;
-} CLSFilterAttributes;
+} CRMFilterAttributes;
 
-extern const struct CLSFilterRelationships {
+extern const struct CRMFilterRelationships {
 	__unsafe_unretained NSString *application;
 	__unsafe_unretained NSString *build;
-} CLSFilterRelationships;
+} CRMFilterRelationships;
 
-extern const struct CLSFilterFetchedProperties {
-} CLSFilterFetchedProperties;
+extern const struct CRMFilterFetchedProperties {
+} CRMFilterFetchedProperties;
 
 @class CRMApplication;
 @class CRMBuild;
@@ -25,14 +25,14 @@ extern const struct CLSFilterFetchedProperties {
 
 
 
-@interface CLSFilterID : NSManagedObjectID {}
+@interface CRMFilterID : NSManagedObjectID {}
 @end
 
 @interface _CRMFilter : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-- (CLSFilterID*)objectID;
+- (CRMFilterID *)objectID;
 
 
 

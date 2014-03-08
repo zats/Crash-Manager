@@ -1,10 +1,10 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to CLSIssue.h instead.
+// Make changes to CRMIssue.h instead.
 
 #import <CoreData/CoreData.h>
 
 
-extern const struct CLSIssueAttributes {
+extern const struct CRMIssueAttributes {
 	__unsafe_unretained NSString *crashesCount;
 	__unsafe_unretained NSString *devicesAffected;
 	__unsafe_unretained NSString *displayID;
@@ -17,15 +17,15 @@ extern const struct CLSIssueAttributes {
 	__unsafe_unretained NSString *subtitle;
 	__unsafe_unretained NSString *title;
 	__unsafe_unretained NSString *urlString;
-} CLSIssueAttributes;
+} CRMIssueAttributes;
 
-extern const struct CLSIssueRelationships {
+extern const struct CRMIssueRelationships {
 	__unsafe_unretained NSString *application;
 	__unsafe_unretained NSString *build;
-} CLSIssueRelationships;
+} CRMIssueRelationships;
 
-extern const struct CLSIssueFetchedProperties {
-} CLSIssueFetchedProperties;
+extern const struct CRMIssueFetchedProperties {
+} CRMIssueFetchedProperties;
 
 @class CRMApplication;
 @class CRMBuild;
@@ -43,14 +43,14 @@ extern const struct CLSIssueFetchedProperties {
 
 
 
-@interface CLSIssueID : NSManagedObjectID {}
+@interface CRMIssueID : NSManagedObjectID {}
 @end
 
 @interface _CRMIssue : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-- (CLSIssueID*)objectID;
+- (CRMIssueID *)objectID;
 
 
 

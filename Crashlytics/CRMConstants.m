@@ -8,8 +8,8 @@
 
 #import "CRMConstants.h"
 
-NSString *const CLSGoogleAnalyticsEnabledKey = @"CLSGoogleAnalyticsEnabledKey";
+NSString *const CRMGoogleAnalyticsEnabledKey = @"CRMGoogleAnalyticsEnabledKey";
 
-NSString *const CLSGoogleAnalyticsIdenitifer = @"UA-46469219-2";
+NSString *const CRMGoogleAnalyticsIdenitifer = @"UA-46469219-2";
 
-NSString *const CLSLastPasteboardedIssueIDKey = @"CLSLastPasteboardedIssueIDKey";
+NSString *const CRMLastPasteboardedIssueIDKey = @"CRMLastPasteboardedIssueIDKey";

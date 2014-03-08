@@ -10,7 +10,7 @@
 
 @implementation NSURLRequest (CRMLogging)
 
-- (NSString *)cls_cURLCommand {
+- (NSString *)crm_cURLCommand {
     NSMutableString *command = [NSMutableString stringWithString:@"curl"];
     
     [command appendFormat:@" -X %@", [self HTTPMethod]];

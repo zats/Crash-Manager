@@ -15,7 +15,7 @@
  
  @return curl-style description for the receiver.
  */
-- (NSString *)cls_cURLCommand;
+- (NSString *)crm_cURLCommand;
 
 
 @end

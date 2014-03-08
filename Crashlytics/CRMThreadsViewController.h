@@ -1,5 +1,5 @@
 //
-//  CLSThreadsTableViewController.h
+//  CRMThreadsTableViewController.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/25/13.

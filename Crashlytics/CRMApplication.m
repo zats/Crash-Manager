@@ -24,7 +24,7 @@
 		return nil;
 	}
 	
-	CRMApplication *application = [CRMApplication MR_findFirstByAttribute:CLSApplicationAttributes.applicationID
+	CRMApplication *application = [CRMApplication MR_findFirstByAttribute:CRMApplicationAttributes.applicationID
 																withValue:applicationID
 																inContext:context];
 	if (!application) {

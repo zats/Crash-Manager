@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSViewController.h"
+#import "CRMViewController.h"
 
 @class CRMIssue;
-@interface CRMIssueDetailsViewController : CLSViewController
+@interface CRMIssueDetailsViewController : CRMViewController
 
 @property (nonatomic, weak) CRMIssue *issue;
 

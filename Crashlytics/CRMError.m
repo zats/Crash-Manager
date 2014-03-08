@@ -1,5 +1,5 @@
 //
-//  CLSError.m
+//  CRMError.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 1/3/14.

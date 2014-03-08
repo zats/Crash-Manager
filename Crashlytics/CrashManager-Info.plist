@@ -5,11 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Crash Manager${CLSDisplayNameSuffix}</string>
+	<string>Crash Manager${CRMDisplayNameSuffix}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>io.zats.${PRODUCT_NAME:rfc1034identifier}${CLSBundleSuffix}</string>
+	<string>io.zats.${PRODUCT_NAME:rfc1034identifier}${CRMBundleSuffix}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

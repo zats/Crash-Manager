@@ -1,9 +1,9 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to CLSAccount.m instead.
+// Make changes to CRMAccount.m instead.
 
 #import "_CRMAccount.h"
 
-const struct CLSAccountAttributes CLSAccountAttributes = {
+const struct CRMAccountAttributes CRMAccountAttributes = {
 	.email = @"email",
 	.name = @"name",
 	.password = @"password",
@@ -11,14 +11,14 @@ const struct CLSAccountAttributes CLSAccountAttributes = {
 	.userID = @"userID",
 };
 
-const struct CLSAccountRelationships CLSAccountRelationships = {
+const struct CRMAccountRelationships CRMAccountRelationships = {
 	.organizations = @"organizations",
 };
 
-const struct CLSAccountFetchedProperties CLSAccountFetchedProperties = {
+const struct CRMAccountFetchedProperties CRMAccountFetchedProperties = {
 };
 
-@implementation CLSAccountID
+@implementation CRMAccountID
 @end
 
 @implementation _CRMAccount
@@ -37,8 +37,8 @@ const struct CLSAccountFetchedProperties CLSAccountFetchedProperties = {
 	return [NSEntityDescription entityForName:@"Account" inManagedObjectContext:moc_];
 }
 
-- (CLSAccountID*)objectID {
-	return (CLSAccountID*)[super objectID];
+- (CRMAccountID *)objectID {
+	return (CRMAccountID *)[super objectID];
 }
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {

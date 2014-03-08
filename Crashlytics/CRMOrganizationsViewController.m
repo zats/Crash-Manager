@@ -30,10 +30,10 @@
 }
 
 - (IBAction)_logoutBarButtonItemHandler:(id)sender {
-	UIAlertView *alert = [UIAlertView SH_alertViewWithTitle:NSLocalizedString(@"CLSLogoutAlertTitle", nil)
-												withMessage:NSLocalizedString(@"CLSLogoutAlertMessage", nil)];
-	[alert SH_addButtonCancelWithTitle:NSLocalizedString(@"CLSLogoutAlertCancelTitle", nil) withBlock:nil];
-	[alert SH_addButtonWithTitle:NSLocalizedString(@"CLSLogoutAlertLogoutTitle", nil) withBlock:^(NSInteger theButtonIndex) {
+	UIAlertView *alert = [UIAlertView SH_alertViewWithTitle:NSLocalizedString(@"CRMLogoutAlertTitle", nil)
+												withMessage:NSLocalizedString(@"CRMLogoutAlertMessage", nil)];
+	[alert SH_addButtonCancelWithTitle:NSLocalizedString(@"CRMLogoutAlertCancelTitle", nil) withBlock:nil];
+	[alert SH_addButtonWithTitle:NSLocalizedString(@"CRMLogoutAlertLogoutTitle", nil) withBlock:^(NSInteger theButtonIndex) {
 		[CRMAccount setCurrentAccount:nil];
 		
 		
@@ -65,11 +65,11 @@
 		}]
 		subscribeNext:^(CRMAccount *account) {
 			@strongify(self);
-			NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ in %K", account, CLSOrganizationRelationships.accounts];
+			NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ in %K", account, CRMOrganizationRelationships.accounts];
 
 			self.fetchedResultsController = [CRMOrganization MR_fetchAllGroupedBy:nil
 																 withPredicate:predicate
-																	  sortedBy:CLSOrganizationAttributes.name
+																	  sortedBy:CRMOrganizationAttributes.name
 																	 ascending:YES];
 			
 			[[CRMPasteboardObserver sharedInstance] startObservingParsteboardWithNavigationController:self.navigationController];
@@ -107,9 +107,9 @@
 	CRMOrganization *organization = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	cell.textLabel.text = organization.name;
 	if (!organization.appsCountValue) {
-		cell.detailTextLabel.text = NSLocalizedString(@"CLSOrganizationNoApps", @"No applications string for organization screen");
+		cell.detailTextLabel.text = NSLocalizedString(@"CRMOrganizationNoApps", @"No applications string for organization screen");
 	} else {
-		cell.detailTextLabel.text = TTTLocalizedPluralString(organization.appsCountValue, @"CLSOrganizationsAppsCount", @"Applications number for organization screen");
+		cell.detailTextLabel.text = TTTLocalizedPluralString(organization.appsCountValue, @"CRMOrganizationsAppsCount", @"Applications number for organization screen");
 	}
 	
 	return cell;

@@ -1,9 +1,9 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to CLSApplication.m instead.
+// Make changes to CRMApplication.m instead.
 
 #import "_CRMApplication.h"
 
-const struct CLSApplicationAttributes CLSApplicationAttributes = {
+const struct CRMApplicationAttributes CRMApplicationAttributes = {
 	.applicationID = @"applicationID",
 	.bundleID = @"bundleID",
 	.iconURLString = @"iconURLString",
@@ -15,17 +15,17 @@ const struct CLSApplicationAttributes CLSApplicationAttributes = {
 	.unresolvedIssuesCount = @"unresolvedIssuesCount",
 };
 
-const struct CLSApplicationRelationships CLSApplicationRelationships = {
+const struct CRMApplicationRelationships CRMApplicationRelationships = {
 	.builds = @"builds",
 	.filter = @"filter",
 	.issues = @"issues",
 	.organization = @"organization",
 };
 
-const struct CLSApplicationFetchedProperties CLSApplicationFetchedProperties = {
+const struct CRMApplicationFetchedProperties CRMApplicationFetchedProperties = {
 };
 
-@implementation CLSApplicationID
+@implementation CRMApplicationID
 @end
 
 @implementation _CRMApplication
@@ -44,8 +44,8 @@ const struct CLSApplicationFetchedProperties CLSApplicationFetchedProperties = {
 	return [NSEntityDescription entityForName:@"Application" inManagedObjectContext:moc_];
 }
 
-- (CLSApplicationID*)objectID {
-	return (CLSApplicationID*)[super objectID];
+- (CRMApplicationID *)objectID {
+	return (CRMApplicationID *)[super objectID];
 }
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {

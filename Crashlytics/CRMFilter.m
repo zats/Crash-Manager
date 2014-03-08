@@ -4,25 +4,25 @@
 #import "CRMIssue.h"
 #import "CRMApplication.h"
 
-NSString *const CLSFilterIssueStatusAll = @"all";
-NSString *const CLSFilterIssueStatusUnresolved = @"unresolved";
-NSString *const CLSFilterIssueStatusResolved = @"resolved";
+NSString *const CRMFilterIssueStatusAll = @"all";
+NSString *const CRMFilterIssueStatusUnresolved = @"unresolved";
+NSString *const CRMFilterIssueStatusResolved = @"resolved";
 
-NSString *const CLSFilterLabelKey = @"CLSIssueStatusFilterLabelKey";
-NSString *const CLSFilterValueKey = @"CLSIssueStatusFilterValueKey";
+NSString *const CRMFilterLabelKey = @"CRMIssueStatusFilterLabelKey";
+NSString *const CRMFilterValueKey = @"CRMIssueStatusFilterValueKey";
 
-id CLSFilterTimeRangeAll;
-NSArray *CLSFilterTimeRangeLastHour;
-NSArray *CLSFilterTimeRangeLast24Hours;
-NSArray *CLSFilterTimeRangeLast48Hours;
-NSArray *CLSFilterTimeRangeLast7Days;
-NSArray *CLSFilterTimeRangeLast30Days;
+id CRMFilterTimeRangeAll;
+NSArray *CRMFilterTimeRangeLastHour;
+NSArray *CRMFilterTimeRangeLast24Hours;
+NSArray *CRMFilterTimeRangeLast48Hours;
+NSArray *CRMFilterTimeRangeLast7Days;
+NSArray *CRMFilterTimeRangeLast30Days;
 
 
-NSArray *CLSFilterIssueStatuses;
-NSArray *CLSFilterTimeRanges;
+NSArray *CRMFilterIssueStatuses;
+NSArray *CRMFilterTimeRanges;
 
-#define CLSStrignify( key ) (@#key)
+#define CRMStrignify( key ) (@#key)
 
 @interface CRMFilter ()
 
@@ -35,37 +35,37 @@ NSArray *CLSFilterTimeRanges;
 	@autoreleasepool {
 		
 		// Issue Statuses
-		CLSFilterIssueStatuses = @[
-		  @{ CLSFilterLabelKey : CLSLocalizedDisplayStringForFiterIssueStatus(CLSFilterIssueStatusAll),
-			 CLSFilterValueKey : CLSFilterIssueStatusAll },
-		  @{ CLSFilterLabelKey : CLSLocalizedDisplayStringForFiterIssueStatus(CLSFilterIssueStatusResolved),
-			 CLSFilterValueKey : CLSFilterIssueStatusResolved },
-		  @{ CLSFilterLabelKey : CLSLocalizedDisplayStringForFiterIssueStatus(CLSFilterIssueStatusUnresolved),
-			 CLSFilterValueKey : CLSFilterIssueStatusUnresolved },
+		CRMFilterIssueStatuses = @[
+		  @{CRMFilterLabelKey : CRMLocalizedDisplayStringForFiterIssueStatus(CRMFilterIssueStatusAll),
+                  CRMFilterValueKey : CRMFilterIssueStatusAll},
+		  @{CRMFilterLabelKey : CRMLocalizedDisplayStringForFiterIssueStatus(CRMFilterIssueStatusResolved),
+                  CRMFilterValueKey : CRMFilterIssueStatusResolved},
+		  @{CRMFilterLabelKey : CRMLocalizedDisplayStringForFiterIssueStatus(CRMFilterIssueStatusUnresolved),
+                  CRMFilterValueKey : CRMFilterIssueStatusUnresolved},
 		];
 		
 		// Time Ranges
 		
-		CLSFilterTimeRangeAll = @[ @0, @0 ];
-		CLSFilterTimeRangeLastHour = @[ @0, @-3600 ];
-		CLSFilterTimeRangeLast24Hours = @[ @0, @-86400 ];
-		CLSFilterTimeRangeLast48Hours = @[ @0, @-172800 ];
-		CLSFilterTimeRangeLast7Days = @[ @0, @-604800 ];
-		CLSFilterTimeRangeLast30Days  = @[ @0, @-2592000 ];
+		CRMFilterTimeRangeAll = @[ @0, @0 ];
+		CRMFilterTimeRangeLastHour = @[ @0, @-3600 ];
+		CRMFilterTimeRangeLast24Hours = @[ @0, @-86400 ];
+		CRMFilterTimeRangeLast48Hours = @[ @0, @-172800 ];
+		CRMFilterTimeRangeLast7Days = @[ @0, @-604800 ];
+		CRMFilterTimeRangeLast30Days = @[ @0, @-2592000 ];
 		
-		CLSFilterTimeRanges = @[
-			@{ CLSFilterLabelKey : NSLocalizedString(CLSStrignify(CLSFilterTimeRangeAll), @"All time range for issues filter"),
-			   CLSFilterValueKey : CLSFilterTimeRangeAll },
-			@{ CLSFilterLabelKey : NSLocalizedString(CLSStrignify(CLSFilterTimeRangeLastHour), @"Last hour range for issues filter"),
-			   CLSFilterValueKey : CLSFilterTimeRangeLastHour },
-			@{ CLSFilterLabelKey : NSLocalizedString(CLSStrignify(CLSFilterTimeRangeLast24Hours), @"Last day range for issues filter"),
-			   CLSFilterValueKey : CLSFilterTimeRangeLast24Hours },
-			@{ CLSFilterLabelKey : NSLocalizedString(CLSStrignify(CLSFilterTimeRangeLast48Hours), @"Last two days range for issues filter"),
-			   CLSFilterValueKey : CLSFilterTimeRangeLast48Hours },
-			@{ CLSFilterLabelKey : NSLocalizedString(CLSStrignify(CLSFilterTimeRangeLast7Days), @"Last week range for issues filter"),
-			   CLSFilterValueKey : CLSFilterTimeRangeLast7Days },
-			@{ CLSFilterLabelKey : NSLocalizedString(CLSStrignify(CLSFilterTimeRangeLast30Days), @"Last month range for issues filter"),
-			   CLSFilterValueKey : CLSFilterTimeRangeLast30Days }
+		CRMFilterTimeRanges = @[
+			@{CRMFilterLabelKey : NSLocalizedString(CRMStrignify(CRMFilterTimeRangeAll), @"All time range for issues filter"),
+                    CRMFilterValueKey : CRMFilterTimeRangeAll},
+			@{CRMFilterLabelKey : NSLocalizedString(CRMStrignify(CRMFilterTimeRangeLastHour), @"Last hour range for issues filter"),
+                    CRMFilterValueKey : CRMFilterTimeRangeLastHour},
+			@{CRMFilterLabelKey : NSLocalizedString(CRMStrignify(CRMFilterTimeRangeLast24Hours), @"Last day range for issues filter"),
+                    CRMFilterValueKey : CRMFilterTimeRangeLast24Hours},
+			@{CRMFilterLabelKey : NSLocalizedString(CRMStrignify(CRMFilterTimeRangeLast48Hours), @"Last two days range for issues filter"),
+                    CRMFilterValueKey : CRMFilterTimeRangeLast48Hours},
+			@{CRMFilterLabelKey : NSLocalizedString(CRMStrignify(CRMFilterTimeRangeLast7Days), @"Last week range for issues filter"),
+                    CRMFilterValueKey : CRMFilterTimeRangeLast7Days},
+			@{CRMFilterLabelKey : NSLocalizedString(CRMStrignify(CRMFilterTimeRangeLast30Days), @"Last month range for issues filter"),
+                    CRMFilterValueKey : CRMFilterTimeRangeLast30Days}
 		];
 	}
 }
@@ -87,8 +87,8 @@ NSArray *CLSFilterTimeRanges;
 }
 
 - (BOOL)isTimeRangeFilterSet {
-	return !([self.issueOlderThen isEqualToNumber:CLSFilterTimeRangeAll[0]] &&
-			 [self.issueNewerThen isEqualToNumber:CLSFilterTimeRangeAll[1]]);
+	return !([self.issueOlderThen isEqualToNumber:CRMFilterTimeRangeAll[0]] &&
+			 [self.issueNewerThen isEqualToNumber:CRMFilterTimeRangeAll[1]]);
 }
 
 - (BOOL)isBuildFilterSet {
@@ -96,7 +96,7 @@ NSArray *CLSFilterTimeRanges;
 }
 
 - (BOOL)isStatusFilterSet {
-	return ![self.issueStatus isEqualToString:CLSFilterIssueStatusAll];
+	return ![self.issueStatus isEqualToString:CRMFilterIssueStatusAll];
 }
 
 - (BOOL)isFilterSet {
@@ -107,8 +107,8 @@ NSArray *CLSFilterTimeRanges;
 
 - (void)resetFilter {
 	self.build = nil;
-	self.issueStatus = CLSFilterIssueStatusAll;
-	[self setIssueTimeRangeArray:CLSFilterTimeRangeAll];
+	self.issueStatus = CRMFilterIssueStatusAll;
+    [self setIssueTimeRangeArray:CRMFilterTimeRangeAll];
 }
 
 - (NSString *)summaryString {
@@ -120,11 +120,11 @@ NSArray *CLSFilterTimeRanges;
 		result = [result stringByAppendingFormat:@"%@  ", self.build.buildID];
 	}
 	NSArray *timeRangeArray = [self issueTimeRangeArray];
-	if (![CLSFilterTimeRangeAll isEqualToArray:timeRangeArray])  {
-		result = [result stringByAppendingFormat:@"%@  ", CLSLocalizedDisplayStringForFilterTimeRange(timeRangeArray)];
+	if (![CRMFilterTimeRangeAll isEqualToArray:timeRangeArray])  {
+		result = [result stringByAppendingFormat:@"%@  ", CRMLocalizedDisplayStringForFilterTimeRange(timeRangeArray)];
 	}
-	if (![CLSFilterIssueStatusAll isEqualToString:self.issueStatus]) {
-		result = [result stringByAppendingFormat:@"%@  ", CLSLocalizedDisplayStringForFiterIssueStatus(self.issueStatus)];
+	if (![CRMFilterIssueStatusAll isEqualToString:self.issueStatus]) {
+		result = [result stringByAppendingFormat:@"%@  ", CRMLocalizedDisplayStringForFiterIssueStatus(self.issueStatus)];
 	}
 	if ([result length]) {
 		result = [result substringToIndex:[result length] - 2];
@@ -137,33 +137,33 @@ NSArray *CLSFilterTimeRanges;
 - (void)awakeFromInsert {
 	[super awakeFromInsert];
 	
-	self.issueStatus = CLSFilterIssueStatusAll;
+	self.issueStatus = CRMFilterIssueStatusAll;
 
-	self.issueOlderThen = CLSFilterTimeRangeAll[0];
-	self.issueNewerThen = CLSFilterTimeRangeAll[1];
+	self.issueOlderThen = CRMFilterTimeRangeAll[0];
+	self.issueNewerThen = CRMFilterTimeRangeAll[1];
 }
 
-#undef CLSStrignify
+#undef CRMStrignify
 
 @end
 
-@implementation CRMFilter (CLSPredicate)
+@implementation CRMFilter (CRMPredicate)
 
 - (NSPredicate *)emptyFilterPreidacte {
-	return [NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.application, self.application];
+	return [NSPredicate predicateWithFormat:@"%K == %@", CRMIssueRelationships.application, self.application];
 }
 
 - (NSPredicate *)predicate {
 	NSMutableArray *predicates = [NSMutableArray arrayWithObject:[self emptyFilterPreidacte]];
 	if ([self isStatusFilterSet]) {
-		if ([self.issueStatus isEqualToString:CLSFilterIssueStatusResolved]) {
-			[predicates addObject:[NSPredicate predicateWithFormat:@"%K != nil", CLSIssueAttributes.resolvedAt]];
-		} else if ([self.issueStatus isEqualToString:CLSFilterIssueStatusUnresolved]) {
-			[predicates addObject:[NSPredicate predicateWithFormat:@"%K == nil", CLSIssueAttributes.resolvedAt]];
+		if ([self.issueStatus isEqualToString:CRMFilterIssueStatusResolved]) {
+			[predicates addObject:[NSPredicate predicateWithFormat:@"%K != nil", CRMIssueAttributes.resolvedAt]];
+		} else if ([self.issueStatus isEqualToString:CRMFilterIssueStatusUnresolved]) {
+			[predicates addObject:[NSPredicate predicateWithFormat:@"%K == nil", CRMIssueAttributes.resolvedAt]];
 		}
 	}
 	if ([self isBuildFilterSet]) {
-		[predicates addObject:[NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.build, self.build]];
+		[predicates addObject:[NSPredicate predicateWithFormat:@"%K == %@", CRMIssueRelationships.build, self.build]];
 	}
 	if ([self isTimeRangeFilterSet]) {
 		// No predicate can match time range

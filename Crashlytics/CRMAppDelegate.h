@@ -1,5 +1,5 @@
 //
-//  CLSAppDelegate.h
+//  CRMAppDelegate.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CLSAppDelegate : UIResponder <UIApplicationDelegate>
+@interface CRMAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

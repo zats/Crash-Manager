@@ -1,23 +1,23 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to CLSBuild.m instead.
+// Make changes to CRMBuild.m instead.
 
 #import "_CRMBuild.h"
 
-const struct CLSBuildAttributes CLSBuildAttributes = {
+const struct CRMBuildAttributes CRMBuildAttributes = {
 	.buildID = @"buildID",
 	.collectCrashReports = @"collectCrashReports",
 };
 
-const struct CLSBuildRelationships CLSBuildRelationships = {
+const struct CRMBuildRelationships CRMBuildRelationships = {
 	.application = @"application",
 	.filters = @"filters",
 	.issues = @"issues",
 };
 
-const struct CLSBuildFetchedProperties CLSBuildFetchedProperties = {
+const struct CRMBuildFetchedProperties CRMBuildFetchedProperties = {
 };
 
-@implementation CLSBuildID
+@implementation CRMBuildID
 @end
 
 @implementation _CRMBuild
@@ -36,8 +36,8 @@ const struct CLSBuildFetchedProperties CLSBuildFetchedProperties = {
 	return [NSEntityDescription entityForName:@"Build" inManagedObjectContext:moc_];
 }
 
-- (CLSBuildID*)objectID {
-	return (CLSBuildID*)[super objectID];
+- (CRMBuildID *)objectID {
+	return (CRMBuildID *)[super objectID];
 }
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {

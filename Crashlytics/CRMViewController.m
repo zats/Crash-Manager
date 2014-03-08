@@ -1,23 +1,23 @@
 //
-//  CLSViewController.m
+//  CRMViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSViewController.h"
+#import "CRMViewController.h"
 
 #import "CRMLoginViewController.h"
 #import "CRMAccount.h"
 #import "CRMAnalyticsController.h"
 #import "UIViewController+OpenSource.h"
 
-@interface CLSViewController ()
+@interface CRMViewController ()
 @property (nonatomic, strong) RACSubject *disappearingSubject;
 @end
 
-@implementation CLSViewController
+@implementation CRMViewController
 
 #pragma mark - Actions
 

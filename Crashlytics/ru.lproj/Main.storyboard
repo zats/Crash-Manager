@@ -7,7 +7,7 @@
         <!--Login View Controller - Login-->
         <scene sceneID="uZN-ah-d2v">
             <objects>
-                <viewController id="bHC-a8-w9w" customClass="CLSLoginViewController" sceneMemberID="viewController">
+                <viewController id="bHC-a8-w9w" customClass="CRMLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pSO-fC-GGK"/>
                         <viewControllerLayoutGuide type="bottom" id="JIL-x6-A5B"/>
@@ -57,7 +57,7 @@
         <!--Organizations View Controller - Organizations-->
         <scene sceneID="xmy-Dc-yVi">
             <objects>
-                <tableViewController storyboardIdentifier="organizations" id="khs-6S-axm" customClass="CLSOrganizationsViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="organizations" id="khs-6S-axm" customClass="CRMOrganizationsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2T9-zK-21R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,13 +112,13 @@
         <!--Applications Table View Controller - Applications-->
         <scene sceneID="BOz-Ck-b50">
             <objects>
-                <tableViewController storyboardIdentifier="applications" id="hD6-6o-zBf" customClass="CLSApplicationsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="applications" id="hD6-6o-zBf" customClass="CRMApplicationsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="d93-5c-yOP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ApplicationCellIdentifier" rowHeight="60" id="VfB-sj-1qk" customClass="CLSApplicationCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ApplicationCellIdentifier" rowHeight="60" id="VfB-sj-1qk" customClass="CRMApplicationCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VfB-sj-1qk" id="APy-W3-bri">
@@ -195,7 +195,7 @@
         <!--Versions View Controller - Build Version-->
         <scene sceneID="Gbj-KC-aaV">
             <objects>
-                <tableViewController id="9Qu-u3-lee" customClass="CLSVersionsViewController" sceneMemberID="viewController">
+                <tableViewController id="9Qu-u3-lee" customClass="CRMVersionsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Yti-5m-rqs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,7 +233,7 @@
         <!--Filters View Controller - Filters-->
         <scene sceneID="nyj-ne-egX">
             <objects>
-                <tableViewController id="l2d-5d-xO1" customClass="CLSFiltersViewController" sceneMemberID="viewController">
+                <tableViewController id="l2d-5d-xO1" customClass="CRMFiltersViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="100" sectionFooterHeight="10" id="Yvg-uN-jWq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -371,13 +371,13 @@
         <!--Issues Table View Controller - Issues-->
         <scene sceneID="Ztd-nv-mXT">
             <objects>
-                <tableViewController storyboardIdentifier="issues" id="Dfk-2b-2i1" customClass="CLSIssuesTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="issues" id="Dfk-2b-2i1" customClass="CRMIssuesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="Bpu-ky-ePF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IssueCellIdentifier" rowHeight="54" id="4Sf-zF-lAO" customClass="CLSIssueListCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IssueCellIdentifier" rowHeight="54" id="4Sf-zF-lAO" customClass="CRMIssueListCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Sf-zF-lAO" id="w5g-k1-w2A">
@@ -462,7 +462,7 @@
         <!--Issue Details View Controller-->
         <scene sceneID="ZuZ-ai-d6J">
             <objects>
-                <viewController id="AZ3-BU-2Ne" customClass="CLSIssueDetailsViewController" sceneMemberID="viewController">
+                <viewController id="AZ3-BU-2Ne" customClass="CRMIssueDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YWI-tf-hMf"/>
                         <viewControllerLayoutGuide type="bottom" id="whG-Oi-uXl"/>
@@ -564,7 +564,7 @@
         <!--Issue Exception Table View Controller-->
         <scene sceneID="y4h-3v-ceJ">
             <objects>
-                <tableViewController storyboardIdentifier="IssueException" id="Ihb-lI-4jC" customClass="CLSIssueExceptionTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="IssueException" id="Ihb-lI-4jC" customClass="CRMIssueExceptionTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="JJw-oL-USK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -608,7 +608,7 @@
         <!--Issue Status Filter View Controller - Issue Status-->
         <scene sceneID="caw-Yh-vYz">
             <objects>
-                <tableViewController id="VGm-Bx-7xJ" customClass="CLSIssueStatusFilterViewController" sceneMemberID="viewController">
+                <tableViewController id="VGm-Bx-7xJ" customClass="CRMIssueStatusFilterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rB3-No-EcC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -774,7 +774,7 @@
         <!--Threads Table View Controller-->
         <scene sceneID="aIL-bi-Mdr">
             <objects>
-                <tableViewController storyboardIdentifier="IssueDetailsThreads" id="gvt-Xj-bzR" customClass="CLSThreadsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="IssueDetailsThreads" id="gvt-Xj-bzR" customClass="CRMThreadsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="2Qx-0d-At9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -818,7 +818,7 @@
         <!--Issue General Details View Controller-->
         <scene sceneID="P6a-qJ-s9K">
             <objects>
-                <tableViewController storyboardIdentifier="IssueDeviceDetails" id="HZe-5m-R33" customClass="CLSIssueGeneralDetailsViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="IssueDeviceDetails" id="HZe-5m-R33" customClass="CRMIssueGeneralDetailsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="hpq-0P-DZo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

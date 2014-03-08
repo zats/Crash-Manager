@@ -102,7 +102,7 @@
 																			   options:NSRegularExpressionCaseInsensitive
 																				 error:&error];
 		if (!regex) {
-			CLSNSLog(@"Failed to compile a regex from pattern: %@", regexPattern);
+            DDLogError(@"Failed to compile a regex from pattern: %@", regexPattern);
 			continue;
 		}
 		
@@ -183,23 +183,23 @@
 		}
 	}
 	
-	NSString *message = NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessage", nil);
-	message = [message stringByAppendingFormat:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageOrganization", nil), organizationAlias];
-	message = [message stringByAppendingFormat:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageApp", nil), bundleID];
-	message = [message stringByAppendingFormat:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageIssue", nil), issueID];
+	NSString *message = NSLocalizedString(@"CRMPasteboardObserverURLDetectedMessage", nil);
+	message = [message stringByAppendingFormat:NSLocalizedString(@"CRMPasteboardObserverURLDetectedMessageOrganization", nil), organizationAlias];
+	message = [message stringByAppendingFormat:NSLocalizedString(@"CRMPasteboardObserverURLDetectedMessageApp", nil), bundleID];
+	message = [message stringByAppendingFormat:NSLocalizedString(@"CRMPasteboardObserverURLDetectedMessageIssue", nil), issueID];
 	
-	UIAlertView *alert = [UIAlertView SH_alertViewWithTitle:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageTitle", nil)
+	UIAlertView *alert = [UIAlertView SH_alertViewWithTitle:NSLocalizedString(@"CRMPasteboardObserverURLDetectedMessageTitle", nil)
 												withMessage:message];
-	[alert SH_addButtonWithTitle:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageCancelTitle", nil)
+	[alert SH_addButtonWithTitle:NSLocalizedString(@"CRMPasteboardObserverURLDetectedMessageCancelTitle", nil)
 					   withBlock:nil];
-	[alert SH_addButtonCancelWithTitle:NSLocalizedString(@"CLSPasteboardObserverURLDetectedMessageNavigateTitle", nil) withBlock:^(NSInteger theButtonIndex) {		
-		CRMOrganization *organization = [CRMOrganization MR_findFirstByAttribute:CLSOrganizationAttributes.alias
+	[alert SH_addButtonCancelWithTitle:NSLocalizedString(@"CRMPasteboardObserverURLDetectedMessageNavigateTitle", nil) withBlock:^(NSInteger theButtonIndex) {
+		CRMOrganization *organization = [CRMOrganization MR_findFirstByAttribute:CRMOrganizationAttributes.alias
 																	   withValue:organizationAlias];
 		
-		CRMApplication *application = [CRMApplication MR_findFirstByAttribute:CLSApplicationAttributes.bundleID
+		CRMApplication *application = [CRMApplication MR_findFirstByAttribute:CRMApplicationAttributes.bundleID
 																	withValue:bundleID];
 
-		CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
+		CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CRMIssueAttributes.issueID
 										 withValue:issueID];
 		
 		if (!issue) {
@@ -244,14 +244,14 @@
 		return NO;
 	}
 	
-	CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
+	CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CRMIssueAttributes.issueID
 											  withValue:issueID];
 	if (!issue) {
 		issue = [CRMIssue MR_createEntity];
 		issue.issueID = issueID;
 	}
 
-	CRMApplication *application = [CRMApplication MR_findFirstByAttribute:CLSApplicationAttributes.bundleID
+	CRMApplication *application = [CRMApplication MR_findFirstByAttribute:CRMApplicationAttributes.bundleID
 																	withValue:bundleID];
 		
 	if (!issue.application) {
@@ -271,15 +271,15 @@
 		return nil;
 	}
 	
-	self.lastNavigatedURLString = [[NSUserDefaults standardUserDefaults] objectForKey:CLSLastPasteboardedIssueIDKey];
+	self.lastNavigatedURLString = [[NSUserDefaults standardUserDefaults] objectForKey:CRMLastPasteboardedIssueIDKey];
 	
 	[RACObserve(self, lastNavigatedURLString)
 		subscribeNext:^(NSString *lastNavigatedURLString) {
 			if (!lastNavigatedURLString) {
-				[[NSUserDefaults standardUserDefaults] removeObjectForKey:CLSLastPasteboardedIssueIDKey];
+                [[NSUserDefaults standardUserDefaults] removeObjectForKey:CRMLastPasteboardedIssueIDKey];
 			} else {
-				[[NSUserDefaults standardUserDefaults] setObject:lastNavigatedURLString
-														  forKey:CLSLastPasteboardedIssueIDKey];
+                [[NSUserDefaults standardUserDefaults] setObject:lastNavigatedURLString
+                                                          forKey:CRMLastPasteboardedIssueIDKey];
 			}
 			[[NSUserDefaults standardUserDefaults] synchronize];		 
 		}];

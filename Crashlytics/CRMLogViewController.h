@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Sasha Zats. All rights reserved.
 //
 
-#import "CLSViewController.h"
+#import "CRMViewController.h"
 
 @class CRMSession;
-@interface CRMLogViewController : CLSViewController
+@interface CRMLogViewController : CRMViewController
 
 @property (nonatomic, weak) CRMSession *session;
 

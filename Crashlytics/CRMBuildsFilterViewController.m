@@ -1,5 +1,5 @@
 //
-//  CLSBuildsTableViewController.m
+//  CRMBuildsTableViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/21/13.
@@ -46,14 +46,14 @@
 	// Updating fetch results controller
 	[applicationDidChangeSignal subscribeNext:^(id x) {
 		// All builds of the current application
-		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K.%K == %@", CLSBuildRelationships.application, CLSApplicationAttributes.applicationID, self.filter.application.applicationID];
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K.%K == %@", CRMBuildRelationships.application, CRMApplicationAttributes.applicationID, self.filter.application.applicationID];
 		
 		self.fetchedResultsController = [CRMBuild MR_fetchAllGroupedBy:nil
 														 withPredicate:predicate
 															  sortedBy:nil
 															 ascending:NO];
 		
-		self.fetchedResultsController.fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:CLSBuildAttributes.buildID
+		self.fetchedResultsController.fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:CRMBuildAttributes.buildID
 																									 ascending:NO
 																									  selector:@selector(localizedStandardCompare:)]];
 		[self.fetchedResultsController performFetch:nil];
@@ -126,7 +126,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	cell.accessoryType = UITableViewCellAccessoryCheckmark;
 }
 
-#pragma mark - CLSTableViewController
+    #pragma mark - CRMTableViewController
 
 - (NSInteger)coreDataSectionForDisplaySection:(NSInteger)section {
 	return section + 1;

@@ -22,14 +22,14 @@
 
 @end
 
-@interface CRMAPIClient (CLSOrganization)
+@interface CRMAPIClient (CRMOrganization)
 
 - (RACSignal *)applicationsForOrganization:(CRMOrganization *)organization;
 - (RACSignal *)organizations;
 
 @end
 
-@interface CRMAPIClient (CLSBuild)
+@interface CRMAPIClient (CRMBuild)
 
 - (RACSignal *)buildsForApplication:(CRMApplication *)application;
 - (RACSignal *)setReportCollectionForBuild:(CRMBuild *)build
@@ -37,7 +37,7 @@
 
 @end
 
-@interface CRMAPIClient (CLSIssues)
+@interface CRMAPIClient (CRMIssues)
 
 - (RACSignal *)issuesForApplication:(CRMApplication *)application;
 - (RACSignal *)latestIncidentForIssue:(CRMIssue *)issue;

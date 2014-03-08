@@ -17,11 +17,11 @@
 #import <SHActionSheetBlocks/SHActionSheetBlocks.h>
 #import "CRMIncident_Session+Crashlytics.h"
 
-typedef enum _CLSDetailsSegment {
-	kCLSExceptionSegment = 2,
-	kCLSThreadsSegment = 1,
-	kCLSDeviceSegment = 0,
-} CLSDetailsSegment;
+typedef enum _CRMDetailsSegment {
+	kCRMExceptionSegment = 2,
+	kCRMThreadsSegment = 1,
+	kCRMDeviceSegment = 0,
+} CRMDetailsSegment;
 
 @interface CRMIssueDetailsViewController ()
 
@@ -51,7 +51,7 @@ typedef enum _CLSDetailsSegment {
 }
 
 - (CRMIssue *)issue {
-	return [CRMIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
+	return [CRMIssue MR_findFirstByAttribute:CRMIssueAttributes.issueID
 								   withValue:self.issueID];
 }
 
@@ -112,11 +112,11 @@ typedef enum _CLSDetailsSegment {
 
 - (NSString *)_viewControllerIdentifierForSegment:(NSInteger)segment {
 	switch (segment) {
-		case kCLSExceptionSegment:
+		case kCRMExceptionSegment:
 			return @"IssueException";
-		case kCLSThreadsSegment:
+		case kCRMThreadsSegment:
 			return @"IssueDetailsThreads";
-		case kCLSDeviceSegment:
+		case kCRMDeviceSegment:
 			return @"IssueDeviceDetails";
 	}
 	return nil;
@@ -129,14 +129,14 @@ typedef enum _CLSDetailsSegment {
 		
 	// setting up segmented control
 	[self.segmentedControl removeAllSegments];
-	[self.segmentedControl insertSegmentWithTitle:NSLocalizedString(@"CLSIssueDetailsSegmentDetails", @"Details segment title in issues detail screen")
-										  atIndex:kCLSDeviceSegment
+	[self.segmentedControl insertSegmentWithTitle:NSLocalizedString(@"CRMIssueDetailsSegmentDetails", @"Details segment title in issues detail screen")
+										  atIndex:kCRMDeviceSegment
 										 animated:NO];
-	[self.segmentedControl insertSegmentWithTitle:NSLocalizedString(@"CLSIssueDetailsSegmentException", @"Exception segment title in issues detail screen")
-										  atIndex:kCLSExceptionSegment
+	[self.segmentedControl insertSegmentWithTitle:NSLocalizedString(@"CRMIssueDetailsSegmentException", @"Exception segment title in issues detail screen")
+										  atIndex:kCRMExceptionSegment
 										 animated:NO];
-	[self.segmentedControl insertSegmentWithTitle:NSLocalizedString(@"CLSIssueDetailsSegmentThreads", @"Threads segment title in issues detail screen")
-										  atIndex:kCLSThreadsSegment
+	[self.segmentedControl insertSegmentWithTitle:NSLocalizedString(@"CRMIssueDetailsSegmentThreads", @"Threads segment title in issues detail screen")
+										  atIndex:kCRMThreadsSegment
 										 animated:NO];
 	
 	// Wiring signals
@@ -195,8 +195,8 @@ typedef enum _CLSDetailsSegment {
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	
-	[self _setSelectedSection:kCLSDeviceSegment];
+
+    [self _setSelectedSection:kCRMDeviceSegment];
 }
 
 - (void)updateViewConstraints {

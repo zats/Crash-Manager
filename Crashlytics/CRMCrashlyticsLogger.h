@@ -1,5 +1,5 @@
 //
-//  CLSCrashlyticsLogger.h
+//  CRMCrashlyticsLogger.h
 //  CrashManager
 //
 //  Created by Sasha Zats on 3/1/14.

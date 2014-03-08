@@ -1,5 +1,5 @@
 //
-//  CLSGoogleAnalyticsLogger.m
+//  CRMGoogleAnalyticsLogger.m
 //  CrashManager
 //
 //  Created by Sasha Zats on 2/21/14.

@@ -4,20 +4,20 @@
 #import <CoreData/CoreData.h>
 
 
-extern const struct CLSAccountAttributes {
+extern const struct CRMAccountAttributes {
 	__unsafe_unretained NSString *email;
 	__unsafe_unretained NSString *name;
 	__unsafe_unretained NSString *password;
 	__unsafe_unretained NSString *token;
 	__unsafe_unretained NSString *userID;
-} CLSAccountAttributes;
+} CRMAccountAttributes;
 
-extern const struct CLSAccountRelationships {
+extern const struct CRMAccountRelationships {
 	__unsafe_unretained NSString *organizations;
-} CLSAccountRelationships;
+} CRMAccountRelationships;
 
-extern const struct CLSAccountFetchedProperties {
-} CLSAccountFetchedProperties;
+extern const struct CRMAccountFetchedProperties {
+} CRMAccountFetchedProperties;
 
 @class CRMOrganization;
 
@@ -27,14 +27,14 @@ extern const struct CLSAccountFetchedProperties {
 
 
 
-@interface CLSAccountID : NSManagedObjectID {}
+@interface CRMAccountID : NSManagedObjectID {}
 @end
 
 @interface _CRMAccount : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-- (CLSAccountID*)objectID;
+- (CRMAccountID *)objectID;
 
 
 

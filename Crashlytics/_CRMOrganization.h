@@ -1,25 +1,25 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to CLSOrganization.h instead.
+// Make changes to CRMOrganization.h instead.
 
 #import <CoreData/CoreData.h>
 
 
-extern const struct CLSOrganizationAttributes {
+extern const struct CRMOrganizationAttributes {
 	__unsafe_unretained NSString *accountsCount;
 	__unsafe_unretained NSString *alias;
 	__unsafe_unretained NSString *apiKey;
 	__unsafe_unretained NSString *appsCount;
 	__unsafe_unretained NSString *name;
 	__unsafe_unretained NSString *organizationID;
-} CLSOrganizationAttributes;
+} CRMOrganizationAttributes;
 
-extern const struct CLSOrganizationRelationships {
+extern const struct CRMOrganizationRelationships {
 	__unsafe_unretained NSString *accounts;
 	__unsafe_unretained NSString *applications;
-} CLSOrganizationRelationships;
+} CRMOrganizationRelationships;
 
-extern const struct CLSOrganizationFetchedProperties {
-} CLSOrganizationFetchedProperties;
+extern const struct CRMOrganizationFetchedProperties {
+} CRMOrganizationFetchedProperties;
 
 @class CRMAccount;
 @class CRMApplication;
@@ -31,14 +31,14 @@ extern const struct CLSOrganizationFetchedProperties {
 
 
 
-@interface CLSOrganizationID : NSManagedObjectID {}
+@interface CRMOrganizationID : NSManagedObjectID {}
 @end
 
 @interface _CRMOrganization : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-- (CLSOrganizationID*)objectID;
+- (CRMOrganizationID *)objectID;
 
 
 

@@ -3,10 +3,10 @@
 #import "CRMOrganization.h"
 #import <SSKeychain/SSKeychain.h>
 
-static NSString *const CLSCurrentAccountKeyName = @"CLSCurrentAccountKeyName";
-static NSString *const CLSKeychainServiceName = @"CLSKeychainServiceName";
+static NSString *const CRMCurrentAccountKeyName = @"CRMCurrentAccountKeyName";
+static NSString *const CRMKeychainServiceName = @"CRMKeychainServiceName";
 
-NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidChangeNotification";
+NSString *const CRMActiveAccountDidChangeNotification = @"CRMActiveAccountDidChangeNotification";
 
 @interface CRMAccount ()
 
@@ -70,16 +70,16 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 }
 
 - (NSString *)password {
-    [self willAccessValueForKey:CLSAccountAttributes.password];
+    [self willAccessValueForKey:CRMAccountAttributes.password];
     NSString *result = self.primitivePassword;
-    [self didAccessValueForKey:CLSAccountAttributes.password];
+    [self didAccessValueForKey:CRMAccountAttributes.password];
     if (result) {
         return result;
     }
     
     NSError *error = nil;
     SSKeychainQuery *query = [[SSKeychainQuery alloc] init];
-    query.service = CLSKeychainServiceName;
+    query.service = CRMKeychainServiceName;
     query.account = self.email;
     [query fetch:&error];
     
@@ -96,7 +96,7 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 - (void)willSave {
     NSError *error = nil;
     SSKeychainQuery *query = [[SSKeychainQuery alloc] init];
-    query.service = CLSKeychainServiceName;
+    query.service = CRMKeychainServiceName;
     query.account = self.primitiveEmail;
     query.password = self.primitivePassword;
     if (![query save:&error]) {
@@ -108,7 +108,7 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 
 @end
 
-@implementation CRMAccount (CLSCurrentAccount)
+@implementation CRMAccount (CRMCurrentAccount)
 
 + (RACSignal *)activeAccountChangedSignal {
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
@@ -120,19 +120,19 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 
 + (void)setCurrentAccount:(CRMAccount *)account {
 	if (!account) {
-		[[NSUserDefaults standardUserDefaults] removeObjectForKey:CLSCurrentAccountKeyName];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:CRMCurrentAccountKeyName];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 		[[[self class] activeAccountInternalSignal] sendNext:nil];
 		return;
 	}
 
 	NSParameterAssert(![account.objectID isTemporaryID]);
-	
-	[[NSUserDefaults standardUserDefaults] setObject:[[account.objectID URIRepresentation] absoluteString]
-											  forKey:CLSCurrentAccountKeyName];
+
+    [[NSUserDefaults standardUserDefaults] setObject:[[account.objectID URIRepresentation] absoluteString]
+                                              forKey:CRMCurrentAccountKeyName];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
-	[[NSNotificationCenter defaultCenter] postNotificationName:CLSActiveAccountDidChangeNotification
+	[[NSNotificationCenter defaultCenter] postNotificationName:CRMActiveAccountDidChangeNotification
 														object:nil];
 	
 	[[self activeAccountInternalSignal] sendNext:account];
@@ -143,7 +143,7 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 }
 
 + (instancetype)currentAccountInContext:(NSManagedObjectContext *)context {
-	NSString *objectIDURIString = [[NSUserDefaults standardUserDefaults] objectForKey:CLSCurrentAccountKeyName];
+	NSString *objectIDURIString = [[NSUserDefaults standardUserDefaults] objectForKey:CRMCurrentAccountKeyName];
 	NSURL *objectIDURI = [NSURL URLWithString:objectIDURIString];
 	if (!objectIDURI) {
 		return nil;
@@ -166,7 +166,7 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 
 @end
 
-@implementation CRMAccount (CLSUtility)
+@implementation CRMAccount (CRMUtility)
 
 + (void)getKeychainedLastUsedUsername:(NSString **)username
 							 password:(NSString **)password {
@@ -182,7 +182,7 @@ NSString *const CLSActiveAccountDidChangeNotification = @"CLSActiveAccountDidCha
 	if (username) {
 		*username = lastUsedAccount[ kSSKeychainAccountKey ];
 	}
-	*password = [SSKeychain passwordForService:CLSKeychainServiceName
+	*password = [SSKeychain passwordForService:CRMKeychainServiceName
 									   account:*username];
 }
 

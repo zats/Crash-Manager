@@ -2,14 +2,14 @@
 
 #import "CRMIncident.h"
 
-@implementation ClsincidentRoot
+@implementation CRMIncidentRoot
 static PBExtensionRegistry* extensionRegistry = nil;
 + (PBExtensionRegistry*) extensionRegistry {
 	return extensionRegistry;
 }
 
 + (void) initialize {
-	if (self == [ClsincidentRoot class]) {
+	if (self == [CRMIncidentRoot class]) {
 		PBMutableExtensionRegistry* registry = [PBMutableExtensionRegistry registry];
 		[self registerAllExtensions:registry];
 		extensionRegistry = [registry retain];
@@ -32,17 +32,17 @@ static PBExtensionRegistry* extensionRegistry = nil;
 	}
 	return self;
 }
-static CRMIncident* defaultCLSIncidentInstance = nil;
+static CRMIncident *defaultCRMIncidentInstance = nil;
 + (void) initialize {
 	if (self == [CRMIncident class]) {
-		defaultCLSIncidentInstance = [[CRMIncident alloc] init];
+		defaultCRMIncidentInstance = [[CRMIncident alloc] init];
 	}
 }
 + (CRMIncident*) defaultInstance {
-	return defaultCLSIncidentInstance;
+	return defaultCRMIncidentInstance;
 }
 - (CRMIncident*) defaultInstance {
-	return defaultCLSIncidentInstance;
+	return defaultCRMIncidentInstance;
 }
 - (BOOL) isInitialized {
 	return YES;
@@ -112,128 +112,128 @@ static CRMIncident* defaultCLSIncidentInstance = nil;
 }
 @end
 
-BOOL CLSIncident_ArchitectureIsValidValue(CLSIncident_Architecture value) {
+BOOL CRMIncident_ArchitectureIsValidValue(CRMIncident_Architecture value) {
 	switch (value) {
-		case CLSIncident_ArchitectureX8632:
-		case CLSIncident_ArchitectureX8664:
-		case CLSIncident_ArchitectureArmUnknown:
-		case CLSIncident_ArchitecturePpc:
-		case CLSIncident_ArchitecturePpc64:
-		case CLSIncident_ArchitectureArmv6:
-		case CLSIncident_ArchitectureArmv7:
-		case CLSIncident_ArchitectureUnknown:
-		case CLSIncident_ArchitectureArmv7S:
-		case CLSIncident_ArchitectureArm64:
+		case CRMIncident_ArchitectureX8632:
+		case CRMIncident_ArchitectureX8664:
+		case CRMIncident_ArchitectureArmUnknown:
+		case CRMIncident_ArchitecturePpc:
+		case CRMIncident_ArchitecturePpc64:
+		case CRMIncident_ArchitectureArmv6:
+		case CRMIncident_ArchitectureArmv7:
+		case CRMIncident_ArchitectureUnknown:
+		case CRMIncident_ArchitectureArmv7S:
+		case CRMIncident_ArchitectureArm64:
 			return YES;
 		default:
 			return NO;
 	}
 }
-BOOL CLSIncident_PlatformIsValidValue(CLSIncident_Platform value) {
+BOOL CRMIncident_PlatformIsValidValue(CRMIncident_Platform value) {
 	switch (value) {
-		case CLSIncident_PlatformMacOsX:
-		case CLSIncident_PlatformIphoneOs:
-		case CLSIncident_PlatformIphoneSimulator:
-		case CLSIncident_PlatformAndroid:
-		case CLSIncident_PlatformWindows:
-		case CLSIncident_PlatformLinux:
-		case CLSIncident_PlatformBlackberry:
-		case CLSIncident_PlatformOther:
+		case CRMIncident_PlatformMacOsX:
+		case CRMIncident_PlatformIphoneOs:
+		case CRMIncident_PlatformIphoneSimulator:
+		case CRMIncident_PlatformAndroid:
+		case CRMIncident_PlatformWindows:
+		case CRMIncident_PlatformLinux:
+		case CRMIncident_PlatformBlackberry:
+		case CRMIncident_PlatformOther:
 			return YES;
 		default:
 			return NO;
 	}
 }
-BOOL CLSIncident_FrameImportanceIsValidValue(CLSIncident_FrameImportance value) {
+BOOL CRMIncident_FrameImportanceIsValidValue(CRMIncident_FrameImportance value) {
 	switch (value) {
-		case CLSIncident_FrameImportanceSymbolicated:
-		case CLSIncident_FrameImportanceInDeveloperCode:
-		case CLSIncident_FrameImportanceInCrashedThread:
-		case CLSIncident_FrameImportanceLikelyLeadToCrash:
-		case CLSIncident_FrameImportanceInException:
-		case CLSIncident_FrameImportanceAlgorithm:
-		case CLSIncident_FrameImportanceUserDeclared:
+		case CRMIncident_FrameImportanceSymbolicated:
+		case CRMIncident_FrameImportanceInDeveloperCode:
+		case CRMIncident_FrameImportanceInCrashedThread:
+		case CRMIncident_FrameImportanceLikelyLeadToCrash:
+		case CRMIncident_FrameImportanceInException:
+		case CRMIncident_FrameImportanceAlgorithm:
+		case CRMIncident_FrameImportanceUserDeclared:
 			return YES;
 		default:
 			return NO;
 	}
 }
-BOOL CLSIncident_FramePropertiesIsValidValue(CLSIncident_FrameProperties value) {
+BOOL CRMIncident_FramePropertiesIsValidValue(CRMIncident_FrameProperties value) {
 	switch (value) {
-		case CLSIncident_FramePropertiesFrameUnknown:
-		case CLSIncident_FramePropertiesFrameTypeCompiled:
-		case CLSIncident_FramePropertiesFrameTypeVm:
-		case CLSIncident_FramePropertiesFrameTypeInterpreted:
-		case CLSIncident_FramePropertiesFrameTypeJit:
-		case CLSIncident_FramePropertiesFrameTypeSpeculative:
-		case CLSIncident_FramePropertiesFrameTypeInlined:
-		case CLSIncident_FramePropertiesFrameContextDeveloper:
-		case CLSIncident_FramePropertiesFrameContextVendor:
-		case CLSIncident_FramePropertiesFrameContextRuntime:
-		case CLSIncident_FramePropertiesFrameContextPlatform:
-		case CLSIncident_FramePropertiesFrameContextSystem:
+		case CRMIncident_FramePropertiesFrameUnknown:
+		case CRMIncident_FramePropertiesFrameTypeCompiled:
+		case CRMIncident_FramePropertiesFrameTypeVm:
+		case CRMIncident_FramePropertiesFrameTypeInterpreted:
+		case CRMIncident_FramePropertiesFrameTypeJit:
+		case CRMIncident_FramePropertiesFrameTypeSpeculative:
+		case CRMIncident_FramePropertiesFrameTypeInlined:
+		case CRMIncident_FramePropertiesFrameContextDeveloper:
+		case CRMIncident_FramePropertiesFrameContextVendor:
+		case CRMIncident_FramePropertiesFrameContextRuntime:
+		case CRMIncident_FramePropertiesFrameContextPlatform:
+		case CRMIncident_FramePropertiesFrameContextSystem:
 			return YES;
 		default:
 			return NO;
 	}
 }
-BOOL CLSIncident_GeneratorTypeIsValidValue(CLSIncident_GeneratorType value) {
+BOOL CRMIncident_GeneratorTypeIsValidValue(CRMIncident_GeneratorType value) {
 	switch (value) {
-		case CLSIncident_GeneratorTypeIosSdk:
-		case CLSIncident_GeneratorTypeMacosSdk:
-		case CLSIncident_GeneratorTypeAndroidSdk:
-		case CLSIncident_GeneratorTypeJavascriptSdk:
+		case CRMIncident_GeneratorTypeIosSdk:
+		case CRMIncident_GeneratorTypeMacosSdk:
+		case CRMIncident_GeneratorTypeAndroidSdk:
+		case CRMIncident_GeneratorTypeJavascriptSdk:
 			return YES;
 		default:
 			return NO;
 	}
 }
-BOOL CLSIncident_DeviceIdentifierTypeIsValidValue(CLSIncident_DeviceIdentifierType value) {
+BOOL CRMIncident_DeviceIdentifierTypeIsValidValue(CRMIncident_DeviceIdentifierType value) {
 	switch (value) {
-		case CLSIncident_DeviceIdentifierTypeWifiMacAddress:
-		case CLSIncident_DeviceIdentifierTypeBluetoothMacAddress:
-		case CLSIncident_DeviceIdentifierTypeIosUdid:
-		case CLSIncident_DeviceIdentifierTypeIosAdvertisingIdentifier:
-		case CLSIncident_DeviceIdentifierTypeIosVendorIdentifier:
-		case CLSIncident_DeviceIdentifierTypeAndroidId:
-		case CLSIncident_DeviceIdentifierTypeAndroidDeviceId:
-		case CLSIncident_DeviceIdentifierTypeAndroidSerial:
-		case CLSIncident_DeviceIdentifierTypeMacHardwareUuid:
-		case CLSIncident_DeviceIdentifierTypeMacSerial:
+		case CRMIncident_DeviceIdentifierTypeWifiMacAddress:
+		case CRMIncident_DeviceIdentifierTypeBluetoothMacAddress:
+		case CRMIncident_DeviceIdentifierTypeIosUdid:
+		case CRMIncident_DeviceIdentifierTypeIosAdvertisingIdentifier:
+		case CRMIncident_DeviceIdentifierTypeIosVendorIdentifier:
+		case CRMIncident_DeviceIdentifierTypeAndroidId:
+		case CRMIncident_DeviceIdentifierTypeAndroidDeviceId:
+		case CRMIncident_DeviceIdentifierTypeAndroidSerial:
+		case CRMIncident_DeviceIdentifierTypeMacHardwareUuid:
+		case CRMIncident_DeviceIdentifierTypeMacSerial:
 			return YES;
 		default:
 			return NO;
 	}
 }
-BOOL CLSIncident_DeviceStateIsValidValue(CLSIncident_DeviceState value) {
+BOOL CRMIncident_DeviceStateIsValidValue(CRMIncident_DeviceState value) {
 	switch (value) {
-		case CLSIncident_DeviceStateIsSimulator:
-		case CLSIncident_DeviceStateJailbroken:
-		case CLSIncident_DeviceStateDebuggerAttached:
-		case CLSIncident_DeviceStateBetaOs:
-		case CLSIncident_DeviceStateVendorInternal:
-		case CLSIncident_DeviceStateCompromisedLibraries:
+		case CRMIncident_DeviceStateIsSimulator:
+		case CRMIncident_DeviceStateJailbroken:
+		case CRMIncident_DeviceStateDebuggerAttached:
+		case CRMIncident_DeviceStateBetaOs:
+		case CRMIncident_DeviceStateVendorInternal:
+		case CRMIncident_DeviceStateCompromisedLibraries:
 			return YES;
 		default:
 			return NO;
 	}
 }
-BOOL CLSIncident_DeliveryMechanismIsValidValue(CLSIncident_DeliveryMechanism value) {
+BOOL CRMIncident_DeliveryMechanismIsValidValue(CRMIncident_DeliveryMechanism value) {
 	switch (value) {
-		case CLSIncident_DeliveryMechanismDeveloper:
-		case CLSIncident_DeliveryMechanismUserSideload:
-		case CLSIncident_DeliveryMechanismTestDistribution:
-		case CLSIncident_DeliveryMechanismAppStore:
+		case CRMIncident_DeliveryMechanismDeveloper:
+		case CRMIncident_DeliveryMechanismUserSideload:
+		case CRMIncident_DeliveryMechanismTestDistribution:
+		case CRMIncident_DeliveryMechanismAppStore:
 			return YES;
 		default:
 			return NO;
 	}
 }
-BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value) {
+BOOL CRMIncident_FrameDecoderIsValidValue(CRMIncident_FrameDecoder value) {
 	switch (value) {
-		case CLSIncident_FrameDecoderSymbolication:
-		case CLSIncident_FrameDecoderDeobfuscation:
-		case CLSIncident_FrameDecoderCacheHydration:
+		case CRMIncident_FrameDecoderSymbolication:
+		case CRMIncident_FrameDecoderDeobfuscation:
+		case CRMIncident_FrameDecoderCacheHydration:
 			return YES;
 		default:
 			return NO;
@@ -272,17 +272,17 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value) {
 	}
 	return self;
 }
-static CRMSessionCustomAttribute* defaultCLSIncident_CustomAttributeInstance = nil;
+static CRMSessionCustomAttribute* defaultCRMIncident_CustomAttributeInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionCustomAttribute class]) {
-		defaultCLSIncident_CustomAttributeInstance = [[CRMSessionCustomAttribute alloc] init];
+		defaultCRMIncident_CustomAttributeInstance = [[CRMSessionCustomAttribute alloc] init];
 	}
 }
 + (CRMSessionCustomAttribute*) defaultInstance {
-	return defaultCLSIncident_CustomAttributeInstance;
+	return defaultCRMIncident_CustomAttributeInstance;
 }
 - (CRMSessionCustomAttribute*) defaultInstance {
-	return defaultCLSIncident_CustomAttributeInstance;
+	return defaultCRMIncident_CustomAttributeInstance;
 }
 - (BOOL) isInitialized {
 	if (!self.hasKey) {
@@ -607,17 +607,17 @@ static CRMSessionCustomAttribute* defaultCLSIncident_CustomAttributeInstance = n
 	}
 	return self;
 }
-static CRMSessionFrame* defaultCLSIncident_FrameInstance = nil;
+static CRMSessionFrame* defaultCRMIncident_FrameInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionFrame class]) {
-		defaultCLSIncident_FrameInstance = [[CRMSessionFrame alloc] init];
+		defaultCRMIncident_FrameInstance = [[CRMSessionFrame alloc] init];
 	}
 }
 + (CRMSessionFrame*) defaultInstance {
-	return defaultCLSIncident_FrameInstance;
+	return defaultCRMIncident_FrameInstance;
 }
 - (CRMSessionFrame*) defaultInstance {
-	return defaultCLSIncident_FrameInstance;
+	return defaultCRMIncident_FrameInstance;
 }
 - (BOOL) isInitialized {
 	if (!self.hasPc) {
@@ -1135,8 +1135,8 @@ static CRMSessionFrame* defaultCLSIncident_FrameInstance = nil;
 @property uint64_t endedAt;
 @property BOOL crashed;
 @property uint32_t analyzer;
-@property CLSIncident_GeneratorType generatorType;
-@property CLSIncident_FrameDecoder frameDecoder;
+@property CRMIncident_GeneratorType generatorType;
+@property CRMIncident_FrameDecoder frameDecoder;
 @property (retain) CRMSessionUser* user;
 @property (retain) CRMSessionApplication* app;
 @property (retain) CRMSessionOperatingSystem* os;
@@ -1255,8 +1255,8 @@ static CRMSessionFrame* defaultCLSIncident_FrameInstance = nil;
 		self.endedAt = 0L;
 		self.crashed = NO;
 		self.analyzer = 0;
-		self.generatorType = CLSIncident_GeneratorTypeIosSdk;
-		self.frameDecoder = CLSIncident_FrameDecoderSymbolication;
+		self.generatorType = CRMIncident_GeneratorTypeIosSdk;
+		self.frameDecoder = CRMIncident_FrameDecoderSymbolication;
 		self.user = [CRMSessionUser defaultInstance];
 		self.app = [CRMSessionApplication defaultInstance];
 		self.os = [CRMSessionOperatingSystem defaultInstance];
@@ -1264,17 +1264,17 @@ static CRMSessionFrame* defaultCLSIncident_FrameInstance = nil;
 	}
 	return self;
 }
-static CRMSession* defaultCLSIncident_SessionInstance = nil;
+static CRMSession* defaultCRMIncident_SessionInstance = nil;
 + (void) initialize {
 	if (self == [CRMSession class]) {
-		defaultCLSIncident_SessionInstance = [[CRMSession alloc] init];
+		defaultCRMIncident_SessionInstance = [[CRMSession alloc] init];
 	}
 }
 + (CRMSession*) defaultInstance {
-	return defaultCLSIncident_SessionInstance;
+	return defaultCRMIncident_SessionInstance;
 }
 - (CRMSession*) defaultInstance {
-	return defaultCLSIncident_SessionInstance;
+	return defaultCRMIncident_SessionInstance;
 }
 - (PBArray *)events {
 	return eventsArray;
@@ -1628,17 +1628,17 @@ static CRMSession* defaultCLSIncident_SessionInstance = nil;
 	}
 	return self;
 }
-static CRMSessionUser* defaultCLSIncident_Session_UserInstance = nil;
+static CRMSessionUser* defaultCRMIncident_Session_UserInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionUser class]) {
-		defaultCLSIncident_Session_UserInstance = [[CRMSessionUser alloc] init];
+		defaultCRMIncident_Session_UserInstance = [[CRMSessionUser alloc] init];
 	}
 }
 + (CRMSessionUser*) defaultInstance {
-	return defaultCLSIncident_Session_UserInstance;
+	return defaultCRMIncident_Session_UserInstance;
 }
 - (CRMSessionUser*) defaultInstance {
-	return defaultCLSIncident_Session_UserInstance;
+	return defaultCRMIncident_Session_UserInstance;
 }
 - (PBArray *)customAttributes {
 	return customAttributesArray;
@@ -2016,17 +2016,17 @@ static CRMSessionUser* defaultCLSIncident_Session_UserInstance = nil;
 	}
 	return self;
 }
-static CRMSessionProcess* defaultCLSIncident_Session_ProcessInstance = nil;
+static CRMSessionProcess* defaultCRMIncident_Session_ProcessInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionProcess class]) {
-		defaultCLSIncident_Session_ProcessInstance = [[CRMSessionProcess alloc] init];
+		defaultCRMIncident_Session_ProcessInstance = [[CRMSessionProcess alloc] init];
 	}
 }
 + (CRMSessionProcess*) defaultInstance {
-	return defaultCLSIncident_Session_ProcessInstance;
+	return defaultCRMIncident_Session_ProcessInstance;
 }
 - (CRMSessionProcess*) defaultInstance {
-	return defaultCLSIncident_Session_ProcessInstance;
+	return defaultCRMIncident_Session_ProcessInstance;
 }
 - (BOOL) isInitialized {
 	if (!self.hasPid) {
@@ -2362,7 +2362,7 @@ static CRMSessionProcess* defaultCLSIncident_Session_ProcessInstance = nil;
 @property (retain) NSString* clsId;
 @property (retain) NSString* developmentPlatform;
 @property (retain) NSString* developmentPlatformVersion;
-@property CLSIncident_DeliveryMechanism deliveryMechanism;
+@property CRMIncident_DeliveryMechanism deliveryMechanism;
 @end
 
 @implementation CRMSessionApplication
@@ -2460,21 +2460,21 @@ static CRMSessionProcess* defaultCLSIncident_Session_ProcessInstance = nil;
 		self.clsId = @"";
 		self.developmentPlatform = @"";
 		self.developmentPlatformVersion = @"";
-		self.deliveryMechanism = CLSIncident_DeliveryMechanismDeveloper;
+		self.deliveryMechanism = CRMIncident_DeliveryMechanismDeveloper;
 	}
 	return self;
 }
-static CRMSessionApplication* defaultCLSIncident_Session_ApplicationInstance = nil;
+static CRMSessionApplication* defaultCRMIncident_Session_ApplicationInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionApplication class]) {
-		defaultCLSIncident_Session_ApplicationInstance = [[CRMSessionApplication alloc] init];
+		defaultCRMIncident_Session_ApplicationInstance = [[CRMSessionApplication alloc] init];
 	}
 }
 + (CRMSessionApplication*) defaultInstance {
-	return defaultCLSIncident_Session_ApplicationInstance;
+	return defaultCRMIncident_Session_ApplicationInstance;
 }
 - (CRMSessionApplication*) defaultInstance {
-	return defaultCLSIncident_Session_ApplicationInstance;
+	return defaultCRMIncident_Session_ApplicationInstance;
 }
 - (BOOL) isInitialized {
 	if (!self.hasIdentifier) {
@@ -2620,7 +2620,7 @@ static CRMSessionApplication* defaultCLSIncident_Session_ApplicationInstance = n
 		[output appendFormat:@"%@%@: %@\n", indent, @"installationUuid", self.installationUuid];
 	}
 	if (self.hasClsId) {
-		[output appendFormat:@"%@%@: %@\n", indent, @"clsId", self.clsId];
+		[output appendFormat:@"%@%@: %@\n", indent, @"CRMId", self.clsId];
 	}
 	if (self.hasDevelopmentPlatform) {
 		[output appendFormat:@"%@%@: %@\n", indent, @"developmentPlatform", self.developmentPlatform];
@@ -2734,17 +2734,17 @@ static CRMSessionApplication* defaultCLSIncident_Session_ApplicationInstance = n
 	}
 	return self;
 }
-static CRMSessionOrganization* defaultCLSIncident_Session_Application_OrganizationInstance = nil;
+static CRMSessionOrganization* defaultCRMIncident_Session_Application_OrganizationInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionOrganization class]) {
-		defaultCLSIncident_Session_Application_OrganizationInstance = [[CRMSessionOrganization alloc] init];
+		defaultCRMIncident_Session_Application_OrganizationInstance = [[CRMSessionOrganization alloc] init];
 	}
 }
 + (CRMSessionOrganization*) defaultInstance {
-	return defaultCLSIncident_Session_Application_OrganizationInstance;
+	return defaultCRMIncident_Session_Application_OrganizationInstance;
 }
 - (CRMSessionOrganization*) defaultInstance {
-	return defaultCLSIncident_Session_Application_OrganizationInstance;
+	return defaultCRMIncident_Session_Application_OrganizationInstance;
 }
 - (BOOL) isInitialized {
 	return YES;
@@ -2810,7 +2810,7 @@ static CRMSessionOrganization* defaultCLSIncident_Session_Application_Organizati
 		[output appendFormat:@"%@%@: %@\n", indent, @"apiKey", self.apiKey];
 	}
 	if (self.hasClsId) {
-		[output appendFormat:@"%@%@: %@\n", indent, @"clsId", self.clsId];
+		[output appendFormat:@"%@%@: %@\n", indent, @"CRMId", self.clsId];
 	}
 	[self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -3097,7 +3097,7 @@ static CRMSessionOrganization* defaultCLSIncident_Session_Application_Organizati
 			}
 			case 80: {
 				int32_t value = [input readEnum];
-				if (CLSIncident_DeliveryMechanismIsValidValue(value)) {
+				if (CRMIncident_DeliveryMechanismIsValidValue(value)) {
 					[self setDeliveryMechanism:value];
 				} else {
 					[unknownFields mergeVarintField:10 value:value];
@@ -3282,23 +3282,23 @@ static CRMSessionOrganization* defaultCLSIncident_Session_Application_Organizati
 - (BOOL) hasDeliveryMechanism {
 	return result.hasDeliveryMechanism;
 }
-- (CLSIncident_DeliveryMechanism) deliveryMechanism {
+- (CRMIncident_DeliveryMechanism) deliveryMechanism {
 	return result.deliveryMechanism;
 }
-- (CRMIncident_Session_Application_Builder*) setDeliveryMechanism:(CLSIncident_DeliveryMechanism) value {
+- (CRMIncident_Session_Application_Builder*) setDeliveryMechanism:(CRMIncident_DeliveryMechanism) value {
 	result.hasDeliveryMechanism = YES;
 	result.deliveryMechanism = value;
 	return self;
 }
 - (CRMIncident_Session_Application_Builder*) clearDeliveryMechanism {
 	result.hasDeliveryMechanism = NO;
-	result.deliveryMechanism = CLSIncident_DeliveryMechanismDeveloper;
+	result.deliveryMechanism = CRMIncident_DeliveryMechanismDeveloper;
 	return self;
 }
 @end
 
 @interface CRMSessionOperatingSystem ()
-@property CLSIncident_Platform platform;
+@property CRMIncident_Platform platform;
 @property (retain) NSString* version;
 @property (retain) NSString* buildVersion;
 @property BOOL jailbroken;
@@ -3346,24 +3346,24 @@ static CRMSessionOrganization* defaultCLSIncident_Session_Application_Organizati
 }
 - (id) init {
 	if ((self = [super init])) {
-		self.platform = CLSIncident_PlatformMacOsX;
+		self.platform = CRMIncident_PlatformMacOsX;
 		self.version = @"";
 		self.buildVersion = @"";
 		self.jailbroken = NO;
 	}
 	return self;
 }
-static CRMSessionOperatingSystem* defaultCLSIncident_Session_OperatingSystemInstance = nil;
+static CRMSessionOperatingSystem* defaultCRMIncident_Session_OperatingSystemInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionOperatingSystem class]) {
-		defaultCLSIncident_Session_OperatingSystemInstance = [[CRMSessionOperatingSystem alloc] init];
+		defaultCRMIncident_Session_OperatingSystemInstance = [[CRMSessionOperatingSystem alloc] init];
 	}
 }
 + (CRMSessionOperatingSystem*) defaultInstance {
-	return defaultCLSIncident_Session_OperatingSystemInstance;
+	return defaultCRMIncident_Session_OperatingSystemInstance;
 }
 - (CRMSessionOperatingSystem*) defaultInstance {
-	return defaultCLSIncident_Session_OperatingSystemInstance;
+	return defaultCRMIncident_Session_OperatingSystemInstance;
 }
 - (BOOL) isInitialized {
 	if (!self.hasPlatform) {
@@ -3572,7 +3572,7 @@ static CRMSessionOperatingSystem* defaultCLSIncident_Session_OperatingSystemInst
 			}
 			case 8: {
 				int32_t value = [input readEnum];
-				if (CLSIncident_PlatformIsValidValue(value)) {
+				if (CRMIncident_PlatformIsValidValue(value)) {
 					[self setPlatform:value];
 				} else {
 					[unknownFields mergeVarintField:1 value:value];
@@ -3597,17 +3597,17 @@ static CRMSessionOperatingSystem* defaultCLSIncident_Session_OperatingSystemInst
 - (BOOL) hasPlatform {
 	return result.hasPlatform;
 }
-- (CLSIncident_Platform) platform {
+- (CRMIncident_Platform) platform {
 	return result.platform;
 }
-- (CRMIncident_Session_OperatingSystem_Builder*) setPlatform:(CLSIncident_Platform) value {
+- (CRMIncident_Session_OperatingSystem_Builder*) setPlatform:(CRMIncident_Platform) value {
 	result.hasPlatform = YES;
 	result.platform = value;
 	return self;
 }
 - (CRMIncident_Session_OperatingSystem_Builder*) clearPlatform {
 	result.hasPlatform = NO;
-	result.platform = CLSIncident_PlatformMacOsX;
+	result.platform = CRMIncident_PlatformMacOsX;
 	return self;
 }
 - (BOOL) hasVersion {
@@ -3663,7 +3663,7 @@ static CRMSessionOperatingSystem* defaultCLSIncident_Session_OperatingSystemInst
 @interface CRMSessionDevice ()
 @property (retain) NSData* identifier;
 @property (retain) NSData* udid;
-@property CLSIncident_Architecture arch;
+@property CRMIncident_Architecture arch;
 @property (retain) NSString* model;
 @property uint32_t cores;
 @property uint64_t ram;
@@ -3792,7 +3792,7 @@ static CRMSessionOperatingSystem* defaultCLSIncident_Session_OperatingSystemInst
 	if ((self = [super init])) {
 		self.identifier = [NSData data];
 		self.udid = [NSData data];
-		self.arch = CLSIncident_ArchitectureX8632;
+		self.arch = CRMIncident_ArchitectureX8632;
 		self.model = @"";
 		self.cores = 0;
 		self.ram = 0L;
@@ -3806,17 +3806,17 @@ static CRMSessionOperatingSystem* defaultCLSIncident_Session_OperatingSystemInst
 	}
 	return self;
 }
-static CRMSessionDevice* defaultCLSIncident_Session_DeviceInstance = nil;
+static CRMSessionDevice* defaultCRMIncident_Session_DeviceInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionDevice class]) {
-		defaultCLSIncident_Session_DeviceInstance = [[CRMSessionDevice alloc] init];
+		defaultCRMIncident_Session_DeviceInstance = [[CRMSessionDevice alloc] init];
 	}
 }
 + (CRMSessionDevice*) defaultInstance {
-	return defaultCLSIncident_Session_DeviceInstance;
+	return defaultCRMIncident_Session_DeviceInstance;
 }
 - (CRMSessionDevice*) defaultInstance {
-	return defaultCLSIncident_Session_DeviceInstance;
+	return defaultCRMIncident_Session_DeviceInstance;
 }
 - (PBArray *)identifiers {
 	return identifiersArray;
@@ -4099,7 +4099,7 @@ static CRMSessionDevice* defaultCLSIncident_Session_DeviceInstance = nil;
 @end
 
 @interface CRMIncident_Session_Device_Identifier ()
-@property CLSIncident_DeviceIdentifierType key;
+@property CRMIncident_DeviceIdentifierType key;
 @property (retain) NSString* value;
 @end
 
@@ -4125,22 +4125,22 @@ static CRMSessionDevice* defaultCLSIncident_Session_DeviceInstance = nil;
 }
 - (id) init {
 	if ((self = [super init])) {
-		self.key = CLSIncident_DeviceIdentifierTypeWifiMacAddress;
+		self.key = CRMIncident_DeviceIdentifierTypeWifiMacAddress;
 		self.value = @"";
 	}
 	return self;
 }
-static CRMIncident_Session_Device_Identifier* defaultCLSIncident_Session_Device_IdentifierInstance = nil;
+static CRMIncident_Session_Device_Identifier* defaultCRMIncident_Session_Device_IdentifierInstance = nil;
 + (void) initialize {
 	if (self == [CRMIncident_Session_Device_Identifier class]) {
-		defaultCLSIncident_Session_Device_IdentifierInstance = [[CRMIncident_Session_Device_Identifier alloc] init];
+		defaultCRMIncident_Session_Device_IdentifierInstance = [[CRMIncident_Session_Device_Identifier alloc] init];
 	}
 }
 + (CRMIncident_Session_Device_Identifier*) defaultInstance {
-	return defaultCLSIncident_Session_Device_IdentifierInstance;
+	return defaultCRMIncident_Session_Device_IdentifierInstance;
 }
 - (CRMIncident_Session_Device_Identifier*) defaultInstance {
-	return defaultCLSIncident_Session_Device_IdentifierInstance;
+	return defaultCRMIncident_Session_Device_IdentifierInstance;
 }
 - (BOOL) isInitialized {
 	if (!self.hasKey) {
@@ -4315,7 +4315,7 @@ static CRMIncident_Session_Device_Identifier* defaultCLSIncident_Session_Device_
 			}
 			case 8: {
 				int32_t value = [input readEnum];
-				if (CLSIncident_DeviceIdentifierTypeIsValidValue(value)) {
+				if (CRMIncident_DeviceIdentifierTypeIsValidValue(value)) {
 					[self setKey:value];
 				} else {
 					[unknownFields mergeVarintField:1 value:value];
@@ -4332,17 +4332,17 @@ static CRMIncident_Session_Device_Identifier* defaultCLSIncident_Session_Device_
 - (BOOL) hasKey {
 	return result.hasKey;
 }
-- (CLSIncident_DeviceIdentifierType) key {
+- (CRMIncident_DeviceIdentifierType) key {
 	return result.key;
 }
-- (CRMIncident_Session_Device_Identifier_Builder*) setKey:(CLSIncident_DeviceIdentifierType) value {
+- (CRMIncident_Session_Device_Identifier_Builder*) setKey:(CRMIncident_DeviceIdentifierType) value {
 	result.hasKey = YES;
 	result.key = value;
 	return self;
 }
 - (CRMIncident_Session_Device_Identifier_Builder*) clearKey {
 	result.hasKey = NO;
-	result.key = CLSIncident_DeviceIdentifierTypeWifiMacAddress;
+	result.key = CRMIncident_DeviceIdentifierTypeWifiMacAddress;
 	return self;
 }
 - (BOOL) hasValue {
@@ -4482,7 +4482,7 @@ static CRMIncident_Session_Device_Identifier* defaultCLSIncident_Session_Device_
 			}
 			case 24: {
 				int32_t value = [input readEnum];
-				if (CLSIncident_ArchitectureIsValidValue(value)) {
+				if (CRMIncident_ArchitectureIsValidValue(value)) {
 					[self setArch:value];
 				} else {
 					[unknownFields mergeVarintField:3 value:value];
@@ -4573,17 +4573,17 @@ static CRMIncident_Session_Device_Identifier* defaultCLSIncident_Session_Device_
 - (BOOL) hasArch {
 	return result.hasArch;
 }
-- (CLSIncident_Architecture) arch {
+- (CRMIncident_Architecture) arch {
 	return result.arch;
 }
-- (CRMIncident_Session_Device_Builder*) setArch:(CLSIncident_Architecture) value {
+- (CRMIncident_Session_Device_Builder*) setArch:(CRMIncident_Architecture) value {
 	result.hasArch = YES;
 	result.arch = value;
 	return self;
 }
 - (CRMIncident_Session_Device_Builder*) clearArch {
 	result.hasArch = NO;
-	result.arch = CLSIncident_ArchitectureX8632;
+	result.arch = CRMIncident_ArchitectureX8632;
 	return self;
 }
 - (BOOL) hasModel {
@@ -4855,17 +4855,17 @@ static CRMIncident_Session_Device_Identifier* defaultCLSIncident_Session_Device_
 	}
 	return self;
 }
-static CRMSessionEvent* defaultCLSIncident_Session_EventInstance = nil;
+static CRMSessionEvent* defaultCRMIncident_Session_EventInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionEvent class]) {
-		defaultCLSIncident_Session_EventInstance = [[CRMSessionEvent alloc] init];
+		defaultCRMIncident_Session_EventInstance = [[CRMSessionEvent alloc] init];
 	}
 }
 + (CRMSessionEvent*) defaultInstance {
-	return defaultCLSIncident_Session_EventInstance;
+	return defaultCRMIncident_Session_EventInstance;
 }
 - (CRMSessionEvent*) defaultInstance {
-	return defaultCLSIncident_Session_EventInstance;
+	return defaultCRMIncident_Session_EventInstance;
 }
 - (BOOL) isInitialized {
 	if (!self.hasTimestamp) {
@@ -5111,17 +5111,17 @@ static CRMSessionEvent* defaultCLSIncident_Session_EventInstance = nil;
 	}
 	return self;
 }
-static CRMSessionEventApplication* defaultCLSIncident_Session_Event_ApplicationInstance = nil;
+static CRMSessionEventApplication* defaultCRMIncident_Session_Event_ApplicationInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionEventApplication class]) {
-		defaultCLSIncident_Session_Event_ApplicationInstance = [[CRMSessionEventApplication alloc] init];
+		defaultCRMIncident_Session_Event_ApplicationInstance = [[CRMSessionEventApplication alloc] init];
 	}
 }
 + (CRMSessionEventApplication*) defaultInstance {
-	return defaultCLSIncident_Session_Event_ApplicationInstance;
+	return defaultCRMIncident_Session_Event_ApplicationInstance;
 }
 - (CRMSessionEventApplication*) defaultInstance {
-	return defaultCLSIncident_Session_Event_ApplicationInstance;
+	return defaultCRMIncident_Session_Event_ApplicationInstance;
 }
 - (PBArray *)customAttributes {
 	return customAttributesArray;
@@ -5310,17 +5310,17 @@ static CRMSessionEventApplication* defaultCLSIncident_Session_Event_ApplicationI
 	}
 	return self;
 }
-static CRMSessionExecution* defaultCLSIncident_Session_Event_Application_ExecutionInstance = nil;
+static CRMSessionExecution* defaultCRMIncident_Session_Event_Application_ExecutionInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionExecution class]) {
-		defaultCLSIncident_Session_Event_Application_ExecutionInstance = [[CRMSessionExecution alloc] init];
+		defaultCRMIncident_Session_Event_Application_ExecutionInstance = [[CRMSessionExecution alloc] init];
 	}
 }
 + (CRMSessionExecution*) defaultInstance {
-	return defaultCLSIncident_Session_Event_Application_ExecutionInstance;
+	return defaultCRMIncident_Session_Event_Application_ExecutionInstance;
 }
 - (CRMSessionExecution*) defaultInstance {
-	return defaultCLSIncident_Session_Event_Application_ExecutionInstance;
+	return defaultCRMIncident_Session_Event_Application_ExecutionInstance;
 }
 - (PBArray *)threads {
 	return threadsArray;
@@ -5549,17 +5549,17 @@ static CRMSessionExecution* defaultCLSIncident_Session_Event_Application_Executi
 	}
 	return self;
 }
-static CRMSessionThread* defaultCLSIncident_Session_Event_Application_Execution_ThreadInstance = nil;
+static CRMSessionThread* defaultCRMIncident_Session_Event_Application_Execution_ThreadInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionThread class]) {
-		defaultCLSIncident_Session_Event_Application_Execution_ThreadInstance = [[CRMSessionThread alloc] init];
+		defaultCRMIncident_Session_Event_Application_Execution_ThreadInstance = [[CRMSessionThread alloc] init];
 	}
 }
 + (CRMSessionThread*) defaultInstance {
-	return defaultCLSIncident_Session_Event_Application_Execution_ThreadInstance;
+	return defaultCRMIncident_Session_Event_Application_Execution_ThreadInstance;
 }
 - (CRMSessionThread*) defaultInstance {
-	return defaultCLSIncident_Session_Event_Application_Execution_ThreadInstance;
+	return defaultCRMIncident_Session_Event_Application_Execution_ThreadInstance;
 }
 - (PBArray *)frames {
 	return framesArray;
@@ -5774,17 +5774,17 @@ static CRMSessionThread* defaultCLSIncident_Session_Event_Application_Execution_
 	}
 	return self;
 }
-static CRMSessionRegister* defaultCLSIncident_Session_Event_Application_Execution_Thread_RegisterInstance = nil;
+static CRMSessionRegister* defaultCRMIncident_Session_Event_Application_Execution_Thread_RegisterInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionRegister class]) {
-		defaultCLSIncident_Session_Event_Application_Execution_Thread_RegisterInstance = [[CRMSessionRegister alloc] init];
+		defaultCRMIncident_Session_Event_Application_Execution_Thread_RegisterInstance = [[CRMSessionRegister alloc] init];
 	}
 }
 + (CRMSessionRegister*) defaultInstance {
-	return defaultCLSIncident_Session_Event_Application_Execution_Thread_RegisterInstance;
+	return defaultCRMIncident_Session_Event_Application_Execution_Thread_RegisterInstance;
 }
 - (CRMSessionRegister*) defaultInstance {
-	return defaultCLSIncident_Session_Event_Application_Execution_Thread_RegisterInstance;
+	return defaultCRMIncident_Session_Event_Application_Execution_Thread_RegisterInstance;
 }
 - (BOOL) isInitialized {
 	if (!self.hasName) {
@@ -6317,17 +6317,17 @@ static CRMSessionRegister* defaultCLSIncident_Session_Event_Application_Executio
 	}
 	return self;
 }
-static CRMSessionException* defaultCLSIncident_Session_Event_Application_Execution_ExceptionInstance = nil;
+static CRMSessionException* defaultCRMIncident_Session_Event_Application_Execution_ExceptionInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionException class]) {
-		defaultCLSIncident_Session_Event_Application_Execution_ExceptionInstance = [[CRMSessionException alloc] init];
+		defaultCRMIncident_Session_Event_Application_Execution_ExceptionInstance = [[CRMSessionException alloc] init];
 	}
 }
 + (CRMSessionException*) defaultInstance {
-	return defaultCLSIncident_Session_Event_Application_Execution_ExceptionInstance;
+	return defaultCRMIncident_Session_Event_Application_Execution_ExceptionInstance;
 }
 - (CRMSessionException*) defaultInstance {
-	return defaultCLSIncident_Session_Event_Application_Execution_ExceptionInstance;
+	return defaultCRMIncident_Session_Event_Application_Execution_ExceptionInstance;
 }
 - (PBArray *)frames {
 	return framesArray;
@@ -6886,17 +6886,17 @@ static CRMSessionException* defaultCLSIncident_Session_Event_Application_Executi
 	}
 	return self;
 }
-static CRMSessionSignal* defaultCLSIncident_Session_Event_Application_Execution_SignalInstance = nil;
+static CRMSessionSignal* defaultCRMIncident_Session_Event_Application_Execution_SignalInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionSignal class]) {
-		defaultCLSIncident_Session_Event_Application_Execution_SignalInstance = [[CRMSessionSignal alloc] init];
+		defaultCRMIncident_Session_Event_Application_Execution_SignalInstance = [[CRMSessionSignal alloc] init];
 	}
 }
 + (CRMSessionSignal*) defaultInstance {
-	return defaultCLSIncident_Session_Event_Application_Execution_SignalInstance;
+	return defaultCRMIncident_Session_Event_Application_Execution_SignalInstance;
 }
 - (CRMSessionSignal*) defaultInstance {
-	return defaultCLSIncident_Session_Event_Application_Execution_SignalInstance;
+	return defaultCRMIncident_Session_Event_Application_Execution_SignalInstance;
 }
 - (BOOL) isInitialized {
 	if (!self.hasName) {
@@ -7158,7 +7158,7 @@ static CRMSessionSignal* defaultCLSIncident_Session_Event_Application_Execution_
 @property uint64_t baseAddress;
 @property uint64_t size;
 @property (retain) NSString* name;
-@property CLSIncident_Architecture arch;
+@property CRMIncident_Architecture arch;
 @property (retain) NSString* clsId;
 @end
 
@@ -7209,22 +7209,22 @@ static CRMSessionSignal* defaultCLSIncident_Session_Event_Application_Execution_
 		self.baseAddress = 0L;
 		self.size = 0L;
 		self.name = @"";
-		self.arch = CLSIncident_ArchitectureX8632;
+		self.arch = CRMIncident_ArchitectureX8632;
 		self.clsId = @"";
 	}
 	return self;
 }
-static CRMSessionBinaryImage* defaultCLSIncident_Session_Event_Application_Execution_BinaryImageInstance = nil;
+static CRMSessionBinaryImage* defaultCRMIncident_Session_Event_Application_Execution_BinaryImageInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionBinaryImage class]) {
-		defaultCLSIncident_Session_Event_Application_Execution_BinaryImageInstance = [[CRMSessionBinaryImage alloc] init];
+		defaultCRMIncident_Session_Event_Application_Execution_BinaryImageInstance = [[CRMSessionBinaryImage alloc] init];
 	}
 }
 + (CRMSessionBinaryImage*) defaultInstance {
-	return defaultCLSIncident_Session_Event_Application_Execution_BinaryImageInstance;
+	return defaultCRMIncident_Session_Event_Application_Execution_BinaryImageInstance;
 }
 - (CRMSessionBinaryImage*) defaultInstance {
-	return defaultCLSIncident_Session_Event_Application_Execution_BinaryImageInstance;
+	return defaultCRMIncident_Session_Event_Application_Execution_BinaryImageInstance;
 }
 - (BOOL) isInitialized {
 	if (!self.hasBaseAddress) {
@@ -7326,7 +7326,7 @@ static CRMSessionBinaryImage* defaultCLSIncident_Session_Event_Application_Execu
 		[output appendFormat:@"%@%@: %d\n", indent, @"arch", self.arch];
 	}
 	if (self.hasClsId) {
-		[output appendFormat:@"%@%@: %@\n", indent, @"clsId", self.clsId];
+		[output appendFormat:@"%@%@: %@\n", indent, @"CRMId", self.clsId];
 	}
 	[self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
@@ -7465,7 +7465,7 @@ static CRMSessionBinaryImage* defaultCLSIncident_Session_Event_Application_Execu
 			}
 			case 40: {
 				int32_t value = [input readEnum];
-				if (CLSIncident_ArchitectureIsValidValue(value)) {
+				if (CRMIncident_ArchitectureIsValidValue(value)) {
 					[self setArch:value];
 				} else {
 					[unknownFields mergeVarintField:5 value:value];
@@ -7530,17 +7530,17 @@ static CRMSessionBinaryImage* defaultCLSIncident_Session_Event_Application_Execu
 - (BOOL) hasArch {
 	return result.hasArch;
 }
-- (CLSIncident_Architecture) arch {
+- (CRMIncident_Architecture) arch {
 	return result.arch;
 }
-- (CRMIncident_Session_Event_Application_Execution_BinaryImage_Builder*) setArch:(CLSIncident_Architecture) value {
+- (CRMIncident_Session_Event_Application_Execution_BinaryImage_Builder*) setArch:(CRMIncident_Architecture) value {
 	result.hasArch = YES;
 	result.arch = value;
 	return self;
 }
 - (CRMIncident_Session_Event_Application_Execution_BinaryImage_Builder*) clearArch {
 	result.hasArch = NO;
-	result.arch = CLSIncident_ArchitectureX8632;
+	result.arch = CRMIncident_ArchitectureX8632;
 	return self;
 }
 - (BOOL) hasClsId {
@@ -8004,17 +8004,17 @@ static CRMSessionBinaryImage* defaultCLSIncident_Session_Event_Application_Execu
 	}
 	return self;
 }
-static CRMSessionEventOperatingSystem* defaultCLSIncident_Session_Event_OperatingSystemInstance = nil;
+static CRMSessionEventOperatingSystem* defaultCRMIncident_Session_Event_OperatingSystemInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionEventOperatingSystem class]) {
-		defaultCLSIncident_Session_Event_OperatingSystemInstance = [[CRMSessionEventOperatingSystem alloc] init];
+		defaultCRMIncident_Session_Event_OperatingSystemInstance = [[CRMSessionEventOperatingSystem alloc] init];
 	}
 }
 + (CRMSessionEventOperatingSystem*) defaultInstance {
-	return defaultCLSIncident_Session_Event_OperatingSystemInstance;
+	return defaultCRMIncident_Session_Event_OperatingSystemInstance;
 }
 - (CRMSessionEventOperatingSystem*) defaultInstance {
-	return defaultCLSIncident_Session_Event_OperatingSystemInstance;
+	return defaultCRMIncident_Session_Event_OperatingSystemInstance;
 }
 - (PBArray *)networkInterfaces {
 	return networkInterfacesArray;
@@ -8190,17 +8190,17 @@ static CRMSessionEventOperatingSystem* defaultCLSIncident_Session_Event_Operatin
 	}
 	return self;
 }
-static CRMIncident_Session_Event_OperatingSystem_NetworkInterface* defaultCLSIncident_Session_Event_OperatingSystem_NetworkInterfaceInstance = nil;
+static CRMIncident_Session_Event_OperatingSystem_NetworkInterface* defaultCRMIncident_Session_Event_OperatingSystem_NetworkInterfaceInstance = nil;
 + (void) initialize {
 	if (self == [CRMIncident_Session_Event_OperatingSystem_NetworkInterface class]) {
-		defaultCLSIncident_Session_Event_OperatingSystem_NetworkInterfaceInstance = [[CRMIncident_Session_Event_OperatingSystem_NetworkInterface alloc] init];
+		defaultCRMIncident_Session_Event_OperatingSystem_NetworkInterfaceInstance = [[CRMIncident_Session_Event_OperatingSystem_NetworkInterface alloc] init];
 	}
 }
 + (CRMIncident_Session_Event_OperatingSystem_NetworkInterface*) defaultInstance {
-	return defaultCLSIncident_Session_Event_OperatingSystem_NetworkInterfaceInstance;
+	return defaultCRMIncident_Session_Event_OperatingSystem_NetworkInterfaceInstance;
 }
 - (CRMIncident_Session_Event_OperatingSystem_NetworkInterface*) defaultInstance {
-	return defaultCLSIncident_Session_Event_OperatingSystem_NetworkInterfaceInstance;
+	return defaultCRMIncident_Session_Event_OperatingSystem_NetworkInterfaceInstance;
 }
 - (PBArray *)connections {
 	return connectionsArray;
@@ -8415,17 +8415,17 @@ static CRMIncident_Session_Event_OperatingSystem_NetworkInterface* defaultCLSInc
 	}
 	return self;
 }
-static CRMIncident_Session_Event_OperatingSystem_NetworkInterface_Connection* defaultCLSIncident_Session_Event_OperatingSystem_NetworkInterface_ConnectionInstance = nil;
+static CRMIncident_Session_Event_OperatingSystem_NetworkInterface_Connection* defaultCRMIncident_Session_Event_OperatingSystem_NetworkInterface_ConnectionInstance = nil;
 + (void) initialize {
 	if (self == [CRMIncident_Session_Event_OperatingSystem_NetworkInterface_Connection class]) {
-		defaultCLSIncident_Session_Event_OperatingSystem_NetworkInterface_ConnectionInstance = [[CRMIncident_Session_Event_OperatingSystem_NetworkInterface_Connection alloc] init];
+		defaultCRMIncident_Session_Event_OperatingSystem_NetworkInterface_ConnectionInstance = [[CRMIncident_Session_Event_OperatingSystem_NetworkInterface_Connection alloc] init];
 	}
 }
 + (CRMIncident_Session_Event_OperatingSystem_NetworkInterface_Connection*) defaultInstance {
-	return defaultCLSIncident_Session_Event_OperatingSystem_NetworkInterface_ConnectionInstance;
+	return defaultCRMIncident_Session_Event_OperatingSystem_NetworkInterface_ConnectionInstance;
 }
 - (CRMIncident_Session_Event_OperatingSystem_NetworkInterface_Connection*) defaultInstance {
-	return defaultCLSIncident_Session_Event_OperatingSystem_NetworkInterface_ConnectionInstance;
+	return defaultCRMIncident_Session_Event_OperatingSystem_NetworkInterface_ConnectionInstance;
 }
 - (BOOL) isInitialized {
 	return YES;
@@ -9199,17 +9199,17 @@ static CRMIncident_Session_Event_OperatingSystem_NetworkInterface_Connection* de
 	}
 	return self;
 }
-static CRMSessionEventDevice* defaultCLSIncident_Session_Event_DeviceInstance = nil;
+static CRMSessionEventDevice* defaultCRMIncident_Session_Event_DeviceInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionEventDevice class]) {
-		defaultCLSIncident_Session_Event_DeviceInstance = [[CRMSessionEventDevice alloc] init];
+		defaultCRMIncident_Session_Event_DeviceInstance = [[CRMSessionEventDevice alloc] init];
 	}
 }
 + (CRMSessionEventDevice*) defaultInstance {
-	return defaultCLSIncident_Session_Event_DeviceInstance;
+	return defaultCRMIncident_Session_Event_DeviceInstance;
 }
 - (CRMSessionEventDevice*) defaultInstance {
-	return defaultCLSIncident_Session_Event_DeviceInstance;
+	return defaultCRMIncident_Session_Event_DeviceInstance;
 }
 - (BOOL) isInitialized {
 	return YES;
@@ -9602,17 +9602,17 @@ static CRMSessionEventDevice* defaultCLSIncident_Session_Event_DeviceInstance = 
 	}
 	return self;
 }
-static CRMSessionLog* defaultCLSIncident_Session_Event_LogInstance = nil;
+static CRMSessionLog* defaultCRMIncident_Session_Event_LogInstance = nil;
 + (void) initialize {
 	if (self == [CRMSessionLog class]) {
-		defaultCLSIncident_Session_Event_LogInstance = [[CRMSessionLog alloc] init];
+		defaultCRMIncident_Session_Event_LogInstance = [[CRMSessionLog alloc] init];
 	}
 }
 + (CRMSessionLog*) defaultInstance {
-	return defaultCLSIncident_Session_Event_LogInstance;
+	return defaultCRMIncident_Session_Event_LogInstance;
 }
 - (CRMSessionLog*) defaultInstance {
-	return defaultCLSIncident_Session_Event_LogInstance;
+	return defaultCRMIncident_Session_Event_LogInstance;
 }
 - (BOOL) isInitialized {
 	return YES;
@@ -10303,7 +10303,7 @@ static CRMSessionLog* defaultCLSIncident_Session_Event_LogInstance = nil;
 			}
 			case 96: {
 				int32_t value = [input readEnum];
-				if (CLSIncident_GeneratorTypeIsValidValue(value)) {
+				if (CRMIncident_GeneratorTypeIsValidValue(value)) {
 					[self setGeneratorType:value];
 				} else {
 					[unknownFields mergeVarintField:12 value:value];
@@ -10312,7 +10312,7 @@ static CRMSessionLog* defaultCLSIncident_Session_Event_LogInstance = nil;
 			}
 			case 104: {
 				int32_t value = [input readEnum];
-				if (CLSIncident_FrameDecoderIsValidValue(value)) {
+				if (CRMIncident_FrameDecoderIsValidValue(value)) {
 					[self setFrameDecoder:value];
 				} else {
 					[unknownFields mergeVarintField:13 value:value];
@@ -10421,33 +10421,33 @@ static CRMSessionLog* defaultCLSIncident_Session_Event_LogInstance = nil;
 - (BOOL) hasGeneratorType {
 	return result.hasGeneratorType;
 }
-- (CLSIncident_GeneratorType) generatorType {
+- (CRMIncident_GeneratorType) generatorType {
 	return result.generatorType;
 }
-- (CRMIncident_Session_Builder*) setGeneratorType:(CLSIncident_GeneratorType) value {
+- (CRMIncident_Session_Builder*) setGeneratorType:(CRMIncident_GeneratorType) value {
 	result.hasGeneratorType = YES;
 	result.generatorType = value;
 	return self;
 }
 - (CRMIncident_Session_Builder*) clearGeneratorType {
 	result.hasGeneratorType = NO;
-	result.generatorType = CLSIncident_GeneratorTypeIosSdk;
+	result.generatorType = CRMIncident_GeneratorTypeIosSdk;
 	return self;
 }
 - (BOOL) hasFrameDecoder {
 	return result.hasFrameDecoder;
 }
-- (CLSIncident_FrameDecoder) frameDecoder {
+- (CRMIncident_FrameDecoder) frameDecoder {
 	return result.frameDecoder;
 }
-- (CRMIncident_Session_Builder*) setFrameDecoder:(CLSIncident_FrameDecoder) value {
+- (CRMIncident_Session_Builder*) setFrameDecoder:(CRMIncident_FrameDecoder) value {
 	result.hasFrameDecoder = YES;
 	result.frameDecoder = value;
 	return self;
 }
 - (CRMIncident_Session_Builder*) clearFrameDecoder {
 	result.hasFrameDecoder = NO;
-	result.frameDecoder = CLSIncident_FrameDecoderSymbolication;
+	result.frameDecoder = CRMIncident_FrameDecoderSymbolication;
 	return self;
 }
 - (BOOL) hasUser {

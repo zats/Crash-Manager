@@ -1,22 +1,22 @@
 //
-//  CLSAppDelegate.m
+//  CRMAppDelegate.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSAppDelegate.h"
+#import "CRMAppDelegate.h"
 
 #import "CRMConfiguration.h"
 #import "CRMAnalyticsController.h"
 #import <Crashlytics/Crashlytics.h>
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 
-@interface CLSAppDelegate () <CrashlyticsDelegate>
+@interface CRMAppDelegate () <CrashlyticsDelegate>
 @end
 
-@implementation CLSAppDelegate
+@implementation CRMAppDelegate
 
 #pragma mark - UIApplicationDelegate
 

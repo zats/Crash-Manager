@@ -1,5 +1,5 @@
 //
-//  CLSIncident_Session+Crashlytics.m
+//  CRMIncident_Session+Crashlytics.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/26/13.
@@ -220,15 +220,15 @@
 - (NSString *)displayString {
 	NSString *result = [NSString string];
 	switch (self.platform) {
-		case CLSIncident_PlatformAndroid:
+		case CRMIncident_PlatformAndroid:
 			result = [result stringByAppendingString:@"Android"];
 			break;
 
-		case CLSIncident_PlatformIphoneOs:
+		case CRMIncident_PlatformIphoneOs:
 			result = [result stringByAppendingString:@"iOS"];
 			break;
 			
-		case CLSIncident_PlatformMacOsX:
+		case CRMIncident_PlatformMacOsX:
 			result = [result stringByAppendingString:@"Mac OS"];
 
 		default:

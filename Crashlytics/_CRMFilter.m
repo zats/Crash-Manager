@@ -3,21 +3,21 @@
 
 #import "_CRMFilter.h"
 
-const struct CLSFilterAttributes CLSFilterAttributes = {
+const struct CRMFilterAttributes CRMFilterAttributes = {
 	.issueNewerThen = @"issueNewerThen",
 	.issueOlderThen = @"issueOlderThen",
 	.issueStatus = @"issueStatus",
 };
 
-const struct CLSFilterRelationships CLSFilterRelationships = {
+const struct CRMFilterRelationships CRMFilterRelationships = {
 	.application = @"application",
 	.build = @"build",
 };
 
-const struct CLSFilterFetchedProperties CLSFilterFetchedProperties = {
+const struct CRMFilterFetchedProperties CRMFilterFetchedProperties = {
 };
 
-@implementation CLSFilterID
+@implementation CRMFilterID
 @end
 
 @implementation _CRMFilter
@@ -36,8 +36,8 @@ const struct CLSFilterFetchedProperties CLSFilterFetchedProperties = {
 	return [NSEntityDescription entityForName:@"Filter" inManagedObjectContext:moc_];
 }
 
-- (CLSFilterID*)objectID {
-	return (CLSFilterID*)[super objectID];
+- (CRMFilterID *)objectID {
+	return (CRMFilterID *)[super objectID];
 }
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {

@@ -1,5 +1,5 @@
 //
-//  CLSAboutViewController.h
+//  CRMAboutViewController.h
 //  CrashManager
 //
 //  Created by Sasha Zats on 3/1/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CLSAboutViewController : UITableViewController
+@interface CRMAboutViewController : UITableViewController
 
 @end

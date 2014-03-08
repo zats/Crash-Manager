@@ -1,5 +1,5 @@
 //
-//  CLSHTTPRequestSerializer.m
+//  CRMHTTPRequestSerializer.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/8/13.
@@ -46,7 +46,7 @@ forHTTPHeaderField:@"Accept"];
 		[request setValue:[CRMAccount activeAccount].token
 	   forHTTPHeaderField:@"X-CRASHLYTICS-ACCESS-TOKEN"];
 	}
-    DDLogVerbose(@"%@", [request cls_cURLCommand]);
+    DDLogVerbose(@"%@", [request crm_cURLCommand]);
 	return request;
 }
 

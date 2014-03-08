@@ -35,7 +35,7 @@
 }
 
 - (CRMApplication *)application {
-	return [CRMApplication MR_findFirstByAttribute:CLSApplicationAttributes.applicationID
+	return [CRMApplication MR_findFirstByAttribute:CRMApplicationAttributes.applicationID
 										 withValue:self.applicationID];
 }
 
@@ -70,8 +70,8 @@
 	cell.issueSubtitleLabel.text = issue.subtitle;
 	cell.impactLevelImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"issue-impact-level-%@", issue.impactLevel]];
 	
-	NSString *crashesString = TTTLocalizedPluralString(issue.crashesCountValue, @"CLSIssueListCrashesCount", @"Crashes count for issues list screen");
-	NSString *usersAffected = TTTLocalizedPluralString(issue.devicesAffectedValue, @"CLSIssueListUsersAffected", @"Users affected count for issues list screen");
+	NSString *crashesString = TTTLocalizedPluralString(issue.crashesCountValue, @"CRMIssueListCrashesCount", @"Crashes count for issues list screen");
+	NSString *usersAffected = TTTLocalizedPluralString(issue.devicesAffectedValue, @"CRMIssueListUsersAffected", @"Users affected count for issues list screen");
 	cell.issueDetailsLabel.text = [NSString stringWithFormat:@"%@  %@  %@", issue.build.buildID, crashesString,  usersAffected];
 	// adjusting layout for the cell according to its position in the table view
 	if ([self _isOnlyRowAtIndexPath:indexPath]) {
@@ -148,20 +148,20 @@
 															 ascending:YES];
 		NSArray *sortDescriptors = @[
 			// Impact Level
-			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.impactLevel
+			[NSSortDescriptor sortDescriptorWithKey:CRMIssueAttributes.impactLevel
 										  ascending:NO],
 			// Number of crashes
-			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.crashesCount
+			[NSSortDescriptor sortDescriptorWithKey:CRMIssueAttributes.crashesCount
 										  ascending:NO],
 			// Number of users affected by the crash
-			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.devicesAffected
+			[NSSortDescriptor sortDescriptorWithKey:CRMIssueAttributes.devicesAffected
 										  ascending:NO],
 			// Unresolved issues should come before resovled
 			// Issues resolved today yesterday should go before issues resolved yesterday
-			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.resolvedAt
+			[NSSortDescriptor sortDescriptorWithKey:CRMIssueAttributes.resolvedAt
 										  ascending:YES],
 			// As a final meause, we sort by the title
-			[NSSortDescriptor sortDescriptorWithKey:CLSIssueAttributes.title
+			[NSSortDescriptor sortDescriptorWithKey:CRMIssueAttributes.title
 										  ascending:NO
 										   selector:@selector(localizedStandardCompare:)],
 		];
@@ -174,56 +174,6 @@
 		
 		[self _beginLoading];
 	}];
-	
-
-//	[[RACObserve(self.application, filter)
-//		filter:^BOOL(CLSApplication *application) {
-//			return application != nil;
-//		}]
-//		subscribeNext:^(CRMFilter *filter) {
-//			[[[RACSignal
-//				combineLatest:@[
-//                    RACObserve(filter, build),
-//                    RACObserve(filter, issueStatus),
-//                    RACObserve(filter, issueNewerThen),
-//                    RACObserve(filter, issueOlderThen)]]
-//				distinctUntilChanged]
-//				subscribeNext:^(id x) {
-//					// We don't get issues creation date in response we can not use
-//					// fetched results controller for fetching issues filtered by time.
-//					// Because of that I ended up using a simple array for this case
-//					// However we still trying to prepopulate array for other fitlers
-//					// or for whe no filters selected
-//					@strongify(self);
-//					CRMFilter *filter = self.application.filter;
-//					if ([filter isTimeRangeFilterSet]) {
-//						self.issueIDs = [NSArray array];
-//					} else {
-//						NSMutableArray *predicatesArray = [NSMutableArray array];
-//						if ([filter isBuildFilterSet]) {
-//							[predicatesArray addObject:[NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.build, filter.build]];
-//						}
-//						if ([filter isStatusFilterSet]) {
-//							if ([filter.issueStatus isEqualToString:CLSFilterIssueStatusResolved]) {
-//								[predicatesArray addObject:[NSPredicate predicateWithFormat:@"%K != nil", CLSIssueAttributes.resolvedAt]];
-//							} else if ([filter.issueStatus isEqualToString:CLSFilterIssueStatusUnresolved]) {
-//								[predicatesArray addObject:[NSPredicate predicateWithFormat:@"%K == nil", CLSIssueAttributes.resolvedAt]];
-//							}
-//						}
-//						[predicatesArray addObject:[NSPredicate predicateWithFormat:@"%K == %@", CLSIssueRelationships.application, self.application]];
-//						NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicatesArray];
-//						NSString *sortString = [NSString stringWithFormat:@"%@,%@,%@", CLSIssueAttributes.crashesCount, CLSIssueAttributes.devicesAffected, CLSIssueAttributes.title];
-//						NSArray *issues = [CLSIssue MR_findAllSortedBy:sortString ascending:NO withPredicate:predicate];
-//						self.issueIDs = [issues valueForKey:CLSIssueAttributes.issueID];
-//					}
-//					[self _beginLoading];
-//				}];
-//		}];
-//	
-//	[RACObserve(self, issueIDs) subscribeNext:^(id x) {
-//		@strongify(self);
-//		[self.tableView reloadData];
-//	}];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -270,7 +220,7 @@ canEditRowAtIndexPath:(NSIndexPath *)indexPath {
 - (NSString *)tableView:(UITableView *)tableView
 titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
 	CRMIssue *issue = [self _issueForIndexPath:indexPath];
-    return issue.resolvedAt ? NSLocalizedString(@"CLSIssueListReopenIssue", @"") : NSLocalizedString(@"CLSIssueListCloseIssues", @"") ;
+    return issue.resolvedAt ? NSLocalizedString(@"CRMIssueListReopenIssue", @"") : NSLocalizedString(@"CRMIssueListCloseIssues", @"") ;
 }
 
 - (void)tableView:(UITableView *)tableView

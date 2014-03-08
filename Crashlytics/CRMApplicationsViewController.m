@@ -33,7 +33,7 @@
 }
 
 - (CRMOrganization *)organization {
-	CRMOrganization *organization = [CRMOrganization MR_findFirstByAttribute:CLSOrganizationAttributes.organizationID
+	CRMOrganization *organization = [CRMOrganization MR_findFirstByAttribute:CRMOrganizationAttributes.organizationID
 																   withValue:self.orgnaizationID];
 	return organization;
 }
@@ -58,18 +58,18 @@
 	 }];
 	
 	[organizationDidChangeSignal subscribeNext:^(id x) {
-		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K.%K == %@", CLSApplicationRelationships.organization, CLSOrganizationAttributes.organizationID, self.orgnaizationID];
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K.%K == %@", CRMApplicationRelationships.organization, CRMOrganizationAttributes.organizationID, self.orgnaizationID];
 		self.fetchedResultsController = [CRMApplication MR_fetchAllGroupedBy:nil
 															   withPredicate:predicate
-																	sortedBy:CLSApplicationAttributes.name
+																	sortedBy:CRMApplicationAttributes.name
 																   ascending:YES];
 		self.fetchedResultsController.fetchRequest.sortDescriptors = @[
-			[NSSortDescriptor sortDescriptorWithKey:CLSApplicationAttributes.name
+			[NSSortDescriptor sortDescriptorWithKey:CRMApplicationAttributes.name
 										  ascending:YES
 										   selector:@selector(localizedCaseInsensitiveCompare:)],
-			[NSSortDescriptor sortDescriptorWithKey:CLSApplicationAttributes.bundleID
+			[NSSortDescriptor sortDescriptorWithKey:CRMApplicationAttributes.bundleID
 										  ascending:YES],
-			[NSSortDescriptor sortDescriptorWithKey:CLSApplicationAttributes.impactedDevicesCount
+			[NSSortDescriptor sortDescriptorWithKey:CRMApplicationAttributes.impactedDevicesCount
 										  ascending:NO],
 		];
 		[self.fetchedResultsController performFetch:nil];
@@ -83,7 +83,7 @@
 	if ([segue.identifier isEqualToString:@"applications-issues"]) {
 		CRMIssuesViewController *issuesTableViewController = segue.destinationViewController;
 		
-		issuesTableViewController.title = [NSString stringWithFormat:NSLocalizedString(@"CLSIssueListTitleFormat", @"Format for the title of the issues list screen, application name will be substituded"), selectedApplcation.name];
+		issuesTableViewController.title = [NSString stringWithFormat:NSLocalizedString(@"CRMIssueListTitleFormat", @"Format for the title of the issues list screen, application name will be substituded"), selectedApplcation.name];
 		issuesTableViewController.application = selectedApplcation;
 	}
 }
@@ -102,11 +102,11 @@
 	cell.applicationBundleIDLabel.text = [NSString stringWithFormat:@"%@  %@", application.bundleID, application.latestBuild ?: @""];
 	NSString *detailsString = [NSString stringWithFormat:@"%@  ", application.platform];
 	if (application.impactedDevicesCountValue) {
-		NSString *numberOfIssues = [NSString stringWithFormat:TTTLocalizedPluralString(application.unresolvedIssuesCountValue, @"CLSApplicationsListIssueCount", @"number of issues in the applications list screen"), application.unresolvedIssuesCount];
-		NSString *numberOfUsers = [NSString stringWithFormat:TTTLocalizedPluralString(application.impactedDevicesCountValue, @"CLSApplicationsListUsersAffected", @"number of impacted users in the applications list screen"), application.impactedDevicesCount];
+		NSString *numberOfIssues = [NSString stringWithFormat:TTTLocalizedPluralString(application.unresolvedIssuesCountValue, @"CRMApplicationsListIssueCount", @"number of issues in the applications list screen"), application.unresolvedIssuesCount];
+		NSString *numberOfUsers = [NSString stringWithFormat:TTTLocalizedPluralString(application.impactedDevicesCountValue, @"CRMApplicationsListUsersAffected", @"number of impacted users in the applications list screen"), application.impactedDevicesCount];
 		detailsString = [detailsString stringByAppendingFormat:@"%@  %@", numberOfIssues, numberOfUsers];
 	} else {
-		detailsString = [detailsString stringByAppendingString:NSLocalizedString(@"CLSApplicationsListNoIssues", @"Status text for when application has no issues on the applications list screen")];
+		detailsString = [detailsString stringByAppendingString:NSLocalizedString(@"CRMApplicationsListNoIssues", @"Status text for when application has no issues on the applications list screen")];
 	}
 	cell.applicationDetailsLabel.text = detailsString;
     NSURL *iconURL = [NSURL URLWithString:application.iconURLString];

@@ -41,16 +41,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-	return [CLSFilterTimeRanges count];
+	return [CRMFilterTimeRanges count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeRangeCellIdentifier"
 															forIndexPath:indexPath];
-	NSDictionary *timeRangeTuple = CLSFilterTimeRanges[indexPath.row];
-	cell.textLabel.text = timeRangeTuple[ CLSFilterLabelKey ];
-	BOOL isSelected = [[self.filter issueTimeRangeArray] isEqualToArray:timeRangeTuple[ CLSFilterValueKey ]];
+	NSDictionary *timeRangeTuple = CRMFilterTimeRanges[indexPath.row];
+	cell.textLabel.text = timeRangeTuple[CRMFilterLabelKey];
+	BOOL isSelected = [[self.filter issueTimeRangeArray] isEqualToArray:timeRangeTuple[CRMFilterValueKey]];
 	cell.accessoryType = isSelected ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 	
 	return cell;
@@ -60,10 +60,10 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	
-	NSDictionary *selectedTimeRangeTuple = CLSFilterTimeRanges[indexPath.row];
-	[self.filter setIssueTimeRangeArray:selectedTimeRangeTuple[ CLSFilterValueKey ]];
+	NSDictionary *selectedTimeRangeTuple = CRMFilterTimeRanges[indexPath.row];
+	[self.filter setIssueTimeRangeArray:selectedTimeRangeTuple[CRMFilterValueKey]];
 	[self.filter.managedObjectContext MR_saveToPersistentStoreAndWait];
-	for (NSUInteger row = 0; row < [CLSFilterTimeRanges count]; ++row) {
+	for (NSUInteger row = 0; row < [CRMFilterTimeRanges count]; ++row) {
 		UITableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row
 																					inSection:0]];
 		BOOL isSelected = (row == indexPath.row);

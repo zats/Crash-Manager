@@ -1,5 +1,5 @@
 //
-//  CLSDeviceDetailsViewController.h
+//  CRMDeviceDetailsViewController.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/26/13.

@@ -1,10 +1,10 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to CLSApplication.h instead.
+// Make changes to CRMApplication.h instead.
 
 #import <CoreData/CoreData.h>
 
 
-extern const struct CLSApplicationAttributes {
+extern const struct CRMApplicationAttributes {
 	__unsafe_unretained NSString *applicationID;
 	__unsafe_unretained NSString *bundleID;
 	__unsafe_unretained NSString *iconURLString;
@@ -14,17 +14,17 @@ extern const struct CLSApplicationAttributes {
 	__unsafe_unretained NSString *platform;
 	__unsafe_unretained NSString *status;
 	__unsafe_unretained NSString *unresolvedIssuesCount;
-} CLSApplicationAttributes;
+} CRMApplicationAttributes;
 
-extern const struct CLSApplicationRelationships {
+extern const struct CRMApplicationRelationships {
 	__unsafe_unretained NSString *builds;
 	__unsafe_unretained NSString *filter;
 	__unsafe_unretained NSString *issues;
 	__unsafe_unretained NSString *organization;
-} CLSApplicationRelationships;
+} CRMApplicationRelationships;
 
-extern const struct CLSApplicationFetchedProperties {
-} CLSApplicationFetchedProperties;
+extern const struct CRMApplicationFetchedProperties {
+} CRMApplicationFetchedProperties;
 
 @class CRMBuild;
 @class CRMFilter;
@@ -41,14 +41,14 @@ extern const struct CLSApplicationFetchedProperties {
 
 
 
-@interface CLSApplicationID : NSManagedObjectID {}
+@interface CRMApplicationID : NSManagedObjectID {}
 @end
 
 @interface _CRMApplication : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-- (CLSApplicationID*)objectID;
+- (CRMApplicationID *)objectID;
 
 
 

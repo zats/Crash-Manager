@@ -1,9 +1,9 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
-// Make changes to CLSOrganization.m instead.
+// Make changes to CRMOrganization.m instead.
 
 #import "_CRMOrganization.h"
 
-const struct CLSOrganizationAttributes CLSOrganizationAttributes = {
+const struct CRMOrganizationAttributes CRMOrganizationAttributes = {
 	.accountsCount = @"accountsCount",
 	.alias = @"alias",
 	.apiKey = @"apiKey",
@@ -12,15 +12,15 @@ const struct CLSOrganizationAttributes CLSOrganizationAttributes = {
 	.organizationID = @"organizationID",
 };
 
-const struct CLSOrganizationRelationships CLSOrganizationRelationships = {
+const struct CRMOrganizationRelationships CRMOrganizationRelationships = {
 	.accounts = @"accounts",
 	.applications = @"applications",
 };
 
-const struct CLSOrganizationFetchedProperties CLSOrganizationFetchedProperties = {
+const struct CRMOrganizationFetchedProperties CRMOrganizationFetchedProperties = {
 };
 
-@implementation CLSOrganizationID
+@implementation CRMOrganizationID
 @end
 
 @implementation _CRMOrganization
@@ -39,8 +39,8 @@ const struct CLSOrganizationFetchedProperties CLSOrganizationFetchedProperties =
 	return [NSEntityDescription entityForName:@"Organization" inManagedObjectContext:moc_];
 }
 
-- (CLSOrganizationID*)objectID {
-	return (CLSOrganizationID*)[super objectID];
+- (CRMOrganizationID *)objectID {
+	return (CRMOrganizationID *)[super objectID];
 }
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {

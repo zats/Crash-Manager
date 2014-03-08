@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 // Analytics Keys
-extern NSString *const CLSGoogleAnalyticsEnabledKey;
+extern NSString *const CRMGoogleAnalyticsEnabledKey;
 
 // API Keys
-extern NSString *const CLSGoogleAnalyticsIdenitifer;
+extern NSString *const CRMGoogleAnalyticsIdenitifer;
 
 // Pasteboard Keys
-extern NSString *const CLSLastPasteboardedIssueIDKey;
+extern NSString *const CRMLastPasteboardedIssueIDKey;

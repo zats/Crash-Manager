@@ -1,5 +1,5 @@
 //
-//  CLSViewController.h
+//  CRMViewController.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/7/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CLSViewController : UIViewController
+@interface CRMViewController : UIViewController
 
 @end

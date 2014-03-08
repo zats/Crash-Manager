@@ -67,7 +67,7 @@
         <!--About View Controller - About-->
         <scene sceneID="KcW-J1-kh7">
             <objects>
-                <tableViewController id="E5V-b6-SDB" customClass="CLSAboutViewController" sceneMemberID="viewController">
+                <tableViewController id="E5V-b6-SDB" customClass="CRMAboutViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="4ve-Sn-iIi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

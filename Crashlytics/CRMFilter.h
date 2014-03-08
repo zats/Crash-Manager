@@ -1,33 +1,33 @@
 #import "_CRMFilter.h"
 
-extern NSString *const CLSFilterLabelKey;
-extern NSString *const CLSFilterValueKey;
+extern NSString *const CRMFilterLabelKey;
+extern NSString *const CRMFilterValueKey;
 
 // Issue Status Values
-extern NSString *const CLSFilterIssueStatusAll;
-extern NSString *const CLSFilterIssueStatusUnresolved;
-extern NSString *const CLSFilterIssueStatusResolved;
+extern NSString *const CRMFilterIssueStatusAll;
+extern NSString *const CRMFilterIssueStatusUnresolved;
+extern NSString *const CRMFilterIssueStatusResolved;
 
 // Time Range Values
-extern id CLSFilterTimeRangeAll;
-extern NSArray *CLSFilterTimeRangeLastHour;
-extern NSArray *CLSFilterTimeRangeLast24Hours;
-extern NSArray *CLSFilterTimeRangeLast48Hours;
-extern NSArray *CLSFilterTimeRangeLast7Days;
-extern NSArray *CLSFilterTimeRangeLast30Days;
+extern id CRMFilterTimeRangeAll;
+extern NSArray *CRMFilterTimeRangeLastHour;
+extern NSArray *CRMFilterTimeRangeLast24Hours;
+extern NSArray *CRMFilterTimeRangeLast48Hours;
+extern NSArray *CRMFilterTimeRangeLast7Days;
+extern NSArray *CRMFilterTimeRangeLast30Days;
 
 // Arrays of possible values for each filter
-extern NSArray *CLSFilterIssueStatuses;
-extern NSArray *CLSFilterTimeRanges;
+extern NSArray *CRMFilterIssueStatuses;
+extern NSArray *CRMFilterTimeRanges;
 
-static inline NSString *CLSLocalizedDisplayStringForFiterIssueStatus(NSString *filterIssueStatus) {
-	return NSLocalizedString(([NSString stringWithFormat:@"CLSFilterIssuesStatus%@", [filterIssueStatus capitalizedString]]), nil);
+static inline NSString *CRMLocalizedDisplayStringForFiterIssueStatus(NSString *filterIssueStatus) {
+	return NSLocalizedString(([NSString stringWithFormat:@"CRMFilterIssuesStatus%@", [filterIssueStatus capitalizedString]]), nil);
 }
 
-static inline NSString *CLSLocalizedDisplayStringForFilterTimeRange(NSArray *timeRange) {
-	for (NSDictionary *timeRangeTuple in CLSFilterTimeRanges) {
-		if ([timeRangeTuple[ CLSFilterValueKey ] isEqual:timeRange]) {
-			return timeRangeTuple[ CLSFilterLabelKey ];
+static inline NSString *CRMLocalizedDisplayStringForFilterTimeRange(NSArray *timeRange) {
+	for (NSDictionary *timeRangeTuple in CRMFilterTimeRanges) {
+		if ([timeRangeTuple[CRMFilterValueKey] isEqual:timeRange]) {
+			return timeRangeTuple[CRMFilterLabelKey];
 		}
 	}
 	return nil;
@@ -49,7 +49,7 @@ static inline NSString *CLSLocalizedDisplayStringForFilterTimeRange(NSArray *tim
 
 @end
 
-@interface CRMFilter (CLSPredicate)
+@interface CRMFilter (CRMPredicate)
 
 - (NSPredicate *)emptyFilterPreidacte;
 

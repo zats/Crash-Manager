@@ -1,25 +1,25 @@
 //
-//  CLSAboutViewController.m
+//  CRMAboutViewController.m
 //  CrashManager
 //
 //  Created by Sasha Zats on 3/1/14.
 //  Copyright (c) 2014 Sasha Zats. All rights reserved.
 //
 
-#import "CLSAboutViewController.h"
+#import "CRMAboutViewController.h"
 
 #import "ADNActivityCollection.h"
 #import "CRMConfiguration.h"
 #import "UIViewController+OpenSource.h"
 
-typedef NS_ENUM(NSInteger, CLSSections) {
-	CLSVersionSection = 0,
-	CLSVersionShareSection = 1,
-	CLSVersionOpenGithubSection = 2
+typedef NS_ENUM(NSInteger, CRMSections) {
+	CRMVersionSection = 0,
+    CRMVersionShareSection = 1,
+	CRMVersionOpenGithubSection = 2
 };
 
 
-@interface CLSAboutViewController ()
+@interface CRMAboutViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *appTitleLabel;
 
@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, CLSSections) {
 @property (weak, nonatomic) IBOutlet UILabel *openGitHubPageLabel;
 @end
 
-@implementation CLSAboutViewController
+@implementation CRMAboutViewController
 
 - (void)_configureVersion {
 	NSMutableString *versionString = [NSMutableString string];
@@ -73,8 +73,8 @@ typedef NS_ENUM(NSInteger, CLSSections) {
 
 - (BOOL)tableView:(UITableView *)tableView
 shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section == CLSVersionShareSection ||
-		indexPath.section == CLSVersionOpenGithubSection) {
+	if (indexPath.section == CRMVersionShareSection ||
+		indexPath.section == CRMVersionOpenGithubSection) {
 		return YES;
 	}
 	return NO;
@@ -83,14 +83,14 @@ shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-	switch ((CLSSections)indexPath.section) {
-		case CLSVersionOpenGithubSection: {
+	switch ((CRMSections)indexPath.section) {
+		case CRMVersionOpenGithubSection: {
 			[[UIApplication sharedApplication] openURL:[[CRMConfiguration sharedInstance] gitHubPageURL]];
 			break;
 		}
 			
-		case CLSVersionShareSection: {
-			NSString *shareString = [NSString stringWithFormat:NSLocalizedString(@"CLSSharingFormatString", nil), [[CRMConfiguration sharedInstance] appDisplayName]];
+		case CRMVersionShareSection: {
+			NSString *shareString = [NSString stringWithFormat:NSLocalizedString(@"CRMSharingFormatString", nil), [[CRMConfiguration sharedInstance] appDisplayName]];
 			NSArray *activityItems = @[ shareString, [[CRMConfiguration sharedInstance] marketingURL] ];
 			UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems
 																								 applicationActivities:[ADNActivityCollection allActivities]];

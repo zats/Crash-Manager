@@ -1,5 +1,5 @@
 //
-//  CLSDeviceDetailsViewController.m
+//  CRMDeviceDetailsViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/26/13.
@@ -36,7 +36,7 @@ typedef NS_ENUM(NSInteger, CRMDeviceSection) {
     kCRMDeviceDiskSpace,
 };
 
-typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
+typedef NS_ENUM(NSInteger, CRMOperatingSystemSection) {
 	kCRMOperatingSystemVersion = 0,
     kCRMOperatingSystemJailbroken,
     kCRMOperatingSystemLanguage
@@ -52,16 +52,16 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 - (void)_configureGeneralCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
 	switch ((CRMGeneralSection)indexPath.row) {
 		case kCRMGeneralSectionSignal: {
-			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowSignal", nil);
+			cell.textLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowSignal", nil);
 			cell.detailTextLabel.text = [[self.session lastEvent].app.execution.signal displayString];
 			break;
 		}
 			
 		case kCRMGeneralSectionUser: {
-			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowUser", nil);
+			cell.textLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowUser", nil);
 			NSString *userDisplayString = [self.session.user displayString];
 			if (!userDisplayString) {
-				cell.detailTextLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowValueUnknown", nil);
+				cell.detailTextLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowValueUnknown", nil);
 				cell.detailTextLabel.textColor = [UIColor lightGrayColor];
 			} else {
 				cell.detailTextLabel.text = userDisplayString;
@@ -75,11 +75,11 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 - (void)_configureDeviceCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
 	switch ((CRMDeviceSection)indexPath.row) {
 		case kCRMDeviceBattery: {
-			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowBattery", nil);
+			cell.textLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowBattery", nil);
 			NSString *batteryLevel = [[self.session lastEvent].device batteryDisplayString];
 			if (!batteryLevel) {
 				cell.detailTextLabel.textColor = [UIColor lightGrayColor];
-				cell.detailTextLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowValueNA", nil);
+				cell.detailTextLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowValueNA", nil);
 			} else {
 				cell.detailTextLabel.text = batteryLevel;
 			}
@@ -87,16 +87,16 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 		}
 			
 		case kCRMDeviceDiskSpace:
-			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowDiskSpace", nil);
+			cell.textLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowDiskSpace", nil);
 			cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f%%", [self.session deviceAvailableDiskSpacePercentage]];
 			break;
 			
 		case kCRMDeviceModel: {
-			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowModel", nil);
+			cell.textLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowModel", nil);
 			NSString *model = [self.session.device displayString];
 			if (!model) {
 				cell.detailTextLabel.textColor = [UIColor lightGrayColor];
-				cell.detailTextLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowValueUnknown", nil);
+				cell.detailTextLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowValueUnknown", nil);
 			} else {
 				cell.detailTextLabel.text = model;
 			}
@@ -104,11 +104,11 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 		}
 			
 		case kCRMDeviceOrientation: {
-			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowOrientation", nil);
+			cell.textLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowOrientation", nil);
 			NSString *orienation = [[self.session lastEvent].device orientationDisplayString];
 			if (!orienation) {
 				cell.detailTextLabel.textColor = [UIColor lightGrayColor];
-				cell.detailTextLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowValueNA", nil);
+				cell.detailTextLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowValueNA", nil);
 			} else {
 				cell.detailTextLabel.text = orienation;
 			}
@@ -116,12 +116,12 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 		}
 			
 		case kCRMDeviceProximity:
-			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowProximity", nil);
-			cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [self.session lastEvent].device.proximityOn ? NSLocalizedString(@"CLSIssueGeneralDetailsRowValueOn", nil) : NSLocalizedString(@"CLSIssueGeneralDetailsRowValueOff", nil)];
+			cell.textLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowProximity", nil);
+			cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [self.session lastEvent].device.proximityOn ? NSLocalizedString(@"CRMIssueGeneralDetailsRowValueOn", nil) : NSLocalizedString(@"CRMIssueGeneralDetailsRowValueOff", nil)];
 			break;
 			
 		case kCRMDeviceRam:
-			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowRam", nil);
+			cell.textLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowRam", nil);
 			cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f%%", [self.session deviceAvailableRamPercentage]];
 			break;
 	}
@@ -129,24 +129,24 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 
 - (void)_configureOperatingSystemCell:(UITableViewCell *)cell
 						 forIndexPath:(NSIndexPath *)indexPath {
-	switch ((CLSOperatingSystemSection)indexPath.row) {
+	switch ((CRMOperatingSystemSection)indexPath.row) {
 		case kCRMOperatingSystemVersion:
-			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowOS", nil);
+			cell.textLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowOS", nil);
 			cell.detailTextLabel.text = [self.session.os displayString];
 			break;
 			
 		case kCRMOperatingSystemJailbroken:
-			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowJailbroken", nil);
+			cell.textLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowJailbroken", nil);
 			cell.detailTextLabel.text = self.session.os.jailbroken ? @"Yes" : @"No";
 			break;
 			
 		case kCRMOperatingSystemLanguage:
-			cell.textLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowLanguage", nil);
+			cell.textLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowLanguage", nil);
 			if ([self.session.device.language length]) {
 				cell.detailTextLabel.text = self.session.device.language;
 			} else {
 				cell.detailTextLabel.textColor = [UIColor lightGrayColor];
-				cell.detailTextLabel.text = NSLocalizedString(@"CLSIssueGeneralDetailsRowValueUnknown", nil);
+				cell.detailTextLabel.text = NSLocalizedString(@"CRMIssueGeneralDetailsRowValueUnknown", nil);
 			}
 		default:
 			break;
@@ -169,7 +169,7 @@ typedef NS_ENUM(NSInteger, CLSOperatingSystemSection) {
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	switch ((CLSSections)section) {
+	switch ((CRMSections)section) {
 		case kCRMSSectionGeneral: {
 			return 2;
 		}
@@ -238,19 +238,19 @@ titleForHeaderInSection:(NSInteger)section {
 	switch ((CRMSections)section) {
 		case kCRMSSectionGeneral:
             
-			return NSLocalizedString(@"CLSIssueGeneralDetailsSectionGeneral", @"");
+			return NSLocalizedString(@"CRMIssueGeneralDetailsSectionGeneral", @"");
 
 		case kCRMSectionDevice:
-			return NSLocalizedString(@"CLSIssueGeneralDetailsSectionDevice", @"");
+			return NSLocalizedString(@"CRMIssueGeneralDetailsSectionDevice", @"");
 			
 		case kCRMSectionOS:
-			return NSLocalizedString(@"CLSIssueGeneralDetailsSectionOS", @"");
+			return NSLocalizedString(@"CRMIssueGeneralDetailsSectionOS", @"");
 			
 		case kCRMSectionKeys:
-			return [[self.session lastEvent].app.customAttributes count] ? NSLocalizedString(@"CLSIssueGeneralDetailsSectionKeys", @"") : nil;
+			return [[self.session lastEvent].app.customAttributes count] ? NSLocalizedString(@"CRMIssueGeneralDetailsSectionKeys", @"") : nil;
 
 		case kCRMSectionLogs:
-			return [[self.session lastEvent].log.content length] ? NSLocalizedString(@"CLSIssueGeneralDetailsSectionLogs", @"") : nil;
+			return [[self.session lastEvent].log.content length] ? NSLocalizedString(@"CRMIssueGeneralDetailsSectionLogs", @"") : nil;
 	}
 	return nil;
 }
@@ -265,10 +265,10 @@ titleForFooterInSection:(NSInteger)section {
 			
 		case kCRMSectionKeys:
             
-			return [[self.session lastEvent].app.customAttributes count] ? nil : NSLocalizedString(@"CLSIssueGeneralDetailsNoKeysMessage", @"");
+			return [[self.session lastEvent].app.customAttributes count] ? nil : NSLocalizedString(@"CRMIssueGeneralDetailsNoKeysMessage", @"");
 			
 		case kCRMSectionLogs:
-			return [[self.session lastEvent].log.content length] ? nil : NSLocalizedString(@"CLSIssueGeneralDetailsNoLogsMessage", @"");
+			return [[self.session lastEvent].log.content length] ? nil : NSLocalizedString(@"CRMIssueGeneralDetailsNoLogsMessage", @"");
 	}
 	return nil;
 }

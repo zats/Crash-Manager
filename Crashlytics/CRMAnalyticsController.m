@@ -1,5 +1,5 @@
 //
-//  CLSAnalyticsController.m
+//  CRMAnalyticsController.m
 //  CrashManager
 //
 //  Created by Sasha Zats on 2/21/14.
@@ -58,7 +58,7 @@
 #pragma mark - Private
 
 - (void)_enableAnalyticsWithConfiguration:(NSDictionary *)configuration {
-	BOOL isGoogleAnalyticsEnabled = [configuration[CLSGoogleAnalyticsEnabledKey] boolValue];
+	BOOL isGoogleAnalyticsEnabled = [configuration[CRMGoogleAnalyticsEnabledKey] boolValue];
 	if (self.googleAnalyticsEnabled == isGoogleAnalyticsEnabled) {
 		return;
 	}
@@ -76,7 +76,7 @@
 	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 	if (!tracker) {
 		[GAI sharedInstance].trackUncaughtExceptions = YES;
-		tracker = [[GAI sharedInstance] trackerWithTrackingId:CLSGoogleAnalyticsIdenitifer];
+		tracker = [[GAI sharedInstance] trackerWithTrackingId:CRMGoogleAnalyticsIdenitifer];
 	}
 	
 	if (isGoogleAnalyticsEnabled) {

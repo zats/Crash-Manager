@@ -29,7 +29,7 @@
 	if (!issueID) {
 		return nil;
 	}
-	CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CLSIssueAttributes.issueID
+	CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CRMIssueAttributes.issueID
 											  withValue:issueID
 											  inContext:context];
 	if (!issue) {
@@ -58,7 +58,7 @@
 	
 	// corresponding build object
 	NSString *buildID = dictionary[@"build"];
-	CRMBuild *build = [CRMBuild MR_findFirstByAttribute:CLSBuildAttributes.buildID
+	CRMBuild *build = [CRMBuild MR_findFirstByAttribute:CRMBuildAttributes.buildID
 											  withValue:buildID
 											  inContext:self.managedObjectContext];
 	if (!build) {
@@ -83,9 +83,9 @@
 }
 
 - (CRMSession *)lastSession {
-	[self willAccessValueForKey:CLSIssueAttributes.lastSession];
+	[self willAccessValueForKey:CRMIssueAttributes.lastSession];
 	CRMSession *lastSession = self.primitiveLastSession;
-	[self didAccessValueForKey:CLSIssueAttributes.lastSession];
+	[self didAccessValueForKey:CRMIssueAttributes.lastSession];
 
 	if (lastSession) {
 		return lastSession;

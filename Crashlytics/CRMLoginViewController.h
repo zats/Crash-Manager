@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Sasha Zats. All rights reserved.
 //
 
-#import "CLSViewController.h"
+#import "CRMViewController.h"
 
 @interface CRMLoginViewController : UITableViewController
 

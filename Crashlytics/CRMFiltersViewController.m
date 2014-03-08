@@ -16,10 +16,10 @@
 #import "CRMTimeRangeFilterViewController.h"
 #import <ReactiveCocoa/RACEXTScope.h>
 
-typedef NS_ENUM(NSInteger, CLSFilterTableViewCell) {
-	kCLSFilterTableViewCellBuild = 0,
-	kCLSFilterTableViewCellIssueStatus = 1,
-	kCLSFilterTableViewCellTimeRange = 2
+typedef NS_ENUM(NSInteger, CRMFilterTableViewCell) {
+	kCRMFilterTableViewCellBuild = 0,
+	kCRMFilterTableViewCellIssueStatus = 1,
+	kCRMFilterTableViewCellTimeRange = 2
 };
 
 @interface CRMFiltersViewController ()
@@ -39,21 +39,21 @@ typedef NS_ENUM(NSInteger, CLSFilterTableViewCell) {
 	@weakify(self);
 	[RACObserve(self.filter, issueStatus) subscribeNext:^(NSString *issueStatus) {
 		@strongify(self);
-		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:kCLSFilterTableViewCellIssueStatus
+		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:kCRMFilterTableViewCellIssueStatus
 																						 inSection:0]];
-		cell.detailTextLabel.text = CLSLocalizedDisplayStringForFiterIssueStatus(issueStatus);
+		cell.detailTextLabel.text = CRMLocalizedDisplayStringForFiterIssueStatus(issueStatus);
 	}];
 	
 	[[RACSignal combineLatest:@[ RACObserve(self.filter, issueNewerThen), RACObserve(self.filter, issueOlderThen) ]] subscribeNext:^(id x) {
 		@strongify(self);
-		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:kCLSFilterTableViewCellTimeRange
+		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:kCRMFilterTableViewCellTimeRange
 																						 inSection:0]];
-		cell.detailTextLabel.text = CLSLocalizedDisplayStringForFilterTimeRange([self.filter issueTimeRangeArray]);
+		cell.detailTextLabel.text = CRMLocalizedDisplayStringForFilterTimeRange([self.filter issueTimeRangeArray]);
 	}];
 
 	[RACObserve(self.filter, build) subscribeNext:^(id x) {
 		@strongify(self);
-		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:kCLSFilterTableViewCellBuild
+		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:kCRMFilterTableViewCellBuild
 																						 inSection:0]];
 		
 		cell.detailTextLabel.text = self.filter.build ? self.filter.build.buildID : @"All Builds";
@@ -61,7 +61,7 @@ typedef NS_ENUM(NSInteger, CLSFilterTableViewCell) {
 }
 
 - (CRMApplication *)application {
-	return [CRMApplication MR_findFirstByAttribute:CLSApplicationAttributes.applicationID
+	return [CRMApplication MR_findFirstByAttribute:CRMApplicationAttributes.applicationID
 										 withValue:self.applicationID];
 }
 
@@ -100,12 +100,12 @@ typedef NS_ENUM(NSInteger, CLSFilterTableViewCell) {
 	}
 
 	// Filters
-	if (indexPath.row == kCLSFilterTableViewCellBuild) {
+	if (indexPath.row == kCRMFilterTableViewCellBuild) {
 		cell.detailTextLabel.text = self.filter.build ? self.filter.build.buildID : @"All Builds";
-	} else if (indexPath.row == kCLSFilterTableViewCellIssueStatus) {
-		cell.detailTextLabel.text = CLSLocalizedDisplayStringForFiterIssueStatus(self.filter.issueStatus);
-	} else if (indexPath.row == kCLSFilterTableViewCellTimeRange) {
-		cell.detailTextLabel.text = CLSLocalizedDisplayStringForFilterTimeRange([self.filter issueTimeRangeArray]);
+	} else if (indexPath.row == kCRMFilterTableViewCellIssueStatus) {
+		cell.detailTextLabel.text = CRMLocalizedDisplayStringForFiterIssueStatus(self.filter.issueStatus);
+	} else if (indexPath.row == kCRMFilterTableViewCellTimeRange) {
+		cell.detailTextLabel.text = CRMLocalizedDisplayStringForFilterTimeRange([self.filter issueTimeRangeArray]);
 	}
 	return cell;
 }

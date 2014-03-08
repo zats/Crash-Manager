@@ -63,116 +63,116 @@
 #endif
 
 typedef enum {
-  CLSIncident_ArchitectureX8632 = 0,
-  CLSIncident_ArchitectureX8664 = 1,
-  CLSIncident_ArchitectureArmUnknown = 2,
-  CLSIncident_ArchitecturePpc = 3,
-  CLSIncident_ArchitecturePpc64 = 4,
-  CLSIncident_ArchitectureArmv6 = 5,
-  CLSIncident_ArchitectureArmv7 = 6,
-  CLSIncident_ArchitectureUnknown = 7,
-  CLSIncident_ArchitectureArmv7S = 8,
-  CLSIncident_ArchitectureArm64 = 9,
-} CLSIncident_Architecture;
+  CRMIncident_ArchitectureX8632 = 0,
+  CRMIncident_ArchitectureX8664 = 1,
+  CRMIncident_ArchitectureArmUnknown = 2,
+  CRMIncident_ArchitecturePpc = 3,
+  CRMIncident_ArchitecturePpc64 = 4,
+  CRMIncident_ArchitectureArmv6 = 5,
+  CRMIncident_ArchitectureArmv7 = 6,
+  CRMIncident_ArchitectureUnknown = 7,
+  CRMIncident_ArchitectureArmv7S = 8,
+  CRMIncident_ArchitectureArm64 = 9,
+} CRMIncident_Architecture;
 
-BOOL CLSIncident_ArchitectureIsValidValue(CLSIncident_Architecture value);
-
-typedef enum {
-  CLSIncident_PlatformMacOsX = 0,
-  CLSIncident_PlatformIphoneOs = 1,
-  CLSIncident_PlatformIphoneSimulator = 2,
-  CLSIncident_PlatformAndroid = 3,
-  CLSIncident_PlatformWindows = 4,
-  CLSIncident_PlatformLinux = 5,
-  CLSIncident_PlatformBlackberry = 6,
-  CLSIncident_PlatformOther = 1000,
-} CLSIncident_Platform;
-
-BOOL CLSIncident_PlatformIsValidValue(CLSIncident_Platform value);
+BOOL CRMIncident_ArchitectureIsValidValue(CRMIncident_Architecture value);
 
 typedef enum {
-  CLSIncident_FrameImportanceSymbolicated = 1,
-  CLSIncident_FrameImportanceInDeveloperCode = 2,
-  CLSIncident_FrameImportanceInCrashedThread = 4,
-  CLSIncident_FrameImportanceLikelyLeadToCrash = 8,
-  CLSIncident_FrameImportanceInException = 16,
-  CLSIncident_FrameImportanceAlgorithm = 32,
-  CLSIncident_FrameImportanceUserDeclared = 64,
-} CLSIncident_FrameImportance;
+  CRMIncident_PlatformMacOsX = 0,
+  CRMIncident_PlatformIphoneOs = 1,
+  CRMIncident_PlatformIphoneSimulator = 2,
+  CRMIncident_PlatformAndroid = 3,
+  CRMIncident_PlatformWindows = 4,
+  CRMIncident_PlatformLinux = 5,
+  CRMIncident_PlatformBlackberry = 6,
+  CRMIncident_PlatformOther = 1000,
+} CRMIncident_Platform;
 
-BOOL CLSIncident_FrameImportanceIsValidValue(CLSIncident_FrameImportance value);
-
-typedef enum {
-  CLSIncident_FramePropertiesFrameUnknown = 0,
-  CLSIncident_FramePropertiesFrameTypeCompiled = 1,
-  CLSIncident_FramePropertiesFrameTypeVm = 2,
-  CLSIncident_FramePropertiesFrameTypeInterpreted = 4,
-  CLSIncident_FramePropertiesFrameTypeJit = 8,
-  CLSIncident_FramePropertiesFrameTypeSpeculative = 16,
-  CLSIncident_FramePropertiesFrameTypeInlined = 32,
-  CLSIncident_FramePropertiesFrameContextDeveloper = 67108864,
-  CLSIncident_FramePropertiesFrameContextVendor = 134217728,
-  CLSIncident_FramePropertiesFrameContextRuntime = 268435456,
-  CLSIncident_FramePropertiesFrameContextPlatform = 536870912,
-  CLSIncident_FramePropertiesFrameContextSystem = 1073741824,
-} CLSIncident_FrameProperties;
-
-BOOL CLSIncident_FramePropertiesIsValidValue(CLSIncident_FrameProperties value);
+BOOL CRMIncident_PlatformIsValidValue(CRMIncident_Platform value);
 
 typedef enum {
-  CLSIncident_GeneratorTypeIosSdk = 1,
-  CLSIncident_GeneratorTypeMacosSdk = 2,
-  CLSIncident_GeneratorTypeAndroidSdk = 3,
-  CLSIncident_GeneratorTypeJavascriptSdk = 4,
-} CLSIncident_GeneratorType;
+  CRMIncident_FrameImportanceSymbolicated = 1,
+  CRMIncident_FrameImportanceInDeveloperCode = 2,
+  CRMIncident_FrameImportanceInCrashedThread = 4,
+  CRMIncident_FrameImportanceLikelyLeadToCrash = 8,
+  CRMIncident_FrameImportanceInException = 16,
+  CRMIncident_FrameImportanceAlgorithm = 32,
+  CRMIncident_FrameImportanceUserDeclared = 64,
+} CRMIncident_FrameImportance;
 
-BOOL CLSIncident_GeneratorTypeIsValidValue(CLSIncident_GeneratorType value);
-
-typedef enum {
-  CLSIncident_DeviceIdentifierTypeWifiMacAddress = 1,
-  CLSIncident_DeviceIdentifierTypeBluetoothMacAddress = 2,
-  CLSIncident_DeviceIdentifierTypeIosUdid = 50,
-  CLSIncident_DeviceIdentifierTypeIosAdvertisingIdentifier = 51,
-  CLSIncident_DeviceIdentifierTypeIosVendorIdentifier = 52,
-  CLSIncident_DeviceIdentifierTypeAndroidId = 100,
-  CLSIncident_DeviceIdentifierTypeAndroidDeviceId = 101,
-  CLSIncident_DeviceIdentifierTypeAndroidSerial = 102,
-  CLSIncident_DeviceIdentifierTypeMacHardwareUuid = 200,
-  CLSIncident_DeviceIdentifierTypeMacSerial = 201,
-} CLSIncident_DeviceIdentifierType;
-
-BOOL CLSIncident_DeviceIdentifierTypeIsValidValue(CLSIncident_DeviceIdentifierType value);
+BOOL CRMIncident_FrameImportanceIsValidValue(CRMIncident_FrameImportance value);
 
 typedef enum {
-  CLSIncident_DeviceStateIsSimulator = 1,
-  CLSIncident_DeviceStateJailbroken = 2,
-  CLSIncident_DeviceStateDebuggerAttached = 4,
-  CLSIncident_DeviceStateBetaOs = 8,
-  CLSIncident_DeviceStateVendorInternal = 16,
-  CLSIncident_DeviceStateCompromisedLibraries = 32,
-} CLSIncident_DeviceState;
+  CRMIncident_FramePropertiesFrameUnknown = 0,
+  CRMIncident_FramePropertiesFrameTypeCompiled = 1,
+  CRMIncident_FramePropertiesFrameTypeVm = 2,
+  CRMIncident_FramePropertiesFrameTypeInterpreted = 4,
+  CRMIncident_FramePropertiesFrameTypeJit = 8,
+  CRMIncident_FramePropertiesFrameTypeSpeculative = 16,
+  CRMIncident_FramePropertiesFrameTypeInlined = 32,
+  CRMIncident_FramePropertiesFrameContextDeveloper = 67108864,
+  CRMIncident_FramePropertiesFrameContextVendor = 134217728,
+  CRMIncident_FramePropertiesFrameContextRuntime = 268435456,
+  CRMIncident_FramePropertiesFrameContextPlatform = 536870912,
+  CRMIncident_FramePropertiesFrameContextSystem = 1073741824,
+} CRMIncident_FrameProperties;
 
-BOOL CLSIncident_DeviceStateIsValidValue(CLSIncident_DeviceState value);
-
-typedef enum {
-  CLSIncident_DeliveryMechanismDeveloper = 1,
-  CLSIncident_DeliveryMechanismUserSideload = 2,
-  CLSIncident_DeliveryMechanismTestDistribution = 3,
-  CLSIncident_DeliveryMechanismAppStore = 4,
-} CLSIncident_DeliveryMechanism;
-
-BOOL CLSIncident_DeliveryMechanismIsValidValue(CLSIncident_DeliveryMechanism value);
+BOOL CRMIncident_FramePropertiesIsValidValue(CRMIncident_FrameProperties value);
 
 typedef enum {
-  CLSIncident_FrameDecoderSymbolication = 1,
-  CLSIncident_FrameDecoderDeobfuscation = 2,
-  CLSIncident_FrameDecoderCacheHydration = 3,
-} CLSIncident_FrameDecoder;
+  CRMIncident_GeneratorTypeIosSdk = 1,
+  CRMIncident_GeneratorTypeMacosSdk = 2,
+  CRMIncident_GeneratorTypeAndroidSdk = 3,
+  CRMIncident_GeneratorTypeJavascriptSdk = 4,
+} CRMIncident_GeneratorType;
 
-BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
+BOOL CRMIncident_GeneratorTypeIsValidValue(CRMIncident_GeneratorType value);
+
+typedef enum {
+  CRMIncident_DeviceIdentifierTypeWifiMacAddress = 1,
+  CRMIncident_DeviceIdentifierTypeBluetoothMacAddress = 2,
+  CRMIncident_DeviceIdentifierTypeIosUdid = 50,
+  CRMIncident_DeviceIdentifierTypeIosAdvertisingIdentifier = 51,
+  CRMIncident_DeviceIdentifierTypeIosVendorIdentifier = 52,
+  CRMIncident_DeviceIdentifierTypeAndroidId = 100,
+  CRMIncident_DeviceIdentifierTypeAndroidDeviceId = 101,
+  CRMIncident_DeviceIdentifierTypeAndroidSerial = 102,
+  CRMIncident_DeviceIdentifierTypeMacHardwareUuid = 200,
+  CRMIncident_DeviceIdentifierTypeMacSerial = 201,
+} CRMIncident_DeviceIdentifierType;
+
+BOOL CRMIncident_DeviceIdentifierTypeIsValidValue(CRMIncident_DeviceIdentifierType value);
+
+typedef enum {
+  CRMIncident_DeviceStateIsSimulator = 1,
+  CRMIncident_DeviceStateJailbroken = 2,
+  CRMIncident_DeviceStateDebuggerAttached = 4,
+  CRMIncident_DeviceStateBetaOs = 8,
+  CRMIncident_DeviceStateVendorInternal = 16,
+  CRMIncident_DeviceStateCompromisedLibraries = 32,
+} CRMIncident_DeviceState;
+
+BOOL CRMIncident_DeviceStateIsValidValue(CRMIncident_DeviceState value);
+
+typedef enum {
+  CRMIncident_DeliveryMechanismDeveloper = 1,
+  CRMIncident_DeliveryMechanismUserSideload = 2,
+  CRMIncident_DeliveryMechanismTestDistribution = 3,
+  CRMIncident_DeliveryMechanismAppStore = 4,
+} CRMIncident_DeliveryMechanism;
+
+BOOL CRMIncident_DeliveryMechanismIsValidValue(CRMIncident_DeliveryMechanism value);
+
+typedef enum {
+  CRMIncident_FrameDecoderSymbolication = 1,
+  CRMIncident_FrameDecoderDeobfuscation = 2,
+  CRMIncident_FrameDecoderCacheHydration = 3,
+} CRMIncident_FrameDecoder;
+
+BOOL CRMIncident_FrameDecoderIsValidValue(CRMIncident_FrameDecoder value);
 
 
-@interface ClsincidentRoot : NSObject {
+@interface CRMIncidentRoot : NSObject {
 }
 + (PBExtensionRegistry*) extensionRegistry;
 + (void) registerAllExtensions:(PBMutableExtensionRegistry*) registry;
@@ -412,8 +412,8 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
   CRMSessionDevice* device;
   NSData* identifier;
   uint32_t analyzer;
-  CLSIncident_GeneratorType generatorType;
-  CLSIncident_FrameDecoder frameDecoder;
+  CRMIncident_GeneratorType generatorType;
+  CRMIncident_FrameDecoder frameDecoder;
   PBAppendableArray * eventsArray;
 }
 - (BOOL) hasGenerator;
@@ -434,8 +434,8 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
 @property (readonly) uint64_t endedAt;
 - (BOOL) crashed;
 @property (readonly) uint32_t analyzer;
-@property (readonly) CLSIncident_GeneratorType generatorType;
-@property (readonly) CLSIncident_FrameDecoder frameDecoder;
+@property (readonly) CRMIncident_GeneratorType generatorType;
+@property (readonly) CRMIncident_FrameDecoder frameDecoder;
 @property (readonly, retain) CRMSessionUser* user;
 @property (readonly, retain) CRMSessionApplication* app;
 @property (readonly, retain) CRMSessionOperatingSystem* os;
@@ -644,7 +644,7 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
   NSString* developmentPlatformVersion;
   CRMSessionProcess* process;
   CRMSessionOrganization* organization;
-  CLSIncident_DeliveryMechanism deliveryMechanism;
+  CRMIncident_DeliveryMechanism deliveryMechanism;
 }
 - (BOOL) hasIdentifier;
 - (BOOL) hasVersion;
@@ -665,7 +665,7 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
 @property (readonly, retain) NSString* clsId;
 @property (readonly, retain) NSString* developmentPlatform;
 @property (readonly, retain) NSString* developmentPlatformVersion;
-@property (readonly) CLSIncident_DeliveryMechanism deliveryMechanism;
+@property (readonly) CRMIncident_DeliveryMechanism deliveryMechanism;
 
 + (CRMSessionApplication*) defaultInstance;
 - (CRMSessionApplication*) defaultInstance;
@@ -810,8 +810,8 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
 - (CRMIncident_Session_Application_Builder*) clearDevelopmentPlatformVersion;
 
 - (BOOL) hasDeliveryMechanism;
-- (CLSIncident_DeliveryMechanism) deliveryMechanism;
-- (CRMIncident_Session_Application_Builder*) setDeliveryMechanism:(CLSIncident_DeliveryMechanism) value;
+- (CRMIncident_DeliveryMechanism) deliveryMechanism;
+- (CRMIncident_Session_Application_Builder*) setDeliveryMechanism:(CRMIncident_DeliveryMechanism) value;
 - (CRMIncident_Session_Application_Builder*) clearDeliveryMechanism;
 @end
 
@@ -824,13 +824,13 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
   BOOL jailbroken_:1;
   NSString* version;
   NSString* buildVersion;
-  CLSIncident_Platform platform;
+  CRMIncident_Platform platform;
 }
 - (BOOL) hasPlatform;
 - (BOOL) hasVersion;
 - (BOOL) hasBuildVersion;
 - (BOOL) hasJailbroken;
-@property (readonly) CLSIncident_Platform platform;
+@property (readonly) CRMIncident_Platform platform;
 @property (readonly, retain) NSString* version;
 @property (readonly, retain) NSString* buildVersion;
 - (BOOL) jailbroken;
@@ -871,8 +871,8 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
 - (CRMIncident_Session_OperatingSystem_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
 
 - (BOOL) hasPlatform;
-- (CLSIncident_Platform) platform;
-- (CRMIncident_Session_OperatingSystem_Builder*) setPlatform:(CLSIncident_Platform) value;
+- (CRMIncident_Platform) platform;
+- (CRMIncident_Session_OperatingSystem_Builder*) setPlatform:(CRMIncident_Platform) value;
 - (CRMIncident_Session_OperatingSystem_Builder*) clearPlatform;
 
 - (BOOL) hasVersion;
@@ -918,7 +918,7 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
   NSData* udid;
   uint32_t cores;
   uint32_t state;
-  CLSIncident_Architecture arch;
+  CRMIncident_Architecture arch;
   PBAppendableArray * identifiersArray;
 }
 - (BOOL) hasIdentifier;
@@ -936,7 +936,7 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
 - (BOOL) hasModelClass;
 @property (readonly, retain) NSData* identifier;
 @property (readonly, retain) NSData* udid;
-@property (readonly) CLSIncident_Architecture arch;
+@property (readonly) CRMIncident_Architecture arch;
 @property (readonly, retain) NSString* model;
 @property (readonly) uint32_t cores;
 @property (readonly) uint64_t ram;
@@ -973,11 +973,11 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
   BOOL hasValue_:1;
   BOOL hasKey_:1;
   NSString* value;
-  CLSIncident_DeviceIdentifierType key;
+  CRMIncident_DeviceIdentifierType key;
 }
 - (BOOL) hasKey;
 - (BOOL) hasValue;
-@property (readonly) CLSIncident_DeviceIdentifierType key;
+@property (readonly) CRMIncident_DeviceIdentifierType key;
 @property (readonly, retain) NSString* value;
 
 + (CRMIncident_Session_Device_Identifier*) defaultInstance;
@@ -1016,8 +1016,8 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
 - (CRMIncident_Session_Device_Identifier_Builder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
 
 - (BOOL) hasKey;
-- (CLSIncident_DeviceIdentifierType) key;
-- (CRMIncident_Session_Device_Identifier_Builder*) setKey:(CLSIncident_DeviceIdentifierType) value;
+- (CRMIncident_DeviceIdentifierType) key;
+- (CRMIncident_Session_Device_Identifier_Builder*) setKey:(CRMIncident_DeviceIdentifierType) value;
 - (CRMIncident_Session_Device_Identifier_Builder*) clearKey;
 
 - (BOOL) hasValue;
@@ -1054,8 +1054,8 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
 - (CRMIncident_Session_Device_Builder*) clearUdid;
 
 - (BOOL) hasArch;
-- (CLSIncident_Architecture) arch;
-- (CRMIncident_Session_Device_Builder*) setArch:(CLSIncident_Architecture) value;
+- (CRMIncident_Architecture) arch;
+- (CRMIncident_Session_Device_Builder*) setArch:(CRMIncident_Architecture) value;
 - (CRMIncident_Session_Device_Builder*) clearArch;
 
 - (BOOL) hasModel;
@@ -1587,7 +1587,7 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
   uint64_t size;
   NSString* name;
   NSString* clsId;
-  CLSIncident_Architecture arch;
+  CRMIncident_Architecture arch;
 }
 - (BOOL) hasBaseAddress;
 - (BOOL) hasSize;
@@ -1597,7 +1597,7 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
 @property (readonly) uint64_t baseAddress;
 @property (readonly) uint64_t size;
 @property (readonly, retain) NSString* name;
-@property (readonly) CLSIncident_Architecture arch;
+@property (readonly) CRMIncident_Architecture arch;
 @property (readonly, retain) NSString* clsId;
 
 + (CRMSessionBinaryImage*) defaultInstance;
@@ -1651,8 +1651,8 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
 - (CRMIncident_Session_Event_Application_Execution_BinaryImage_Builder*) clearName;
 
 - (BOOL) hasArch;
-- (CLSIncident_Architecture) arch;
-- (CRMIncident_Session_Event_Application_Execution_BinaryImage_Builder*) setArch:(CLSIncident_Architecture) value;
+- (CRMIncident_Architecture) arch;
+- (CRMIncident_Session_Event_Application_Execution_BinaryImage_Builder*) setArch:(CRMIncident_Architecture) value;
 - (CRMIncident_Session_Event_Application_Execution_BinaryImage_Builder*) clearArch;
 
 - (BOOL) hasClsId;
@@ -2250,13 +2250,13 @@ BOOL CLSIncident_FrameDecoderIsValidValue(CLSIncident_FrameDecoder value);
 - (CRMIncident_Session_Builder*) clearAnalyzer;
 
 - (BOOL) hasGeneratorType;
-- (CLSIncident_GeneratorType) generatorType;
-- (CRMIncident_Session_Builder*) setGeneratorType:(CLSIncident_GeneratorType) value;
+- (CRMIncident_GeneratorType) generatorType;
+- (CRMIncident_Session_Builder*) setGeneratorType:(CRMIncident_GeneratorType) value;
 - (CRMIncident_Session_Builder*) clearGeneratorType;
 
 - (BOOL) hasFrameDecoder;
-- (CLSIncident_FrameDecoder) frameDecoder;
-- (CRMIncident_Session_Builder*) setFrameDecoder:(CLSIncident_FrameDecoder) value;
+- (CRMIncident_FrameDecoder) frameDecoder;
+- (CRMIncident_Session_Builder*) setFrameDecoder:(CRMIncident_FrameDecoder) value;
 - (CRMIncident_Session_Builder*) clearFrameDecoder;
 
 - (BOOL) hasUser;

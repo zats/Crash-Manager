@@ -1,5 +1,5 @@
 //
-//  CLSSettings.m
+//  CRMSettings.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/29/13.
@@ -56,7 +56,7 @@
     [self _setupConfigurationFile];
 }
 
-- (void)updateConfigurationPlistWithCompletionHandler:(CLSSettingsUpdateHandler)completion {
+- (void)updateConfigurationPlistWithCompletionHandler:(CRMSettingsUpdateHandler)completion {
 	return;
 	NSURL *URL = [NSURL URLWithString:@"http://crashlytics-ios.herokuapp.com/configuration.plist"];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
@@ -139,7 +139,7 @@
 #pragma mark - Private
 
 - (void)_serializeConfigurationDictionary:(NSDictionary *)defaults
-                               completion:(CLSSettingsUpdateHandler)completion {
+                               completion:(CRMSettingsUpdateHandler)completion {
     // Serializing response back to plist
     // TODO: Find a non-hacky way to access response's NSData and just save that
     NSError *error = nil;
@@ -229,7 +229,7 @@
 
 @end
 
-@implementation CRMConfiguration (CLSOpenSource)
+@implementation CRMConfiguration (CRMOpenSource)
 
 #pragma mark - Public
 
@@ -281,7 +281,7 @@
 
 @end
 
-@implementation CRMConfiguration (CLSMarketing)
+@implementation CRMConfiguration (CRMMarketing)
 
 - (NSURL *)marketingURL {
 	NSString *URLString = [[NSUserDefaults standardUserDefaults] valueForKey:@"MarketingLink"];

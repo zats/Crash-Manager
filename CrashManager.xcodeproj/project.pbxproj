@@ -17,7 +17,7 @@
 		5C401864186C2CE000CC71AE /* CRMIncident_Session+Crashlytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C401863186C2CE000CC71AE /* CRMIncident_Session+Crashlytics.m */; };
 		5C4B0684185356000061485A /* CRMOrganizationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B0683185356000061485A /* CRMOrganizationsViewController.m */; };
 		5C4B068718535B6F0061485A /* CRMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B068618535B6F0061485A /* CRMLoginViewController.m */; };
-		5C4B068A18535D760061485A /* CLSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B068918535D760061485A /* CLSViewController.m */; };
+		5C4B068A18535D760061485A /* CRMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B068918535D760061485A /* CRMViewController.m */; };
 		5C4B068D18535D9A0061485A /* CRMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B068C18535D9A0061485A /* CRMTableViewController.m */; };
 		5C4B0691185392A00061485A /* CRMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B0690185392A00061485A /* CRMAPIClient.m */; };
 		5C4B069518545AFD0061485A /* CRMApplicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B069418545AFD0061485A /* CRMApplicationsViewController.m */; };
@@ -40,7 +40,7 @@
 		5C71945318B7B49100465412 /* CRMGoogleAnalyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71945218B7B49100465412 /* CRMGoogleAnalyticsLogger.m */; };
 		5C71946C18B8BE2900465412 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C71946A18B8BE2900465412 /* InfoPlist.strings */; };
 		5C757E7A18C1D5E900C50A72 /* CRMCrashlyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E7918C1D5E900C50A72 /* CRMCrashlyticsLogger.m */; };
-		5C757E7F18C1D83500C50A72 /* CLSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E7E18C1D83500C50A72 /* CLSAboutViewController.m */; };
+		5C757E7F18C1D83500C50A72 /* CRMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E7E18C1D83500C50A72 /* CRMAboutViewController.m */; };
 		5C757E9218C200B700C50A72 /* ADNActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E8718C200B700C50A72 /* ADNActivity.m */; };
 		5C757E9318C200B700C50A72 /* ADNActivityCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E8918C200B700C50A72 /* ADNActivityCollection.m */; };
 		5C757E9418C200B700C50A72 /* ADNFelixActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E8B18C200B700C50A72 /* ADNFelixActivity.m */; };
@@ -65,7 +65,7 @@
 		5CE94DEC18534976003C7DB1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94DEB18534976003C7DB1 /* CoreGraphics.framework */; };
 		5CE94DEE18534976003C7DB1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94DED18534976003C7DB1 /* UIKit.framework */; };
 		5CE94DF618534976003C7DB1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE94DF518534976003C7DB1 /* main.m */; };
-		5CE94DFA18534976003C7DB1 /* CLSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE94DF918534976003C7DB1 /* CLSAppDelegate.m */; };
+		5CE94DFA18534976003C7DB1 /* CRMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE94DF918534976003C7DB1 /* CRMAppDelegate.m */; };
 		5CE94DFD18534976003C7DB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE94DFB18534976003C7DB1 /* Main.storyboard */; };
 		5CE94E0218534976003C7DB1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE94E0118534976003C7DB1 /* Images.xcassets */; };
 		5CE94E2218534BE0003C7DB1 /* Crashlytics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CE94E2018534BE0003C7DB1 /* Crashlytics.xcdatamodeld */; };
@@ -93,8 +93,8 @@
 		5C4B0683185356000061485A /* CRMOrganizationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMOrganizationsViewController.m; sourceTree = "<group>"; };
 		5C4B068518535B6F0061485A /* CRMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMLoginViewController.h; sourceTree = "<group>"; };
 		5C4B068618535B6F0061485A /* CRMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMLoginViewController.m; sourceTree = "<group>"; };
-		5C4B068818535D760061485A /* CLSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSViewController.h; sourceTree = "<group>"; };
-		5C4B068918535D760061485A /* CLSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSViewController.m; sourceTree = "<group>"; };
+		5C4B068818535D760061485A /* CRMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMViewController.h; sourceTree = "<group>"; };
+		5C4B068918535D760061485A /* CRMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMViewController.m; sourceTree = "<group>"; };
 		5C4B068B18535D9A0061485A /* CRMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMTableViewController.h; sourceTree = "<group>"; };
 		5C4B068C18535D9A0061485A /* CRMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMTableViewController.m; sourceTree = "<group>"; };
 		5C4B068F185392A00061485A /* CRMAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMAPIClient.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -143,8 +143,8 @@
 		5C71946D18B8BE3000465412 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5C757E7818C1D5E900C50A72 /* CRMCrashlyticsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMCrashlyticsLogger.h; sourceTree = "<group>"; };
 		5C757E7918C1D5E900C50A72 /* CRMCrashlyticsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMCrashlyticsLogger.m; sourceTree = "<group>"; };
-		5C757E7D18C1D83500C50A72 /* CLSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSAboutViewController.h; sourceTree = "<group>"; };
-		5C757E7E18C1D83500C50A72 /* CLSAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSAboutViewController.m; sourceTree = "<group>"; };
+		5C757E7D18C1D83500C50A72 /* CRMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMAboutViewController.h; sourceTree = "<group>"; };
+		5C757E7E18C1D83500C50A72 /* CRMAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMAboutViewController.m; sourceTree = "<group>"; };
 		5C757E8618C200B700C50A72 /* ADNActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNActivity.h; sourceTree = "<group>"; };
 		5C757E8718C200B700C50A72 /* ADNActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNActivity.m; sourceTree = "<group>"; };
 		5C757E8818C200B700C50A72 /* ADNActivityCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNActivityCollection.h; sourceTree = "<group>"; };
@@ -190,8 +190,8 @@
 		5CE94DED18534976003C7DB1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5CE94DF518534976003C7DB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5CE94DF718534976003C7DB1 /* CrashManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrashManager-Prefix.pch"; sourceTree = "<group>"; };
-		5CE94DF818534976003C7DB1 /* CLSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CLSAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		5CE94DF918534976003C7DB1 /* CLSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CLSAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5CE94DF818534976003C7DB1 /* CRMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		5CE94DF918534976003C7DB1 /* CRMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5CE94DFC18534976003C7DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CE94E0118534976003C7DB1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5CE94E0818534976003C7DB1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -311,8 +311,8 @@
 		5C4B069218545AED0061485A /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
-				5C4B068818535D760061485A /* CLSViewController.h */,
-				5C4B068918535D760061485A /* CLSViewController.m */,
+				5C4B068818535D760061485A /* CRMViewController.h */,
+				5C4B068918535D760061485A /* CRMViewController.m */,
 				5C4B068B18535D9A0061485A /* CRMTableViewController.h */,
 				5C4B068C18535D9A0061485A /* CRMTableViewController.m */,
 			);
@@ -420,8 +420,8 @@
 		5C757E7C18C1D82800C50A72 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				5C757E7D18C1D83500C50A72 /* CLSAboutViewController.h */,
-				5C757E7E18C1D83500C50A72 /* CLSAboutViewController.m */,
+				5C757E7D18C1D83500C50A72 /* CRMAboutViewController.h */,
+				5C757E7E18C1D83500C50A72 /* CRMAboutViewController.m */,
 			);
 			name = About;
 			sourceTree = "<group>";
@@ -531,8 +531,8 @@
 		5CE94DEF18534976003C7DB1 /* CrashManager */ = {
 			isa = PBXGroup;
 			children = (
-				5CE94DF818534976003C7DB1 /* CLSAppDelegate.h */,
-				5CE94DF918534976003C7DB1 /* CLSAppDelegate.m */,
+				5CE94DF818534976003C7DB1 /* CRMAppDelegate.h */,
+				5CE94DF918534976003C7DB1 /* CRMAppDelegate.m */,
 				5C3BCF301868AF33004BB1FA /* Generic */,
 				5C6D3CDD18534CA9005E97D1 /* Model */,
 				5C4B068E1853927C0061485A /* Networking */,
@@ -739,7 +739,7 @@
 				5C6D3CF818534CA9005E97D1 /* CRMApplication.m in Sources */,
 				5C5ABF661871C48A00FB2A77 /* CRMIssueStatusFilterViewController.m in Sources */,
 				5C757E9318C200B700C50A72 /* ADNActivityCollection.m in Sources */,
-				5CE94DFA18534976003C7DB1 /* CLSAppDelegate.m in Sources */,
+				5CE94DFA18534976003C7DB1 /* CRMAppDelegate.m in Sources */,
 				5C4B068D18535D9A0061485A /* CRMTableViewController.m in Sources */,
 				5C6D3CF618534CA9005E97D1 /* _CRMOrganization.m in Sources */,
 				5CEDD1CA187050BC00B6A39A /* CRMApplicationCell.m in Sources */,
@@ -753,7 +753,7 @@
 				5C6D3CFB18534CA9005E97D1 /* CRMOrganization.m in Sources */,
 				5C757E9518C200B700C50A72 /* ADNHappyActivity.m in Sources */,
 				5C71945318B7B49100465412 /* CRMGoogleAnalyticsLogger.m in Sources */,
-				5C757E7F18C1D83500C50A72 /* CLSAboutViewController.m in Sources */,
+				5C757E7F18C1D83500C50A72 /* CRMAboutViewController.m in Sources */,
 				5C757E9618C200B700C50A72 /* ADNNetbotActivity.m in Sources */,
 				5C6D3CF418534CA9005E97D1 /* _CRMIssue.m in Sources */,
 				5CC3F7EB1876C933003C2FAC /* CRMError.m in Sources */,
@@ -785,7 +785,7 @@
 				5C67C71518662F8700EC5943 /* CRMBuildsFilterViewController.m in Sources */,
 				5CC3F7F218786E7A003C2FAC /* CRMPasteboardObserver.m in Sources */,
 				5C4B0698185465480061485A /* CRMRequestSerializer.m in Sources */,
-				5C4B068A18535D760061485A /* CLSViewController.m in Sources */,
+				5C4B068A18535D760061485A /* CRMViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,9 +869,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLSBundleSuffix = .beta;
-				CLSDisplayNameSuffix = " β";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CRMBundleSuffix = .beta;
+				CRMDisplayNameSuffix = " β";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Crashlytics",
@@ -929,9 +929,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLSBundleSuffix = .beta;
-				CLSDisplayNameSuffix = " β";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CRMBundleSuffix = .beta;
+				CRMDisplayNameSuffix = " β";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Crashlytics",
@@ -1028,9 +1028,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLSBundleSuffix = "";
-				CLSDisplayNameSuffix = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CRMBundleSuffix = "";
+				CRMDisplayNameSuffix = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Crashlytics",
@@ -1055,9 +1055,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLSBundleSuffix = "";
-				CLSDisplayNameSuffix = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CRMBundleSuffix = "";
+				CRMDisplayNameSuffix = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Crashlytics",

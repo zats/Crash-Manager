@@ -1,5 +1,5 @@
 //
-//  CLSThreadsTableViewController.m
+//  CRMThreadsTableViewController.m
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/25/13.
@@ -91,8 +91,8 @@ titleForHeaderInSection:(NSInteger)section {
 		binaryName = [binaryName stringByAppendingFormat:@" + %lu", frame.offset];
 	}
 	
-	BOOL isDeveloperCode = (frame.importance & CLSIncident_FrameImportanceInDeveloperCode) != 0;
-	BOOL isCrashedFrame = (frame.importance & CLSIncident_FrameImportanceLikelyLeadToCrash ) != 0;
+	BOOL isDeveloperCode = (frame.importance & CRMIncident_FrameImportanceInDeveloperCode) != 0;
+	BOOL isCrashedFrame = (frame.importance & CRMIncident_FrameImportanceLikelyLeadToCrash) != 0;
 	UIColor *color = isCrashedFrame ? [UIColor blackColor] : [UIColor lightGrayColor];
 	cell.textLabel.font = isDeveloperCode ? [UIFont boldSystemFontOfSize:18] : [UIFont systemFontOfSize:18];
 	cell.textLabel.textColor = color;

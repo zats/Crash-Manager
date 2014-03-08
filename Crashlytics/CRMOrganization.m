@@ -19,7 +19,7 @@
 		return nil;
 	}
 	
-	CRMOrganization *organization = [CRMOrganization MR_findFirstByAttribute:CLSOrganizationAttributes.organizationID
+	CRMOrganization *organization = [CRMOrganization MR_findFirstByAttribute:CRMOrganizationAttributes.organizationID
 																   withValue:organizationID
 																   inContext:context];
 	if (!organization) {
