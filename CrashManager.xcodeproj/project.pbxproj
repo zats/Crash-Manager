@@ -47,6 +47,9 @@
 		5C757E9518C200B700C50A72 /* ADNHappyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E8D18C200B700C50A72 /* ADNHappyActivity.m */; };
 		5C757E9618C200B700C50A72 /* ADNNetbotActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E8F18C200B700C50A72 /* ADNNetbotActivity.m */; };
 		5C757E9718C200B700C50A72 /* ADNRiposteActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E9118C200B700C50A72 /* ADNRiposteActivity.m */; };
+		5C7A6D3718CB75E3004E7611 /* CRMIssuesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A6D3618CB75E3004E7611 /* CRMIssuesDataSource.m */; };
+		5C7A6D3A18CB76F3004E7611 /* CRMRecentIssuesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A6D3918CB76F3004E7611 /* CRMRecentIssuesDataSource.m */; };
+		5C7A6D3D18CB79FC004E7611 /* CRMIssuesDefaultDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A6D3C18CB79FC004E7611 /* CRMIssuesDefaultDataSource.m */; };
 		5C85507518720FB8008F5038 /* _CRMFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507218720FB8008F5038 /* _CRMFilter.m */; };
 		5C85507618720FB8008F5038 /* CRMFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85507418720FB8008F5038 /* CRMFilter.m */; };
 		5C8550791872191C008F5038 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C85507B1872191C008F5038 /* Localizable.strings */; };
@@ -157,6 +160,12 @@
 		5C757E8F18C200B700C50A72 /* ADNNetbotActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNNetbotActivity.m; sourceTree = "<group>"; };
 		5C757E9018C200B700C50A72 /* ADNRiposteActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNRiposteActivity.h; sourceTree = "<group>"; };
 		5C757E9118C200B700C50A72 /* ADNRiposteActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNRiposteActivity.m; sourceTree = "<group>"; };
+		5C7A6D3518CB75E3004E7611 /* CRMIssuesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMIssuesDataSource.h; sourceTree = "<group>"; };
+		5C7A6D3618CB75E3004E7611 /* CRMIssuesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMIssuesDataSource.m; sourceTree = "<group>"; };
+		5C7A6D3818CB76F3004E7611 /* CRMRecentIssuesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMRecentIssuesDataSource.h; sourceTree = "<group>"; };
+		5C7A6D3918CB76F3004E7611 /* CRMRecentIssuesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMRecentIssuesDataSource.m; sourceTree = "<group>"; };
+		5C7A6D3B18CB79FC004E7611 /* CRMIssuesDefaultDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMIssuesDefaultDataSource.h; sourceTree = "<group>"; };
+		5C7A6D3C18CB79FC004E7611 /* CRMIssuesDefaultDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMIssuesDefaultDataSource.m; sourceTree = "<group>"; };
 		5C85507118720FB8008F5038 /* _CRMFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _CRMFilter.h; path = Crashlytics/_CRMFilter.h; sourceTree = SOURCE_ROOT; };
 		5C85507218720FB8008F5038 /* _CRMFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _CRMFilter.m; path = Crashlytics/_CRMFilter.m; sourceTree = SOURCE_ROOT; };
 		5C85507318720FB8008F5038 /* CRMFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRMFilter.h; path = Crashlytics/CRMFilter.h; sourceTree = SOURCE_ROOT; };
@@ -283,12 +292,11 @@
 			isa = PBXGroup;
 			children = (
 				5C757E7C18C1D82800C50A72 /* About */,
-				5C4B0682185356000061485A /* CRMOrganizationsViewController.h */,
-				5C4B0683185356000061485A /* CRMOrganizationsViewController.m */,
-				5CC3F7E51876B11B003C2FAC /* Login */,
 				5C4B069218545AED0061485A /* Abstract */,
 				5CEDD1C61870509A00B6A39A /* Applications List */,
 				5CEDD1C218703DB700B6A39A /* Issues List */,
+				5CC3F7E51876B11B003C2FAC /* Login */,
+				5C7A6D3E18CB7A41004E7611 /* Organizations */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -453,6 +461,28 @@
 			path = ADNActivities;
 			sourceTree = "<group>";
 		};
+		5C7A6D3418CB75D2004E7611 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5C7A6D3518CB75E3004E7611 /* CRMIssuesDataSource.h */,
+				5C7A6D3618CB75E3004E7611 /* CRMIssuesDataSource.m */,
+				5C7A6D3B18CB79FC004E7611 /* CRMIssuesDefaultDataSource.h */,
+				5C7A6D3C18CB79FC004E7611 /* CRMIssuesDefaultDataSource.m */,
+				5C7A6D3818CB76F3004E7611 /* CRMRecentIssuesDataSource.h */,
+				5C7A6D3918CB76F3004E7611 /* CRMRecentIssuesDataSource.m */,
+			);
+			name = "Data Sources";
+			sourceTree = "<group>";
+		};
+		5C7A6D3E18CB7A41004E7611 /* Organizations */ = {
+			isa = PBXGroup;
+			children = (
+				5C4B0682185356000061485A /* CRMOrganizationsViewController.h */,
+				5C4B0683185356000061485A /* CRMOrganizationsViewController.m */,
+			);
+			name = Organizations;
+			sourceTree = "<group>";
+		};
 		5CB3C0821871BDFC00CE00D7 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,6 +587,7 @@
 		5CEDD1C218703DB700B6A39A /* Issues List */ = {
 			isa = PBXGroup;
 			children = (
+				5C7A6D3418CB75D2004E7611 /* Data Sources */,
 				5CEDD1C318703DDC00B6A39A /* CRMIssueListCell.h */,
 				5CEDD1C418703DDC00B6A39A /* CRMIssueListCell.m */,
 				5C3CEAB518671C4000F8DDC6 /* CRMIssuesViewController.h */,
@@ -733,6 +764,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CE94DF618534976003C7DB1 /* main.m in Sources */,
+				5C7A6D3D18CB79FC004E7611 /* CRMIssuesDefaultDataSource.m in Sources */,
 				5C71944518B7A3C200465412 /* CRMAnalyticsController.m in Sources */,
 				5CBE4760189D58A6002D3E90 /* NSURLRequest+CRMLogging.m in Sources */,
 				5C4B0684185356000061485A /* CRMOrganizationsViewController.m in Sources */,
@@ -748,6 +780,7 @@
 				5C757E7A18C1D5E900C50A72 /* CRMCrashlyticsLogger.m in Sources */,
 				5CC3F7E41876A12D003C2FAC /* CRMLogViewController.m in Sources */,
 				5C6D3CF318534CA9005E97D1 /* _CRMApplication.m in Sources */,
+				5C7A6D3A18CB76F3004E7611 /* CRMRecentIssuesDataSource.m in Sources */,
 				5C6BF2B018637E34007C483D /* CRMResponseSerializer.m in Sources */,
 				5C9AC77C186C74190037DC36 /* CRMIssueGeneralDetailsViewController.m in Sources */,
 				5C6D3CFB18534CA9005E97D1 /* CRMOrganization.m in Sources */,
@@ -761,6 +794,7 @@
 				5C6D3CF918534CA9005E97D1 /* CRMIssue.m in Sources */,
 				5CEDD1C518703DDC00B6A39A /* CRMIssueListCell.m in Sources */,
 				5CA538B61872D4E200544C7A /* CRMTimeRangeFilterViewController.m in Sources */,
+				5C7A6D3718CB75E3004E7611 /* CRMIssuesDataSource.m in Sources */,
 				5C401864186C2CE000CC71AE /* CRMIncident_Session+Crashlytics.m in Sources */,
 				5C4B0691185392A00061485A /* CRMAPIClient.m in Sources */,
 				5C3BCF2F1868AF20004BB1FA /* CRMIssueDetailsViewController.m in Sources */,
