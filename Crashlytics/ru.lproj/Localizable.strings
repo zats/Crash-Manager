@@ -8,89 +8,89 @@
 
 // Organization Screen
 
-"CLSOrganizationNoApps" = "нет приложений";
-"%d CLSOrganizationsAppsCount (plural rule: one)" = "%d приложение";
-"%d CLSOrganizationsAppsCount (plural rule: few)" = "%d приложения";
-"%d CLSOrganizationsAppsCount (plural rule: many)" = "%d приложений";
+"CRMOrganizationNoApps" = "нет приложений";
+"%d CRMOrganizationsAppsCount (plural rule: one)" = "%d приложение";
+"%d CRMOrganizationsAppsCount (plural rule: few)" = "%d приложения";
+"%d CRMOrganizationsAppsCount (plural rule: many)" = "%d приложений";
 
 // Issue Filters
 
 // by issue status
-"CLSFilterIssuesStatusAll" = "Все проблемы";
-"CLSFilterIssuesStatusResolved" = "Исправленные проблемы";
-"CLSFilterIssuesStatusUnresolved" = "Открытые проблемы";
+"CRMFilterIssuesStatusAll" = "Все проблемы";
+"CRMFilterIssuesStatusResolved" = "Исправленные проблемы";
+"CRMFilterIssuesStatusUnresolved" = "Открытые проблемы";
 // by time
-"CLSFilterTimeRangeAll" = "Все время";
-"CLSFilterTimeRangeLastHour" = "Последний час";
-"CLSFilterTimeRangeLast24Hours" = "Последние 24 часа";
-"CLSFilterTimeRangeLast48Hours" = "Последние 48 часов";
-"CLSFilterTimeRangeLast7Days" = "Последние 7 дней";
-"CLSFilterTimeRangeLast30Days" = "Последние 30 дней";
+"CRMFilterTimeRangeAll" = "Все время";
+"CRMFilterTimeRangeLastHour" = "Последний час";
+"CRMFilterTimeRangeLast24Hours" = "Последние 24 часа";
+"CRMFilterTimeRangeLast48Hours" = "Последние 48 часов";
+"CRMFilterTimeRangeLast7Days" = "Последние 7 дней";
+"CRMFilterTimeRangeLast30Days" = "Последние 30 дней";
 
 // Applications List Screen
 
-"CLSApplicationsListNoIssues" = "";
-"%d CLSApplicationsListIssueCount (plural rule: one)" = "%d проблема";
-"%d CLSApplicationsListIssueCount (plural rule: few)" = "%d проблемы";
-"%d CLSApplicationsListIssueCount (plural rule: many)" = "%d проблем";
-"%d CLSApplicationsListUsersAffected (plural rule: one)" = "%d пользователь";
-"%d CLSApplicationsListUsersAffected (plural rule: few)" = "%d пользователя";
-"%d CLSApplicationsListUsersAffected (plural rule: many)" = "%d пользователей";
-"CLSApplicationsListNoIssues" = "нет багов";
+"CRMApplicationsListNoIssues" = "";
+"%d CRMApplicationsListIssueCount (plural rule: one)" = "%d проблема";
+"%d CRMApplicationsListIssueCount (plural rule: few)" = "%d проблемы";
+"%d CRMApplicationsListIssueCount (plural rule: many)" = "%d проблем";
+"%d CRMApplicationsListUsersAffected (plural rule: one)" = "%d пользователь";
+"%d CRMApplicationsListUsersAffected (plural rule: few)" = "%d пользователя";
+"%d CRMApplicationsListUsersAffected (plural rule: many)" = "%d пользователей";
+"CRMApplicationsListNoIssues" = "нет багов";
 
 // Issues List screen
-"CLSIssueListTitleFormat" = "%@'s issues";
-"%d CLSIssueListCrashesCount (plural rule: one)" = "%d проблема";
-"%d CLSIssueListCrashesCount (plural rule: few)" = "%d проблемы";
-"%d CLSIssueListCrashesCount (plural rule: many)" = "%d проблем";
-"%d CLSIssueListUsersAffected (plural rule: one)" = "%d пользователь";
-"%d CLSIssueListUsersAffected (plural rule: few)" = "%d пользователя";
-"%d CLSIssueListUsersAffected (plural rule: many)" = "%d пользователей";
-"CLSIssueListCloseIssues" = "Закрыть";
-"CLSIssueListReopenIssue" = "Открыть снова";
+"CRMIssueListTitleFormat" = "%@'s issues";
+"%d CRMIssueListCrashesCount (plural rule: one)" = "%d проблема";
+"%d CRMIssueListCrashesCount (plural rule: few)" = "%d проблемы";
+"%d CRMIssueListCrashesCount (plural rule: many)" = "%d проблем";
+"%d CRMIssueListUsersAffected (plural rule: one)" = "%d пользователь";
+"%d CRMIssueListUsersAffected (plural rule: few)" = "%d пользователя";
+"%d CRMIssueListUsersAffected (plural rule: many)" = "%d пользователей";
+"CRMIssueListCloseIssues" = "Закрыть";
+"CRMIssueListReopenIssue" = "Открыть снова";
 
 // Issue details screen
-"CLSIssueDetailsSegmentDetails" = "Детали";
-"CLSIssueDetailsSegmentThreads" = "Процессы";
-"CLSIssueDetailsSegmentException" = "Исключение";
+"CRMIssueDetailsSegmentDetails" = "Детали";
+"CRMIssueDetailsSegmentThreads" = "Процессы";
+"CRMIssueDetailsSegmentException" = "Исключение";
 // General issue details
-"CLSIssueGeneralDetailsSectionGeneral" = "Основные";
-"CLSIssueGeneralDetailsSectionDevice" = "Устройство";
-"CLSIssueGeneralDetailsSectionOS" = "Операционная Система";
-"CLSIssueGeneralDetailsSectionKeys" = "Ключи";
-"CLSIssueGeneralDetailsSectionLogs" = "Отчеты";
-"CLSIssueGeneralDetailsRowSignal" = "сигнал";
-"CLSIssueGeneralDetailsRowUser" = "пользователь";
-"CLSIssueGeneralDetailsRowValueUnknown" = "Неизвестно";
-"CLSIssueGeneralDetailsRowBattery" = "батарейка";
-"CLSIssueGeneralDetailsRowValueNA" = "Нет данных";
-"CLSIssueGeneralDetailsRowDiskSpace" = "место на диске";
-"CLSIssueGeneralDetailsRowModel" = "модель";
-"CLSIssueGeneralDetailsRowOrientation" = "ориентация";
-"CLSIssueGeneralDetailsRowProximity" = "близость";
-"CLSIssueGeneralDetailsRowValueOn" = "вкл.";
-"CLSIssueGeneralDetailsRowValueOff" = "выкл.";
-"CLSIssueGeneralDetailsRowRam" = "опер. память";
-"CLSIssueGeneralDetailsRowOS" = "ОС";
-"CLSIssueGeneralDetailsRowJailbroken" = "взломан";
-"CLSIssueGeneralDetailsRowLanguage" = "язык";
-"CLSIssueGeneralDetailsNoKeysMessage" = "Эта проблема не содержит пользовательских ключей, обратитесь к документации чтобы добавить пользовательские ключи.";
-"CLSIssueGeneralDetailsNoLogsMessage" = "Эта проблема не содержит пользовательских отчетов, обратитесь к документации чтобы добавить пользовательские отчеты.";
+"CRMIssueGeneralDetailsSectionGeneral" = "Основные";
+"CRMIssueGeneralDetailsSectionDevice" = "Устройство";
+"CRMIssueGeneralDetailsSectionOS" = "Операционная Система";
+"CRMIssueGeneralDetailsSectionKeys" = "Ключи";
+"CRMIssueGeneralDetailsSectionLogs" = "Отчеты";
+"CRMIssueGeneralDetailsRowSignal" = "сигнал";
+"CRMIssueGeneralDetailsRowUser" = "пользователь";
+"CRMIssueGeneralDetailsRowValueUnknown" = "Неизвестно";
+"CRMIssueGeneralDetailsRowBattery" = "батарейка";
+"CRMIssueGeneralDetailsRowValueNA" = "Нет данных";
+"CRMIssueGeneralDetailsRowDiskSpace" = "место на диске";
+"CRMIssueGeneralDetailsRowModel" = "модель";
+"CRMIssueGeneralDetailsRowOrientation" = "ориентация";
+"CRMIssueGeneralDetailsRowProximity" = "близость";
+"CRMIssueGeneralDetailsRowValueOn" = "вкл.";
+"CRMIssueGeneralDetailsRowValueOff" = "выкл.";
+"CRMIssueGeneralDetailsRowRam" = "опер. память";
+"CRMIssueGeneralDetailsRowOS" = "ОС";
+"CRMIssueGeneralDetailsRowJailbroken" = "взломан";
+"CRMIssueGeneralDetailsRowLanguage" = "язык";
+"CRMIssueGeneralDetailsNoKeysMessage" = "Эта проблема не содержит пользовательских ключей, обратитесь к документации чтобы добавить пользовательские ключи.";
+"CRMIssueGeneralDetailsNoLogsMessage" = "Эта проблема не содержит пользовательских отчетов, обратитесь к документации чтобы добавить пользовательские отчеты.";
 
 // Pasteboard
-"CLSPasteboardObserverURLDetectedMessageTitle" = "Перейти к проблеме?";
-"CLSPasteboardObserverURLDetectedMessage" = "Буфер содежит информцию о проблеме\n";
-"CLSPasteboardObserverURLDetectedMessageOrganization" = "Организация: %@\n";
-"CLSPasteboardObserverURLDetectedMessageApp" = "Приложение: %@\n";
-"CLSPasteboardObserverURLDetectedMessageIssue" = "Проблема: %@\n";
-"CLSPasteboardObserverURLDetectedMessageNavigateTitle" = "Перейти";
-"CLSPasteboardObserverURLDetectedMessageCancelTitle" = "Отменить";
+"CRMPasteboardObserverURLDetectedMessageTitle" = "Перейти к проблеме?";
+"CRMPasteboardObserverURLDetectedMessage" = "Буфер содежит информцию о проблеме\n";
+"CRMPasteboardObserverURLDetectedMessageOrganization" = "Организация: %@\n";
+"CRMPasteboardObserverURLDetectedMessageApp" = "Приложение: %@\n";
+"CRMPasteboardObserverURLDetectedMessageIssue" = "Проблема: %@\n";
+"CRMPasteboardObserverURLDetectedMessageNavigateTitle" = "Перейти";
+"CRMPasteboardObserverURLDetectedMessageCancelTitle" = "Отменить";
 
 // Logout
-"CLSLogoutAlertTitle" = "Выйти?";
-"CLSLogoutAlertMessage" = "Вы уверенны что хотите выйти?";
-"CLSLogoutAlertCancelTitle" = "Отменить";
-"CLSLogoutAlertLogoutTitle" = "Выйти";
+"CRMLogoutAlertTitle" = "Выйти?";
+"CRMLogoutAlertMessage" = "Вы уверенны что хотите выйти?";
+"CRMLogoutAlertCancelTitle" = "Отменить";
+"CRMLogoutAlertLogoutTitle" = "Выйти";
 
 // Sharing
-"CLSSharingFormatString" = "%@ – клиент для Crashlytics с открытым исходным кодом"; // app name, app store link
+"CRMSharingFormatString" = "%@ – клиент для Crashlytics с открытым исходным кодом"; // app name, app store link

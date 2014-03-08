@@ -9,10 +9,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "CLSAppDelegate.h"
+#import "CRMAppDelegate.h"
 
 int main(int argc, char * argv[]) {
 	@autoreleasepool {
-	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([CLSAppDelegate class]));
+	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([CRMAppDelegate class]));
 	}
 }

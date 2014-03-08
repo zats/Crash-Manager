@@ -8,7 +8,7 @@
 
 #import "UIViewController+OpenSource.h"
 
-#import "CLSConfiguration.h"
+#import "CRMConfiguration.h"
 #import <PBWebViewController/PBWebViewController.h>
 #import <SHBarButtonItemBlocks/SHBarButtonItemBlocks.h>
 #import <TUSafariActivity/TUSafariActivity.h>
@@ -16,7 +16,7 @@
 
 @implementation UIViewController (OpenSource)
 
-- (void)cls_exposeSource {
+- (void)crm_exposeSource {
     NSAssert([self isViewLoaded], @"Can not instantiate source observation before view is loaded");
     if (![self isViewLoaded]) {
         return;
@@ -36,7 +36,7 @@
         subscribeNext:^(id x) {
             // We want to resolve URL as late as possible: configuration might
             // be updated remotely
-            NSURL *URL = [[CLSConfiguration sharedInstance] implementationURLForClass:className];
+            NSURL *URL = [[CRMConfiguration sharedInstance] implementationURLForClass:className];
             if (!URL) {
                 return;
             }
