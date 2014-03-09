@@ -10,7 +10,7 @@
 
 #import "CRMBuild.h"
 #import "CRMIssue.h"
-#import "CRMIssueListCell.h"
+#import "CRMIssueCell.h"
 #import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
 
 @interface CRMIssuesDataSource ()
@@ -34,12 +34,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
+    NSAssert(NO, @"Method is not implemented");
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    static NSString *const IssueCellIdentifier = @"IssueCellIdentifier";
+    CRMIssueCell *cell = [tableView dequeueReusableCellWithIdentifier:IssueCellIdentifier
+                                                             forIndexPath:indexPath];
+    CRMIssue *issue = [self issueForIndexPath:indexPath];
+
+    [self configureCell:cell
+              withIssue:issue
+              indexPath:indexPath];
+
+    return cell;
 }
 
 @end
@@ -47,14 +57,16 @@
 @implementation CRMIssuesDataSource (SubclassingHooks)
 
 - (CRMIssue *)issueForIndexPath:(NSIndexPath *)indexPath {
+    NSAssert(NO, @"Method is not implemented");
     return nil;
 }
 
 - (NSIndexPath *)indexPathForIssue:(CRMIssue *)issue {
+    NSAssert(NO, @"Method is not implemented");
     return nil;
 }
 
-- (void)configureCell:(CRMIssueListCell *)cell withIssue:(CRMIssue *)issue indexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(CRMIssueCell *)cell withIssue:(CRMIssue *)issue indexPath:(NSIndexPath *)indexPath {
 	cell.issueNumberLabel.text = [issue.displayID description];
 	cell.issueTitleLabel.textColor = [issue isResolved] ? [UIColor lightGrayColor] : [UIColor blackColor];
 	cell.issueTitleLabel.text = issue.title;

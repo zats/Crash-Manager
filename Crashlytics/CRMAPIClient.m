@@ -180,7 +180,7 @@
 	if ([application.filter isBuildFilterSet]) {
 		parameters[@"build_equals"] = application.filter.build.buildID;
 	}
-	if ([application.filter isTimeRangeFilterSet]) {
+	if ([application.filter isTimeRangeFilterEnabled]) {
 		NSTimeInterval olderThan = application.filter.issueOlderThenValue;
 		NSTimeInterval newerThan = application.filter.issueNewerThenValue;
 		parameters[@"created_lte"] = @(floor([[NSDate dateWithTimeIntervalSinceNow:olderThan] timeIntervalSince1970]));

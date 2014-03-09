@@ -72,7 +72,7 @@
 		5CE94DFD18534976003C7DB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE94DFB18534976003C7DB1 /* Main.storyboard */; };
 		5CE94E0218534976003C7DB1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE94E0118534976003C7DB1 /* Images.xcassets */; };
 		5CE94E2218534BE0003C7DB1 /* Crashlytics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CE94E2018534BE0003C7DB1 /* Crashlytics.xcdatamodeld */; };
-		5CEDD1C518703DDC00B6A39A /* CRMIssueListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C418703DDC00B6A39A /* CRMIssueListCell.m */; };
+		5CEDD1C518703DDC00B6A39A /* CRMIssueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C418703DDC00B6A39A /* CRMIssueCell.m */; };
 		5CEDD1CA187050BC00B6A39A /* CRMApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C9187050BC00B6A39A /* CRMApplicationCell.m */; };
 		5CEDD1CD18705DE500B6A39A /* CRMConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1CC18705DE500B6A39A /* CRMConfiguration.m */; };
 /* End PBXBuildFile section */
@@ -205,8 +205,8 @@
 		5CE94E0118534976003C7DB1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5CE94E0818534976003C7DB1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5CE94E2118534BE0003C7DB1 /* Crashlytics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crashlytics.xcdatamodel; sourceTree = "<group>"; };
-		5CEDD1C318703DDC00B6A39A /* CRMIssueListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMIssueListCell.h; sourceTree = "<group>"; };
-		5CEDD1C418703DDC00B6A39A /* CRMIssueListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMIssueListCell.m; sourceTree = "<group>"; };
+		5CEDD1C318703DDC00B6A39A /* CRMIssueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMIssueCell.h; sourceTree = "<group>"; };
+		5CEDD1C418703DDC00B6A39A /* CRMIssueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMIssueCell.m; sourceTree = "<group>"; };
 		5CEDD1C8187050BC00B6A39A /* CRMApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMApplicationCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5CEDD1C9187050BC00B6A39A /* CRMApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMApplicationCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5CEDD1CB18705DE500B6A39A /* CRMConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMConfiguration.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -588,8 +588,8 @@
 			isa = PBXGroup;
 			children = (
 				5C7A6D3418CB75D2004E7611 /* Data Sources */,
-				5CEDD1C318703DDC00B6A39A /* CRMIssueListCell.h */,
-				5CEDD1C418703DDC00B6A39A /* CRMIssueListCell.m */,
+				5CEDD1C318703DDC00B6A39A /* CRMIssueCell.h */,
+				5CEDD1C418703DDC00B6A39A /* CRMIssueCell.m */,
 				5C3CEAB518671C4000F8DDC6 /* CRMIssuesViewController.h */,
 				5C3CEAB618671C4000F8DDC6 /* CRMIssuesViewController.m */,
 				5C40185D186B827A00CC71AE /* Issue Details */,
@@ -792,7 +792,7 @@
 				5CC3F7EB1876C933003C2FAC /* CRMError.m in Sources */,
 				5C757E9218C200B700C50A72 /* ADNActivity.m in Sources */,
 				5C6D3CF918534CA9005E97D1 /* CRMIssue.m in Sources */,
-				5CEDD1C518703DDC00B6A39A /* CRMIssueListCell.m in Sources */,
+				5CEDD1C518703DDC00B6A39A /* CRMIssueCell.m in Sources */,
 				5CA538B61872D4E200544C7A /* CRMTimeRangeFilterViewController.m in Sources */,
 				5C7A6D3718CB75E3004E7611 /* CRMIssuesDataSource.m in Sources */,
 				5C401864186C2CE000CC71AE /* CRMIncident_Session+Crashlytics.m in Sources */,

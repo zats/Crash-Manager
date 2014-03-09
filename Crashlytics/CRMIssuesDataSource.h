@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class CRMIssue;
-@class CRMIssueListCell;
+@class CRMIssueCell;
 @interface CRMIssuesDataSource : NSObject <UITableViewDataSource>
 
 @property (nonatomic, weak, readonly) UITableView *tableView;
@@ -25,7 +25,7 @@
 
 - (NSIndexPath *)indexPathForIssue:(CRMIssue *)issue;
 
-- (void)configureCell:(CRMIssueListCell *)cell withIssue:(CRMIssue *)issue indexPath:(NSIndexPath *)indexPath;
+- (void)configureCell:(CRMIssueCell *)cell withIssue:(CRMIssue *)issue indexPath:(NSIndexPath *)indexPath;
 
 - (BOOL)isOnlyRowAtIndexPath:(NSIndexPath *)indexPath;
 

@@ -9,7 +9,7 @@
 #import "CRMTableViewController.h"
 
 @class CRMApplication;
-@interface CRMIssuesViewController : CRMTableViewController
+@interface CRMIssuesViewController : UITableViewController
 
 @property (nonatomic, weak) CRMApplication *application;
 

@@ -86,7 +86,7 @@ NSArray *CRMFilterTimeRanges;
 	}
 }
 
-- (BOOL)isTimeRangeFilterSet {
+- (BOOL)isTimeRangeFilterEnabled {
 	return !([self.issueOlderThen isEqualToNumber:CRMFilterTimeRangeAll[0]] &&
 			 [self.issueNewerThen isEqualToNumber:CRMFilterTimeRangeAll[1]]);
 }
@@ -102,7 +102,7 @@ NSArray *CRMFilterTimeRanges;
 - (BOOL)isFilterSet {
 	return ([self isBuildFilterSet] ||
 			[self isStatusFilterSet] ||
-			[self isTimeRangeFilterSet]);
+			[self isTimeRangeFilterEnabled]);
 }
 
 - (void)resetFilter {
@@ -111,7 +111,7 @@ NSArray *CRMFilterTimeRanges;
     [self setIssueTimeRangeArray:CRMFilterTimeRangeAll];
 }
 
-- (NSString *)summaryString {
+- (NSString *)displayString {
 	if (![self isFilterSet]) {
 		return nil;
 	}
@@ -165,7 +165,7 @@ NSArray *CRMFilterTimeRanges;
 	if ([self isBuildFilterSet]) {
 		[predicates addObject:[NSPredicate predicateWithFormat:@"%K == %@", CRMIssueRelationships.build, self.build]];
 	}
-	if ([self isTimeRangeFilterSet]) {
+	if ([self isTimeRangeFilterEnabled]) {
 		// No predicate can match time range
 	}
 	if ([predicates count] == 1) {

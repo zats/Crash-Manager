@@ -40,12 +40,12 @@ static inline NSString *CRMLocalizedDisplayStringForFilterTimeRange(NSArray *tim
 
 - (BOOL)isFilterSet;
 
-- (BOOL)isTimeRangeFilterSet;
+- (BOOL)isTimeRangeFilterEnabled;
 - (BOOL)isBuildFilterSet;
 - (BOOL)isStatusFilterSet;
 - (void)resetFilter;
 
-- (NSString *)summaryString;
+- (NSString *)displayString;
 
 @end
 

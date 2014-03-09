@@ -8,11 +8,32 @@
 
 #import "CRMRecentIssuesDataSource.h"
 
+#import "CRMIssue.h"
+
 @interface CRMRecentIssuesDataSource ()
 
 @end
 
 @implementation CRMRecentIssuesDataSource
+
+- (instancetype)initWithTableView:(UITableView *)tableView {
+    self = [super initWithTableView:tableView];
+    if (!self) {
+        return nil;
+    }
+    
+    RACSignal *issuesChangedSignal = [self rac_valuesAndChangesForKeyPath:@keypath(self, issues)
+                                                                  options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew
+                                                                 observer:self];
+    @weakify(self);
+    [issuesChangedSignal subscribeNext:^(id x) {
+       @strongify(self);
+        // TODO: diff arrays to find what was inserted / deleted / moved etc
+        [self.tableView reloadData];
+    }];
+    
+    return self;
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -29,7 +50,10 @@
     if (indexPath.section != 0 || indexPath.row >= [self.issues count]) {
         return nil;
     }
-    return self.issues[indexPath.row];
+    NSString *issueIdetnifier = self.issues[indexPath.row];
+    CRMIssue *issue = [CRMIssue MR_findFirstByAttribute:CRMIssueAttributes.issueID
+                                              withValue:issueIdetnifier];
+    return issue;
 }
 
 - (NSIndexPath *)indexPathForIssue:(CRMIssue *)issue {

@@ -1,5 +1,5 @@
 //
-//  CRMIssueListCell.h
+//  CRMIssueCell.h
 //  Crash Manager
 //
 //  Created by Sasha Zats on 12/29/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CRMIssueListCell : UITableViewCell
+@interface CRMIssueCell : UITableViewCell
 @property (weak, nonatomic, readonly) UILabel *issueNumberLabel;
 @property (weak, nonatomic, readonly) UILabel *issueTitleLabel;
 @property (weak, nonatomic, readonly) UILabel *issueSubtitleLabel;

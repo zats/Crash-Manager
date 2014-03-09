@@ -37,25 +37,24 @@ typedef NS_ENUM(NSInteger, CRMFilterTableViewCell) {
 	self.applicationID = application.applicationID;
 	
 	@weakify(self);
-	[RACObserve(self.filter, issueStatus) subscribeNext:^(NSString *issueStatus) {
+	[RACObserve(self, filter.issueStatus) subscribeNext:^(NSString *issueStatus) {
 		@strongify(self);
 		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:kCRMFilterTableViewCellIssueStatus
 																						 inSection:0]];
 		cell.detailTextLabel.text = CRMLocalizedDisplayStringForFiterIssueStatus(issueStatus);
 	}];
 	
-	[[RACSignal combineLatest:@[ RACObserve(self.filter, issueNewerThen), RACObserve(self.filter, issueOlderThen) ]] subscribeNext:^(id x) {
+	[[RACSignal combineLatest:@[ RACObserve(self, filter.issueNewerThen), RACObserve(self.filter, issueOlderThen) ]] subscribeNext:^(id x) {
 		@strongify(self);
 		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:kCRMFilterTableViewCellTimeRange
 																						 inSection:0]];
 		cell.detailTextLabel.text = CRMLocalizedDisplayStringForFilterTimeRange([self.filter issueTimeRangeArray]);
 	}];
 
-	[RACObserve(self.filter, build) subscribeNext:^(id x) {
+	[RACObserve(self, filter.build) subscribeNext:^(id x) {
 		@strongify(self);
 		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:kCRMFilterTableViewCellBuild
 																						 inSection:0]];
-		
 		cell.detailTextLabel.text = self.filter.build ? self.filter.build.buildID : @"All Builds";
 	}];
 }
@@ -118,6 +117,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 		[tableView deselectRowAtIndexPath:indexPath animated:YES];
 		[self.filter resetFilter];
 		[self.filter.managedObjectContext MR_saveToPersistentStoreAndWait];
+        
+        double delayInSeconds = 0.5;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
 	}
 }
 

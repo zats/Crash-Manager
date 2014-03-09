@@ -11,6 +11,13 @@
 @class CRMApplication;
 @interface CRMIssuesDefaultDataSource : CRMIssuesDataSource
 
-@property (nonatomic, strong) CRMApplication *application;
+@property (nonatomic, strong, readonly) CRMApplication *application;
+
+@property (nonatomic, strong, readonly) RACSignal *filterChangedSignal;
+
+- (instancetype)initWithTableView:(UITableView *)tableView
+                      application:(CRMApplication *)applicaton
+              filterChangedSignal:(RACSignal *)filterChangedSignal;
+
 
 @end
