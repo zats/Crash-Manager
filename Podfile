@@ -7,6 +7,8 @@ inhibit_all_warnings!
 link_with ['CrashManager', 'CrashManager β']
 
 pod 'AFNetworking', '2.2.0'
+pod 'AFNetworking-RACExtensions', :git => 'https://github.com/CodaFi/AFNetworking-RACExtensions'
+pod 'ARChromeActivity', :git => 'https://github.com/alextrob/ARChromeActivity/'
 pod 'CocoaLumberjack', '1.8.1'
 pod 'ColorArt', '0.1.1'
 pod 'GoogleAnalytics-iOS-SDK', '3.0.3'
@@ -19,7 +21,6 @@ pod 'SHUIKitBlocks', '2.3.0'
 pod 'SSKeychain', '1.2.1'
 pod 'TTTLocalizedPluralString', '0.0.9'
 pod 'TUSafariActivity', '1.0.0'
-pod 'ARChromeActivity', :git => 'https://github.com/alextrob/ARChromeActivity/'
 
 post_install do | installer |
 	require 'fileutils'

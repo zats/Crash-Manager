@@ -20,6 +20,7 @@
 #import "CRMResponseSerializer.h"
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#import <AFNetworking-RACExtensions/RACAFNetworking.h>
 
 @interface CRMAPIClient ()
 @end
@@ -153,6 +154,7 @@
 	NSParameterAssert(build.buildID);
 	NSParameterAssert(build.application.organization.organizationID);
 	NSParameterAssert(build.application.applicationID);
+    
 	RACReplaySubject *subject = [RACReplaySubject subject];
 	NSString *path = [NSString stringWithFormat:@"api/v2/organizations/%@/apps/%@", build.application.organization.organizationID, build.application.applicationID];
 	NSDictionary *parameters = @{ @"build_opts": @{ build.buildID : @{ @"collect_crash_reports":@(enabled)}}};
@@ -186,7 +188,7 @@
 		parameters[@"created_lte"] = @(floor([[NSDate dateWithTimeIntervalSinceNow:olderThan] timeIntervalSince1970]));
 		parameters[@"created_gte"] = @(floor([[NSDate dateWithTimeIntervalSinceNow:newerThan] timeIntervalSince1970]));
 	}
-	
+    
 	return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
 		AFHTTPRequestOperation *operation = [self GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
 			CRMApplication *application = [CRMApplication MR_findFirstByAttribute:CRMApplicationAttributes.applicationID
