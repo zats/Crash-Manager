@@ -42,22 +42,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+	@weakify(self);
 	
-	RACSignal *organizationDidChangeSignal = [RACObserve(self, organization) filter:^BOOL(CRMOrganization *organization) {
+    RACSignal *organizationDidChangeSignal = [RACObserve(self, organization) filter:^BOOL(CRMOrganization *organization) {
 		return organization != nil;
 	}];
 	RACSignal *activeAccountDidChangeSignal = [[CRMAccount activeAccountChangedSignal] filter:^BOOL(id account) {
 		return account != nil;
 	}];
 	
-	[[RACSignal combineLatest:@[
-		organizationDidChangeSignal,
-		activeAccountDidChangeSignal]]
-	 subscribeNext:^(id x) {
-		[[CRMAPIClient sharedInstance] applicationsForOrganization:self.organization];
-	 }];
+	[[RACSignal combineLatest:@[ organizationDidChangeSignal, activeAccountDidChangeSignal]]
+        subscribeNext:^(id x) {
+            @strongify(self);
+            [[CRMAPIClient sharedInstance] applicationsForOrganization:self.organization];
+        }];
 	
 	[organizationDidChangeSignal subscribeNext:^(id x) {
+        @strongify(self);
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K.%K == %@", CRMApplicationRelationships.organization, CRMOrganizationAttributes.organizationID, self.orgnaizationID];
 		self.fetchedResultsController = [CRMApplication MR_fetchAllGroupedBy:nil
 															   withPredicate:predicate

@@ -26,6 +26,7 @@
     // Reactive cocoa creates a dynamic class so we have to preserve the
     // class reference in advance
     Class className = [self class];
+    @weakify(self);
     [[[pinchGestureRecognizer.rac_gestureSignal
         filter:^BOOL(UIPinchGestureRecognizer *pinchGestureRecognizer) {
             return pinchGestureRecognizer.state == UIGestureRecognizerStateEnded;
@@ -34,6 +35,7 @@
             return pinchGestureRecognizer.scale < 1;
         }]
         subscribeNext:^(id x) {
+            @strongify(self);
             // We want to resolve URL as late as possible: configuration might
             // be updated remotely
             NSURL *URL = [[CRMConfiguration sharedInstance] implementationURLForClass:className];

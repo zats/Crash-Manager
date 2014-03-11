@@ -86,14 +86,14 @@
 	
 	@weakify(self);
     RACSignal *timeRangeFilterChangedSignal = [RACSignal combineLatest:@[ RACObserve(self, application.filter.issueOlderThen), RACObserve(self, application.filter.issueNewerThen)]];
-    RACSignal *filterChangedSignal = [[RACSignal combineLatest:@[
-            RACObserve(self, application.filter.build),
-            RACObserve(self, application.filter.issueStatus),
-            timeRangeFilterChangedSignal]]
+    RACSignal *filterChangedSignal = [[RACSignal combineLatest:@[ RACObserve(self, application.filter.build), RACObserve(self, application.filter.issueStatus), timeRangeFilterChangedSignal]]
         distinctUntilChanged];
+
+    @weakify(filterChangedSignal);
     [filterChangedSignal
         subscribeNext:^(RACTuple *tuple) {
             @strongify(self);
+            @strongify(filterChangedSignal);
             self.navigationItem.prompt = [self.application.filter displayString];
             
             // setup a new data source if needed
@@ -113,9 +113,9 @@
             [self _beginLoading];
         }];
     
-    [RACObserve(self, dataSource) subscribeNext:^(id x) {
+    [RACObserve(self, dataSource) subscribeNext:^(id dataSource) {
         @strongify(self);
-        self.tableView.dataSource = self.dataSource;
+        self.tableView.dataSource = dataSource;
     }];
 }
 
