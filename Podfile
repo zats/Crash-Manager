@@ -22,6 +22,12 @@ pod 'SSKeychain', '1.2.1'
 pod 'TTTLocalizedPluralString', '0.0.9'
 pod 'TUSafariActivity', '1.0.0'
 
+target 'CrashManager Unit Tests' do
+    pod 'Expecta', '~> 0.3.0'
+    pod 'Specta', '~> 0.2.1'
+    pod 'OCMock', '~> 2.2.3'
+end
+
 post_install do | installer |
 	require 'fileutils'
 	FileUtils.cp_r("Pods/Pods-acknowledgements.plist", "Crashlytics/Settings.bundle/Acknowledgements.plist", :remove_destination => true)

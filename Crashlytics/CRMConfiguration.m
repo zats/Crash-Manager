@@ -141,7 +141,6 @@
 - (void)_serializeConfigurationDictionary:(NSDictionary *)defaults
                                completion:(CRMSettingsUpdateHandler)completion {
     // Serializing response back to plist
-    // TODO: Find a non-hacky way to access response's NSData and just save that
     NSError *error = nil;
     NSData *data = [NSPropertyListSerialization dataWithPropertyList:defaults
                                                               format:NSPropertyListBinaryFormat_v1_0

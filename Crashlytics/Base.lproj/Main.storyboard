@@ -422,7 +422,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Filters" id="gcj-tE-rPm">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="a5K-8r-sW4">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="a5K-8r-sW4">
                             <connections>
                                 <segue destination="piZ-D8-UFw" kind="unwind" unwindAction="_unwindFiltersViewController:" id="wLb-JA-pAE"/>
                             </connections>

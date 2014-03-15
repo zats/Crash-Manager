@@ -74,7 +74,23 @@
 		5CEDD1C518703DDC00B6A39A /* CRMIssueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C418703DDC00B6A39A /* CRMIssueCell.m */; };
 		5CEDD1CA187050BC00B6A39A /* CRMApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1C9187050BC00B6A39A /* CRMApplicationCell.m */; };
 		5CEDD1CD18705DE500B6A39A /* CRMConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDD1CC18705DE500B6A39A /* CRMConfiguration.m */; };
+		5CF3E93118D4EB28001E1EDF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94E0818534976003C7DB1 /* XCTest.framework */; };
+		5CF3E93218D4EB28001E1EDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94DE918534976003C7DB1 /* Foundation.framework */; };
+		5CF3E93318D4EB28001E1EDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE94DED18534976003C7DB1 /* UIKit.framework */; };
+		5CF3E93918D4EB28001E1EDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3E93718D4EB28001E1EDF /* InfoPlist.strings */; };
+		5CF3E93B18D4EB28001E1EDF /* CrashManager_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3E93A18D4EB28001E1EDF /* CrashManager_Tests.m */; };
+		DE944F7B79414D16A1B8C5AF /* libPods-CrashManager Unit Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F54834D0A843A382D14CBD /* libPods-CrashManager Unit Tests.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5CF3E93D18D4EB28001E1EDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CE94DDE18534976003C7DB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CE94DE518534976003C7DB1;
+			remoteInfo = CrashManager;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		16F76C7585C649F2A4194805 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,8 +220,15 @@
 		5CEDD1C9187050BC00B6A39A /* CRMApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMApplicationCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5CEDD1CB18705DE500B6A39A /* CRMConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMConfiguration.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5CEDD1CC18705DE500B6A39A /* CRMConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMConfiguration.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5CF3E93018D4EB28001E1EDF /* CrashManager Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CrashManager Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CF3E93618D4EB28001E1EDF /* CrashManager Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrashManager Tests-Info.plist"; sourceTree = "<group>"; };
+		5CF3E93818D4EB28001E1EDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5CF3E93A18D4EB28001E1EDF /* CrashManager_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashManager_Tests.m; sourceTree = "<group>"; };
+		5CF3E93C18D4EB28001E1EDF /* CrashManager Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrashManager Tests-Prefix.pch"; sourceTree = "<group>"; };
+		77C0C6E476524B0A97701588 /* Pods-CrashManager Unit Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrashManager Unit Tests.xcconfig"; path = "Pods/Pods-CrashManager Unit Tests.xcconfig"; sourceTree = "<group>"; };
 		B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrashManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC95309D65084713A2B48175 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E1F54834D0A843A382D14CBD /* libPods-CrashManager Unit Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrashManager Unit Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +241,17 @@
 				5CE94DEE18534976003C7DB1 /* UIKit.framework in Frameworks */,
 				5CE94DEA18534976003C7DB1 /* Foundation.framework in Frameworks */,
 				58FC3CCCF47E4B17A8DA8334 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CF3E92D18D4EB28001E1EDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CF3E93118D4EB28001E1EDF /* XCTest.framework in Frameworks */,
+				5CF3E93318D4EB28001E1EDF /* UIKit.framework in Frameworks */,
+				5CF3E93218D4EB28001E1EDF /* Foundation.framework in Frameworks */,
+				DE944F7B79414D16A1B8C5AF /* libPods-CrashManager Unit Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,10 +556,12 @@
 			isa = PBXGroup;
 			children = (
 				5CE94DEF18534976003C7DB1 /* CrashManager */,
+				5CF3E93418D4EB28001E1EDF /* CrashManager Unit Tests */,
 				5CE94DE818534976003C7DB1 /* Frameworks */,
 				5CE94DE718534976003C7DB1 /* Products */,
 				5C757E8418C200B700C50A72 /* Vendor */,
 				CC95309D65084713A2B48175 /* Pods.xcconfig */,
+				77C0C6E476524B0A97701588 /* Pods-CrashManager Unit Tests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -533,6 +569,7 @@
 			isa = PBXGroup;
 			children = (
 				5CE94DE618534976003C7DB1 /* CrashManager.app */,
+				5CF3E93018D4EB28001E1EDF /* CrashManager Unit Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -547,6 +584,7 @@
 				5CE94E0818534976003C7DB1 /* XCTest.framework */,
 				B68F13DC1EC24B22AD28EC6D /* libPods-CrashManager.a */,
 				16F76C7585C649F2A4194805 /* libPods.a */,
+				E1F54834D0A843A382D14CBD /* libPods-CrashManager Unit Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -600,6 +638,26 @@
 			name = "Applications List";
 			sourceTree = "<group>";
 		};
+		5CF3E93418D4EB28001E1EDF /* CrashManager Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3E93A18D4EB28001E1EDF /* CrashManager_Tests.m */,
+				5CF3E93518D4EB28001E1EDF /* Supporting Files */,
+			);
+			name = "CrashManager Unit Tests";
+			path = "CrashManager Tests";
+			sourceTree = "<group>";
+		};
+		5CF3E93518D4EB28001E1EDF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3E93618D4EB28001E1EDF /* CrashManager Tests-Info.plist */,
+				5CF3E93718D4EB28001E1EDF /* InfoPlist.strings */,
+				5CF3E93C18D4EB28001E1EDF /* CrashManager Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -625,6 +683,26 @@
 			productReference = 5CE94DE618534976003C7DB1 /* CrashManager.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5CF3E92F18D4EB28001E1EDF /* CrashManager Unit Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CF3E94318D4EB28001E1EDF /* Build configuration list for PBXNativeTarget "CrashManager Unit Tests" */;
+			buildPhases = (
+				C759EDDD1F5B4046A816F3C3 /* Check Pods Manifest.lock */,
+				5CF3E92C18D4EB28001E1EDF /* Sources */,
+				5CF3E92D18D4EB28001E1EDF /* Frameworks */,
+				5CF3E92E18D4EB28001E1EDF /* Resources */,
+				2ECEB7910F1F4034B9F087FE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5CF3E93E18D4EB28001E1EDF /* PBXTargetDependency */,
+			);
+			name = "CrashManager Unit Tests";
+			productName = "CrashManager Tests";
+			productReference = 5CF3E93018D4EB28001E1EDF /* CrashManager Unit Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -637,6 +715,9 @@
 				TargetAttributes = {
 					5CE94DE518534976003C7DB1 = {
 						DevelopmentTeam = 5KE88HWMKJ;
+					};
+					5CF3E92F18D4EB28001E1EDF = {
+						TestTargetID = 5CE94DE518534976003C7DB1;
 					};
 				};
 			};
@@ -655,6 +736,7 @@
 			projectRoot = "";
 			targets = (
 				5CE94DE518534976003C7DB1 /* CrashManager */,
+				5CF3E92F18D4EB28001E1EDF /* CrashManager Unit Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -672,9 +754,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5CF3E92E18D4EB28001E1EDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CF3E93918D4EB28001E1EDF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2ECEB7910F1F4034B9F087FE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-CrashManager Unit Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5C6BF2AA18637D38007C483D /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -701,7 +806,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# http://matthewmorey.com/xcode-build-phases\nKEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+			shellScript = "# http://matthewmorey.com/xcode-build-phases\nKEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}/Crashlytics\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
 		};
 		5CDE08DB188A872F0051124A /* Automatic Build incrementation */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -733,6 +838,21 @@
 			showEnvVarsInLog = 0;
 		};
 		B1FA73BB547446999FFD095D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C759EDDD1F5B4046A816F3C3 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -814,7 +934,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5CF3E92C18D4EB28001E1EDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CF3E93B18D4EB28001E1EDF /* CrashManager_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5CF3E93E18D4EB28001E1EDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CE94DE518534976003C7DB1 /* CrashManager */;
+			targetProxy = 5CF3E93D18D4EB28001E1EDF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5C85507B1872191C008F5038 /* Localizable.strings */ = {
@@ -831,6 +967,14 @@
 				5CE94DFC18534976003C7DB1 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5CF3E93718D4EB28001E1EDF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CF3E93818D4EB28001E1EDF /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1087,6 +1231,98 @@
 			};
 			name = Release;
 		};
+		5CF3E93F18D4EB28001E1EDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77C0C6E476524B0A97701588 /* Pods-CrashManager Unit Tests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CrashManager.app/CrashManager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CrashManager Tests/CrashManager Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "CrashManager Tests/CrashManager Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5CF3E94018D4EB28001E1EDF /* Debug Beta */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77C0C6E476524B0A97701588 /* Pods-CrashManager Unit Tests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CrashManager.app/CrashManager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CrashManager Tests/CrashManager Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "CrashManager Tests/CrashManager Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = "Debug Beta";
+		};
+		5CF3E94118D4EB28001E1EDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77C0C6E476524B0A97701588 /* Pods-CrashManager Unit Tests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CrashManager.app/CrashManager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CrashManager Tests/CrashManager Tests-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "CrashManager Tests/CrashManager Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		5CF3E94218D4EB28001E1EDF /* Release Beta */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77C0C6E476524B0A97701588 /* Pods-CrashManager Unit Tests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CrashManager.app/CrashManager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CrashManager Tests/CrashManager Tests-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "CrashManager Tests/CrashManager Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = "Release Beta";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1108,6 +1344,17 @@
 				5C757E8118C1E76000C50A72 /* Debug Beta */,
 				5CE94E1A18534976003C7DB1 /* Release */,
 				5C757E8318C1E76600C50A72 /* Release Beta */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CF3E94318D4EB28001E1EDF /* Build configuration list for PBXNativeTarget "CrashManager Unit Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CF3E93F18D4EB28001E1EDF /* Debug */,
+				5CF3E94018D4EB28001E1EDF /* Debug Beta */,
+				5CF3E94118D4EB28001E1EDF /* Release */,
+				5CF3E94218D4EB28001E1EDF /* Release Beta */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
