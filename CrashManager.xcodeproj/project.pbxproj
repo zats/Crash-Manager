@@ -38,7 +38,6 @@
 		5C71944518B7A3C200465412 /* CRMAnalyticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944418B7A3C200465412 /* CRMAnalyticsController.m */; };
 		5C71944B18B7A7A900465412 /* CRMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944A18B7A7A900465412 /* CRMConstants.m */; };
 		5C71945318B7B49100465412 /* CRMGoogleAnalyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71945218B7B49100465412 /* CRMGoogleAnalyticsLogger.m */; };
-		5C71946C18B8BE2900465412 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C71946A18B8BE2900465412 /* InfoPlist.strings */; };
 		5C757E7A18C1D5E900C50A72 /* CRMCrashlyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E7918C1D5E900C50A72 /* CRMCrashlyticsLogger.m */; };
 		5C757E7F18C1D83500C50A72 /* CRMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E7E18C1D83500C50A72 /* CRMAboutViewController.m */; };
 		5C757E9218C200B700C50A72 /* ADNActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E8718C200B700C50A72 /* ADNActivity.m */; };
@@ -139,11 +138,7 @@
 		5C71944A18B7A7A900465412 /* CRMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMConstants.m; sourceTree = "<group>"; };
 		5C71945118B7B49100465412 /* CRMGoogleAnalyticsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMGoogleAnalyticsLogger.h; sourceTree = "<group>"; };
 		5C71945218B7B49100465412 /* CRMGoogleAnalyticsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMGoogleAnalyticsLogger.m; sourceTree = "<group>"; };
-		5C71945A18B8B6B600465412 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		5C71945B18B8B6B600465412 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5C71946018B8B8F900465412 /* CrashManager-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CrashManager-Info.plist"; sourceTree = "<group>"; };
-		5C71946B18B8BE2900465412 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5C71946D18B8BE3000465412 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5C757E7818C1D5E900C50A72 /* CRMCrashlyticsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMCrashlyticsLogger.h; sourceTree = "<group>"; };
 		5C757E7918C1D5E900C50A72 /* CRMCrashlyticsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMCrashlyticsLogger.m; sourceTree = "<group>"; };
 		5C757E7D18C1D83500C50A72 /* CRMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMAboutViewController.h; sourceTree = "<group>"; };
@@ -188,8 +183,6 @@
 		5CC3F7E31876A12D003C2FAC /* CRMLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMLogViewController.m; sourceTree = "<group>"; };
 		5CC3F7E91876C933003C2FAC /* CRMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMError.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5CC3F7EA1876C933003C2FAC /* CRMError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CRMError.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		5CC3F7EE1876D80D003C2FAC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
-		5CC3F7EF1876D856003C2FAC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5CC3F7F018786E7A003C2FAC /* CRMPasteboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMPasteboardObserver.h; sourceTree = "<group>"; };
 		5CC3F7F118786E7A003C2FAC /* CRMPasteboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMPasteboardObserver.m; sourceTree = "<group>"; };
 		5CE8926E186F13860017F68A /* configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configuration.plist; sourceTree = "<group>"; };
@@ -576,7 +569,6 @@
 		5CE94DF018534976003C7DB1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5C71946A18B8BE2900465412 /* InfoPlist.strings */,
 				5C71946018B8B8F900465412 /* CrashManager-Info.plist */,
 				5CE94DF518534976003C7DB1 /* main.m */,
 				5CE94DF718534976003C7DB1 /* CrashManager-Prefix.pch */,
@@ -587,11 +579,11 @@
 		5CEDD1C218703DB700B6A39A /* Issues List */ = {
 			isa = PBXGroup;
 			children = (
-				5C7A6D3418CB75D2004E7611 /* Data Sources */,
 				5CEDD1C318703DDC00B6A39A /* CRMIssueCell.h */,
 				5CEDD1C418703DDC00B6A39A /* CRMIssueCell.m */,
 				5C3CEAB518671C4000F8DDC6 /* CRMIssuesViewController.h */,
 				5C3CEAB618671C4000F8DDC6 /* CRMIssuesViewController.m */,
+				5C7A6D3418CB75D2004E7611 /* Data Sources */,
 				5C40185D186B827A00CC71AE /* Issue Details */,
 			);
 			name = "Issues List";
@@ -673,7 +665,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CE94E0218534976003C7DB1 /* Images.xcassets in Resources */,
-				5C71946C18B8BE2900465412 /* InfoPlist.strings in Resources */,
 				5CE8926F186F13860017F68A /* configuration.plist in Resources */,
 				5C046FDC1872B64600E4998C /* Settings.bundle in Resources */,
 				5CE94DFD18534976003C7DB1 /* Main.storyboard in Resources */,
@@ -826,21 +817,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5C71946A18B8BE2900465412 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5C71946B18B8BE2900465412 /* en */,
-				5C71946D18B8BE3000465412 /* ru */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		5C85507B1872191C008F5038 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5C85507A1872191C008F5038 /* Base */,
-				5CC3F7EF1876D856003C2FAC /* ru */,
-				5C71945B18B8B6B600465412 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -849,8 +829,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				5CE94DFC18534976003C7DB1 /* Base */,
-				5CC3F7EE1876D80D003C2FAC /* ru */,
-				5C71945A18B8B6B600465412 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
