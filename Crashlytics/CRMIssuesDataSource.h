@@ -14,6 +14,8 @@
 
 @property (nonatomic, weak, readonly) UITableView *tableView;
 
+@property (nonatomic, assign, getter = isPaused) BOOL paused;
+
 - (instancetype)initWithTableView:(UITableView *)tableView;
 
 @end

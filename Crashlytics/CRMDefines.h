@@ -8,23 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-// Source: https://gist.github.com/kyleve/8213806
 
-/**
- Provides the ability to verify key paths at compile time.
- 
- If "keyPath" does not exist, a compile-time error will be generated.
- 
- Example:
- // Verifies "isFinished" exists on "operation".
- NSString *key = SQKeyPath(operation, isFinished);
- 
- // Verifies "isFinished" exists on self.
- NSString *key = SQSelfKeyPath(isFinished);
- 
- // Verifies "isFinished" exists on instances of NSOperation.
- NSString *key = SQTypedKeyPath(NSOperation, isFinished);
- */
+// Cocoa Lumberjack
+#ifdef DEBUG
+    static const int ddLogLevel = LOG_LEVEL_INFO;
+#else
+    static const int ddLogLevel = LOG_LEVEL_WARN;
+#endif
+
+// Compiler-backed keypath, source: https://gist.github.com/kyleve/8213806
 #ifdef DEBUG
     #define SQKeyPath(object, keyPath) ({ if (NO) { (void)((object).keyPath); } @#keyPath; })
 #else 
@@ -34,3 +26,15 @@
 #define SQSelfKeyPath(keyPath) SQKeyPath(self, keyPath)
 #define SQTypedKeyPath(ObjectClass, keyPath) SQKeyPath(((ObjectClass *)nil), keyPath)
 #define SQProtocolKeyPath(Protocol, keyPath) SQKeyPath(((id <Protocol>)nil), keyPath)
+
+// ZAssert & co., source http://www.cimgf.com/2010/05/02/my-current-prefix-pch-file/
+#ifdef DEBUG
+    #define ALog(...) [[NSAssertionHandler currentHandler] handleFailureInFunction:[NSString stringWithCString:__PRETTY_FUNCTION__ encoding:NSUTF8StringEncoding] file:[NSString stringWithCString:__FILE__ encoding:NSUTF8StringEncoding] lineNumber:__LINE__ description:__VA_ARGS__]
+#else
+    #ifndef NS_BLOCK_ASSERTIONS
+        #define NS_BLOCK_ASSERTIONS
+    #endif
+    #define ALog(...) NSLog(@"%s %@", __PRETTY_FUNCTION__, [NSString stringWithFormat:__VA_ARGS__])
+#endif
+
+#define ZAssert(condition, ...) do { if (!(condition)) { ALog(__VA_ARGS__); }} while(0)

@@ -24,6 +24,9 @@
 
 @interface CRMIssuesViewController ()
 @property (nonatomic, strong) RACDisposable *fetchIssuesDisposable;
+@property (weak, nonatomic) IBOutlet UIView *applicationDetailsTitleView;
+@property (weak, nonatomic) IBOutlet UILabel *applicationTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *filtersSummaryLabel;
 @property (nonatomic, strong) CRMIssuesDataSource *dataSource;
 @end
 
@@ -51,6 +54,22 @@
 }
 
 #pragma mark - Private
+
+- (NSAttributedString *)_attributedTitleForApplication:(CRMApplication *)application {
+    NSString *title = [application.filter isFilterSet] ? [NSString stringWithFormat:@"%@ %@", application.name, application.bundleID] : application.name;
+    NSMutableAttributedString *result = [[NSMutableAttributedString alloc] initWithString:title attributes:@{ NSFontAttributeName : [UIFont systemFontOfSize:14] }] ;
+    [result addAttribute:NSFontAttributeName
+                   value:[UIFont boldSystemFontOfSize:14]
+                   range:NSMakeRange(0, [application.name length])];
+    return [result copy];
+}
+
+- (NSAttributedString *)_attributedSubtitleForApplication:(CRMApplication *)application {
+    NSString *title = [application.filter isFilterSet] ? [application.filter displayString] : application.bundleID;
+    NSDictionary *attributes = @{ NSFontAttributeName : [UIFont systemFontOfSize:12],
+                                  NSForegroundColorAttributeName : [UIColor lightGrayColor] };
+    return [[NSAttributedString alloc] initWithString:title attributes:attributes] ;
+}
 
 - (void)_beginLoading {
 	[self.refreshControl beginRefreshing];
@@ -88,13 +107,19 @@
     RACSignal *timeRangeFilterChangedSignal = [RACSignal combineLatest:@[ RACObserve(self, application.filter.issueOlderThen), RACObserve(self, application.filter.issueNewerThen)]];
     RACSignal *filterChangedSignal = [[RACSignal combineLatest:@[ RACObserve(self, application.filter.build), RACObserve(self, application.filter.issueStatus), timeRangeFilterChangedSignal]]
         distinctUntilChanged];
+    
+    [[RACSignal combineLatest:@[ RACObserve(self, application), filterChangedSignal ]] subscribeNext:^(RACTuple *tuple) {
+       @strongify(self);
+        CRMApplication *application = tuple.first;
+        self.applicationTitleLabel.attributedText = [self _attributedTitleForApplication:application];
+        self.filtersSummaryLabel.attributedText = [self _attributedSubtitleForApplication:application];
+    }];
 
     @weakify(filterChangedSignal);
     [filterChangedSignal
         subscribeNext:^(RACTuple *tuple) {
             @strongify(self);
             @strongify(filterChangedSignal);
-            self.navigationItem.prompt = [self.application.filter displayString];
             
             // setup a new data source if needed
             if ([self.application.filter isTimeRangeFilterEnabled]) {
@@ -116,6 +141,16 @@
     [RACObserve(self, dataSource) subscribeNext:^(id dataSource) {
         @strongify(self);
         self.tableView.dataSource = dataSource;
+    }];
+    
+    [[self rac_signalForSelector:@selector(viewWillAppear:)] subscribeNext:^(id x) {
+        @strongify(self);
+        self.dataSource.paused = NO;
+    }];
+    
+    [[self rac_signalForSelector:@selector(viewWillDisappear:)] subscribeNext:^(id x) {
+        @strongify(self);
+        self.dataSource.paused = YES;
     }];
 }
 

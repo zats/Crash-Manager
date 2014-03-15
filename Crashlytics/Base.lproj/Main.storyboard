@@ -440,7 +440,7 @@
             </objects>
             <point key="canvasLocation" x="2795" y="-611"/>
         </scene>
-        <!--Issues View Controller - Issues-->
+        <!--Issues View Controller-->
         <scene sceneID="Ztd-nv-mXT">
             <objects>
                 <tableViewController storyboardIdentifier="issues" id="Dfk-2b-2i1" customClass="CRMIssuesViewController" sceneMemberID="viewController">
@@ -528,7 +528,38 @@
                             <outlet property="delegate" destination="Dfk-2b-2i1" id="P6B-jQ-eef"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Issues" id="ug4-61-S1t">
+                    <navigationItem key="navigationItem" id="ug4-61-S1t">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="GdT-GI-ytw">
+                            <rect key="frame" x="8" y="6" width="260" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJ5-iD-xZ6">
+                                    <rect key="frame" x="113" y="0.0" width="35" height="17"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weZ-dL-nXR">
+                                    <rect key="frame" x="117" y="18" width="27" height="13"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="mJ5-iD-xZ6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GdT-GI-ytw" secondAttribute="leading" constant="10" id="Mg0-eD-VQV"/>
+                                <constraint firstItem="mJ5-iD-xZ6" firstAttribute="centerX" secondItem="weZ-dL-nXR" secondAttribute="centerX" id="OzZ-rB-7Vy"/>
+                                <constraint firstItem="mJ5-iD-xZ6" firstAttribute="top" secondItem="GdT-GI-ytw" secondAttribute="top" id="Q77-xm-Seh"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mJ5-iD-xZ6" secondAttribute="trailing" constant="10" id="Rtq-Yt-Gud"/>
+                                <constraint firstAttribute="centerX" secondItem="mJ5-iD-xZ6" secondAttribute="centerX" constant="-0.5" id="UJd-MJ-YxM"/>
+                                <constraint firstItem="weZ-dL-nXR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GdT-GI-ytw" secondAttribute="leading" constant="10" id="YrV-8h-snc"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="weZ-dL-nXR" secondAttribute="trailing" constant="10" id="euo-8k-4Of"/>
+                                <constraint firstItem="weZ-dL-nXR" firstAttribute="top" secondItem="mJ5-iD-xZ6" secondAttribute="bottom" constant="1" id="xp8-GZ-UDX"/>
+                            </constraints>
+                        </view>
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="Fgo-qE-AWu">
                             <connections>
                                 <segue destination="csm-bk-7Xa" kind="modal" identifier="bugs-filter" id="ydX-2B-gtf"/>
@@ -541,6 +572,11 @@
                             <action selector="_refreshControlHandler:" destination="Dfk-2b-2i1" eventType="valueChanged" id="Fo5-4B-3bu"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <outlet property="applicationDetailsTitleView" destination="GdT-GI-ytw" id="j75-W5-zby"/>
+                        <outlet property="applicationTitleLabel" destination="mJ5-iD-xZ6" id="Yro-bd-9yL"/>
+                        <outlet property="filtersSummaryLabel" destination="weZ-dL-nXR" id="BEN-5g-cmq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bg4-gg-xaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

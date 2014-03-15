@@ -56,6 +56,10 @@
                filterChangedSignal:nil];
 }
 
+- (void)dealloc {
+    self.fetchedResultsController.delegate = nil;
+}
+
 #pragma mark - Private
 
 - (void)_setup {
@@ -111,14 +115,32 @@
         self.fetchedResultsController.delegate = self;
 
         NSError *error = nil;
-        if (![self.fetchedResultsController performFetch:&error]) {
-            DDLogError(@"Failed to fetch issues for application %@\n%@", self.application.name, error);
-        }
+        ZAssert([self.fetchedResultsController performFetch:&error], @"Failed to fetch issues for application %@\n%@", self.application.name, error);
         [self.tableView reloadData];
     }];
+    
+    RACSignal *isPausedSignal = RACObserve(self, isPaused);
+    [[isPausedSignal filter:^BOOL(id value) {
+        return ![value boolValue];
+    }] subscribeNext:^(id x) {
+        @strongify(self);
+        NSError *error = nil;
+        ZAssert([self.fetchedResultsController performFetch:&error], @"Failed to fetch issues with fetch request %@ %@", self.fetchedResultsController.fetchRequest, error);
+        [self.tableView reloadData];
+    }];
+    
+    RAC(self, fetchedResultsController.delegate) = [isPausedSignal
+        map:^id(NSNumber *isPausedValue) {
+            @strongify(self);
+            return [isPausedValue boolValue] ? self : nil;
+        }];
 }
 
 #pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [self.fetchedResultsController.sections count];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     id<NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
