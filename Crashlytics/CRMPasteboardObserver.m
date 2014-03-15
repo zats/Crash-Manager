@@ -234,7 +234,6 @@
 	[alert show];
 }
 
-// TODO: add actual validation
 - (BOOL)_isValidIssueWithIssueID:issueID
 						bundleID:bundleID
 			   organizationAlias:organizationAlias {

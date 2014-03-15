@@ -35,19 +35,30 @@ typedef NS_ENUM(NSInteger, CRMHelpSectionRow) {
 
 #pragma mark - Private
 
+- (BOOL)_validateEmailTextField:(UITextField *)emailTextField
+              passwordTextField:(UITextField *)passwordTextField {
+	if (![[emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]) {
+		[emailTextField becomeFirstResponder];
+		return NO;
+	}
+    
+	if (![[passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]) {
+		[passwordTextField becomeFirstResponder];
+		return NO;
+	}
+
+    return YES;
+}
+
 - (void)_login {
 	NSString *email = self.emailTextField.text;
 	NSString *password = self.passwordTextField.text;
 	
-	if (![[email stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]) {
-		[self.emailTextField becomeFirstResponder];
-		return;
-	}
-
-	if (![[password stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]) {
-		[self.passwordTextField becomeFirstResponder];
-		return;
-	}
+    if (![self _validateEmailTextField:self.emailTextField
+                     passwordTextField:self.passwordTextField]) {
+        return;
+    }
+    
 	
 	CRMAccount *account = [CRMAccount activeAccount];
 	if (!account) {
@@ -158,14 +169,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (![self _validateEmailTextField:self.emailTextField
+                     passwordTextField:self.passwordTextField]) {
+        return NO;
+    }
 	[textField resignFirstResponder];
-	// this is the basic check for the password and email to be non-empty strings
-	// TODO: extract client side validation from _login so it can be called directly
-	if ([self.passwordTextField.text length] &&
-		[self.emailTextField.text length]) {
-		[self _login];
-	}
-	return YES;
+    [self _login];
+    return YES;
 }
 
 @end
