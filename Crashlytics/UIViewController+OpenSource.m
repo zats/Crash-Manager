@@ -8,13 +8,15 @@
 
 #import "UIViewController+OpenSource.h"
 
-#import "CLSConfiguration.h"
+#import "CRMConfiguration.h"
 #import <PBWebViewController/PBWebViewController.h>
 #import <SHBarButtonItemBlocks/SHBarButtonItemBlocks.h>
+#import <TUSafariActivity/TUSafariActivity.h>
+#import <ARChromeActivity/ARChromeActivity.h>
 
 @implementation UIViewController (OpenSource)
 
-- (void)cls_exposeSource {
+- (void)crm_exposeSource {
     NSAssert([self isViewLoaded], @"Can not instantiate source observation before view is loaded");
     if (![self isViewLoaded]) {
         return;
@@ -24,6 +26,7 @@
     // Reactive cocoa creates a dynamic class so we have to preserve the
     // class reference in advance
     Class className = [self class];
+    @weakify(self);
     [[[pinchGestureRecognizer.rac_gestureSignal
         filter:^BOOL(UIPinchGestureRecognizer *pinchGestureRecognizer) {
             return pinchGestureRecognizer.state == UIGestureRecognizerStateEnded;
@@ -32,9 +35,10 @@
             return pinchGestureRecognizer.scale < 1;
         }]
         subscribeNext:^(id x) {
+            @strongify(self);
             // We want to resolve URL as late as possible: configuration might
             // be updated remotely
-            NSURL *URL = [[CLSConfiguration sharedInstance] implementationURLForClass:className];
+            NSURL *URL = [[CRMConfiguration sharedInstance] implementationURLForClass:className];
             if (!URL) {
                 return;
             }
@@ -49,6 +53,7 @@
 - (void)_showWebViewControllerWithURL:(NSURL *)URL {
     PBWebViewController *webViewController = [[PBWebViewController alloc] init];
     webViewController.URL = URL;
+	webViewController.applicationActivities = @[ [TUSafariActivity new], [ARChromeActivity new] ];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:webViewController];
 
     UIBarButtonItem *closeBarButtonItem = [UIBarButtonItem SH_barButtonItemWithBarButtonSystemItem:UIBarButtonSystemItemCancel withBlock:^(UIBarButtonItem *sender) {

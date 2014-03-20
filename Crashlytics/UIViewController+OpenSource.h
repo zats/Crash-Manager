@@ -10,6 +10,6 @@
 
 @interface UIViewController (OpenSource)
 
-- (void)cls_exposeSource;
+- (void)crm_exposeSource;
 
 @end

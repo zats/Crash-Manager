@@ -20,7 +20,7 @@
 			<key>Title</key>
 			<string>GoogleAnalytics</string>
 			<key>Key</key>
-			<string>CLSGoogleAnalyticsEnabledKey</string>
+			<string>CRMGoogleAnalyticsEnabledKey</string>
 			<key>DefaultValue</key>
 			<true/>
 		</dict>

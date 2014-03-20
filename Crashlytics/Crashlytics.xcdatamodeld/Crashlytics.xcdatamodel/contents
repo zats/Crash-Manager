@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Account" representedClassName="CLSAccount" syncable="YES">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Account" representedClassName="CRMAccount" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
@@ -8,7 +8,7 @@
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="organizations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Organization" inverseName="accounts" inverseEntity="Organization" syncable="YES"/>
     </entity>
-    <entity name="Application" representedClassName="CLSApplication" syncable="YES">
+    <entity name="Application" representedClassName="CRMApplication" syncable="YES">
         <attribute name="applicationID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="bundleID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="iconURLString" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,21 +23,21 @@
         <relationship name="issues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Issue" inverseName="application" inverseEntity="Issue" syncable="YES"/>
         <relationship name="organization" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="applications" inverseEntity="Organization" syncable="YES"/>
     </entity>
-    <entity name="Build" representedClassName="CLSBuild" syncable="YES">
+    <entity name="Build" representedClassName="CRMBuild" syncable="YES">
         <attribute name="buildID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="collectCrashReports" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="application" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Application" inverseName="builds" inverseEntity="Application" syncable="YES"/>
         <relationship name="filters" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Filter" inverseName="build" inverseEntity="Filter" syncable="YES"/>
         <relationship name="issues" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Issue" inverseName="build" inverseEntity="Issue" syncable="YES"/>
     </entity>
-    <entity name="Filter" representedClassName="CLSFilter" syncable="YES">
+    <entity name="Filter" representedClassName="CRMFilter" syncable="YES">
         <attribute name="issueNewerThen" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="issueOlderThen" optional="YES" attributeType="Integer 32" syncable="YES"/>
         <attribute name="issueStatus" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="application" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Application" inverseName="filter" inverseEntity="Application" syncable="YES"/>
         <relationship name="build" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Build" inverseName="filters" inverseEntity="Build" syncable="YES"/>
     </entity>
-    <entity name="Issue" representedClassName="CLSIssue" syncable="YES">
+    <entity name="Issue" representedClassName="CRMIssue" syncable="YES">
         <attribute name="crashesCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="devicesAffected" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="displayID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -53,7 +53,7 @@
         <relationship name="application" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Application" inverseName="issues" inverseEntity="Application" syncable="YES"/>
         <relationship name="build" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Build" inverseName="issues" inverseEntity="Build" syncable="YES"/>
     </entity>
-    <entity name="Organization" representedClassName="CLSOrganization" syncable="YES">
+    <entity name="Organization" representedClassName="CRMOrganization" syncable="YES">
         <attribute name="accountsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="alias" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="apiKey" optional="YES" attributeType="String" syncable="YES"/>
