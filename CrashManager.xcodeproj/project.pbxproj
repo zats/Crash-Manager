@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		58FC3CCCF47E4B17A8DA8334 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F76C7585C649F2A4194805 /* libPods.a */; };
 		5C046FDC1872B64600E4998C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C046FDB1872B64600E4998C /* Settings.bundle */; };
+		5C262C3718DC8827003B8BB3 /* CRMPushNotificationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C262C3618DC8827003B8BB3 /* CRMPushNotificationSettingsViewController.m */; };
+		5C262C3B18DC890D003B8BB3 /* CRMPushNotificationSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C262C3A18DC890D003B8BB3 /* CRMPushNotificationSettingTableViewCell.m */; };
 		5C3BCF2B1868AD1D004BB1FA /* CRMIncident.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BCF2A1868AD1D004BB1FA /* CRMIncident.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5C3BCF2F1868AF20004BB1FA /* CRMIssueDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BCF2E1868AF20004BB1FA /* CRMIssueDetailsViewController.m */; };
 		5C3CEAB718671C4000F8DDC6 /* CRMIssuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CEAB618671C4000F8DDC6 /* CRMIssuesViewController.m */; };
@@ -39,7 +41,7 @@
 		5C71944B18B7A7A900465412 /* CRMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71944A18B7A7A900465412 /* CRMConstants.m */; };
 		5C71945318B7B49100465412 /* CRMGoogleAnalyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C71945218B7B49100465412 /* CRMGoogleAnalyticsLogger.m */; };
 		5C757E7A18C1D5E900C50A72 /* CRMCrashlyticsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E7918C1D5E900C50A72 /* CRMCrashlyticsLogger.m */; };
-		5C757E7F18C1D83500C50A72 /* CRMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E7E18C1D83500C50A72 /* CRMAboutViewController.m */; };
+		5C757E7F18C1D83500C50A72 /* CRMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E7E18C1D83500C50A72 /* CRMSettingsViewController.m */; };
 		5C757E9218C200B700C50A72 /* ADNActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E8718C200B700C50A72 /* ADNActivity.m */; };
 		5C757E9318C200B700C50A72 /* ADNActivityCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E8918C200B700C50A72 /* ADNActivityCollection.m */; };
 		5C757E9418C200B700C50A72 /* ADNFelixActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C757E8B18C200B700C50A72 /* ADNFelixActivity.m */; };
@@ -95,6 +97,10 @@
 /* Begin PBXFileReference section */
 		16F76C7585C649F2A4194805 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C046FDB1872B64600E4998C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		5C262C3518DC8827003B8BB3 /* CRMPushNotificationSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMPushNotificationSettingsViewController.h; sourceTree = "<group>"; };
+		5C262C3618DC8827003B8BB3 /* CRMPushNotificationSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMPushNotificationSettingsViewController.m; sourceTree = "<group>"; };
+		5C262C3918DC890D003B8BB3 /* CRMPushNotificationSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMPushNotificationSettingTableViewCell.h; sourceTree = "<group>"; };
+		5C262C3A18DC890D003B8BB3 /* CRMPushNotificationSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMPushNotificationSettingTableViewCell.m; sourceTree = "<group>"; };
 		5C3BCF291868AD1D004BB1FA /* CRMIncident.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRMIncident.h; path = Crashlytics/CRMIncident.h; sourceTree = SOURCE_ROOT; };
 		5C3BCF2A1868AD1D004BB1FA /* CRMIncident.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRMIncident.m; path = Crashlytics/CRMIncident.m; sourceTree = SOURCE_ROOT; };
 		5C3BCF2D1868AF20004BB1FA /* CRMIssueDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CRMIssueDetailsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -157,8 +163,8 @@
 		5C71946018B8B8F900465412 /* CrashManager-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CrashManager-Info.plist"; sourceTree = "<group>"; };
 		5C757E7818C1D5E900C50A72 /* CRMCrashlyticsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMCrashlyticsLogger.h; sourceTree = "<group>"; };
 		5C757E7918C1D5E900C50A72 /* CRMCrashlyticsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMCrashlyticsLogger.m; sourceTree = "<group>"; };
-		5C757E7D18C1D83500C50A72 /* CRMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMAboutViewController.h; sourceTree = "<group>"; };
-		5C757E7E18C1D83500C50A72 /* CRMAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMAboutViewController.m; sourceTree = "<group>"; };
+		5C757E7D18C1D83500C50A72 /* CRMSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMSettingsViewController.h; sourceTree = "<group>"; };
+		5C757E7E18C1D83500C50A72 /* CRMSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMSettingsViewController.m; sourceTree = "<group>"; };
 		5C757E8618C200B700C50A72 /* ADNActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNActivity.h; sourceTree = "<group>"; };
 		5C757E8718C200B700C50A72 /* ADNActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADNActivity.m; sourceTree = "<group>"; };
 		5C757E8818C200B700C50A72 /* ADNActivityCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADNActivityCollection.h; sourceTree = "<group>"; };
@@ -258,6 +264,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C262C3818DC88D6003B8BB3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5C262C3918DC890D003B8BB3 /* CRMPushNotificationSettingTableViewCell.h */,
+				5C262C3A18DC890D003B8BB3 /* CRMPushNotificationSettingTableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		5C3BCF2C1868AF0B004BB1FA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,8 +470,11 @@
 		5C757E7C18C1D82800C50A72 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				5C757E7D18C1D83500C50A72 /* CRMAboutViewController.h */,
-				5C757E7E18C1D83500C50A72 /* CRMAboutViewController.m */,
+				5C262C3818DC88D6003B8BB3 /* Cell */,
+				5C757E7D18C1D83500C50A72 /* CRMSettingsViewController.h */,
+				5C757E7E18C1D83500C50A72 /* CRMSettingsViewController.m */,
+				5C262C3518DC8827003B8BB3 /* CRMPushNotificationSettingsViewController.h */,
+				5C262C3618DC8827003B8BB3 /* CRMPushNotificationSettingsViewController.m */,
 			);
 			name = About;
 			sourceTree = "<group>";
@@ -885,6 +903,7 @@
 				5CE94DFA18534976003C7DB1 /* CRMAppDelegate.m in Sources */,
 				5C4B068D18535D9A0061485A /* CRMTableViewController.m in Sources */,
 				5C6D3CF618534CA9005E97D1 /* _CRMOrganization.m in Sources */,
+				5C262C3718DC8827003B8BB3 /* CRMPushNotificationSettingsViewController.m in Sources */,
 				5CEDD1CA187050BC00B6A39A /* CRMApplicationCell.m in Sources */,
 				5C6D3CFA18534CA9005E97D1 /* CRMBuild.m in Sources */,
 				5C6D3CF218534CA9005E97D1 /* _CRMAccount.m in Sources */,
@@ -897,7 +916,7 @@
 				5C6D3CFB18534CA9005E97D1 /* CRMOrganization.m in Sources */,
 				5C757E9518C200B700C50A72 /* ADNHappyActivity.m in Sources */,
 				5C71945318B7B49100465412 /* CRMGoogleAnalyticsLogger.m in Sources */,
-				5C757E7F18C1D83500C50A72 /* CRMAboutViewController.m in Sources */,
+				5C757E7F18C1D83500C50A72 /* CRMSettingsViewController.m in Sources */,
 				5C757E9618C200B700C50A72 /* ADNNetbotActivity.m in Sources */,
 				5C6D3CF418534CA9005E97D1 /* _CRMIssue.m in Sources */,
 				5CC3F7EB1876C933003C2FAC /* CRMError.m in Sources */,
@@ -908,6 +927,7 @@
 				5C7A6D3718CB75E3004E7611 /* CRMIssuesDataSource.m in Sources */,
 				5C401864186C2CE000CC71AE /* CRMIncident_Session+Crashlytics.m in Sources */,
 				5C4B0691185392A00061485A /* CRMAPIClient.m in Sources */,
+				5C262C3B18DC890D003B8BB3 /* CRMPushNotificationSettingTableViewCell.m in Sources */,
 				5C3BCF2F1868AF20004BB1FA /* CRMIssueDetailsViewController.m in Sources */,
 				5C85507518720FB8008F5038 /* _CRMFilter.m in Sources */,
 				5C71944B18B7A7A900465412 /* CRMConstants.m in Sources */,

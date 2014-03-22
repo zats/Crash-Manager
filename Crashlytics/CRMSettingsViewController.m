@@ -1,25 +1,27 @@
 //
-//  CRMAboutViewController.m
+//  CRMSettingsViewController.m
 //  CrashManager
 //
 //  Created by Sasha Zats on 3/1/14.
 //  Copyright (c) 2014 Sasha Zats. All rights reserved.
 //
 
-#import "CRMAboutViewController.h"
+#import "CRMSettingsViewController.h"
 
 #import "ADNActivityCollection.h"
 #import "CRMConfiguration.h"
+#import "CRMAPIClient.h"
 #import "UIViewController+OpenSource.h"
 
 typedef NS_ENUM(NSInteger, CRMSections) {
-	CRMVersionSection = 0,
-    CRMVersionShareSection = 1,
-	CRMVersionOpenGithubSection = 2
+	CRMPushNotificationsSection = 0,
+	CRMVersionSection = 1,
+    CRMVersionShareSection = 2,
+	CRMVersionOpenGithubSection = 3
 };
 
 
-@interface CRMAboutViewController ()
+@interface CRMSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *appTitleLabel;
 
@@ -27,7 +29,9 @@ typedef NS_ENUM(NSInteger, CRMSections) {
 @property (weak, nonatomic) IBOutlet UILabel *openGitHubPageLabel;
 @end
 
-@implementation CRMAboutViewController
+@implementation CRMSettingsViewController
+
+#pragma mark - Private
 
 - (void)_configureVersion {
 	NSMutableString *versionString = [NSMutableString string];
@@ -73,11 +77,10 @@ typedef NS_ENUM(NSInteger, CRMSections) {
 
 - (BOOL)tableView:(UITableView *)tableView
 shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section == CRMVersionShareSection ||
-		indexPath.section == CRMVersionOpenGithubSection) {
-		return YES;
+	if (indexPath.section == CRMVersionSection) {
+		return NO;
 	}
-	return NO;
+	return YES;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

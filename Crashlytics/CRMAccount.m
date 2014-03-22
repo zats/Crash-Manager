@@ -148,6 +148,10 @@ NSString *const CRMActiveAccountDidChangeNotification = @"CRMActiveAccountDidCha
 	if (!objectIDURI) {
 		return nil;
 	}
+    
+    if (!context) {
+        context = [NSManagedObjectContext MR_defaultContext];
+    }
 	
 	NSManagedObjectID *objectID = [context.persistentStoreCoordinator managedObjectIDForURIRepresentation:objectIDURI];
 	if (!objectID) {

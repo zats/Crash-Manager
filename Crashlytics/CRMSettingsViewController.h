@@ -1,5 +1,5 @@
 //
-//  CRMAboutViewController.h
+//  CRMSettingsViewController.h
 //  CrashManager
 //
 //  Created by Sasha Zats on 3/1/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CRMAboutViewController : UITableViewController
+@interface CRMSettingsViewController : UITableViewController
 
 @end

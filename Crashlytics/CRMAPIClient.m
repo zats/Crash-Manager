@@ -21,6 +21,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 #import <AFNetworking-RACExtensions/RACAFNetworking.h>
+#import <Parse/Parse.h>
 
 @interface CRMAPIClient ()
 @end
@@ -45,6 +46,10 @@
 	[AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 	self.requestSerializer = [CRMRequestSerializer serializer];
 	self.responseSerializer = [CRMResponseSerializer serializer];
+
+#ifdef DEBUG
+    self.securityPolicy.allowInvalidCertificates = YES;
+#endif
     
     // Network error tracking
     [[NSNotificationCenter defaultCenter] addObserverForName:AFNetworkingTaskDidCompleteNotification object:Nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
@@ -82,6 +87,12 @@
 		[account updateWithContentsOfDictionary:responseObject];
 		[context MR_saveToPersistentStoreAndWait];
 		
+        // Subscribe to the user id channel
+        PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+        NSString *channelIdentifier = [NSString stringWithFormat:@"crashlytics_user_id_%@", account.userID];
+        [currentInstallation setObject:channelIdentifier forKey:@"channels"];
+        [currentInstallation saveInBackground];
+        
 		[subject sendNext:[CRMAccount activeAccount]];
 		[subject sendCompleted];
 	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -281,6 +292,90 @@
 		[subject sendError:error];
 	}];
 	return subject;
+}
+
+@end
+
+
+@implementation CRMAPIClient (CRMWebHook)
+
+- (RACSignal *)setWebhookForApplication:(CRMApplication *)application {
+    NSParameterAssert(application);
+    CRMAccount *currentAccount = [CRMAccount currentAccountInContext:nil];
+    NSString *webhookURLString = [NSString stringWithFormat:@"http://crash-manager.parseapp.com/crashlytics/%@", currentAccount.userID];
+    NSDictionary *parameters = @{
+        @"service_hooks" : @{
+                @"webhook" : @{
+                        @"events" : @{
+                                @"issue_impact_change" : @{
+                                    @"enabled": @"1",
+                                    @"threshold" : @1
+                                }
+                        },
+                        @"config" : @{
+                            @"url" : webhookURLString
+                        }
+                },
+                @"is_verified" : @YES
+        }
+    };
+    NSString *path = [NSString stringWithFormat:@"api/v2/organizations/%@/apps/%@", application.organization.organizationID, application.applicationID];
+
+	return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+		AFHTTPRequestOperation *operation = [self PUT:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+			[subscriber sendNext:responseObject];
+			[subscriber sendCompleted];
+		} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+			[subscriber sendError:error];
+		}];
+		
+		return [RACDisposable disposableWithBlock:^{
+			[operation cancel];
+		}];
+	}];
+}
+
+- (RACSignal *)validateWebhookForApplication:(CRMApplication *)application {
+    NSParameterAssert(application);
+    CRMAccount *currentAccount = [CRMAccount currentAccountInContext:nil];
+    NSString *webhookURLString = [NSString stringWithFormat:@"http://crash-manager.parseapp.com/crashlytics/%@", currentAccount.userID];
+    NSDictionary *parameters = @{
+                                 @"service_hooks" : @{
+                                         @"webhook" : @{
+                                                 @"events" : @{
+                                                         @"issue_impact_change" : @{
+                                                                 @"enabled": @"1",
+                                                                 @"threshold" : @1
+                                                                 }
+                                                         },
+                                                 @"config" : @{
+                                                         @"url" : webhookURLString
+                                                         },
+                                                 @"is_verified" : @"false"
+                                             },
+                                         }
+                                 };
+    NSString *path = [NSString stringWithFormat:@"api/v2/organizations/%@/apps/%@/verify_service_hook", application.organization.organizationID, application.applicationID];
+    
+	return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"POST"
+                                                                       URLString:[[NSURL URLWithString:path relativeToURL:self.baseURL] absoluteString]
+                                                                      parameters:parameters
+                                                                           error:nil];
+        [request setValue:@"application/x-www-form-urlencoded; charset=UTF-8"
+       forHTTPHeaderField:@"Content-Type"];
+        AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+			[subscriber sendNext:responseObject];
+			[subscriber sendCompleted];
+		} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+			[subscriber sendError:error];
+		}];
+        [self.operationQueue addOperation:operation];
+        
+		return [RACDisposable disposableWithBlock:^{
+			[operation cancel];
+		}];
+	}];
 }
 
 @end

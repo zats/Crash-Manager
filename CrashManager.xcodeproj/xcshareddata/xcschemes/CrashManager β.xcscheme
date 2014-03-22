@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5CF3E92F18D4EB28001E1EDF"
-               BuildableName = "CrashManager Unit Tests.octest"
+               BuildableName = "CrashManager Unit Tests.xctest"
                BlueprintName = "CrashManager Unit Tests"
                ReferencedContainer = "container:CrashManager.xcodeproj">
             </BuildableReference>

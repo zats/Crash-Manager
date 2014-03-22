@@ -46,3 +46,10 @@
 				  forIssue:(CRMIssue *)issue;
 
 @end
+
+@interface CRMAPIClient (CRMWebHook)
+
+- (RACSignal *)validateWebhookForApplication:(CRMApplication *)application;
+- (RACSignal *)setWebhookForApplication:(CRMApplication *)application;
+
+@end

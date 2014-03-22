@@ -21,6 +21,7 @@ pod 'SHUIKitBlocks', '2.3.0'
 pod 'SSKeychain', '1.2.1'
 pod 'TTTLocalizedPluralString', '0.0.9'
 pod 'TUSafariActivity', '1.0.0'
+pod 'Parse-iOS-SDK', '~> 1.2.18'
 
 target 'CrashManager Unit Tests' do
     pod 'Expecta', '~> 0.3.0'

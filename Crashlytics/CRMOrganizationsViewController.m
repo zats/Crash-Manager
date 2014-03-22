@@ -12,10 +12,11 @@
 #import "CRMAccount.h"
 #import "CRMApplicationsViewController.h"
 #import "CRMOrganization.h"
-#import <Crashlytics/Crashlytics.h>
-#import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
-#import <SHUIKitBlocks/SHUIKitBlocks.h>
 #import "CRMPasteboardObserver.h"
+#import <Crashlytics/Crashlytics.h>
+#import <Parse/Parse.h>
+#import <SHUIKitBlocks/SHUIKitBlocks.h>
+#import <TTTLocalizedPluralString/TTTLocalizedPluralString.h>
 
 @interface CRMOrganizationsViewController ()
 
@@ -35,8 +36,11 @@
 	[alert SH_addButtonCancelWithTitle:NSLocalizedString(@"CRMLogoutAlertCancelTitle", nil) withBlock:nil];
 	[alert SH_addButtonWithTitle:NSLocalizedString(@"CRMLogoutAlertLogoutTitle", nil) withBlock:^(NSInteger theButtonIndex) {
 		[CRMAccount setCurrentAccount:nil];
-		
-		
+
+        PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+        [currentInstallation removeObjectForKey:@"channels"];
+        [currentInstallation saveInBackground];
+
 		NSPersistentStore *persistentStore = [NSPersistentStore MR_defaultPersistentStore];
 		NSError *error = nil;
 		
