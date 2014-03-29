@@ -82,14 +82,16 @@ titleForHeaderInSection:(NSInteger)section {
 	CRMSessionFrame *frame = [thread.frames objectAtIndex:indexPath.row];
 	CRMSessionBinaryImage *correspondingBinaryImage = [self.session binaryImageForAddress:frame.pc + frame.offset];
 	
-	NSString *binaryName = correspondingBinaryImage.name;
-	NSURL *binaryImageURL = [NSURL fileURLWithPath:correspondingBinaryImage.name];
-	if (binaryImageURL) {
-		binaryName = [binaryImageURL lastPathComponent];
-	}
-	if (frame.offset) {
-		binaryName = [binaryName stringByAppendingFormat:@" + %lu", frame.offset];
-	}
+	NSString *binaryName = correspondingBinaryImage.name ?: @"";
+    if (correspondingBinaryImage.name) {
+        NSURL *binaryImageURL = [NSURL fileURLWithPath:correspondingBinaryImage.name];
+        if (binaryImageURL) {
+            binaryName = [binaryImageURL lastPathComponent];
+        }
+        if (frame.offset) {
+            binaryName = [binaryName stringByAppendingFormat:@" + %lu", frame.offset];
+        }
+    }
 	
 	BOOL isDeveloperCode = (frame.importance & CRMIncident_FrameImportanceInDeveloperCode) != 0;
 	BOOL isCrashedFrame = (frame.importance & CRMIncident_FrameImportanceLikelyLeadToCrash) != 0;
