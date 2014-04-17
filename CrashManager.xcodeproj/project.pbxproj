@@ -1226,7 +1226,7 @@
 					/Users/zats/Documents/Crashlytics,
 				);
 				PRODUCT_NAME = CrashManager;
-				PROVISIONING_PROFILE = "450B4897-8ADE-4037-91CE-4AF08A245F3B";
+				PROVISIONING_PROFILE = "78720531-00BA-4213-B798-C93D0E37BC18";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

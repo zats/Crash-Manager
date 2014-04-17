@@ -20,7 +20,6 @@
 #import "CRMResponseSerializer.h"
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
-#import <AFNetworking-RACExtensions/RACAFNetworking.h>
 
 @interface CRMAPIClient ()
 @end
