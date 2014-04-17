@@ -96,9 +96,14 @@ static inline NSDictionary *CRMSimplifyDictionary(NSDictionary *dictionary) {
 	if (isErrorResponse) {
 		// an error message?
 		if (error) {
+            NSDictionary *userInfo;
+            NSString *errorMessage = result[@"message"];
+            if (errorMessage) {
+                userInfo = @{ NSLocalizedDescriptionKey: errorMessage };
+            }
 			*error = [NSError errorWithDomain:CRMErrorDomain
 										 code:((NSHTTPURLResponse *)response).statusCode
-									 userInfo:@{ NSLocalizedDescriptionKey: result[@"message"] }];
+									 userInfo:userInfo];
 		}
 		return nil;
 	}
