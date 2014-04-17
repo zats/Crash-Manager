@@ -40,11 +40,6 @@
 	CRMSessionFrame *frame = [[self.session lastEvent].app.execution.exception.frames objectAtIndex:indexPath.row];
 	uint64_t framePosition = frame.pc + frame.offset;
 	CRMSessionBinaryImage *correspondingBinaryImage = [self.session binaryImageForAddress:framePosition];
-	NSString *binaryName = correspondingBinaryImage.name;
-	NSURL *binaryImageURL = [NSURL fileURLWithPath:correspondingBinaryImage.name];
-	if (binaryImageURL) {
-		binaryName = [binaryImageURL lastPathComponent];
-	}
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExceptionCellIdentifier"
 															forIndexPath:indexPath];
 	BOOL isDeveloperCode = (frame.importance & CRMIncident_FrameImportanceInDeveloperCode) != 0;
@@ -53,6 +48,14 @@
 	cell.textLabel.font = isDeveloperCode ? [UIFont boldSystemFontOfSize:18] : [UIFont systemFontOfSize:18];
 	cell.textLabel.textColor = color;
 	cell.textLabel.text = frame.symbol;
+	NSString *binaryName = correspondingBinaryImage.name ?: @"";
+    NSURL *binaryImageURL;
+    if (binaryName) {
+        binaryImageURL = [NSURL fileURLWithPath:binaryName];
+        if (binaryImageURL) {
+            binaryName = [binaryImageURL lastPathComponent];
+        }
+    }
 	cell.detailTextLabel.text = binaryName;
 	
 	return cell;
